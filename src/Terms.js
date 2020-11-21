@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import { NextWeek } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,25 +28,18 @@ export default function Terms(props) {
     return (
         <div>
         <Paper className={classes.root}>
-          <Typography variant="h3" component="h2" gutterBottom>
-              Vos données ... sont A NOUS!
+          <Typography variant="h3" component="h2" gutterBottom> 
+                FORMULAIRE DE CONSENTEMENT ECLAIRE
           </Typography>
           <Typography variant="body1" gutterBottom >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+          Je certifie donner mon accord pour participer à une étude portant sur les comportements d’achats en ligne. 
+          J'accepte volontairement de participer à cette étude et je comprends que ma participation n'est pas obligatoire 
+          et que je peux arrêter à tout moment, sans avoir à me justifier, ni encourir aucune responsabilité. 
+          Au cours de cette étude, j'accepte que soient recueillies des données sur mes réponses. 
+          Je comprends que les informations recueillies sont strictement confidentielles et à usage exclusif des investigateurs de cette étude. 
+          J'ai été informé(e) que mes données sont anonymes et que par conséquent mon identité n'apparaitra dans aucun rapport ou publication et 
+          que toute information me concernant sera traitée de façon confidentielle. J'accepte que les données enregistrées à l'occasion de cette étude 
+          puissent être conservées dans une base de données et faire l'objet d'un traitement informatisé.
           </Typography>
           
           <FormControlLabel
@@ -58,7 +50,7 @@ export default function Terms(props) {
                     color="primary"
                 />
                 }
-                label="Je suis d'accord avec ce que je viens de pas lire."
+                label="J’ai lu, compris et accepté les termes du consentement éclairé ci-dessus."
             /> 
             <br></br>
           <Button color="primary" disabled={!ticked} variant="contained" onClick={() => checkIfAgree(ticked, props)}>Continuer</Button>
