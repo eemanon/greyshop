@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <HeaderBar titletext={titles[progressState-1]} progress={progressState} total={titles.length}></HeaderBar>
+      
       <Router history={history}>
           <Route exact path='/'>
             <StudentLogin next={() => { history.push("/consent");setProgress(2);}}>
