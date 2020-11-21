@@ -7,9 +7,11 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    zIndex: theme.zIndex.drawer + 1000,
   },
   bar: {
     backgroundColor: "#8a8a8a",
+    zIndex: theme.zIndex.drawer + 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -25,7 +27,7 @@ export default function HeaderBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.bar}>
+      <AppBar position="relative" className={classes.bar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             {props.titletext}

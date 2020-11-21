@@ -42,7 +42,7 @@ export default function ProductCard(props) {
             <Typography variant="h6" component="h2" gutterBottom>
             {props.name}
           </Typography>
-                <img src={logo} alt={props.alt} width="40%"/>
+                <img src={logo} alt={props.alt} width="100%"/>
                 <Typography variant="body1" gutterBottom className={classes.typo} style={{backgroundColor: props.color}}>
                 {props.indicator} kg de CO2 émis par kg de produit
                 </Typography>

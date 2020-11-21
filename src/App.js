@@ -15,7 +15,7 @@ import Questionnaire from './Questionnaire.js'
 function App() {
   const [progressState, setProgress] = useState( 1 );
   const titles = ["Bienvenue", "Consentement", "Instructions", "Shop", "Questionnaire", "Dice Game"];
-
+  const drawerWidth = 240;
 
   return (
     <div className="App">
