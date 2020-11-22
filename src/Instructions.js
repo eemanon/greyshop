@@ -1,12 +1,9 @@
-
-
 import Paper from '@material-ui/core/Paper';
 import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+
 import logo from './images/clle_logo.png' 
 
 const useStyles = makeStyles((theme) => ({

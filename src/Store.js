@@ -10,18 +10,11 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ProductCard from './ProductCard';
 
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-
-
+import SideDrawer from './SideDrawer.js'
 import therm from './images/thermometer_placeholder.png' 
+import Basket from './Basket.js'
+import ThermoCard from './Thermometer';
 
 const drawerWidth = 300;
 
@@ -88,7 +81,7 @@ TabPanel.propTypes = {
 const categories = ["Acceuil", "Fruits et légumes", "Viandes et poissons", "Produits laitiers et oeufs", "Plats préparés","Epicerie salée","Epicerie sucrée"];
 
 
-export default function FullWidthGrid() {
+export default function Store(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -115,49 +108,31 @@ export default function FullWidthGrid() {
       {categories.map((item, i) => (
                 <TabPanel value={value} index={i}>
                     <Grid container spacing={3} className={classes.grid}>
-                        <Grid item xs={12} sm={6} md={3} lg={2}>
+                        <Grid item xs={12} md={6} lg={3}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} lg={2}>
+                        <Grid item xs={12} md={6} lg={3}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={3} lg={2}>
+                        </Grid> <Grid item xs={12} md={6} lg={3}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={3} lg={2}>
+                        </Grid> <Grid item xs={12} md={6} lg={3}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={3} lg={2}>
+                        </Grid> <Grid item xs={12} md={6} lg={3}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={3} lg={2}>
+                        </Grid> <Grid item xs={12} md={6} lg={3}>
+                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
+                        </Grid> <Grid item xs={12} md={6} lg={3}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
                         </Grid>
                     </Grid>
                 </TabPanel>
             ))}
-
-        <Drawer className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-        anchor="right"
-        >
-          <div className={classes.toolbar} />
-        <Divider />
-        <img src={therm} alt="therm"/>
-
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+    <SideDrawer drawerwidth={drawerWidth} >
+      <ThermoCard></ThermoCard>
+      <Divider />
+      <Basket next={props.next}></Basket>
+    </SideDrawer>
+        
     </div>
   );
 }
