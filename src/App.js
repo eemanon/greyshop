@@ -43,7 +43,7 @@ function App() {
             </Questionnaire>
           </Route>
           <Route path='/dicegame'>
-            <DiceGame next={() => { history.push("/questionnaire");setProgress(7);}}>
+            <DiceGame>
             </DiceGame>
           </Route>
       </Router>

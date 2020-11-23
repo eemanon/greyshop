@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import QuestionScale from './QuestionScale.js';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,5 +39,6 @@ export default function Questionnaire(props) {
             <QuestionScale question="Un couple marié devrait pouvoir avoir autant d’enfants qu’il le souhaite, du moment qu’il peut subvenir correctement à leurs besoins." options={["1","2", "3","4","5", "6","7"]}></QuestionScale>
             <QuestionScale question="Protéger l’environnement est plus important que protéger l’emploi des gens." options={["1","2", "3","4","5", "6","7"]}></QuestionScale>
             </Paper>
+            <Button color="primary" variant="contained" onClick={() => props.next()}>Envoyer mes réponses</Button>
         </div>);
 }
