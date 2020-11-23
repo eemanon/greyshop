@@ -10,8 +10,6 @@ import FormControl from '@material-ui/core/FormControl';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: "auto",
-    padding: "10px",
     maxWidth: "1000px",
     marginTop: "30px",
     

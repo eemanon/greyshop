@@ -3,16 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ProductCard from './ProductCard';
 
 import Divider from '@material-ui/core/Divider';
 import SideDrawer from './SideDrawer.js'
-import therm from './images/thermometer_placeholder.png' 
+import Chip from '@material-ui/core/Chip';
 import Basket from './Basket.js'
 import ThermoCard from './Thermometer';
 
@@ -22,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginRight: drawerWidth
+  },
+  panel: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0.5),
+    },
   },
   appbar: {
     width: '100%',
@@ -42,7 +47,14 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0.5),
+    },
+  }
 }));
 
 function TabPanel(props) {
@@ -73,8 +85,7 @@ TabPanel.propTypes = {
   
   function a11yProps(index) {
     return {
-      id: `scrollable-auto-tab-${index}`,
-      'aria-controls': `scrollable-auto-tabpanel-${index}`,
+      color:"primary"
     };
   }
 
@@ -83,49 +94,38 @@ const categories = ["Acceuil", "Fruits et légumes", "Viandes et poissons", "Pro
 
 export default function Store(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(categories[0]);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
+    console.log(newValue)
   };
   return (
     <div className={classes.root}>
-     <AppBar position="static" color="default">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="scrollable auto tabs example"
-        >
-            {categories.map((item, i) => (
-                <Tab label={item} {...a11yProps(i)} />
-            ))}
-        </Tabs>
-      </AppBar>
+      <div className={classes.toolbar}>
       {categories.map((item, i) => (
-                <TabPanel value={value} index={i}>
+                <Chip label={item} color={value===item?"primary":"default"} onClick={(i) => {handleChange(item)}}/>
+            ))}
+      </div>
+      {categories.map((item, i) => (
                     <Grid container spacing={3} className={classes.grid}>
-                        <Grid item xs={12} md={6} lg={3}>
+                        <Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
                         </Grid>
-                        <Grid item xs={12} md={6} lg={3}>
+                        <Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid> <Grid item xs={12} md={6} lg={3}>
+                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid> <Grid item xs={12} md={6} lg={3}>
+                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid> <Grid item xs={12} md={6} lg={3}>
+                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid> <Grid item xs={12} md={6} lg={3}>
+                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid> <Grid item xs={12} md={6} lg={3}>
+                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
                         <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
                         </Grid>
                     </Grid>
-                </TabPanel>
             ))}
     <SideDrawer drawerwidth={drawerWidth} >
       <ThermoCard></ThermoCard>

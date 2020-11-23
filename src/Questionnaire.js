@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
       display:"block",
       margin: "30px",
+      textAlign: "left",
     },
     paper: {
         marginBottom:"10px",
