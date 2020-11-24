@@ -1,17 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import ProductCard from './ProductCard';
-
 import Divider from '@material-ui/core/Divider';
 import SideDrawer from './SideDrawer.js'
 import Chip from '@material-ui/core/Chip';
+
+import ProductCard from './ProductCard';
 import Basket from './Basket.js'
 import ThermoCard from './Thermometer';
+import Products from './DataLoader';
+
 
 const drawerWidth = 300;
 
@@ -57,76 +55,39 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-  
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`scrollable-auto-tabpanel-${index}`}
-        aria-labelledby={`scrollable-auto-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
-    );
-  }
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
-  };
-  
-  function a11yProps(index) {
-    return {
-      color:"primary"
-    };
-  }
-
-const categories = ["Acceuil", "Fruits et légumes", "Viandes et poissons", "Produits laitiers et oeufs", "Plats préparés","Epicerie salée","Epicerie sucrée"];
-
-
 export default function Store(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(categories[0]);
-
+  const items = Products();
+  const [value, setValue] = React.useState(-1);
+  const showCategory = () => {
+    if(value===-1){
+      return(<div>Landing Screen :)</div>)
+    }
+    else {
+    const found = items.find(category => category.id === value);
+      return(
+        <Grid container spacing={3} className={classes.grid}>
+          {found.products.map((item, i) => (
+            <Grid item xs={6} md={4} lg={3} xl={2}>
+            <ProductCard name={item["Descriptif Produit"]} quantity={item["Grammes"]} unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} color="red" mode="0"></ProductCard>
+            </Grid>
+          ))}
+        </Grid>
+      );
+    }
+  }
   const handleChange = (newValue) => {
     setValue(newValue);
-    console.log(newValue)
   };
   return (
     <div className={classes.root}>
       <div className={classes.toolbar}>
-      {categories.map((item, i) => (
-                <Chip label={item} color={value===item?"primary":"default"} onClick={(i) => {handleChange(item)}}/>
+      <Chip label="Acceuil" color={value===-1?"primary":"default"} onClick={(i) => {handleChange(-1)}}/>
+      {items.map((item, i) => (
+                <Chip label={item.name} color={value===item.id?"primary":"default"} onClick={(i) => {handleChange(item.id)}}/>
             ))}
-      </div>
-      {categories.map((item, i) => (
-                    <Grid container spacing={3} className={classes.grid}>
-                        <Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid>
-                        <Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid><Grid item xs={6} md={4} lg={3} xl={2}>
-                        <ProductCard name="sweet sweets" quantity="200" unit="g" imagePath="./images/clle_logo.png" alt="alt" indicator="23.4" priceInEuros="2.0" pricePerUnit="202.2" color="red" mode="0"></ProductCard>
-                        </Grid>
-                    </Grid>
-            ))}
+      </div>{/*needs conditional display based on "value"*/}
+      {showCategory()}
     <SideDrawer drawerwidth={drawerWidth} >
       <ThermoCard></ThermoCard>
       <Divider />

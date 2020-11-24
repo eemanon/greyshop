@@ -5,7 +5,6 @@ import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import logo from './images/clle_logo.png' 
 
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
@@ -24,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     },
     typo: {
       marginTop: "40px",
-      padding: "10px"
+      padding: "10px",
+      display: "inline-block"
     },
     paper: {
       padding: theme.spacing(2),
@@ -42,11 +42,11 @@ export default function ProductCard(props) {
             <Typography variant="h6" component="h2" gutterBottom>
             {props.name}
           </Typography>
-                <img src={logo} alt={props.alt} width="100%"/>
-                <Typography variant="body1" gutterBottom className={classes.typo} style={{backgroundColor: props.color}}>
+                <img src={process.env.PUBLIC_URL+props.imagePath} alt={props.alt} width="70%"/>
+                <Typography variant="body1" gutterBottom className={classes.typo} style={{backgroundColor: props.color}} component={'span'}>
                 {props.indicator} kg de CO2 émis par kg de produit
                 </Typography>
-                <Typography variant="body1" gutterBottom className={classes.typo}>
+                <Typography variant="body1" gutterBottom className={classes.typo} component={'span'}>
                 Prix: {props.priceInEuros} € <div className={classes.priceperUnit} >{props.pricePerUnit} €/kg</div>
                 </Typography>
                 <Button
