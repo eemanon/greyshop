@@ -2,7 +2,7 @@ import Paper from '@material-ui/core/Paper';
 import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
+import arrowRight from './images/right.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,105 +16,28 @@ const useStyles = makeStyles((theme) => ({
   thermometer: {
      width: "auto",
      marginBottom: "10px",
-     color: "red",
-     minHeight: "200px",
      margin: "auto",
      position: "relative"
   },
-  outerCircleBottom: {
-    height: "90px",
-    width: "90px",
-    backgroundColor: "black",
-    left: "95px",
-    position: "absolute",
-    top: "115px",
-    borderRadius: "50%",
-    zIndex: "1"
- },
- outerColumn: {
-    height: "100px",
-    width: "50px",
-    backgroundColor: "black",
-    left: "115px",
-    position: "absolute",
-    top: "50px",
-    zIndex: "1"
- },
- outerCircleTop: {
-    height: "50px",
-    width: "50px",
-    backgroundColor: "black",
-    left: "115px",
-    position: "absolute",
-    top: "25px",
-    borderRadius: "50%",
-    zIndex: "1"
- },
-
-innerCircleBottom: {
-    height: "70px",
-    width: "70px",
-    backgroundColor: "white",
-    left: "105px",
-    position: "absolute",
-    top: "125px",
-    borderRadius: "50%",
-    zIndex: "2"
- },
- innerColumn: {
-    height: "100px",
-    width: "30px",
-    backgroundColor: "white",
-    left: "125px",
-    position: "absolute",
-    top: "50px",
-    zIndex: "2"
- },
- innerCircleTop: {
-    height: "30px",
-    width: "30px",
-    backgroundColor: "white",
-    left: "125px",
-    position: "absolute",
-    top: "35px",
-    zIndex: "2",
-    borderRadius: "50%",
- },
-
- tempCircleBottom: {
-    height: "50px",
-    width: "50px",
-    backgroundColor: "green",
-    left: "115px",
-    position: "absolute",
-    top: "135px",
-    borderRadius: "50%",
-    zIndex: "3"
- },
- tempColumn: {
-    height: "100px",
-    width: "10px",
-    backgroundColor: "green",
-    left: "135px",
-    position: "absolute",
-    top: "50px",
-    zIndex: "3"
- },
- tempCircleTop: {
-    height: "10px",
-    width: "10px",
-    backgroundColor: "green",
-    left: "135px",
-    position: "absolute",
-    top: "45px",
-    zIndex: "3",
-    borderRadius: "50%",
- },
-
-}));
+  pointerLabel: {
+   float: "left",
+   padding: "3px"
+  },
+  pointer: {
+   float: "left",
+   position: "relative",
+   top: "-10px"
+  },
+  container: {
+   display: "inline-block",
+   
+  }
+}
+));
 
 export default function ThermoCard(props) {
     const classes = useStyles();
+    const labels = ["> 9,32","<=9,32","<=6,99","<=4,66", "<=2,33"]
     const [ticked, setTicked] = useState( false );
     return (
         <div>
@@ -123,18 +46,34 @@ export default function ThermoCard(props) {
                 Empreinte Carbone du panier
           </Typography>
           <div className={classes.thermometer}>
-              <div className={classes.outerColumn}></div>
-              <div className={classes.outerCircleBottom}></div>
-              <div className={classes.outerCircleTop}></div>
-
-              <div className={classes.innerColumn}></div>
-              <div className={classes.innerCircleBottom}></div>
-              <div className={classes.innerCircleTop}></div>
-
-              <div className={classes.tempColumn}></div>
-              <div className={classes.tempCircleBottom}></div>
-              <div className={classes.tempCircleTop}></div>
-
+             <div className={classes.container}>
+             <div className={classes.pointer}>
+               <div className={classes.pointerLabel}>23.5</div>
+               <img src={arrowRight} height="25px"></img>
+             </div>
+            <table cellspacing="0" cellpadding="0">
+               <tr>
+                  <td><div style={{backgroundColor: "#ff0000", height: "20px", width:"50px"}}></div></td>
+                  <td>{labels[0]}</td>
+               </tr>
+               <tr>
+                  <td><div style={{backgroundColor: "#ff5900", height: "20px", width:"50px"}}></div></td>
+                  <td>{labels[1]}</td>
+               </tr>
+               <tr>
+                  <td><div style={{backgroundColor: "#ffc000", height: "20px", width:"50px"}}></div></td>
+                  <td>{labels[2]}</td>
+               </tr>
+               <tr>
+                  <td><div style={{backgroundColor: "#ffff00", height: "20px", width:"50px"}}></div></td>
+                  <td>{labels[3]}</td>
+               </tr>
+               <tr>
+                  <td><div style={{backgroundColor: "#008000", height: "20px", width:"50px"}}></div></td>
+                  <td>{labels[4]}</td>
+               </tr>
+            </table>   
+            </div> 
           </div>
         </Paper>
       </div>

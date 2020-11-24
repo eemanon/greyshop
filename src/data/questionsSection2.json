@@ -1,0 +1,110 @@
+{
+    "title": "Section 2 : alimentation criteria",
+    "information": "Dans quelle mesure les critères suivants ont-ils une importance pour vous lorsque vous achetez des produits alimentaires ? (échelle allant de 1 à 7)",
+    "questions": [
+        {
+            "Question": "Qualité",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Prix",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Rapport qualité/prix",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Nombre de calories",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Valeurs nutritionnelles",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Mode de production",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Impact environnemental",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        },
+        {
+            "Question": "Lieu de production",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes"
+        }
+    ]
+}

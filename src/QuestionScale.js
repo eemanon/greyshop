@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "30px",
     
   },
+  answers: {
+    display: "block"
+  }
 }));
 
 
@@ -26,10 +29,10 @@ export default function QuestionScale(props) {
     };
     return (
         <div className={classes.root}>
-            <Typography variant="body1" gutterBottom >
+            <Typography variant="body1" component="span" gutterBottom >
                 {props.question}
             </Typography>
-            <FormControl component="fieldset">
+            <FormControl component="fieldset" className={classes.answers}>
                 <RadioGroup row aria-label="position" name="position" value={value} onChange={handleChange}>
                     {props.options.map((item, i) => (
                         <FormControlLabel

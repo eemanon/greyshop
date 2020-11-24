@@ -9,7 +9,7 @@ import ProductCard from './ProductCard';
 import Basket from './Basket.js'
 import ThermoCard from './Thermometer';
 import Products from './DataLoader';
-
+import ShopLandingPage from "./ShopLandingPage"
 
 const drawerWidth = 300;
 
@@ -61,7 +61,7 @@ export default function Store(props) {
   const [value, setValue] = React.useState(-1);
   const showCategory = () => {
     if(value===-1){
-      return(<div>Landing Screen :)</div>)
+      return(<ShopLandingPage variant="2"></ShopLandingPage>)
     }
     else {
     const found = items.find(category => category.id === value);
@@ -69,7 +69,7 @@ export default function Store(props) {
         <Grid container spacing={3} className={classes.grid}>
           {found.products.map((item, i) => (
             <Grid item xs={6} md={4} lg={3} xl={2}>
-            <ProductCard name={item["Descriptif Produit"]} quantity={item["Grammes"]} unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} color="red" mode="0"></ProductCard>
+            <ProductCard name={item["Descriptif Produit"]} quantity={item["Grammes"]} unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} color={item["Traffic light inter"]} mode="0"></ProductCard>
             </Grid>
           ))}
         </Grid>

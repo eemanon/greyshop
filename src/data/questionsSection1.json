@@ -1,0 +1,165 @@
+
+
+{
+    "id": 1,
+    "title": "Section 1 : Attitudes (12 items)",
+    "information": "1. Sur une échelle allant de 1 à 7, indiquez votre degré d'accord (1= pas d’accord, 7=tout à fait d’accord)",
+    "questions": [
+    {
+       "Question": "Un couple marié devrait pouvoir avoir autant d’enfants qu’il le souhaite, du moment qu’il peut subvenir correctement à leurs besoins.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Protéger l’environnement est plus important que protéger l’emploi des gens.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Nous devons garder les lacs et les rivières propres pour protéger l’environnement, \r\net non pour permettre aux gens de profiter des sports nautiques.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "La science moderne résoudra nos problèmes environnementaux.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Les êtres humains exploitent trop l’environnement.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Je préfère un jardin sauvage et naturel à un jardin soigné et bien ordonné.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "L’être humain a été créé ou a évolué pour dominer le reste de la nature.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Je suis opposé à l’idée du contrôle et de la régulation de l’utilisation des matières premières par les gouvernements dans le but de les faire durer plus longtemps.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Ça me rend triste de voir les forêts détruites pour l’agriculture.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Je trouve que passer du temps dans la nature est ennuyeux.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "J’aimerais rejoindre et participer activement à un groupe écologiste.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    },
+    {
+       "Question": "Je ne suis pas le genre de personne qui fait des efforts pour économiser les ressources naturelles.",
+       "Answer": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+       ],
+       "obligatory": "yes"
+    }
+ ]
+}

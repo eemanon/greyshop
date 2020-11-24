@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
+import Logo from './images/clle_logo.png'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -30,7 +30,7 @@ export default function Instructions(props) {
     return (
         <div>
         <Paper className={classes.root}>
-        <img src={process.env.PUBLIC_URL+"/images/clle_logo.png"} alt="Logo" width="20%"/>
+        <img src={Logo} alt="Logo" width="20%"/>
           <Typography variant="h3" component="h2" gutterBottom>
             Instructions 
           </Typography>
