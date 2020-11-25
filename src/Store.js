@@ -60,16 +60,16 @@ export default function Store(props) {
   const items = Products();
   const [value, setValue] = React.useState(-1);
   const showCategory = () => {
-    if(value===-1){
-      return(<ShopLandingPage variant="2"></ShopLandingPage>)
+    if (value === -1) {
+      return (<ShopLandingPage variant="2"></ShopLandingPage>)
     }
     else {
-    const found = items.find(category => category.id === value);
-      return(
+      const found = items.find(category => category.id === value);
+      return (
         <Grid container spacing={3} className={classes.grid}>
           {found.products.map((item, i) => (
             <Grid item xs={6} md={4} lg={3} xl={2}>
-            <ProductCard name={item["Descriptif Produit"]} quantity={item["Grammes"]} unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} color={item["Traffic light inter"]} mode="0"></ProductCard>
+              <ProductCard name={item["Descriptif Produit"]} quantity={item["Grammes"]} unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} color={item["Traffic light inter"]} mode="0"></ProductCard>
             </Grid>
           ))}
         </Grid>
@@ -82,18 +82,18 @@ export default function Store(props) {
   return (
     <div className={classes.root}>
       <div className={classes.toolbar}>
-      <Chip label="Acceuil" color={value===-1?"primary":"default"} onClick={(i) => {handleChange(-1)}}/>
-      {items.map((item, i) => (
-                <Chip label={item.name} color={value===item.id?"primary":"default"} onClick={(i) => {handleChange(item.id)}}/>
-            ))}
+        <Chip label="Acceuil" color={value === -1 ? "primary" : "default"} onClick={(i) => { handleChange(-1) }} />
+        {items.map((item, i) => (
+          <Chip label={item.name} color={value === item.id ? "primary" : "default"} onClick={(i) => { handleChange(item.id) }} />
+        ))}
       </div>{/*needs conditional display based on "value"*/}
       {showCategory()}
-    <SideDrawer drawerwidth={drawerWidth} >
-      <ThermoCard></ThermoCard>
-      <Divider />
-      <Basket next={props.next}></Basket>
-    </SideDrawer>
-        
+      <SideDrawer drawerwidth={drawerWidth} >
+        <ThermoCard></ThermoCard>
+        <Divider />
+        <Basket next={props.next}></Basket>
+      </SideDrawer>
+
     </div>
   );
 }

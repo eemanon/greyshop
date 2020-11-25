@@ -1,0 +1,20 @@
+{
+    "Title": "Section 11 : manipulation check",
+    "Information": "Avez-vous lu les informations affichées sur la page d’accueil du magasin expérimental (la première page quand vous êtes entré dans le magasin) ?",
+    "id": 11,
+    "showTitle": "no",
+    "questions": [
+        {
+            "Question": "",
+            "Answer": [
+                "Oui, je suis sûr de les avoir lues",
+                "Je pense que oui mais je ne suis pas sûr",
+                "Je ne sais pas",
+                "Je pense que non mais je ne suis pas sûr",
+                "Non, je suis sûr que je ne les ai pas lues"
+            ],
+            "obligatory": "yes",
+            "id": 1
+        }
+    ]
+}

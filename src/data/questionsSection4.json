@@ -1,0 +1,21 @@
+{
+    "Title": "Section 4 : online shopping habits",
+    "Information": "A quelle fréquence faites-vous vos courses en ligne dans des magasins comparables à ce magasin expérimental? (échelle allant de 1 à 7)",
+    "id": 4,
+    "showTitle": "no",
+    "questions": [
+        {
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes",
+            "id": 1
+        }
+    ]
+}

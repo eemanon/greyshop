@@ -1,0 +1,29 @@
+{
+    "Title": "Section 12 : demographic information",
+    "id": 12,
+    "showTitle": "no",
+    "questions": [
+        {
+            "Question": "Quel est votre âge?",
+            "obligatory": "yes",
+            "id": 1
+        },
+        {
+            "Question": "Quel est votre sexe?",
+            "Answer": ["femme","homme"],
+            "obligatory": "yes",
+            "id": 2
+        },
+        {
+            "Question": "Quel est votre degré de maîtrise du français?",
+            "Answer": [
+                "C'est ma langue maternelle",
+                "Je le parle aussi bien que ma langue maternelle",
+                "Je le parle couramment mais pas aussi bien que ma langue maternelle",
+                "Je le parle nettement moins bien que ma langue maternelle"
+            ],
+            "obligatory": "yes",
+            "id": 3
+        }
+    ]
+}

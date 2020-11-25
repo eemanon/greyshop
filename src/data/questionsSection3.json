@@ -1,11 +1,11 @@
 {
-    "Title": "Section 2 : alimentation criteria",
-    "Information": "Dans quelle mesure les critères suivants ont-ils une importance pour vous lorsque vous achetez des produits alimentaires ? (échelle allant de 1 à 7)",
-    "id": 2,
+    "Title": "Section 3 : shopping habits",
+    "Information": "A quelle fréquence faites-vous vos courses dans les types de magasin suivants ? (Échelle allant de 1 à 7)",
+    "id": 3,
     "showTitle": "no",
     "questions": [
         {
-            "Question": "Qualité",
+            "Question": "Hypermarchés (Auchan, Carrefour, Leclerc…)",
             "Answer": [
                 1,
                 2,
@@ -19,7 +19,7 @@
             "id": 1
         },
         {
-            "Question": "Prix",
+            "Question": "Supermarchés (Carrefour Market, Casino, Super U…)",
             "Answer": [
                 1,
                 2,
@@ -33,7 +33,7 @@
             "id": 2
         },
         {
-            "Question": "Rapport qualité/prix",
+            "Question": "Superettes (8 à huit, Monoprix, Petit casino)",
             "Answer": [
                 1,
                 2,
@@ -47,7 +47,7 @@
             "id": 3
         },
         {
-            "Question": "Nombre de calories",
+            "Question": "Hard discounts (Aldi, Lidl, Leader price…)",
             "Answer": [
                 1,
                 2,
@@ -61,7 +61,7 @@
             "id": 4
         },
         {
-            "Question": "Valeurs nutritionnelles",
+            "Question": "Petits commerces (Epiceries,boucheries,boulangeries…)",
             "Answer": [
                 1,
                 2,
@@ -75,7 +75,7 @@
             "id": 5
         },
         {
-            "Question": "Mode de production",
+            "Question": "Magasins bio",
             "Answer": [
                 1,
                 2,
@@ -89,7 +89,7 @@
             "id": 6
         },
         {
-            "Question": "Impact environnemental",
+            "Question": "AMAP (Association pour le Maintien d'une Agriculture Paysanne)",
             "Answer": [
                 1,
                 2,
@@ -103,7 +103,7 @@
             "id": 7
         },
         {
-            "Question": "Lieu de production",
+            "Question": "Directement chez le(s) producteur(s)",
             "Answer": [
                 1,
                 2,
@@ -115,6 +115,20 @@
             ],
             "obligatory": "yes",
             "id": 8
+        },
+        {
+            "Question": "Sur les marchés",
+            "Answer": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "obligatory": "yes",
+            "id": 9
         }
     ]
 }

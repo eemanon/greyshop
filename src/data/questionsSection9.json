@@ -1,0 +1,24 @@
+
+
+
+   {
+      "Title": "Section 9 : Political views",
+      "Information": "Quel parti représente le mieux vos opinions politiques (Réponse non-obligatoire) ?",
+      "id": 9,
+      "showTitle": "no",
+      "questions":
+
+
+[
+   {
+       "Question":"",
+      "Answer": ["France insoumise (FI)","Parti communiste français (PCF)","Parti socialiste (PS)","Parti radical de gauche (PRG)","Europe Écologie Les Verts (EELV)","La République en marche ! (REM)","Mouvement démocrate (MoDem)","Les Républicains (LR)","Union des démocrates et indépendants (UDI)","Debout la France (DLF)","Front national (FN)","Autre","Je ne veux pas répondre"],
+      "obligatory": "no",
+      "id": 1
+   }
+]
+
+
+   }
+
+

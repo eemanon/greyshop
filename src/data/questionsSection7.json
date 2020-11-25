@@ -1,0 +1,14 @@
+{
+    "Title": "Section 7 : studies",
+    "Information": "Veuillez préciser votre domaine d'activité ou votre domaine d’études principale",
+    "id": 7,
+    "showTitle": "no",
+    "questions": [
+        {
+            "Answer": ["Sciences humaines et sociales","Sciences Economiques","Commerce, finance, management","Arts, Musique, Audiovisuel et Cinéma","Batiments, travaux publics et Architecture","Droit et justice","Hotellerie, Restauration et Tourisme","Information et communication","Informatique","Ingénierie","Langues et lettres","Médical et paramédical","Mode, coiffure, esthétique","Sciences naturelles","Sport","Transport et logistique","Ressources humaines","Patrimoine naturel et environnement","Agriculture","Technologie","Education, enseignement, formation","Maths, statistiques","Retraité","Autre"],
+            "obligatory": "yes",
+            "id": 1,
+            "Question":""
+        }
+    ]
+}

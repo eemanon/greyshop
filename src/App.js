@@ -15,6 +15,15 @@ import Questionnaire from './Questionnaire.js'
 //data for questionnaire
 import section1 from './data/questionsSection1.json';
 import section2 from './data/questionsSection2.json';
+import section3 from './data/questionsSection3.json';
+import section4 from './data/questionsSection4.json';
+import section5 from './data/questionsSection5.json';
+import section6 from './data/questionsSection6.json';
+import section7 from './data/questionsSection7.json';
+import section8 from './data/questionsSection8.json';
+import section9 from './data/questionsSection9.json';
+import section11 from './data/questionsSection11.json';
+import section12 from './data/questionsSection12.json';
 
 function App() {
   const [progressState, setProgress] = useState( 1 );
@@ -46,35 +55,35 @@ function App() {
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section2'>
-            <Questionnaire data={section2} next={() => { history.push("/dicegame");setProgress(6);}}>
+            <Questionnaire data={section2} next={() => { history.push("/questionnaire_section3");setProgress(6);}}>
             </Questionnaire>
           </Route>
-          {/* <Route path='/questionnaire_section3'>
-            <Questionnaire next={() => { history.push("/questionnaire_section4");setProgress(6);}}>
+          <Route path='/questionnaire_section3'>
+            <Questionnaire data={section3} next={() => { history.push("/questionnaire_section4");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section4'>
-            <Questionnaire next={() => { history.push("/questionnaire_section5");setProgress(6);}}>
+            <Questionnaire data={section4} next={() => { history.push("/questionnaire_section5");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section5'>
-            <Questionnaire next={() => { history.push("/questionnaire_section6");setProgress(6);}}>
+            <Questionnaire data={section5} next={() => { history.push("/questionnaire_section6");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section6'>
-            <Questionnaire next={() => { history.push("/questionnaire_section7");setProgress(6);}}>
+            <Questionnaire data={section6} next={() => { history.push("/questionnaire_section7");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section7'>
-            <Questionnaire next={() => { history.push("/questionnaire_section8");setProgress(6);}}>
+            <Questionnaire data={section7} next={() => { history.push("/questionnaire_section8");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section8'>
-            <Questionnaire next={() => { history.push("/questionnaire_section9");setProgress(6);}}>
+            <Questionnaire data={section8} next={() => { history.push("/questionnaire_section9");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section9'>
-            <Questionnaire next={() => { history.push("/questionnaire_section10");setProgress(6);}}>
+            <Questionnaire data={section9} next={() => { history.push("/questionnaire_section11");setProgress(6);}}>
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section10'>
@@ -82,9 +91,13 @@ function App() {
             </Questionnaire>
           </Route>
           <Route path='/questionnaire_section11'>
-            <Questionnaire next={() => { history.push("/dicegame");setProgress(6);}}>
+            <Questionnaire data={section11} next={() => { history.push("/questionnaire_section12");setProgress(6);}}>
             </Questionnaire>
-          </Route> */}
+          </Route>
+          <Route path='/questionnaire_section12'>
+            <Questionnaire data={section12} next={() => { history.push("/dicegame");setProgress(6);}}>
+            </Questionnaire>
+          </Route>
           <Route path='/dicegame'>
             <DiceGame>
             </DiceGame>
