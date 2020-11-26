@@ -116,15 +116,15 @@ function App() {
           </Questionnaire>
         </Route>
         <Route path='/questionnaire_section10'>
-          <Questionnaire data={carbonQuestions} next={() => { history.push("/questionnaire_section11"); setProgress(6); }}>
+          <Questionnaire data={carbonQuestions} form={"list"} next={() => { history.push("/questionnaire_section11"); setProgress(6); }}>
           </Questionnaire>
         </Route>
         <Route path='/questionnaire_section11'>
-          <Questionnaire data={section11} next={() => { history.push("/questionnaire_section12"); setProgress(6); }}>
+          <Questionnaire data={section11} form={"list"} next={() => { history.push("/questionnaire_section12"); setProgress(6); }}>
           </Questionnaire>
         </Route>
         <Route path='/questionnaire_section12'>
-          <Questionnaire data={section12} next={() => { history.push("/dicegame"); setProgress(6); }}>
+          <Questionnaire data={section12} form={"list"} next={() => { history.push("/dicegame"); setProgress(6); }}>
           </Questionnaire>
         </Route>
         <Route path='/dicegame'>

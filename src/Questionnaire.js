@@ -30,7 +30,7 @@ export default function Questionnaire(props) {
         <div className={classes.root}>
             <Paper className={classes.paper}>
             {props.showTitle=="yes"?titleElement():""}
-            <Typography gutterBottom>{props.data.Information}</Typography>
+            <Typography variant="h6" gutterBottom>{props.data.Information}</Typography>
             {props.data.questions.map(
               (item, i) => (
                 <QuestionScale question={item.Question} form={props.form} options={item.Answer} mustAnswer={item.obligatory} image={item.image}></QuestionScale>

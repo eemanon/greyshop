@@ -1,11 +1,11 @@
 {
     "Title": "Section 8 : Level of studies",
-    "Information": "Quel est votre niveau d’études actuel (votre dernier diplôme si vous avez terminé vos études, sinon la dernière année terminée)",
+    "Information": "",
     "id": 8,
     "showTitle": "no",
     "questions": [
         {
-            "Question":"",
+            "Question":"Quel est votre niveau d’études actuel (votre dernier diplôme si vous avez terminé vos études, sinon la dernière année terminée)",
             "Answer": [
                 "CAP/BEP",
                 "BAC/BT/BP",

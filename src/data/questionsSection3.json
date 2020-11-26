@@ -1,19 +1,19 @@
 {
     "Title": "Section 3 : shopping habits",
-    "Information": "A quelle fréquence faites-vous vos courses dans les types de magasin suivants ? (Échelle allant de 1 à 7)",
+    "Information": "A quelle fréquence faites-vous vos courses dans les types de magasin suivants ?",
     "id": 3,
     "showTitle": "no",
     "questions": [
         {
             "Question": "Hypermarchés (Auchan, Carrefour, Leclerc…)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 1
@@ -21,13 +21,13 @@
         {
             "Question": "Supermarchés (Carrefour Market, Casino, Super U…)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 2
@@ -35,13 +35,13 @@
         {
             "Question": "Superettes (8 à huit, Monoprix, Petit casino)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 3
@@ -49,13 +49,13 @@
         {
             "Question": "Hard discounts (Aldi, Lidl, Leader price…)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 4
@@ -63,13 +63,13 @@
         {
             "Question": "Petits commerces (Epiceries,boucheries,boulangeries…)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 5
@@ -77,13 +77,13 @@
         {
             "Question": "Magasins bio",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 6
@@ -91,13 +91,13 @@
         {
             "Question": "AMAP (Association pour le Maintien d'une Agriculture Paysanne)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 7
@@ -105,13 +105,13 @@
         {
             "Question": "Directement chez le(s) producteur(s)",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 8
@@ -119,13 +119,13 @@
         {
             "Question": "Sur les marchés",
             "Answer": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "obligatory": "yes",
             "id": 9

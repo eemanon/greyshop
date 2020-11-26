@@ -1,13 +1,13 @@
 {
     "Title": "Section 6 : revenu",
-    "Information": "Pourriez-vous nous indiquer le montant de votre revenu net mensuel (Réponse non-obligatoire) ?",
+    "Information": "",
     "id": 6,
     "showTitle": "no",
     "questions": [
         {
-            "Question": "",
+            "Question": "Pourriez-vous nous indiquer le montant de votre revenu net mensuel (Réponse non-obligatoire) ?",
             "Answer": ["Je ne veux pas répondre","[0-499]","[500-999]","[1000-1499]","[1500-1999]","[2000-2499]","[2500-2999]","[3000-3499]","[3500-3999]","[4000-4499]","[4500-4999]","[5000-5499]","Revenu supérieur à 5500 euros net"],
-            "obligatory": "yes",
+            "obligatory": "no",
             "id": 1
         }
     ]

@@ -30,7 +30,6 @@ export default function QuestionScale(props) {
   const textInput = () => {
     return (<TextField id="standard-basic" label={props.question} />)
   }
-  console.log(props.form)
   const [value, setValue] = React.useState("");
   const answercomponent = () => {
     return (<RadioGroup column={props.form=="list"} row={props.form!="list"} aria-label="position" name="position" value={value} onChange={handleChange}>
@@ -55,7 +54,7 @@ export default function QuestionScale(props) {
   console.log(props.image)
   return (
     <div className={classes.root}>
-      <Typography variant="body1" component="span" gutterBottom >
+      <Typography variant="h6" component="span" gutterBottom >
         {props.question}
       </Typography>
       {props.image!=null?<img className={classes.img} src={props.image} />:""}

@@ -8,8 +8,6 @@ import Button from '@material-ui/core/Button';
 
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -36,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProductCard(props) {
     const classes = useStyles();
-    console.log(props.imagePath)
     return (
         <div>
             <Paper className={classes.root}>
@@ -52,6 +49,7 @@ export default function ProductCard(props) {
                 </Typography>
                 <Button
                     variant="contained"
+                    onClick={() => props.add(props.item)}
                     color="default"
                     className={classes.button}
                     startIcon={<AddShoppingCartIcon/>}

@@ -25,12 +25,31 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "10px"
   },
   table: {
-    
+
   },
-list: {
-  minHeight: "200px"
-}
+  list: {
+    minHeight: "200px"
+  },
+  btngroup: {
+
+  },
+  button: {
+
+  }
 }));
+
+function format2Digit(number){
+  return Math.round (number*100) / 100
+}
+
+function sumHT(basket){
+  console.log('counting')
+  let sumHT = 0.0;
+  basket.array.forEach(item => {
+    sumHT = sumHT + item["Prix initial"] * item.quantity;
+  });
+  return sumHT;
+}
 
 export default function Basket(props) {
   const classes = useStyles();
@@ -45,50 +64,46 @@ export default function Basket(props) {
         <Table className={classes.table} aria-label="simple table" size="small">
           <TableBody>
             <TableRow>
-                <TableCell component="th" scope="row">
-                  Total en cours HT
+              <TableCell component="th" scope="row">
+                Total en cours HT
                 </TableCell>
-                <TableCell align="left">12.3</TableCell>
+              <TableCell align="left">{format2Digit(props.ht)} €</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell component="th" scope="row">
-                  Taxe
+              <TableCell component="th" scope="row">
+                Taxe
                 </TableCell>
-                <TableCell align="left">0.3</TableCell>
+              <TableCell align="left">{format2Digit(props.taxe)} €</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell component="th" scope="row">
-                  Total en cours
+              <TableCell component="th" scope="row">
+                Total en cours
                 </TableCell>
-                <TableCell align="left">12.6</TableCell>
+              <TableCell align="left">{format2Digit(props.ht+props.taxe)} €</TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
       <Divider />
       <List className={classes.list}>
-      <ListSubheader component="div" id="nested-list-subheader">
+        <ListSubheader component="div" id="nested-list-subheader">
           Produits selectionnées
         </ListSubheader>
-      {[0, 1, 2, 3,4,5,6,7].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
-
-        return (
-          <ListItem key={value} role={undefined} dense button >
-            <ListItemText>
-              2x blbal
-            </ListItemText>
-            <ListItemSecondaryAction>
-            <ButtonGroup size="small" fullWidth color="primary" aria-label="outlined primary button group">
-                <Button>-</Button>
-                <Button>+</Button>
+        {props.basket.map((item) => {
+          return (
+            <ListItem key={item.id} role={undefined} dense button >
+              <ListItemText>
+                {item.quantity}x {item["Descriptif Produit"]}
+              </ListItemText>
+              <ButtonGroup className={classes.btngroup} size="small" color="primary" aria-label="outlined primary button group">
+                <Button onClick={() => props.remove(item)}>-</Button>
+                <Button onClick={() => props.add(item)}>+</Button>
               </ButtonGroup>
-            </ListItemSecondaryAction>
-          </ListItem>
-        );
-      })}
-    </List>
-    <Button
+            </ListItem>
+          );
+        })}
+      </List>
+      <Button
         variant="contained"
         color="default"
         size="small"

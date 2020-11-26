@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   pointer: {
    float: "left",
    position: "relative",
-   top: "-10px"
+   top: "90px"
   },
   container: {
    display: "inline-block",
@@ -35,10 +35,20 @@ const useStyles = makeStyles((theme) => ({
 }
 ));
 
+
+function valueToPx(value, numPx, maxValue){
+   console.log('called converter')
+   return value>=maxValue?numPx:value*numPx/maxValue;
+}
+function format2Digit(number){
+   return Math.round (number*100) / 100
+ }
+
 export default function ThermoCard(props) {
     const classes = useStyles();
     const labels = ["> 9,32","<=9,32","<=6,99","<=4,66", "<=2,33"]
     const [ticked, setTicked] = useState( false );
+    console.log("temp: "+props.value)
     return (
         <div>
         <Paper className={classes.root}>
@@ -47,8 +57,8 @@ export default function ThermoCard(props) {
           </Typography>
           <div className={classes.thermometer}>
              <div className={classes.container}>
-             <div className={classes.pointer}>
-               <div className={classes.pointerLabel}>23.5</div>
+             <div className={classes.pointer} style={{ top: 90-valueToPx(props.value,100,11.66) }}>
+               <div className={classes.pointerLabel}>{format2Digit(props.value)}</div>
                <img src={arrowRight} height="25px"></img>
              </div>
             <table cellspacing="0" cellpadding="0">
