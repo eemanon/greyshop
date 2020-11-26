@@ -33,7 +33,7 @@ export default function Questionnaire(props) {
             <Typography gutterBottom>{props.data.Information}</Typography>
             {props.data.questions.map(
               (item, i) => (
-                <QuestionScale question={item.Question} options={item.Answer} mustAnswer={item.obligatory}></QuestionScale>
+                <QuestionScale question={item.Question} form={props.form} options={item.Answer} mustAnswer={item.obligatory} image={item.image}></QuestionScale>
             ))}
             </Paper>
             <Button color="primary" variant="contained" onClick={() => props.next()}>Envoyer mes réponses</Button>
