@@ -25,42 +25,38 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function QuestionScale(props) {
+export default function Question(props) {
   const classes = useStyles();
   const textInput = () => {
-    return (<TextField id="standard-basic" label={props.question} />)
+    return (<TextField id="standard-basic" label={props.question.Question} onChange={handleChange} />)
   }
   const [value, setValue] = React.useState("");
   const answercomponent = () => {
-    return (<RadioGroup column={props.form=="list"} row={props.form!="list"} aria-label="position" name="position" value={value} onChange={handleChange}>
-
-      {props.options.map((item, i) => (
-
-          
+    return (<RadioGroup column={props.form == "list"} row={props.form != "list"} aria-label="position" name="position" value={value} onChange={handleChange}>
+      {props.question.Answer.map((item, i) => (
         <FormControlLabel
-          value={item}
+          value={"" + i}
           control={<Radio color="primary" />}
           label={item}
-          labelPlacement={props.form=="list"?"end":"bottom"}
+          labelPlacement={props.form == "list" ? "end" : "bottom"}
         />
       ))
       }
-
     </RadioGroup>)
   }
   const handleChange = (event) => {
+    props.setAnswer(props.question.id, event.target.value)
     setValue(event.target.value);
   };
-  console.log(props.image)
-  return (
-    <div className={classes.root}>
-      <Typography variant="h6" component="span" gutterBottom >
-        {props.question}
-      </Typography>
-      {props.image!=null?<img className={classes.img} src={props.image} />:""}
-      <FormControl component="fieldset" className={classes.answers}>
-        {props.options != null ? answercomponent() : textInput()}
 
+  return (
+    <div className={classes.root} style={props.colored=="yes"&&props.check?{backgroundColor: "red"}:{}}>
+      <Typography variant="h6" component="span" gutterBottom >
+        {props.question.Question}
+      </Typography>
+      {props.question.image != null ? <img className={classes.img} src={props.question.image} /> : ""}
+      <FormControl component="fieldset" className={classes.answers}>
+        {props.question.Answer != null ? answercomponent() : textInput()}
       </FormControl>
     </div>
   );

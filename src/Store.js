@@ -8,7 +8,6 @@ import Chip from '@material-ui/core/Chip';
 import ProductCard from './ProductCard';
 import Basket from './Basket.js'
 import ThermoCard from './Thermometer';
-import Products from './DataLoader';
 import ShopLandingPage from "./ShopLandingPage"
 
 const drawerWidth = 300;
@@ -65,7 +64,6 @@ function sumHT(basket){
 }  
 
 function carbonWeight(basket){
-  console.log("callTaxe")
   let carbonWeight = 0.0;
   basket.forEach(item => {
     carbonWeight = carbonWeight + item.quantity * (item.Grammes/100*item["Empreinte CO2 (g par 100 g)"]);
@@ -75,7 +73,6 @@ function carbonWeight(basket){
   return carbonWeightkg;
 } 
 function basketWeight(basket){
-  console.log("callTaxe")
   let basketWeight = 0.0;
   basket.forEach(item => {
     basketWeight = basketWeight + item.quantity * (item.Grammes);
@@ -87,7 +84,7 @@ function basketWeight(basket){
 
 export default function Store(props) {
   const classes = useStyles();
-  const items = Products();
+  const items = props.products;
   const [basket, setBasket] = React.useState([]);
   const [value, setValue] = React.useState(-1);
   const [totalHT, setTotalHT] = React.useState(0.0);
@@ -163,7 +160,7 @@ export default function Store(props) {
       <SideDrawer drawerwidth={drawerWidth} >
         <ThermoCard value={basketWeight(basket)!==0?carbonWeight(basket)/basketWeight(basket):0}></ThermoCard>
         <Divider />
-        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)} taxe={carbonWeight(basket)>14.22?carbonWeight(basket)*0.25:0}></Basket>
+        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)} taxe={carbonWeight(basket)>14.22?(carbonWeight(basket)-14.22)*0.25:0}></Basket>
       </SideDrawer>
 
     </div>

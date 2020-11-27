@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProductCard(props) {
     const classes = useStyles();
+    console.log("image path "+props.imagePath)
     return (
         <div>
             <Paper className={classes.root}>
