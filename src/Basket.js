@@ -5,10 +5,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -17,6 +16,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 
   },
   list: {
-    minHeight: "200px"
   },
   btngroup: {
 
@@ -38,17 +37,19 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function format2Digit(number){
-  return Math.round (number*100) / 100
+function format2Digit(number) {
+  return Math.round(number * 100) / 100
 }
 
-function sumHT(basket){
-  console.log('counting')
-  let sumHT = 0.0;
-  basket.array.forEach(item => {
-    sumHT = sumHT + item["Prix initial"] * item.quantity;
-  });
-  return sumHT;
+function check(value, tax, taxAdded) {
+  if (taxAdded) {
+    if (value + tax < 20 || value + tax > 25)
+      return true;
+  } else {
+    if (value < 20 || value > 25)
+      return true;
+  }
+  return false;
 }
 
 export default function Basket(props) {
@@ -63,23 +64,24 @@ export default function Basket(props) {
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table" size="small">
           <TableBody>
-            <TableRow>
+            {props.showTax ? <TableRow>
               <TableCell component="th" scope="row">
                 Total en cours HT
                 </TableCell>
               <TableCell align="left">{format2Digit(props.ht)} €</TableCell>
-            </TableRow>
-            <TableRow>
+            </TableRow> : ""}
+            {props.showTax ? <TableRow>
               <TableCell component="th" scope="row">
                 Taxe
                 </TableCell>
               <TableCell align="left">{format2Digit(props.taxe)} €</TableCell>
-            </TableRow>
+            </TableRow> : ""}
+
             <TableRow>
               <TableCell component="th" scope="row">
                 Total en cours
                 </TableCell>
-              <TableCell align="left">{format2Digit(props.ht+props.taxe)} €</TableCell>
+              <TableCell align="left">{props.showTax ? format2Digit(props.ht + props.taxe) : format2Digit(props.ht)} €</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -87,7 +89,7 @@ export default function Basket(props) {
       <Divider />
       <List className={classes.list}>
         <ListSubheader component="div" id="nested-list-subheader">
-          Produits selectionnées
+          {props.basket.length===0?"Votre panier est vide":"Produits selectionnées"}
         </ListSubheader>
         {props.basket.map((item) => {
           return (
@@ -103,14 +105,18 @@ export default function Basket(props) {
           );
         })}
       </List>
-      <Button
-        variant="contained"
-        color="default"
-        size="small"
-        className={classes.button}
-        onClick={() => props.next()}
-        startIcon={<ShoppingCartIcon />}
-      >Checkout</Button>
+      <Tooltip title="Le panier doit être entre 20 et 25 €">
+        <Button
+          variant="contained"
+          color={check(props.ht, props.taxe, props.showTax) ? "default" : "primary"}
+          size="small"
+          className={classes.button}
+          onClick={() => props.next()}
+          startIcon={<ShoppingCartIcon />}
+        >
+          Checkout
+      </Button>
+      </Tooltip>
     </div>
   );
 }

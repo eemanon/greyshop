@@ -32,6 +32,7 @@ export default function HeaderBar(props) {
           <Typography variant="h6" className={classes.title}>
             {props.titletext}
           </Typography>
+          {props.children}
           <Typography variant="h6">
             {props.progress}/{props.total}
           </Typography>

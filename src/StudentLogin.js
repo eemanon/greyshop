@@ -1,5 +1,5 @@
 import Paper from '@material-ui/core/Paper';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -25,7 +25,7 @@ export default function StudentLogin(props) {
   const classes = useStyles();
   const [studentValue, setValue] = useState( "" );
 
-  const regex = RegExp('[0-9]{8}');
+  const regex = RegExp('^[0-9]{8}$');
 
   return (
     <div>

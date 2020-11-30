@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import HeaderBar from './HeaderBar.js'
 import { Router } from 'react-router-dom';
@@ -17,6 +17,10 @@ import regularQuestions from './data/questionnary.json';
 
 import Products from './DataLoader';
 import Co2questionids from './data/productIdsForQuestions.json';
+
+
+//debug only
+import Button from '@material-ui/core/Button';
 
 function productIdsToQuestions(products, productIds, answers, title, id, information, showTitle, questionText) {
   //takes a list of product ids, general answers and a products object to return a section of questions about the product
@@ -42,14 +46,55 @@ function productIdsToQuestions(products, productIds, answers, title, id, informa
   return result;
 }
 
+const variants = [
+  {
+    number: "0",
+    labels: false,
+    labeltext: "",
+    labelpos: "front",
+    tax: false,
+    thermometer: false,
+    thermometerlabel: ""
+  },
+  {
+    number: "1",
+    labels: true,
+    labeltext: "Indicateur de rareté de produit: ",
+    labelpos: "front",
+    tax: true,
+    thermometer: true,
+    thermometerlabel: "Rareté moyenne de votre panier"
+  },
+  {
+    number: "2",
+    labels: true,
+    labeltext: " kg de CO2 émis par kg de produit",
+    labelpos: "behind",
+    tax: false,
+    thermometer: true,
+    thermometerlabel: "Empreinte carbone moyenne de votre panier"
+  },
+  {
+    number: "3",
+    labels: true,
+    labeltext: " kg de CO2 émis par kg de produit",
+    labelpos: "behind",
+    tax: true,
+    thermometer: true,
+    thermometerlabel: "Empreinte carbone moyenne de votre panier"
+  }    
+]
+
 function App() {
+  //debugging only:
+  const [variant, setVariant] = useState(0);
   const [progressState, setProgress] = useState(1);
   const [headerBarTitle, setHeaderBarTitle] = useState("Bienvenue");
   const products = Products();
   const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, "", "no", "Évaluer l'empreinte carbone de ce produit.");
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} progress={progressState} total={17}></HeaderBar>
+      <HeaderBar titletext={headerBarTitle} progress={progressState} total={17}><Button variant="contained" onClick={()=>setVariant((variant+1)%4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
 
       <Router history={history}>
         <Route exact path='/'>
@@ -65,7 +110,7 @@ function App() {
           </Instructions>
         </Route>
         <Route path='/store'>
-          <Store products={products} next={() => { history.push("/questionnaire_section1"); setProgress(5); setHeaderBarTitle("Questionnaire") }}>
+          <Store variant={variants[variant]} products={products} next={() => { history.push("/questionnaire_section1"); setProgress(5); setHeaderBarTitle("Questionnaire") }}>
           </Store>
         </Route>
         {regularQuestions.map((item, i) => (

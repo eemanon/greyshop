@@ -10,6 +10,7 @@ import Basket from './Basket.js'
 import ThermoCard from './Thermometer';
 import ShopLandingPage from "./ShopLandingPage"
 
+
 const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
@@ -82,12 +83,14 @@ function basketWeight(basket){
   return basketWeightkg;
 } 
 
+
+
 export default function Store(props) {
+  console.log(props.variant)
   const classes = useStyles();
   const items = props.products;
   const [basket, setBasket] = React.useState([]);
   const [value, setValue] = React.useState(-1);
-  const [totalHT, setTotalHT] = React.useState(0.0);
   const addToBasket = (item) => {
     const found = basket.find(product => product.id === item.id)
     if (found == null) {
@@ -130,7 +133,7 @@ export default function Store(props) {
   };
   const showCategory = () => {
     if (value === -1) {
-      return (<ShopLandingPage variant="2"></ShopLandingPage>)
+      return (<ShopLandingPage variant={props.variant.number}></ShopLandingPage>)
     }
     else {
       const found = items.find(category => category.id === value);
@@ -138,7 +141,11 @@ export default function Store(props) {
         <Grid container spacing={3} className={classes.grid}>
           {found.products.map((item, i) => (
             <Grid item xs={6} md={4} lg={3} xl={2}>
-              <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]} unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} color={item["Traffic light inter"]} mode="0"></ProductCard>
+              <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]} 
+                unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} 
+                priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} 
+                color={item["Traffic light inter"]} label={props.variant.labels} labelpos={props.variant.labelpos} labeltext={props.variant.labeltext}>
+              </ProductCard>
             </Grid>
           ))}
         </Grid>
@@ -158,9 +165,12 @@ export default function Store(props) {
       </div>
       {showCategory()}
       <SideDrawer drawerwidth={drawerWidth} >
-        <ThermoCard value={basketWeight(basket)!==0?carbonWeight(basket)/basketWeight(basket):0}></ThermoCard>
+        {props.variant.thermometer?<ThermoCard label={props.variant.thermometerlabel} 
+        value={basketWeight(basket)!==0?carbonWeight(basket)/basketWeight(basket):0}></ThermoCard>:""}
         <Divider />
-        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)} taxe={carbonWeight(basket)>14.22?(carbonWeight(basket)-14.22)*0.25:0}></Basket>
+        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)} 
+          showTax={props.variant.tax} taxe={carbonWeight(basket)>14.22?(carbonWeight(basket)-14.22)*0.25:0}>
+        </Basket>
       </SideDrawer>
 
     </div>

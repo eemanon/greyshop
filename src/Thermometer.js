@@ -1,5 +1,5 @@
 import Paper from '@material-ui/core/Paper';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import arrowRight from './images/right.png'
@@ -47,19 +47,17 @@ function format2Digit(number){
 export default function ThermoCard(props) {
     const classes = useStyles();
     const labels = ["> 9,32","<=9,32","<=6,99","<=4,66", "<=2,33"]
-    const [ticked, setTicked] = useState( false );
-    console.log("temp: "+props.value)
     return (
         <div>
         <Paper className={classes.root}>
           <Typography variant="h6" component="h2" gutterBottom> 
-                Empreinte Carbone du panier
+                {props.label}
           </Typography>
           <div className={classes.thermometer}>
              <div className={classes.container}>
              <div className={classes.pointer} style={{ top: 90-valueToPx(props.value,100,11.66) }}>
                <div className={classes.pointerLabel}>{format2Digit(props.value)}</div>
-               <img src={arrowRight} height="25px"></img>
+               <img src={arrowRight} alt="arrow" height="25px"></img>
              </div>
             <table cellspacing="0" cellpadding="0">
                <tr>
