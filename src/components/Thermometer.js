@@ -1,8 +1,14 @@
+//Component to display co2 footprint
+//props: value=value of the thermometer
+
+
+import React from 'react';
+
 import Paper from '@material-ui/core/Paper';
-import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import arrowRight from './images/right.png'
+
+import arrowRight from '../images/right.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {

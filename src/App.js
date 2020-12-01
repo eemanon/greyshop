@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import './App.css';
-import HeaderBar from './HeaderBar.js'
+import HeaderBar from './components/HeaderBar.js'
 import { Router } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import history from './history';
 
-import StudentLogin from './StudentLogin.js'
-import Terms from './Terms.js'
-import Instructions from './Instructions.js'
-import Store from './Store.js'
-import DiceGame from './DiceGame.js'
-import SurveySection from './SurveySection.js'
+import StudentLogin from './pages/StudentLogin.js'
+import Terms from './pages/Terms.js'
+import Instructions from './pages/Instructions.js'
+import Store from './pages/Store.js'
+import DiceGame from './pages/DiceGame.js'
+import SurveySection from './components/SurveySection.js'
+import DataStore from './pages/DataStore.js'
 
-//data for questionnaire
-import regularQuestions from './data/questionnary.json';
+import Products from './functions/DataLoader';
 
-import Products from './DataLoader';
 import Co2questionids from './data/productIdsForQuestions.json';
+import regularQuestions from './data/questionnary.json';
 
 
 //debug only
@@ -26,7 +26,7 @@ function productIdsToQuestions(products, productIds, answers, title, id, informa
   //takes a list of product ids, general answers and a products object to return a section of questions about the product
   let result = {
     "title": title,
-    "information": information,
+    "Information": information,
     "id": id,
     "showTitle": showTitle,
     "questions": []
@@ -39,7 +39,7 @@ function productIdsToQuestions(products, productIds, answers, title, id, informa
       if (found != null)
         product = found;
     });
-    let question = { "id": i, "Answer": answers, "Question": questionText, "image": product["Lien fichier"] }
+    let question = { "id": i, "Answer": answers, "Question": questionText, "image": product["Lien fichier"], "imageTitle": product["Descriptif Produit"] }
     result.questions.push(question);
     return true
   });
@@ -91,7 +91,9 @@ function App() {
   const [progressState, setProgress] = useState(1);
   const [headerBarTitle, setHeaderBarTitle] = useState("Bienvenue");
   const products = Products();
-  const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, "", "no", "Évaluer l'empreinte carbone de ce produit.");
+
+  const carbonInfo = "Vous allez à présent évaluer l’empreinte carbone de 36 produits sélectionnés dans le magasin. L’empreinte carbone est une mesure de l’émission de gaz à effet de serre au cours de la production, du transport et de la distribution d’un produit. Plus l’empreinte carbone d’un produit est élevée, plus celui-ci contribue au réchauffement climatique.";
+  const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, carbonInfo, "yes", "Évaluer l'empreinte carbone de ce produit.");
   return (
     <div className="App">
       <HeaderBar titletext={headerBarTitle} progress={progressState} total={17}><Button variant="contained" onClick={()=>setVariant((variant+1)%4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
@@ -114,7 +116,7 @@ function App() {
           </Store>
         </Route>
         {regularQuestions.map((item, i) => (
-            <Route exact path={item.link}>
+            <Route exact path={item.link} key={item.id}>
               <SurveySection data={item} form={item.form} next={() => { console.log(item.nextPage);history.push(item.nextPage); setProgress(progressState + 1); }}>
               </SurveySection>
             </Route>
@@ -126,6 +128,9 @@ function App() {
         <Route path='/dicegame'>
           <DiceGame>
           </DiceGame>
+        </Route>
+        <Route path='/datastore'>
+          <DataStore></DataStore>
         </Route>
       </Router>
     </div>

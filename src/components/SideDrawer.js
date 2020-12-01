@@ -1,7 +1,10 @@
+//Component to display a styled drawer.
+//props:none
+
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 
 export default function SideDrawer(props) {
@@ -32,7 +35,6 @@ export default function SideDrawer(props) {
         toolbar: theme.mixins.toolbar,
       }));
     const classes = useStyles();
-    const [ticked, setTicked] = useState( false );
     return (
 <Drawer className={classes.drawer}
         variant="permanent"

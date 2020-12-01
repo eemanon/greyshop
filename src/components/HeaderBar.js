@@ -1,4 +1,8 @@
+//Component to Show progress and title.
+//props: titletext=text to appear in headerbar, progress=current value of progress, total=total number of steps
+
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';

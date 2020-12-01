@@ -1,10 +1,14 @@
+//Component to display a section of a survey
+//props: data=Question object in json format, form="list"/"column" how to display question answers, next=next page
+
+import React, { useState } from 'react';
+
 import Paper from '@material-ui/core/Paper';
-import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Question from './Question.js';
 import Button from '@material-ui/core/Button';
 
+import Question from './Question.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,23 +57,16 @@ export default function SurveySection(props) {
         });
         return newAnswers;
       });
-      
+
     }
-    console.log("unanswered after "+unansweredQuestions)
   };
   const checkFilled = () => {
-    console.log(answers);
-    console.log(unansweredQuestions)
-    if (unansweredQuestions.length>0){
+    if (unansweredQuestions.length > 0) {
       setCheck(true);
       return false;
-      
     }
-
-    //if not, mark the question in question red 
     props.next()
   }
-  console.log(unansweredQuestions.includes(3))
   const titleElement = () => { return (<Typography variant="h4" component="h2" gutterBottom>{props.data.title}</Typography>) };
   return (
     <div className={classes.root}>
@@ -78,7 +75,7 @@ export default function SurveySection(props) {
         <Typography variant="h6" gutterBottom>{props.data.Information}</Typography>
         {props.data.questions.map(
           (item, i) => (
-            <Question check={check} colored={unansweredQuestions.includes(item.id)?"yes":"no"}  question={item} form={props.form} setAnswer={setAnswer}></Question>
+            <Question key={item.id} check={check} colored={unansweredQuestions.includes(item.id) ? "yes" : "no"} question={item} form={props.form} setAnswer={setAnswer}></Question>
           ))}
       </Paper>
       <Button color="primary" variant="contained" onClick={() => { checkFilled() }}>Envoyer mes réponses</Button>

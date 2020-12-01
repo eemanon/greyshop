@@ -1,3 +1,5 @@
+//Component to display a message 
+//props: variant=number of the variant to display.
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -105,7 +107,7 @@ export default function ShopLandingPage(props) {
           </Paper>
         </div>
       );
-      default: return (<div></div>);
+    default: return (<div></div>);
   }
 
 }

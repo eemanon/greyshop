@@ -1,6 +1,11 @@
-import React from 'react';
-import Divider from '@material-ui/core/Divider';
+//Component to display the contents of the basket and (sub)totals
+//props: next=next Page basket=basket remove=function to remove item from basket add=function to add item to basket  ht=sum without taxes 
+//showTax=boolean if tax is to be included taxe=value of the tax
 
+import React from 'react';
+
+//material ui imports
+import Divider from '@material-ui/core/Divider';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -38,10 +43,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function format2Digit(number) {
+  //function to cut off unneccesary digits behind comma
   return Math.round(number * 100) / 100
 }
 
 function check(value, tax, taxAdded) {
+  //check if basket value is between 20 and 25 €
   if (taxAdded) {
     if (value + tax < 20 || value + tax > 25)
       return true;
@@ -89,7 +96,7 @@ export default function Basket(props) {
       <Divider />
       <List className={classes.list}>
         <ListSubheader component="div" id="nested-list-subheader">
-          {props.basket.length===0?"Votre panier est vide":"Produits selectionnées"}
+          {props.basket.length === 0 ? "Votre panier est vide" : "Produits selectionnées"}
         </ListSubheader>
         {props.basket.map((item) => {
           return (

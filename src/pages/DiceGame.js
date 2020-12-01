@@ -1,13 +1,17 @@
+//Component that displays a dice game with videos as animations.
+//props: next=next page
 
-import Paper from '@material-ui/core/Paper';
 import React, { useRef, useState } from 'react';
-import vid1 from './videos/vid1.webm'
-import vid2 from './videos/vid2.webm'
-import vid3 from './videos/vid3.webm'
-import vid4 from './videos/vid4.webm'
-import vid5 from './videos/vid5.webm'
-import vid6 from './videos/vid6.webm'
 
+//video imports
+import vid1 from '../videos/vid1.mp4'
+import vid2 from '../videos/vid2.mp4'
+import vid3 from '../videos/vid3.mp4'
+import vid4 from '../videos/vid4.mp4'
+import vid5 from '../videos/vid5.mp4'
+import vid6 from '../videos/vid6.mp4'
+
+//Material ui
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -17,6 +21,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,20 +37,23 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+//open Victory Message
 function showMessage(setOpen) {
   setOpen(true)
-  console.log("fired")
-
 }
+
 export default function DiceGame(props) {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
   const vidRef1 = useRef(null);
   const vidRef2 = useRef(null);
   const vidRef3 = useRef(null);
   const vidRef4 = useRef(null);
   const vidRef5 = useRef(null);
   const vidRef6 = useRef(null);
+  //interface tracker for dialog open
+  const [open, setOpen] = useState(false);
+
+  //value of dice
   const [dice, setDice] = React.useState(1);
 
   const handleClose = () => {
@@ -62,6 +70,7 @@ export default function DiceGame(props) {
       case 3: vidRef3.current.play();break;
       case 4: vidRef4.current.play();break;
       case 5: vidRef5.current.play();break;
+      default: break;
     }
     
   }

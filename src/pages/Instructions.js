@@ -1,9 +1,15 @@
+//Components to show instructions
+//props: next=next page
+
+//material ui
 import Paper from '@material-ui/core/Paper';
-import React, { useRef, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Logo from './images/clle_logo.png'
+
+import Logo from '../images/clle_logo.png'
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -26,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Instructions(props) {
     const classes = useStyles();
-    const [ticked, setTicked] = useState( false );
     return (
         <div>
         <Paper className={classes.root}>

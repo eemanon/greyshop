@@ -1,14 +1,22 @@
+//Component that displays a shop.
+//props: variant: a json object with the changes depending on the shop variant to be displayed 
+// products=a json object containing the categories containing the products to display} 
+// next=next page
+
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import SideDrawer from './SideDrawer.js'
 import Chip from '@material-ui/core/Chip';
 
-import ProductCard from './ProductCard';
-import Basket from './Basket.js'
-import ThermoCard from './Thermometer';
-import ShopLandingPage from "./ShopLandingPage"
+//component imports
+import SideDrawer from '../components/SideDrawer.js'
+import ProductCard from '../components/ProductCard';
+import Basket from '../components/Basket.js'
+import ThermoCard from '../components/Thermometer';
+import ShopLandingPage from "../components/ShopLandingPage"
 
 
 const drawerWidth = 300;
@@ -55,42 +63,41 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function sumHT(basket){
-  console.log("callTHT")
+function sumHT(basket) {
+  //calc the sum without tax based on the basket object
   let sumHT = 0.0;
   basket.forEach(item => {
     sumHT = sumHT + item["Prix initial"] * item.quantity;
   });
   return sumHT;
-}  
+}
 
-function carbonWeight(basket){
+function carbonWeight(basket) {
+  //calc carbon footprint of basket based on the items in the basket
   let carbonWeight = 0.0;
   basket.forEach(item => {
-    carbonWeight = carbonWeight + item.quantity * (item.Grammes/100*item["Empreinte CO2 (g par 100 g)"]);
+    carbonWeight = carbonWeight + item.quantity * (item.Grammes / 100 * item["Empreinte CO2 (g par 100 g)"]);
   });
-  const carbonWeightkg = carbonWeight/1000
-  console.log("carbonWeight actuelle: "+carbonWeightkg)
+  const carbonWeightkg = carbonWeight / 1000
   return carbonWeightkg;
-} 
-function basketWeight(basket){
+}
+function basketWeight(basket) {
+  //calc the weight of the basket
   let basketWeight = 0.0;
   basket.forEach(item => {
     basketWeight = basketWeight + item.quantity * (item.Grammes);
   });
-  const basketWeightkg = basketWeight/1000
-  console.log("basketWeight actuelle: "+basketWeightkg)
+  const basketWeightkg = basketWeight / 1000
   return basketWeightkg;
-} 
+}
 
 
 
 export default function Store(props) {
-  console.log(props.variant)
   const classes = useStyles();
   const items = props.products;
   const [basket, setBasket] = React.useState([]);
-  const [value, setValue] = React.useState(-1);
+  const [categoryIndex, setValue] = React.useState(-1);
   const addToBasket = (item) => {
     const found = basket.find(product => product.id === item.id)
     if (found == null) {
@@ -131,19 +138,20 @@ export default function Store(props) {
       });
     }
   };
+  //returns categories and containing products 
   const showCategory = () => {
-    if (value === -1) {
+    if (categoryIndex === -1) {
       return (<ShopLandingPage variant={props.variant.number}></ShopLandingPage>)
     }
     else {
-      const found = items.find(category => category.id === value);
+      const found = items.find(category => category.id === categoryIndex);
       return (
         <Grid container spacing={3} className={classes.grid}>
           {found.products.map((item, i) => (
             <Grid item xs={6} md={4} lg={3} xl={2}>
-              <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]} 
-                unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]} 
-                priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]} 
+              <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]}
+                unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]}
+                priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]}
                 color={item["Traffic light inter"]} label={props.variant.labels} labelpos={props.variant.labelpos} labeltext={props.variant.labeltext}>
               </ProductCard>
             </Grid>
@@ -152,24 +160,25 @@ export default function Store(props) {
       );
     }
   }
-  const handleChange = (newValue) => {
+  //method to change currently selected category
+  const changeCategory = (newValue) => {
     setValue(newValue);
   };
   return (
     <div className={classes.root}>
       <div className={classes.toolbar}>
-        <Chip label="Acceuil" color={value === -1 ? "primary" : "default"} onClick={(i) => { handleChange(-1) }} />
+        <Chip label="Acceuil" color={categoryIndex === -1 ? "primary" : "default"} onClick={(i) => { changeCategory(-1) }} />
         {items.map((item, i) => (
-          <Chip label={item.name} color={value === item.id ? "primary" : "default"} onClick={(i) => { handleChange(item.id) }} />
+          <Chip label={item.name} color={categoryIndex === item.id ? "primary" : "default"} onClick={(i) => { changeCategory(item.id) }} />
         ))}
       </div>
       {showCategory()}
       <SideDrawer drawerwidth={drawerWidth} >
-        {props.variant.thermometer?<ThermoCard label={props.variant.thermometerlabel} 
-        value={basketWeight(basket)!==0?carbonWeight(basket)/basketWeight(basket):0}></ThermoCard>:""}
+        {props.variant.thermometer ? <ThermoCard label={props.variant.thermometerlabel}
+          value={basketWeight(basket) !== 0 ? carbonWeight(basket) / basketWeight(basket) : 0}></ThermoCard> : ""}
         <Divider />
-        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)} 
-          showTax={props.variant.tax} taxe={carbonWeight(basket)>14.22?(carbonWeight(basket)-14.22)*0.25:0}>
+        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)}
+          showTax={props.variant.tax} taxe={carbonWeight(basket) > 14.22 ? (carbonWeight(basket) - 14.22) * 0.25 : 0}>
         </Basket>
       </SideDrawer>
 

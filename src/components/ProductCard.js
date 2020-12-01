@@ -1,10 +1,16 @@
 
+//Component to display a product
+//props: add=function to add item to basket item=item to display, name=name of the product, quantity=weight in grams
+//imagePath, alt=for image, indicator=indicator value if any,
+//priceInEuros, pricePerUnit,
+//color=color of label label=boolean if label to be displayed labelpos="front"/"back" to say where the labeltext goes in relation to the value
+// labeltext
 
+//material ui imports
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const useStyles = makeStyles((theme) => ({

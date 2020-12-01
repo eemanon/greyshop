@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+//Component to display a question. A question has an id, can have an image, a question and an array of possible answers.
+//props check=boolean to say whether the question is ok colored="yes"/"no" question=question object form="list" or "column" how the answer options are to displayed, setAnswer=if the answer is set
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -7,7 +9,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
   img: {
     display: "block",
     width: "200px",
+  },
+  imgTitle: {
+    display: "block",
+    marginTop: "20px"
   }
 }));
 
@@ -32,9 +37,10 @@ export default function Question(props) {
   }
   const [value, setValue] = React.useState("");
   const answercomponent = () => {
-    return (<RadioGroup column={props.form == "list"} row={props.form != "list"} aria-label="position" name="position" value={value} onChange={handleChange}>
+    return (<RadioGroup column={(props.form == "list")?1:0} row={(props.form != "list")?1:0} aria-label="position" name="position" value={value} onChange={handleChange}>
       {props.question.Answer.map((item, i) => (
         <FormControlLabel
+          key={item.id}
           value={"" + i}
           control={<Radio color="primary" />}
           label={item}
@@ -54,6 +60,7 @@ export default function Question(props) {
       <Typography variant="h6" component="span" gutterBottom >
         {props.question.Question}
       </Typography>
+      {props.question.image != null ? <Typography variant="subtitle1" component="span" className={classes.imgTitle} gutterBottom >{props.question.imageTitle}</Typography> : ""}
       {props.question.image != null ? <img className={classes.img} src={props.question.image} /> : ""}
       <FormControl component="fieldset" className={classes.answers}>
         {props.question.Answer != null ? answercomponent() : textInput()}
