@@ -52,7 +52,8 @@ export default function DiceGame(props) {
   const vidRef6 = useRef(null);
   //interface tracker for dialog open
   const [open, setOpen] = useState(false);
-
+  const timestamp_finishExperience = Date.now()
+  console.log("experience finished at "+timestamp_finishExperience)
   //value of dice
   const [dice, setDice] = React.useState(1);
 

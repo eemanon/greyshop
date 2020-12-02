@@ -1,153 +1,117 @@
-id,Descriptif Produit,Prix initial,Prix/quantité (euro/kg) baseline,Rayon,Lien fichier,Grammes,Empreinte CO2 (g par 100 g),kg CO2 / kg,"Traffic light intra (green = vert, orange orange, red rouge)",Traffic light inter,Prix final  BM80 - calculé,Prix/quantité (euro/kg) BM80,BM 80 - arrondi,Prix final   BM250 - calculé,Prix/quantité (euro/kg) BM250,BM 250 - arrondi,,,,,"BM 80 - Malus amount (carbon tax, 80euros attributed to 1ton of co2) - Subsidy amount (7.63% of initial price, when 80euros to per ton of co2)","BM 250 - Malus amount (carbon tax, 250euros attributed to 1ton of co2) - Subsidy amount(23.86% of initial prices, when 250euros per ton of co2)",,Prix final  BM80,Prix final   BM250
-1,Bananes (l'unité) 176g,0.29,1.65,1,\Fichiers\Rayon1\IM1.png,176,200.000,2.000,green,green,0.27,1.53,0.02,0.22,1.25,0.07,,,,,0.02,0.07,,0.27,0.22
-2,Champignons 200g,0.66,3.30,1,\Fichiers\Rayon1\IM2 copy.jpg,200,480.000,4.800,green,orange,0.66,3.30,0.00,0.66,3.30,0.00,,,,,0.00,0.00,,0.66,0.66
-3,Carottes 200g,0.34,1.70,1,\Fichiers\Rayon1\IM3.png,200,83.000,0.830,green,green,0.31,1.55,0.03,0.26,1.30,0.08,,,,,0.03,0.08,,0.31,0.26
-4,Concombres (l'unité) 500g,1.33,2.66,1,\Fichiers\Rayon1\IM4.png,500,136.670,1.367,green,green,1.23,2.46,0.10,1.01,2.02,0.32,,,,,0.10,0.32,,1.23,1.01
-5,Oranges (l'unité) 142g,0.28,1.97,1,\Fichiers\Rayon1\IM5.png,142,120.000,1.200,green,green,0.26,1.83,0.02,0.21,1.48,0.07,,,,,0.02,0.07,,0.26,0.21
-6,Pommes (l'unité) 150g,0.25,1.67,1,\Fichiers\Rayon1\IM6.png,150,120.000,1.200,green,green,0.23,1.53,0.02,0.19,1.27,0.06,,,,,0.02,0.06,,0.23,0.19
-7,Salade en sachet 300g,0.66,2.20,1,\Fichiers\Rayon1\IM7.png,300,40.000,0.400,green,green,0.61,2.03,0.05,0.50,1.67,0.16,,,,,0.05,0.16,,0.61,0.50
-8,Salade roquette vert frais 125g,0.66,5.28,1,\Fichiers\Rayon1\IM8 copy.jpg,125,40.000,0.400,green,green,0.61,4.88,0.05,0.50,4.00,0.16,,,,,0.05,0.16,,0.61,0.50
-9,Pommes de terre 1kg,1.53,1.53,1,\Fichiers\Rayon1\IM9.png,1000,116.000,1.160,green,green,1.41,1.41,0.12,1.16,1.16,0.37,,,,,0.12,0.37,,1.41,1.16
-10,Tomates (l'unité) 111g,0.19,1.71,1,\Fichiers\Rayon1\IM10.png,111,110.000,1.100,green,green,0.18,1.62,0.01,0.14,1.26,0.05,,,,,0.01,0.05,,0.18,0.14
-11,Steaks hachés petit appétit (2x80g) Charal  160g,2.21,13.81,2,\Fichiers\Rayon2\Charal petit apetit.png,160,2700.000,27.000,green,red,2.56,16.00,0.35,3.29,20.56,1.08,,,,,0.35,1.08,,2.56,3.29
-12,Blanc de dinde en tranches (4t) Casino 160g,1.86,11.63,2,\Fichiers\Rayon2\blanc de dinde.jpg,160,690.000,6.900,green,red,1.95,12.19,0.09,2.14,13.38,0.28,,,,,0.09,0.28,,1.95,2.14
-13,Blanc de poulet en tranches (4t) Casino 160g,1.70,10.63,2,\Fichiers\Rayon2\blanc de poulet.jpg,160,765.000,7.650,green,red,1.80,11.25,0.10,2.01,12.56,0.31,,,,,0.10,0.31,,1.80,2.01
-14,Escalopes de dinde (×2) Casino 240g,2.17,9.04,2,\Fichiers\Rayon2\Escalope Dinde CAsino.jpg,240,1090.000,10.900,green,red,2.38,9.92,0.21,2.82,11.75,0.65,,,,,0.21,0.65,,2.38,2.82
-15,Aiguillette de poulet jaune (×6) Casino 210g,2.46,11.71,2,\Fichiers\Rayon2\Aiguillet de POulet Jaune Casino.jpg,210,690.000,6.900,green,red,2.58,12.29,0.12,2.82,13.43,0.36,,,,,0.12,0.36,,2.58,2.82
-16,Filets de poulet rôti (×2) Le Gaulois 230g,3.64,15.83,2,\Fichiers\Rayon2\Filet Poulet Roti (×2) Le Gaulois.jpg,230,690.000,6.900,green,red,3.77,16.39,0.13,4.04,17.57,0.40,,,,,0.13,0.40,,3.77,4.04
-17,Filets de poulet jaune (x2) Casino 280g,2.91,10.39,2,\Fichiers\Rayon2\Filets de Poulet Jaune.jpg,280,690.000,6.900,green,red,3.06,10.93,0.15,3.39,12.11,0.48,,,,,0.15,0.48,,3.06,3.39
-18,Jambon à l'étouffé (2t) Herta 85g,1.39,16.35,2,\Fichiers\Rayon2\Jambon a l'étouffé Herta.jpg,85,1365.000,13.650,green,red,1.48,17.41,0.09,1.68,19.76,0.29,,,,,0.09,0.29,,1.48,1.68
-19,Pr Chiffonade de jambon cru 90g,1.34,14.89,2,\Fichiers\Rayon2\Pr Chiffonade de Jambon Cru.jpg,90,835.000,8.350,green,red,1.40,15.56,0.06,1.53,17.00,0.19,,,,,0.06,0.19,,1.40,1.53
-20,Jambon supérieur -25% sel (4t) Fleury Michon 160g,1.78,11.13,2,\Fichiers\Rayon2\Jambon superieur Fleury Michon.jpg,160,1035.000,10.350,green,red,1.91,11.94,0.13,2.19,13.69,0.41,,,,,0.13,0.41,,1.91,2.19
-21,Saucisse Serrault 300g,2.75,9.17,2,\Fichiers\Rayon2\saucisse serrault.jpg,300,1210.000,12.100,green,red,3.04,10.13,0.29,3.66,12.20,0.91,,,,,0.29,0.91,,3.04,3.66
-22,Saumon Atlantique fumé (2t) Casino 80g,4.01,50.13,2,\Fichiers\Rayon2\saumon atlantique fumé casino.jpg,80,1190.000,11.900,green,red,4.09,51.13,0.08,4.25,53.13,0.24,,,,,0.08,0.24,,4.09,4.25
-23,Steaks hachés Charal (2x130g) 260g,3.72,14.31,2,\Fichiers\Rayon2\Steak haché Charal.jpg,260,2700.000,27.000,green,red,4.28,16.46,0.56,5.48,21.08,1.76,,,,,0.56,1.76,,4.28,5.48
-24,Steak tartare et sa sauce Charal 250g,3.52,14.08,2,\Fichiers\Rayon2\Steak tartare et sa sauce Charal.jpg,250,2700.000,27.000,green,red,4.06,16.24,0.54,5.21,20.84,1.69,,,,,0.54,1.69,,4.06,5.21
-25,Pavé de saumon (×2) Delpierre 200g,3.99,19.95,2,\Fichiers\Rayon2\saumon pave delpierre.jpg,200,1190.000,11.900,green,red,4.18,20.90,0.19,4.59,22.95,0.60,,,,,0.19,0.60,,4.18,4.59
-26,Thon Albacore au naturel (boite) Casino 93g,1.43,15.38,2,\Fichiers\Rayon2\thon alabacore casino.jpg,93,610.000,6.100,green,red,1.48,15.91,0.05,1.57,16.88,0.14,,,,,0.05,0.14,,1.48,1.57
-27,Beurre Président 250g,1.83,7.32,3,\Fichiers\Rayon3\Beurre president.jpg,250,950.000,9.500,green,red,2.02,8.08,0.19,2.42,9.68,0.59,,,,,0.19,0.59,,2.02,2.42
-28,Beurre traditionnel demi-sel Casino 250g,1.59,6.36,3,\Fichiers\Rayon3\Beurre Traditionnel Demi Sel Casino.jpg,250,950.000,9.500,green,red,1.78,7.12,0.19,2.18,8.72,0.59,,,,,0.19,0.59,,1.78,2.18
-29,Margarine Planta Fin 250g,1.19,4.76,3,\Fichiers\Rayon3\margarine planta fin.jpg,250,237.000,2.370,green,orange,1.19,4.76,0.00,1.19,4.76,0.00,,,,,0.00,0.00,,1.19,1.19
-30,Fromage de chèvre Casino 200g,1.59,7.95,3,\Fichiers\Rayon3\Fromage de chevre.jpg,200,1325.000,13.250,green,red,1.80,9.00,0.21,2.25,11.25,0.66,,,,,0.21,0.66,,1.80,2.25
-31,Comté Entremont 200g,3.17,15.85,3,\Fichiers\Rayon3\comté entremont.jpg,200,1075.000,10.750,green,red,3.34,16.70,0.17,3.71,18.55,0.54,,,,,0.17,0.54,,3.34,3.71
-32,Crème fraîche épaisse Casino 10cl,0.55,5.50,3,\Fichiers\Rayon3\Crème fraîche épaisse Casino.jpg,100,740.420,7.404,green,red,0.61,6.10,0.06,0.74,7.40,0.19,,,,,0.06,0.19,,0.61,0.74
-33,Danette saveur chocolat 4x125g,1.45,2.90,3,\Fichiers\Rayon3\Danette saveur chocolat.jpg,500,310.000,3.100,green,orange,1.45,2.90,0.00,1.45,2.90,0.00,,,,,0.00,0.00,,1.45,1.45
-34,Danette saveur vanille 4x125g,1.45,2.90,3,\Fichiers\Rayon3\Danette saveur vanille.jpg,500,310.000,3.100,green,orange,1.45,2.90,0.00,1.45,2.90,0.00,,,,,0.00,0.00,,1.45,1.45
-35,Emmental Casino 300g,2.46,8.20,3,\Fichiers\Rayon3\Emmental Casino.jpg,300,1275.000,12.750,green,red,2.77,9.23,0.31,3.42,11.40,0.96,,,,,0.31,0.96,,2.77,3.42
-36,Emmental rapé Casino 100g,1.01,10.10,3,\Fichiers\Rayon3\Emmental rapé Casino.jpg,100,1580.000,15.800,green,red,1.14,11.40,0.13,1.41,14.10,0.40,,,,,0.13,0.40,,1.14,1.41
-37,Flanby Nestlé 6x100g,1.68,2.80,3,\Fichiers\Rayon3\Flanby Nestlé.jpg,600,320.000,3.200,green,orange,1.68,2.80,0.00,1.68,2.80,0.00,,,,,0.00,0.00,,1.68,1.68
-38,Boisson au soja Bio Casino 1L,1.35,1.35,3,\Fichiers\Rayon3\Boisson au Soja.jpg,1000,120.000,1.200,green,green,1.25,1.25,0.10,1.03,1.03,0.32,,,,,0.10,0.32,,1.25,1.03
-39,Lait frais 1/2 ecrémé Candia 1L,1.08,1.08,3,\Fichiers\Rayon3\Lait frais demi ecrémé Candia.jpg,1000,170.210,1.702,green,green,1.00,1.00,0.08,0.82,0.82,0.26,,,,,0.08,0.26,,1.00,0.82
-40,Lait frais 1/2 écrémé Casino 1L,0.85,0.85,3,\Fichiers\Rayon3\Lait pasteurisé demi écrémé Casino.jpg,1000,170.210,1.702,green,green,0.79,0.79,0.06,0.65,0.65,0.20,,,,,0.06,0.20,,0.79,0.65
-41,La vache qui rit 200g,1.71,8.55,3,\Fichiers\Rayon3\La vache qui rit.jpg,200,1325.000,13.250,green,red,1.92,9.60,0.21,2.37,11.85,0.66,,,,,0.21,0.66,,1.92,2.37
-42,Mozzarella Casino 125g,0.88,7.04,3,\Fichiers\Rayon3\Mozzarella Casino 125g.jpg,125,1350.000,13.500,green,red,1.02,8.16,0.14,1.30,10.40,0.42,,,,,0.14,0.42,,1.02,1.30
-43,Oeufs frais plein air Casino (6X63-73g) 400g,1.91,4.78,3,\Fichiers\Rayon3\Oeufs frais plein air Casino.jpg,400,414.290,4.143,green,orange,1.91,4.78,0.00,1.91,4.78,0.00,,,,,0.00,0.00,,1.91,1.91
-44,Oeufs Loue (6x63-73g) 400g,2.29,5.73,3,\Fichiers\Rayon3\Oeufs Loue.jpg,400,414.290,4.143,green,orange,2.29,5.73,0.00,2.29,5.73,0.00,,,,,0.00,0.00,,2.29,2.29
-45,Oeufs frais Bio Casino (6x63-73g) 400g,1.96,4.90,3,\Fichiers\Rayon3\Oeufs frais Bio Casino.jpg,400,449.210,4.492,green,orange,1.96,4.90,0.00,1.96,4.90,0.00,,,,,0.00,0.00,,1.96,1.96
-46,Petit suisse Casino 6x60g  ,1.02,2.83,3,\Fichiers\Rayon3\petit suisse casino.jpg,360,255.000,2.550,green,orange,1.02,2.83,0.00,1.02,2.83,0.00,,,,,0.00,0.00,,1.02,1.02
-47,Roquefort Casino 150g,2.19,14.60,3,\Fichiers\Rayon3\Roquefort Casino.jpg,150,550.000,5.500,green,red,2.26,15.07,0.07,2.40,16.00,0.21,,,,,0.07,0.21,,2.26,2.40
-48,Soja Cuisine nature Bio Bjorg 250ml,1.10,4.40,3,\Fichiers\Rayon3\Soja cuisine nature bio Bjorg.png,250,90.000,0.900,green,green,1.02,4.08,0.08,0.84,3.36,0.26,,,,,0.08,0.26,,1.02,0.84
-49,Yaourt Activia nature 4x125g,1.37,2.74,3,\Fichiers\Rayon3\Yaourt Activia nature.jpg,500,295.000,2.950,green,orange,1.37,2.74,0.00,1.37,2.74,0.00,,,,,0.00,0.00,,1.37,1.37
-50,Yaourt Bio Casino 4x125g,1.13,2.26,3,\Fichiers\Rayon3\Yaourt Bio Casino.jpg,500,180.000,1.800,green,green,1.04,2.08,0.09,0.86,1.72,0.27,,,,,0.09,0.27,,1.04,0.86
-51,Yaourt nature Sojasun 6x100g,2.11,3.52,3,\Fichiers\Rayon3\Yaourt Nature Sojasun.jpg,600,84.000,0.840,green,green,1.95,3.25,0.16,1.61,2.68,0.50,,,,,0.16,0.50,,1.95,1.61
-52,Sojasun saveur vanille 4x100g,1.55,3.88,3,\Fichiers\Rayon3\Sojasun saveur vanille.jpg,400,84.000,0.840,green,green,1.43,3.58,0.12,1.18,2.95,0.37,,,,,0.12,0.37,,1.43,1.18
-53,Sojasun saveur chocolat 4x100g,1.71,4.28,3,\Fichiers\Rayon3\Sojasun saveur chocolat.jpg,400,84.000,0.840,green,green,1.58,3.95,0.13,1.30,3.25,0.41,,,,,0.13,0.41,,1.58,1.30
-54,Yaourt nature Casino 4x125g,0.57,1.14,3,\Fichiers\Rayon3\Yaourt Nature Casino.jpg,500,170.000,1.700,green,green,0.53,1.06,0.04,0.43,0.86,0.14,,,,,0.04,0.14,,0.53,0.43
-55,Yop vanille 850g,1.90,2.24,3,\Fichiers\Rayon3\Yop vanille 850g.jpg,850,215.000,2.150,green,orange,1.90,2.24,0.00,1.90,2.24,0.00,,,,,0.00,0.00,,1.90,1.90
-56,Pizza 4 fromages Casino 450g,2.83,6.29,4,\Fichiers\Rayon4\Pizza 4 Fromages Casino.jpg,450,480.000,4.800,green,orange,2.83,6.29,0.00,2.83,6.29,0.00,,,,,0.00,0.00,,2.83,2.83
-57,Pizza jambon emmental Casino 450g,2.17,4.82,4,\Fichiers\Rayon4\Pizza Jambon Emmental Casino 450g.jpg,450,535.000,5.350,green,red,2.36,5.24,0.19,2.77,6.16,0.60,,,,,0.19,0.60,,2.36,2.77
-58,Pizza Crust jambon emmental Sodebo 600g,4.13,6.88,4,\Fichiers\Rayon4\Pizza Crust Jambon Emmental Sodebo 600g.jpg,600,535.000,5.350,green,red,4.39,7.32,0.26,4.93,8.22,0.80,,,,,0.26,0.80,,4.39,4.93
-59,Pizza chèvre lardon Casino 180g,1.45,8.06,4,\Fichiers\Rayon4\Pizza Chevre Lardon Casino.jpg,180,590.000,5.900,green,red,1.53,8.50,0.08,1.72,9.56,0.27,,,,,0.08,0.27,,1.53,1.72
-60,Pizza Dolce légumes grillés mozarella Sodebo 400g,4.39,10.98,4,\Fichiers\Rayon4\Pizza Dolce Legumes Grillés Mozarella Sodebo.jpg,400,380.000,3.800,green,orange,4.39,10.98,0.00,4.39,10.98,0.00,,,,,0.00,0.00,,4.39,4.39
-61,Falafels Herta 190g,2.95,15.53,4,\Fichiers\Rayon4\Falafel Herta.jpg,190,80.000,0.800,green,green,2.72,14.32,0.23,2.25,11.84,0.70,,,,,0.23,0.70,,2.72,2.25
-62,Tendre croque jambon fromage -25% sel Herta 200g,2.67,13.35,4,\Fichiers\Rayon4\Tendre Croque Jambon Fromage -25% sel Herta 200g.jpg,200,675.000,6.750,green,red,2.78,13.90,0.11,3.01,15.05,0.34,,,,,0.11,0.34,,2.78,3.01
-63,Purée de carottes (2x200g) Créaline 400g,2.22,5.55,4,\Fichiers\Rayon4\Purée de Carottes.jpg,400,170.000,1.700,green,green,2.05,5.13,0.17,1.69,4.23,0.53,,,,,0.17,0.53,,2.05,1.69
-64,Hachis parmentier Casino 300g,2.32,7.73,4,\Fichiers\Rayon4\Hachis Parmentier Casino.jpg,300,1040.000,10.400,green,red,2.57,8.57,0.25,3.10,10.33,0.78,,,,,0.25,0.78,,2.57,3.10
-65,Lasagnes à la bolognaise Marie 300g,3.21,10.70,4,\Fichiers\Rayon4\Lasagne Marie.jpeg,300,1000.000,10.000,green,red,3.45,11.50,0.24,3.96,13.20,0.75,,,,,0.24,0.75,,3.45,3.96
-66,Lasagnes chèvre épinard Casino 350g,3.29,9.40,4,\Fichiers\Rayon4\Lasagnes Chevre Epinard Casino.jpg,350,485.000,4.850,green,red,3.43,9.80,0.14,3.71,10.60,0.42,,,,,0.14,0.42,,3.43,3.71
-67,Gnocchi à la pomme de terre Bio Casino 300g,1.31,4.37,4,\Fichiers\Rayon4\Gnocchi Pomme de Terre Casino Bio.jpg,300,320.000,3.200,green,orange,1.31,4.37,0.00,1.31,4.37,0.00,,,,,0.00,0.00,,1.31,1.31
-68,Champignons de Paris Casino 230g,1.20,5.22,5,\Fichiers\Rayon5\Champignon Casino.jpg,230,480.000,4.800,green,orange,1.20,5.22,0.00,1.20,5.22,0.00,,,,,0.00,0.00,,1.20,1.20
-69,"Farfalline Barilla  500 g
-
-",1.21,2.42,5,\Fichiers\Rayon5\Farfalline Barilla  500 g.jpg,500,293.330,2.933,green,orange,1.21,2.42,0.00,1.21,2.42,0.00,,,,,0.00,0.00,,1.21,1.21
-70,"Coquillettes Bio Casino 500 g
-
-",1.07,2.14,5,\Fichiers\Rayon5\Coquillettes Bio Casino.jpg,500,240.000,2.400,green,orange,1.07,2.14,0.00,1.07,2.14,0.00,,,,,0.00,0.00,,1.07,1.07
-71,"Coquillettes Casino  500g
-
-",0.53,1.06,5,\Fichiers\Rayon5\Coquillettes Casino.jpg,500,240.000,2.400,green,orange,0.53,1.06,0.00,0.53,1.06,0.00,,,,,0.00,0.00,,0.53,0.53
-72,Flageolets verts extra fins Casino 530g,1.50,2.83,5,\Fichiers\Rayon5\Flageolets verts extra fins Casino.jpg,530,300.000,3.000,green,orange,1.50,2.83,0.00,1.50,2.83,0.00,,,,,0.00,0.00,,1.50,1.50
-73,Haricots verts très fins Casino 3x110g,1.49,4.52,5,\Fichiers\Rayon5\Haricots Verts Tres Fins Casino.jpg,330,175.000,1.750,green,green,1.38,4.18,0.11,1.13,3.42,0.36,,,,,0.11,0.36,,1.38,1.13
-74,Haricots blancs à la tomate Casino 800g,0.91,1.14,5,\Fichiers\Rayon5\Haricots blancs à la tomate.jpg,800,110.000,1.100,green,green,0.84,1.05,0.07,0.69,0.86,0.22,,,,,0.07,0.22,,0.84,0.69
-75,"Huile d'olive Bio Casino  75 cl
-
-",5.53,7.37,5,\Fichiers\Rayon5\Huile d'olive Bio Casino.jpg,750,360.000,3.600,green,orange,5.53,7.37,0.00,5.53,7.37,0.00,,,,,0.00,0.00,,5.53,5.53
-76,"Huile d'olive Casino  50 cl
-
-",3.31,6.62,5,\Fichiers\Rayon5\Huile d'olive Casino.jpg,500,466.670,4.667,green,orange,3.31,6.62,0.00,3.31,6.62,0.00,,,,,0.00,0.00,,3.31,3.31
-77,Lentilles vertes Casino 500g,1.21,2.42,5,\Fichiers\Rayon5\Lentilles Vertes Casino.jpg,500,90.000,0.900,green,green,1.12,2.24,0.09,0.92,1.84,0.29,,,,,0.09,0.29,,1.12,0.92
-78,"Pain de mie en tranches Harrys  280 g
-
-
-
-",0.89,3.18,5,\Fichiers\Rayon5\Pain de mie en tranches Harrys.jpg,280,155.000,1.550,green,green,0.82,2.93,0.07,0.68,2.43,0.21,,,,,0.07,0.21,,0.82,0.68
-79,"Pain de mie sandwich complet Casino  550 g
-
-",0.95,1.73,5,\Fichiers\Rayon5\Pain de mie sandwich complet Casino.jpg,550,145.000,1.450,green,green,0.88,1.60,0.07,0.72,1.31,0.23,,,,,0.07,0.23,,0.88,0.72
-80,"Petits pains grillés au froment Bio Casino  225 g
-
-",1.33,5.91,5,\Fichiers\Rayon5\Petits pains grillés au froment Bio Casino.jpg,225,230.000,2.300,green,orange,1.33,5.91,0.00,1.33,5.91,0.00,,,,,0.00,0.00,,1.33,1.33
-81,"Petits pains grillés au froment Casino  225 g
-
-",1.09,4.84,5,\Fichiers\Rayon5\Petits pains grillés au froment Casino.jpg,225,230.000,2.300,green,orange,1.09,4.84,0.00,1.09,4.84,0.00,,,,,0.00,0.00,,1.09,1.09
-82,"Petits pains - Dorés - Krisprolls  425 g
-",2.94,6.92,5,\Fichiers\Rayon5\Pains Dorés Krisprolls.jpeg,425,230.000,2.300,green,orange,2.94,6.92,0.00,2.94,6.92,0.00,,,,,0.00,0.00,,2.94,2.94
-83,Pois chiches Casino 265g,0.63,2.38,5,\Fichiers\Rayon5\Pois chiches Casino.jpg,265,200.000,2.000,green,green,0.58,2.19,0.05,0.48,1.81,0.15,,,,,0.05,0.15,,0.58,0.48
-84,"Purée de tomates Casino  560 g
-
-",1.04,1.86,5,\Fichiers\Rayon5\Purée de tomates Casino.jpg,560,160.000,1.600,green,green,0.96,1.71,0.08,0.79,1.41,0.25,,,,,0.08,0.25,,0.96,0.79
-85,Purée de pommes de terre Casino 125g,0.62,4.96,5,\Fichiers\Rayon5\purée de pomme de terre casino.jpg,125,340.000,3.400,green,orange,0.62,4.96,0.00,0.62,4.96,0.00,,,,,0.00,0.00,,0.62,0.62
-86,Purée de pommes de terre Mousline 125g,0.96,7.68,5,\Fichiers\Rayon5\Purée de pommes de terre Mousline.jpg,125,340.000,3.400,green,orange,0.96,7.68,0.00,0.96,7.68,0.00,,,,,0.00,0.00,,0.96,0.96
-87,Riz Basmati Casino  4x125 g,1.18,2.36,5,\Fichiers\Rayon5\Riz Basmati Casino.jpg,500,270.000,2.700,green,orange,1.18,2.36,0.00,1.18,2.36,0.00,,,,,0.00,0.00,,1.18,1.18
-88,"Riz Basmati Taureau Ailé  1kg
-
-",2.93,2.93,5,\Fichiers\Rayon5\Riz Basmati Taureau Ailé.jpg,1000,270.000,2.700,green,orange,2.93,2.93,0.00,2.93,2.93,0.00,,,,,0.00,0.00,,2.93,2.93
-89,"Riz semi-complet Bio Casino  500 g
-
-",2.41,4.82,5,\Fichiers\Rayon5\Riz semi-complet Bio Casino.jpg,500,270.000,2.700,green,orange,2.41,4.82,0.00,2.41,4.82,0.00,,,,,0.00,0.00,,2.41,2.41
-90,"Sauce napolitaine Casino  200 g
-
-",0.98,4.90,5,\Fichiers\Rayon5\Sauce napolitaine Casino.jpg,200,140.000,1.400,green,green,0.91,4.55,0.07,0.75,3.75,0.23,,,,,0.07,0.23,,0.91,0.75
-91,"Sauce provençale Bio Casino  200 g
-
-",0.99,4.95,5,\Fichiers\Rayon5\Sauce provençale Bio Casino.jpg,200,140.000,1.400,green,green,0.91,4.55,0.08,0.75,3.75,0.24,,,,,0.08,0.24,,0.91,0.75
-92,Sauce  provençale Panzani 320g,2.36,7.38,5,\Fichiers\Rayon5\Sauce  provençale Panzani.jpeg,320,140.000,1.400,green,green,2.18,6.81,0.18,1.80,5.63,0.56,,,,,0.18,0.56,,2.18,1.80
-93,"Spaghetti Barilla 500 g
-
-",0.97,1.94,5,\Fichiers\Rayon5\Spaghetti Barilla.jpg,500,293.000,2.930,green,orange,0.97,1.94,0.00,0.97,1.94,0.00,,,,,0.00,0.00,,0.97,0.97
-94,Spaghetti complet Bio Casino 500 g,0.96,1.92,5,\Fichiers\Rayon5\Spaghetti Complet Bio Casino.jpg,500,320.000,3.200,green,orange,0.96,1.92,0.00,0.96,1.92,0.00,,,,,0.00,0.00,,0.96,0.96
-95,Tofu nature Bio Bjorg (2x200g) 400g,2.36,5.90,5,\Fichiers\Rayon5\Tofu nature bio Bjorg.jpg,400,200.000,2.000,green,green,2.18,5.45,0.18,1.80,4.50,0.56,,,,,0.18,0.56,,2.18,1.80
-96,Chocolat au lait Casino 100g,0.54,5.40,6,\Fichiers\Rayon6\Chocolat au lait casino.jpeg,100,655.000,6.550,green,red,0.59,5.90,0.05,0.70,7.00,0.16,,,,,0.05,0.16,,0.59,0.70
-97,Chocolat blanc Casino Délices 100g,1.37,13.70,6,\Fichiers\Rayon6\chocolat blanc Casino Délices.jpg,100,685.000,6.850,green,red,1.42,14.20,0.05,1.54,15.40,0.17,,,,,0.05,0.17,,1.42,1.54
-98,"Chocolat noir 74% cacao Bio Casino 100 g
-
-",1.17,11.70,6,\Fichiers\Rayon6\Chocolat noir 74% cacao Bio Casino.png,100,190.000,1.900,green,green,1.08,10.80,0.09,0.89,8.90,0.28,,,,,0.09,0.28,,1.08,0.89
-99,Chocolat noir dessert Casino 200g,1.00,5.00,6,\Fichiers\Rayon6\Casino chocolat noir dessert.jpg,200,190.000,1.900,green,green,0.92,4.60,0.08,0.76,3.80,0.24,,,,,0.08,0.24,,0.92,0.76
-100,Compote pomme sans sucres ajouté Casino 4x100g ,1.24,3.10,6,\Fichiers\Rayon6\Compote de pommes sans sucres casino.jpg,400,110.000,1.100,green,green,1.15,2.88,0.09,0.94,2.35,0.30,,,,,0.09,0.30,,1.15,0.94
-101,Confiture d'abricots Bio Casino  360 g,2.04,5.67,6,\Fichiers\Rayon6\Confiture d’abricots Bio Casino.jpg,360,210.000,2.100,green,orange,2.04,5.67,0.00,2.04,5.67,0.00,,,,,0.00,0.00,,2.04,2.04
-102,"Confiture d'abricots allégée Casino  340 g
-",1.12,3.29,6,\Fichiers\Rayon6\Confiture d’abricots allégée Casino.jpg,340,210.000,2.100,green,orange,1.12,3.29,0.00,1.12,3.29,0.00,,,,,0.00,0.00,,1.12,1.12
-103,Confiture de fraises Casino 370g,1.20,3.24,6,\Fichiers\Rayon6\Confiture de fraises casino.jpg,370,210.000,2.100,green,orange,1.20,3.24,0.00,1.20,3.24,0.00,,,,,0.00,0.00,,1.20,1.20
-104,Miel Casino 250g,2.26,9.04,6,\Fichiers\Rayon6\Miel casino.jpg,250,110.000,1.100,green,green,2.09,8.36,0.17,1.72,6.88,0.54,,,,,0.17,0.54,,2.09,1.72
-105,Cookies Casino 200 g,1.59,7.95,6,\Fichiers\Rayon6\Cookies Casino.jpg,200,290.000,2.900,green,orange,1.59,7.95,0.00,1.59,7.95,0.00,,,,,0.00,0.00,,1.59,1.59
-106,Cookies Granola Lu 184 g,1.92,10.43,6,\Fichiers\Rayon6\Cookies Granola Lu.jpg,184,290.000,2.900,green,orange,1.92,10.43,0.00,1.92,10.43,0.00,,,,,0.00,0.00,,1.92,1.92
-107,Cookies noisette et chocolat Bio Casino 175 g,1.70,9.71,6,\Fichiers\Rayon6\Cookies noisette et chocolat Bio Casino.jpg,175,290.000,2.900,green,orange,1.70,9.71,0.00,1.70,9.71,0.00,,,,,0.00,0.00,,1.70,1.70
-108,Biscuits Petit Beurre avec tablette de chocolat au lait Bio Casino 150 g,2.04,13.60,6,\Fichiers\Rayon6\Biscuits Petit Beurre avec tablette de chocolat au lait Bio Casino 1.jpg,150,435.000,4.350,green,orange,2.04,13.60,0.00,2.04,13.60,0.00,,,,,0.00,0.00,,2.04,2.04
-109,Biscuits Petit beurre  avec tablette de chocolat noir Casino 150 g,1.15,7.67,6,\Fichiers\Rayon6\Biscuits Petit beurre  avec tablette de chocolat noir Casino.jpg,150,435.000,4.350,green,orange,1.15,7.67,0.00,1.15,7.67,0.00,,,,,0.00,0.00,,1.15,1.15
-110,Biscuits Petit beurre  avec tablette de chocolat noir Lu 150 g,1.50,10.00,6,\Fichiers\Rayon6\Biscuits Petit beurre  avec tablette de chocolat noir Lu.jpg,150,435.000,4.350,green,orange,1.50,10.00,0.00,1.50,10.00,0.00,,,,,0.00,0.00,,1.50,1.50
-111,Farine de blé Bio Casino 1 kg,1.02,1.02,6,\Fichiers\Rayon6\Farine de blé Bio Casino.jpg,1000,150.000,1.500,green,green,0.94,0.94,0.08,0.78,0.78,0.24,,,,,0.08,0.24,,0.94,0.78
-112,Farine de blé Fluide Francine 1 kg,1.17,1.17,6,\Fichiers\Rayon6\Farine de blé Fluide Francine.jpg,1000,150.000,1.500,green,green,1.08,1.08,0.09,0.89,0.89,0.28,,,,,0.09,0.28,,1.08,0.89
-113,Madeleines (x20) Le Ster 250g,1.51,6.04,6,\Fichiers\Rayon6\Madeleines (x20) Le Ster.jpeg,250,520.000,5.200,green,red,1.61,6.44,0.10,1.84,7.36,0.33,,,,,0.10,0.33,,1.61,1.84
-114,Madeleines au beurre Bonne Maman (x12) 300g,3.32,11.07,6,\Fichiers\Rayon6\Madeleines au beurre Bonne Maman.jpg,300,520.000,5.200,green,red,3.44,11.47,0.12,3.71,12.37,0.39,,,,,0.12,0.39,,3.44,3.71
-115,Sucre en poudre Beghin Say 1 kg,1.63,1.63,6,\Fichiers\Rayon6\Sucre en poudre Beghin Say.jpg,1000,110.000,1.100,green,green,1.51,1.51,0.12,1.24,1.24,0.39,,,,,0.12,0.39,,1.51,1.24
-116,Sucre en poudre Tous Les Jours 1 kg,0.96,0.96,6,\Fichiers\Rayon6\Sucre en poudre Tous Les Jours.jpg,1000,110.000,1.100,green,green,0.89,0.89,0.07,0.73,0.73,0.23,,,,,0.07,0.23,,0.89,0.73
+id,Descriptif Produit,Prix initial,Prix/quantité (euro/kg) baseline,Rayon,Lien fichier,Grammes,Empreinte CO2 (g par 100 g),kg CO2 / kg,"Traffic light intra (green = vert, orange orange, red rouge)",Traffic light inter,Prix final BM80 - calculé,Prix/quantité (euro/kg) BM80,BM 80 - arrondi,Prix final BM250 - calculé,Prix/quantité (euro/kg) BM250,BM 250 - arrondi
+2,Bananes (l'unité) 176g,0.29,1.65,1,\Fichiers\Rayon1\IM1.png,176,200,2,Invité: LW : je mets des valeurs dont on ne se sert pas car le greenshop plante si il n'y a pas de valeur pour le TL green,green,0.27,1.53,0.02,0.22,1.25,0.07
+3,Champignons 200g,0.66,3.3,1,\Fichiers\Rayon1\IM2 copy.jpg,200,480,4.8,green,orange,0.66,3.3,0,0.66,3.3,0
+4,Carottes 200g,0.34,1.7,1,\Fichiers\Rayon1\IM3.png,200,83,0.83,green,green,0.31,1.55,0.03,0.26,1.3,0.08
+5,Concombres (l'unité) 500g,1.33,2.66,1,\Fichiers\Rayon1\IM4.png,500,136.67,1.367,green,green,1.23,2.46,0.1,1.01,2.02,0.32
+6,Oranges (l'unité) 142g,0.28,1.97,1,\Fichiers\Rayon1\IM5.png,142,120,1.2,green,green,0.26,1.83,0.02,0.21,1.48,0.07
+7,Pommes (l'unité) 150g,0.25,1.67,1,\Fichiers\Rayon1\IM6.png,150,120,1.2,green,green,0.23,1.53,0.02,0.19,1.27,0.06
+8,Salade en sachet 300g,0.66,2.2,1,\Fichiers\Rayon1\IM7.png,300,40,0.4,green,green,0.61,2.03,0.05,0.5,1.67,0.16
+9,Salade roquette vert frais 125g,0.66,5.28,1,\Fichiers\Rayon1\IM8 copy.jpg,125,40,0.4,green,green,0.61,4.88,0.05,0.5,4,0.16
+10,Pommes de terre 1kg,1.53,1.53,1,\Fichiers\Rayon1\IM9.png,1000,116,1.16,green,green,1.41,1.41,0.12,1.16,1.16,0.37
+11,Tomates (l'unité) 111g,0.19,1.71,1,\Fichiers\Rayon1\IM10.png,111,110,1.1,green,green,0.18,1.62,0.01,0.14,1.26,0.05
+12,Steaks hachés petit appétit (2x80g) Charal 160g,2.21,13.81,2,\Fichiers\Rayon2\Charal petit apetit.png,160,2700,27,green,red,2.56,16,0.35,3.29,20.56,1.08
+13,Blanc de dinde en tranches (4t) Casino 160g,1.86,11.63,2,\Fichiers\Rayon2\blanc de dinde.jpg,160,690,6.9,green,red,1.95,12.19,0.09,2.14,13.38,0.28
+14,Blanc de poulet en tranches (4t) Casino 160g,1.7,10.63,2,\Fichiers\Rayon2\blanc de poulet.jpg,160,765,7.65,green,red,1.8,11.25,0.1,2.01,12.56,0.31
+15,Escalopes de dinde (×2) Casino 240g,2.17,9.04,2,\Fichiers\Rayon2\Escalope Dinde CAsino.jpg,240,1090,10.9,green,red,2.38,9.92,0.21,2.82,11.75,0.65
+16,Aiguillette de poulet jaune (×6) Casino 210g,2.46,11.71,2,\Fichiers\Rayon2\Aiguillet de POulet Jaune Casino.jpg,210,690,6.9,green,red,2.58,12.29,0.12,2.82,13.43,0.36
+17,Filets de poulet rôti (×2) Le Gaulois 230g,3.64,15.83,2,\Fichiers\Rayon2\Filet Poulet Roti (x2) Le Gaulois.jpg,230,690,6.9,green,red,3.77,16.39,0.13,4.04,17.57,0.4
+18,Filets de poulet jaune (x2) Casino 280g,2.91,10.39,2,\Fichiers\Rayon2\Filets de Poulet Jaune.jpg,280,690,6.9,green,red,3.06,10.93,0.15,3.39,12.11,0.48
+19,Jambon à l'étouffé (2t) Herta 85g,1.39,16.35,2,\Fichiers\Rayon2\Jambon a l'étouffé Herta.jpg,85,1365,13.65,green,red,1.48,17.41,0.09,1.68,19.76,0.29
+20,Pr Chiffonade de jambon cru 90g,1.34,14.89,2,\Fichiers\Rayon2\Pr Chiffonade de Jambon Cru.jpg,90,835,8.35,green,red,1.4,15.56,0.06,1.53,17,0.19
+21,Jambon supérieur -25% sel (4t) Fleury Michon 160g,1.78,11.13,2,\Fichiers\Rayon2\Jambon superieur Fleury Michon.jpg,160,1035,10.35,green,red,1.91,11.94,0.13,2.19,13.69,0.41
+22,Saucisse Serrault 300g,2.75,9.17,2,\Fichiers\Rayon2\saucisse serrault.jpg,300,1210,12.1,green,red,3.04,10.13,0.29,3.66,12.2,0.91
+23,Saumon Atlantique fumé (2t) Casino 80g,4.01,50.13,2,\Fichiers\Rayon2\Saumon Atlantique fumé (2t) Casino 80g.jpg,80,1190,11.9,green,red,4.09,51.13,0.08,4.25,53.13,0.24
+24,Steaks hachés Charal (2x130g) 260g,3.72,14.31,2,\Fichiers\Rayon2\Steak haché Charal.jpg,260,2700,27,green,red,4.28,16.46,0.56,5.48,21.08,1.76
+25,Steak tartare et sa sauce Charal 250g,3.52,14.08,2,\Fichiers\Rayon2\Steak tartare et sa sauce Charal.jpg,250,2700,27,green,red,4.06,16.24,0.54,5.21,20.84,1.69
+26,Pavé de saumon (×2) Delpierre 200g,3.99,19.95,2,\Fichiers\Rayon2\saumon pave delpierre.jpg,200,1190,11.9,green,red,4.18,20.9,0.19,4.59,22.95,0.6
+27,Thon Albacore au naturel (boite) Casino 93g,1.43,15.38,2,\Fichiers\Rayon2\thon alabacore casino.jpg,93,610,6.1,green,red,1.48,15.91,0.05,1.57,16.88,0.14
+28,Beurre Président 250g,1.83,7.32,3,\Fichiers\Rayon3\Beurre president.jpg,250,950,9.5,green,red,2.02,8.08,0.19,2.42,9.68,0.59
+29,Beurre traditionnel demi-sel Casino 250g,1.59,6.36,3,\Fichiers\Rayon3\Beurre Traditionnel Demi Sel Casino.jpg,250,950,9.5,green,red,1.78,7.12,0.19,2.18,8.72,0.59
+30,Margarine Planta Fin 250g,1.19,4.76,3,\Fichiers\Rayon3\margarine planta fin.jpg,250,237,2.37,green,orange,1.19,4.76,0,1.19,4.76,0
+31,Fromage de chèvre Casino 200g,1.59,7.95,3,\Fichiers\Rayon3\Fromage de chevre.jpg,200,1325,13.25,green,red,1.8,9,0.21,2.25,11.25,0.66
+32,Comté Entremont 200g,3.17,15.85,3,\Fichiers\Rayon3\comté entremont.jpg,200,1075,10.75,green,red,3.34,16.7,0.17,3.71,18.55,0.54
+33,Crème fraîche épaisse Casino 10cl,0.55,5.5,3,\Fichiers\Rayon3\Crème fraîche épaisse Casino.jpg,100,740.42,7.404,green,red,0.61,6.1,0.06,0.74,7.4,0.19
+34,Danette saveur chocolat 4x125g,1.45,2.9,3,\Fichiers\Rayon3\Danette saveur chocolat.jpg,500,310,3.1,green,orange,1.45,2.9,0,1.45,2.9,0
+35,Danette saveur vanille 4x125g,1.45,2.9,3,\Fichiers\Rayon3\Danette saveur vanille.jpg,500,310,3.1,green,orange,1.45,2.9,0,1.45,2.9,0
+36,Emmental Casino 300g,2.46,8.2,3,\Fichiers\Rayon3\Emmental Casino.jpg,300,1275,12.75,green,red,2.77,9.23,0.31,3.42,11.4,0.96
+37,Emmental rapé Casino 100g,1.01,10.1,3,\Fichiers\Rayon3\Emmental rapé Casino.jpg,100,1580,15.8,green,red,1.14,11.4,0.13,1.41,14.1,0.4
+38,Flanby Nestlé 6x100g,1.68,2.8,3,\Fichiers\Rayon3\Flanby Nestlé.jpg,600,320,3.2,green,orange,1.68,2.8,0,1.68,2.8,0
+39,Boisson au soja Bio Casino 1L,1.35,1.35,3,\Fichiers\Rayon3\Boisson au Soja.jpg,1000,120,1.2,green,green,1.25,1.25,0.1,1.03,1.03,0.32
+40,Lait frais 1/2 ecrémé Candia 1L,1.08,1.08,3,\Fichiers\Rayon3\Lait frais demi ecrémé Candia.jpg,1000,170.21,1.702,green,green,1,1,0.08,0.82,0.82,0.26
+41,Lait frais 1/2 écrémé Casino 1L,0.85,0.85,3,\Fichiers\Rayon3\Lait pasteurisé demi écrémé Casino.jpg,1000,170.21,1.702,green,green,0.79,0.79,0.06,0.65,0.65,0.2
+42,La vache qui rit 200g,1.71,8.55,3,\Fichiers\Rayon3\La vache qui rit.jpg,200,1325,13.25,green,red,1.92,9.6,0.21,2.37,11.85,0.66
+43,Mozzarella Casino 125g,0.88,7.04,3,\Fichiers\Rayon3\Mozzarella Casino 125g.jpg,125,1350,13.5,green,red,1.02,8.16,0.14,1.3,10.4,0.42
+44,Oeufs frais plein air Casino (6X63-73g) 400g,1.91,4.78,3,\Fichiers\Rayon3\Oeufs frais plein air Casino.jpg,400,414.29,4.143,green,orange,1.91,4.78,0,1.91,4.78,0
+45,Oeufs Loue (6x63-73g) 400g,2.29,5.73,3,\Fichiers\Rayon3\Oeufs Loue.jpg,400,414.29,4.143,green,orange,2.29,5.73,0,2.29,5.73,0
+46,Oeufs frais Bio Casino (6x63-73g) 400g,1.96,4.9,3,\Fichiers\Rayon3\Oeufs frais Bio Casino.jpg,400,449.21,4.492,green,orange,1.96,4.9,0,1.96,4.9,0
+47,Petit suisse Casino 6x60g,1.02,2.83,3,\Fichiers\Rayon3\petit suisse casino.jpg,360,255,2.55,green,orange,1.02,2.83,0,1.02,2.83,0
+48,Roquefort Casino 150g,2.19,14.6,3,\Fichiers\Rayon3\Roquefort Casino.jpg,150,550,5.5,green,red,2.26,15.07,0.07,2.4,16,0.21
+49,Soja Cuisine nature Bio Bjorg 250ml,1.1,4.4,3,\Fichiers\Rayon3\Soja cuisine nature bio Bjorg.png,250,90,0.9,green,green,1.02,4.08,0.08,0.84,3.36,0.26
+50,Yaourt Activia nature 4x125g,1.37,2.74,3,\Fichiers\Rayon3\Yaourt Activia nature.jpg,500,295,2.95,green,orange,1.37,2.74,0,1.37,2.74,0
+51,Yaourt Bio Casino 4x125g,1.13,2.26,3,\Fichiers\Rayon3\Yaourt Bio Casino.jpg,500,180,1.8,green,green,1.04,2.08,0.09,0.86,1.72,0.27
+52,Yaourt nature Sojasun 6x100g,2.11,3.52,3,\Fichiers\Rayon3\Yaourt Nature Sojasun.jpg,600,84,0.84,green,green,1.95,3.25,0.16,1.61,2.68,0.5
+53,Sojasun saveur vanille 4x100g,1.55,3.88,3,\Fichiers\Rayon3\Sojasun saveur vanille.jpg,400,84,0.84,green,green,1.43,3.58,0.12,1.18,2.95,0.37
+54,Sojasun saveur chocolat 4x100g,1.71,4.28,3,\Fichiers\Rayon3\Sojasun saveur chocolat.jpg,400,84,0.84,green,green,1.58,3.95,0.13,1.3,3.25,0.41
+55,Yaourt nature Casino 4x125g,0.57,1.14,3,\Fichiers\Rayon3\Yaourt Nature Casino.jpg,500,170,1.7,green,green,0.53,1.06,0.04,0.43,0.86,0.14
+56,Yop vanille 850g,1.9,2.24,3,\Fichiers\Rayon3\Yop vanille 850g.jpg,850,215,2.15,green,orange,1.9,2.24,0,1.9,2.24,0
+57,Pizza 4 fromages Casino 450g,2.83,6.29,4,\Fichiers\Rayon4\Pizza 4 Fromages Casino.jpg,450,480,4.8,green,orange,2.83,6.29,0,2.83,6.29,0
+58,Pizza jambon emmental Casino 450g,2.17,4.82,4,\Fichiers\Rayon4\Pizza Jambon Emmental Casino 450g.jpg,450,535,5.35,green,red,2.36,5.24,0.19,2.77,6.16,0.6
+59,Pizza Crust jambon emmental Sodebo 600g,4.13,6.88,4,\Fichiers\Rayon4\Pizza Crust Jambon Emmental Sodebo 600g.jpg,600,535,5.35,green,red,4.39,7.32,0.26,4.93,8.22,0.8
+60,Pizza chèvre lardon Casino 180g,1.45,8.06,4,\Fichiers\Rayon4\Pizza Chevre Lardon Casino.jpg,180,590,5.9,green,red,1.53,8.5,0.08,1.72,9.56,0.27
+61,Pizza Dolce légumes grillés mozarella Sodebo 400g,4.39,10.98,4,\Fichiers\Rayon4\Pizza Dolce Legumes Grillés Mozarella Sodebo.jpg,400,380,3.8,green,orange,4.39,10.98,0,4.39,10.98,0
+62,Falafels Herta 190g,2.95,15.53,4,\Fichiers\Rayon4\Falafel Herta.jpg,190,80,0.8,green,green,2.72,14.32,0.23,2.25,11.84,0.7
+63,Tendre croque jambon fromage -25% sel Herta 200g,2.67,13.35,4,\Fichiers\Rayon4\Tendre Croque Jambon Fromage -25 sel Herta 200g.jpg,200,675,6.75,green,red,2.78,13.9,0.11,3.01,15.05,0.34
+64,Purée de carottes (2x200g) Créaline 400g,2.22,5.55,4,\Fichiers\Rayon4\Purée de Carottes.jpg,400,170,1.7,green,green,2.05,5.13,0.17,1.69,4.23,0.53
+65,Hachis parmentier Casino 300g,2.32,7.73,4,\Fichiers\Rayon4\Hachis Parmentier Casino.jpg,300,1040,10.4,green,red,2.57,8.57,0.25,3.1,10.33,0.78
+66,Lasagnes à la bolognaise Marie 300g,3.21,10.7,4,\Fichiers\Rayon4\Lasagne Marie.jpeg,300,1000,10,green,red,3.45,11.5,0.24,3.96,13.2,0.75
+67,Lasagnes chèvre épinard Casino 350g,3.29,9.4,4,\Fichiers\Rayon4\Lasagnes Chevre Epinard Casino.jpg,350,485,4.85,green,red,3.43,9.8,0.14,3.71,10.6,0.42
+68,Gnocchi à la pomme de terre Bio Casino 300g,1.31,4.37,4,\Fichiers\Rayon4\Gnocchi Pomme de Terre Casino Bio.jpg,300,320,3.2,green,orange,1.31,4.37,0,1.31,4.37,0
+69,Champignons de Paris Casino 230g,1.2,5.22,5,\Fichiers\Rayon5\Champignon Casino.jpg,230,480,4.8,green,orange,1.2,5.22,0,1.2,5.22,0
+70,Farfalline Barilla 500 g,1.21,2.42,5,\Fichiers\Rayon5\Farfalline Barilla 500 g.jpg,500,293.33,2.933,green,orange,1.21,2.42,0,1.21,2.42,0
+71,Coquillettes Bio Casino 500 g,1.07,2.14,5,\Fichiers\Rayon5\Coquillettes Bio Casino.jpg,500,240,2.4,green,orange,1.07,2.14,0,1.07,2.14,0
+72,Coquillettes Casino 500g,0.53,1.06,5,\Fichiers\Rayon5\Coquillettes Casino.jpg,500,240,2.4,green,orange,0.53,1.06,0,0.53,1.06,0
+73,Flageolets verts extra fins Casino 530g,1.5,2.83,5,\Fichiers\Rayon5\Flageolets verts extra fins Casino.jpg,530,300,3,green,orange,1.5,2.83,0,1.5,2.83,0
+74,Haricots verts très fins Casino 3x110g,1.49,4.52,5,\Fichiers\Rayon5\Haricots Verts Tres Fins Casino.jpg,330,175,1.75,green,green,1.38,4.18,0.11,1.13,3.42,0.36
+75,Haricots blancs à la tomate Casino 800g,0.91,1.14,5,\Fichiers\Rayon5\Haricots blancs à la tomate.jpg,800,110,1.1,green,green,0.84,1.05,0.07,0.69,0.86,0.22
+76,Huile d'olive Bio Casino 75 cl,5.53,7.37,5,\Fichiers\Rayon5\Huile d'olive Bio Casino.jpg,750,360,3.6,green,orange,5.53,7.37,0,5.53,7.37,0
+77,Huile d'olive Casino 50 cl,3.31,6.62,5,\Fichiers\Rayon5\Huile d'olive Casino.jpg,500,466.67,4.667,green,orange,3.31,6.62,0,3.31,6.62,0
+78,Lentilles vertes Casino 500g,1.21,2.42,5,\Fichiers\Rayon5\Lentilles Vertes Casino.jpg,500,90,0.9,green,green,1.12,2.24,0.09,0.92,1.84,0.29
+79,Pain de mie en tranches Harrys 280 g,0.89,3.18,5,\Fichiers\Rayon5\Pain de mie en tranches Harrys.jpg,280,155,1.55,green,green,0.82,2.93,0.07,0.68,2.43,0.21
+80,Pain de mie sandwich complet Casino 550 g,0.95,1.73,5,\Fichiers\Rayon5\Pain de mie sandwich complet Casino.jpg,550,145,1.45,green,green,0.88,1.6,0.07,0.72,1.31,0.23
+81,Petits pains grillés au froment Bio Casino 225 g,1.33,5.91,5,\Fichiers\Rayon5\Petits pains grillés au froment Bio Casino.jpg,225,230,2.3,green,orange,1.33,5.91,0,1.33,5.91,0
+82,Petits pains grillés au froment Casino 225 g,1.09,4.84,5,\Fichiers\Rayon5\Petits pains grillés au froment Casino.jpg,225,230,2.3,green,orange,1.09,4.84,0,1.09,4.84,0
+83,Petits pains - Dorés - Krisprolls 425 g,2.94,6.92,5,\Fichiers\Rayon5\Pains Dorés Krisprolls.jpeg,425,230,2.3,green,orange,2.94,6.92,0,2.94,6.92,0
+84,Pois chiches Casino 265g,0.63,2.38,5,\Fichiers\Rayon5\Pois chiches Casino.jpg,265,200,2,green,green,0.58,2.19,0.05,0.48,1.81,0.15
+85,Purée de tomates Casino 560 g,1.04,1.86,5,\Fichiers\Rayon5\Purée de tomates Casino.jpg,560,160,1.6,green,green,0.96,1.71,0.08,0.79,1.41,0.25
+86,Purée de pommes de terre Casino 125g,0.62,4.96,5,\Fichiers\Rayon5\purée de pomme de terre casino.jpg,125,340,3.4,green,orange,0.62,4.96,0,0.62,4.96,0
+87,Purée de pommes de terre Mousline 125g,0.96,7.68,5,\Fichiers\Rayon5\Purée de pommes de terre Mousline.jpg,125,340,3.4,green,orange,0.96,7.68,0,0.96,7.68,0
+88,Riz Basmati Casino 4x125 g,1.18,2.36,5,\Fichiers\Rayon5\Riz Basmati Casino.jpg,500,270,2.7,green,orange,1.18,2.36,0,1.18,2.36,0
+89,Riz Basmati Taureau Ailé 1kg,2.93,2.93,5,\Fichiers\Rayon5\Riz Basmati Taureau Ailé.jpg,1000,270,2.7,green,orange,2.93,2.93,0,2.93,2.93,0
+90,Riz semi-complet Bio Casino 500 g,2.41,4.82,5,\Fichiers\Rayon5\Riz semi-complet Bio Casino.jpg,500,270,2.7,green,orange,2.41,4.82,0,2.41,4.82,0
+91,Sauce napolitaine Casino 200 g,0.98,4.9,5,\Fichiers\Rayon5\Sauce napolitaine Casino.jpg,200,140,1.4,green,green,0.91,4.55,0.07,0.75,3.75,0.23
+92,Sauce provençale Bio Casino 200 g,0.99,4.95,5,\Fichiers\Rayon5\Sauce provençale Bio Casino.jpg,200,140,1.4,green,green,0.91,4.55,0.08,0.75,3.75,0.24
+93,Sauce provençale Panzani 320g,2.36,7.38,5,\Fichiers\Rayon5\Sauce provençale Panzani.jpeg,320,140,1.4,green,green,2.18,6.81,0.18,1.8,5.63,0.56
+94,Spaghetti Barilla 500 g,0.97,1.94,5,\Fichiers\Rayon5\Spaghetti Barilla.jpg,500,293,2.93,green,orange,0.97,1.94,0,0.97,1.94,0
+95,Spaghetti complet Bio Casino 500 g,0.96,1.92,5,\Fichiers\Rayon5\Spaghetti Complet Bio Casino.jpg,500,320,3.2,green,orange,0.96,1.92,0,0.96,1.92,0
+96,Tofu nature Bio Bjorg (2x200g) 400g,2.36,5.9,5,\Fichiers\Rayon5\Tofu nature bio Bjorg.jpg,400,200,2,green,green,2.18,5.45,0.18,1.8,4.5,0.56
+97,Chocolat au lait Casino 100g,0.54,5.4,6,\Fichiers\Rayon6\Chocolat au lait casino.jpeg,100,655,6.55,green,red,0.59,5.9,0.05,0.7,7,0.16
+98,Chocolat blanc Casino Délices 100g,1.37,13.7,6,\Fichiers\Rayon6\chocolat blanc Casino Délices.jpg,100,685,6.85,green,red,1.42,14.2,0.05,1.54,15.4,0.17
+99,Chocolat noir 74% cacao Bio Casino 100 g,1.17,11.7,6,\Fichiers\Rayon6\Chocolat noir 74% cacao Bio Casino.png,100,190,1.9,green,green,1.08,10.8,0.09,0.89,8.9,0.28
+100,Chocolat noir dessert Casino 200g,1,5,6,\Fichiers\Rayon6\Casino chocolat noir dessert.jpg,200,190,1.9,green,green,0.92,4.6,0.08,0.76,3.8,0.24
+101,Compote pomme sans sucres ajouté Casino 4x100g,1.24,3.1,6,\Fichiers\Rayon6\Compote de pommes sans sucres casino.jpg,400,110,1.1,green,green,1.15,2.88,0.09,0.94,2.35,0.3
+102,Confiture d'abricots Bio Casino 360 g,2.04,5.67,6,\Fichiers\Rayon6\Confiture d’abricots Bio Casino.jpg,360,210,2.1,green,orange,2.04,5.67,0,2.04,5.67,0
+103,Confiture d'abricots allégée Casino 340 g,1.12,3.29,6,\Fichiers\Rayon6\Confiture d’abricots allégée Casino.jpg,340,210,2.1,green,orange,1.12,3.29,0,1.12,3.29,0
+104,Confiture de fraises Casino 370g,1.2,3.24,6,\Fichiers\Rayon6\Confiture de fraises casino.jpg,370,210,2.1,green,orange,1.2,3.24,0,1.2,3.24,0
+105,Miel Casino 250g,2.26,9.04,6,\Fichiers\Rayon6\Miel casino.jpg,250,110,1.1,green,green,2.09,8.36,0.17,1.72,6.88,0.54
+106,Cookies Casino 200 g,1.59,7.95,6,\Fichiers\Rayon6\Cookies Casino.jpg,200,290,2.9,green,orange,1.59,7.95,0,1.59,7.95,0
+107,Cookies Granola Lu 184 g,1.92,10.43,6,\Fichiers\Rayon6\Cookies Granola Lu.jpg,184,290,2.9,green,orange,1.92,10.43,0,1.92,10.43,0
+108,Cookies noisette et chocolat Bio Casino 175 g,1.7,9.71,6,\Fichiers\Rayon6\Cookies noisette et chocolat Bio Casino.jpg,175,290,2.9,green,orange,1.7,9.71,0,1.7,9.71,0
+109,Biscuits Petit Beurre avec tablette de chocolat au lait Bio Casino 150 g,2.04,13.6,6,\Fichiers\Rayon6\Biscuits Petit Beurre avec tablette de chocolat au lait Bio Casino 1.jpg,150,435,4.35,green,orange,2.04,13.6,0,2.04,13.6,0
+110,Biscuits Petit beurre avec tablette de chocolat noir Casino 150 g,1.15,7.67,6,\Fichiers\Rayon6\Biscuits Petit beurre avec tablette de chocolat noir Casino.jpg,150,435,4.35,green,orange,1.15,7.67,0,1.15,7.67,0
+111,Biscuits Petit beurre avec tablette de chocolat noir Lu 150 g,1.5,10,6,\Fichiers\Rayon6\Biscuits Petit beurre avec tablette de chocolat noir Lu.jpg,150,435,4.35,green,orange,1.5,10,0,1.5,10,0
+112,Farine de blé Bio Casino 1 kg,1.02,1.02,6,\Fichiers\Rayon6\Farine de blé Bio Casino.jpg,1000,150,1.5,green,green,0.94,0.94,0.08,0.78,0.78,0.24
+113,Farine de blé Fluide Francine 1 kg,1.17,1.17,6,\Fichiers\Rayon6\Farine de blé Fluide Francine.jpg,1000,150,1.5,green,green,1.08,1.08,0.09,0.89,0.89,0.28
+114,Madeleines (x20) Le Ster 250g,1.51,6.04,6,\Fichiers\Rayon6\Madeleines (x20) Le Ster.jpeg,250,520,5.2,green,red,1.61,6.44,0.1,1.84,7.36,0.33
+115,Madeleines au beurre Bonne Maman (x12) 300g,3.32,11.07,6,\Fichiers\Rayon6\Madeleines au beurre Bonne Maman.jpg,300,520,5.2,green,red,3.44,11.47,0.12,3.71,12.37,0.39
+116,Sucre en poudre Beghin Say 1 kg,1.63,1.63,6,\Fichiers\Rayon6\Sucre en poudre Beghin Say.jpg,1000,110,1.1,green,green,1.51,1.51,0.12,1.24,1.24,0.39
+117,Sucre en poudre Tous Les Jours 1 kg,0.96,0.96,6,\Fichiers\Rayon6\Sucre en poudre Tous Les Jours.jpg,1000,110,1.1,green,green,0.89,0.89,0.07,0.73,0.73,0.23

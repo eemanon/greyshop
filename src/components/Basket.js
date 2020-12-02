@@ -47,6 +47,12 @@ function format2Digit(number) {
   return Math.round(number * 100) / 100
 }
 
+function checkOut(next, basket){
+  console.log("Checkout at "+Date.now());
+  //todo call function to send stuff.
+  next();
+}
+
 function check(value, tax, taxAdded) {
   //check if basket value is between 20 and 25 €
   if (taxAdded) {
@@ -76,13 +82,13 @@ export default function Basket(props) {
                 Total en cours HT
                 </TableCell>
               <TableCell align="left">{format2Digit(props.ht)} €</TableCell>
-            </TableRow> : ""}
+            </TableRow> :null}
             {props.showTax ? <TableRow>
               <TableCell component="th" scope="row">
                 Taxe
                 </TableCell>
               <TableCell align="left">{format2Digit(props.taxe)} €</TableCell>
-            </TableRow> : ""}
+            </TableRow> :null}
 
             <TableRow>
               <TableCell component="th" scope="row">
@@ -118,7 +124,7 @@ export default function Basket(props) {
           color={check(props.ht, props.taxe, props.showTax) ? "default" : "primary"}
           size="small"
           className={classes.button}
-          onClick={() => props.next()}
+          onClick={() => checkOut(props.next, props.basket)}
           startIcon={<ShoppingCartIcon />}
         >
           Checkout

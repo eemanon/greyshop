@@ -19,8 +19,12 @@ import Co2questionids from './data/productIdsForQuestions.json';
 import regularQuestions from './data/questionnary.json';
 
 
+
 //debug only
 import Button from '@material-ui/core/Button';
+
+//database connection imports
+
 
 function productIdsToQuestions(products, productIds, answers, title, id, information, showTitle, questionText) {
   //takes a list of product ids, general answers and a products object to return a section of questions about the product

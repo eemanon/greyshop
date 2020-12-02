@@ -11,11 +11,20 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 //database related imports
-import { useAuthState } from 'react-firebase-hooks/auth';
-import firebase from 'firebase/app'
-import 'firebase/auth'
 
+
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore'
 import firebaseConfig from '../firebase.conf.js';
+import 'firebase/auth'
+import 'firebase/firestore';
+import firebase from 'firebase/app'
+  //Global variables & config load
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,27 +37,38 @@ const useStyles = makeStyles((theme) => ({
   },
 
 }));
-//Global variables & config load
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 
 
-
-export default function DataStore(props) {
+function DataView() {
+  const data = firestore.collection('data');
+  const query = data.limit(30);
+  console.log(query)
+  
+  const [returndata] = useCollectionData(query, {idField: 'id'});
+  console.log(returndata)
+  return (<Paper><Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
+    <table>
+      <tr>{returndata!=null && Object.keys(returndata[0]).map((key) => (
+        <th>{key}</th>
+      ))}</tr>
+      {returndata!=null && returndata.map((item, id) => (
+        <tr>
+          {Object.keys(item).map((key) => (
+            <td>{item[key]}</td>
+          ))}
+        </tr>
+      ))}
+    </table>
+    <Button onClick={() => auth.signOut()}>Logout</Button></Paper>)
+}
+function Loginform (){
   const classes = useStyles();
-
-  //returns user if connected
-  const [user] = useAuthState(auth);
-
-  //interface value trackers
-  const [mail, setMail] = useState("");
   const [password, setPw] = useState("");
-
+  const [mail, setMail] = useState("");
   const signInWithPW = (mail, pw) => {
     console.log("signing in with " + mail)
     auth.signInWithEmailAndPassword(mail, pw)
       .then((user) => {
-        alert('successful')
         console.log(user)
 
       })
@@ -58,21 +78,24 @@ export default function DataStore(props) {
         alert(errorMessage)
       });
   }
-  //conditional render components
-  const loginform = () => {
-    return (<form><Typography variant="h3" component="h2" gutterBottom>Please log in</Typography>
-      <TextField value={mail} onChange={e => { setMail(e.target.value) }} className={classes.textfield} fullWidth id="mail" label="email address" />
-      <TextField value={password} onChange={e => { setPw(e.target.value) }} className={classes.textfield} fullWidth id="password" label="password" />
-      <Button onClick={() => signInWithPW(mail, password)}>Login</Button></form>)
-  }
-  const dataView = () => {
-    return (<Paper><Typography variant="h3" component="h2" gutterBottom>Super Cool Data</Typography><Button onClick={() => auth.signOut()}>Logout</Button></Paper>)
-  }
+  return (<form><Typography variant="h3" component="h2" gutterBottom>Please log in</Typography>
+    <TextField value={mail} onChange={e => { setMail(e.target.value) }} className={classes.textfield} fullWidth id="mail" label="email address" />
+    <TextField value={password} onChange={e => { setPw(e.target.value) }} className={classes.textfield} fullWidth id="password" label="password" />
+    <Button onClick={() => signInWithPW(mail, password)}>Login</Button></form>)
+}
 
+export default function DataStore(props) {
+
+  const classes = useStyles();
+  //returns user if connected
+  const [user] = useAuthState(auth);
+
+  //interface value trackers
+  //conditional render components
   return (
     <div>
       <Paper className={classes.root}>
-        {user==null ? loginform() : dataView()}
+        {user == null ? <Loginform /> : <DataView />}
       </Paper>
     </div>
   );

@@ -94,6 +94,9 @@ function basketWeight(basket) {
 
 
 export default function Store(props) {
+  const [notSeenInstructions, setNotSeenInstructions] = React.useState(true);
+  let timestamp_leave_instructions = null;
+  let timestamp_start_instructions = null;
   const classes = useStyles();
   const items = props.products;
   const [basket, setBasket] = React.useState([]);
@@ -141,14 +144,25 @@ export default function Store(props) {
   //returns categories and containing products 
   const showCategory = () => {
     if (categoryIndex === -1) {
+      if(notSeenInstructions){
+        timestamp_start_instructions = Date.now();
+        console.log("instructions loaded at "+timestamp_start_instructions)
+      }
+
       return (<ShopLandingPage variant={props.variant.number}></ShopLandingPage>)
     }
     else {
+      //if we leave the instructions page for the first time, we store the time.
+      if(notSeenInstructions){
+        timestamp_leave_instructions = Date.now();
+        console.log("left instructions at "+timestamp_leave_instructions)
+        setNotSeenInstructions(false)
+      }
       const found = items.find(category => category.id === categoryIndex);
       return (
         <Grid container spacing={3} className={classes.grid}>
           {found.products.map((item, i) => (
-            <Grid item xs={6} md={4} lg={3} xl={2}>
+            <Grid key={item.id} item xs={6} md={4} lg={3} xl={2}>
               <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]}
                 unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]}
                 priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]}
@@ -169,7 +183,7 @@ export default function Store(props) {
       <div className={classes.toolbar}>
         <Chip label="Acceuil" color={categoryIndex === -1 ? "primary" : "default"} onClick={(i) => { changeCategory(-1) }} />
         {items.map((item, i) => (
-          <Chip label={item.name} color={categoryIndex === item.id ? "primary" : "default"} onClick={(i) => { changeCategory(item.id) }} />
+          <Chip label={item.name} key={item.id} color={categoryIndex === item.id ? "primary" : "default"} onClick={(i) => { changeCategory(item.id) }} />
         ))}
       </div>
       {showCategory()}
