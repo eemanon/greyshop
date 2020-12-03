@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import userExists from '../functions/FireBaseConnector'
+import {userExists, getCounter, incrementCounter} from '../functions/FireBaseConnector'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +37,7 @@ export default function StudentLogin(props) {
   const timestamp_start_experience = (Date.now())
   //input tracking state
   const [studentValue, setValue] = useState("");
+  const [errorMessage, setErrorMessage] = useState("Veuillez entrer un numéro d'étudiant valide.");
   //state of error message
   const [open, setOpen] = useState(false);
   //handler for error message
@@ -46,6 +47,10 @@ export default function StudentLogin(props) {
     }
     setOpen(false);
   }
+
+  //status of database check, checked when returned
+const [existsInDB, setExistsInDB] = useState("pending");
+
   //checks if the student id is a 8digit number
   const regex = RegExp('^[0-9]{8}$');
 
@@ -79,10 +84,10 @@ export default function StudentLogin(props) {
         </Typography>
         <TextField className={classes.textfield} fullWidth id="studentNumber" onChange={e => { setValue(e.target.value) }} label="Numéro étudiant" value={studentValue} />
 
-        <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props, regex, setOpen, timestamp_start_experience)}>Continuer</Button>
+        <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props, regex, setOpen, timestamp_start_experience,setErrorMessage)}>Continuer</Button>
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Veuillez entrer un numéro d'étudiant valide.
+            {errorMessage}
         </Alert>
         </Snackbar>
       </Paper>
@@ -90,7 +95,7 @@ export default function StudentLogin(props) {
   );
 }
 
-function checkIfUsed(studentValue, props, regex, setOpen, timestampStart) {
+function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErrorMessage) {
   //function to check if id is already used or invalid.
   //format check
   console.log("experience started at "+timestampStart)
@@ -100,13 +105,18 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart) {
     return
   }
   //TODO
-  //check if user exists with hash...
-  if(userExists(studentValue)===0){
-    console.log("no user")
-    //return
+  getCounter()
+  incrementCounter()
+
+  //check if user exists...
+  userExists(studentValue, props.next).then((result)=>{
+    if(result=="exists"){
+      setErrorMessage("Ce numéro d'étudiant a déjà été utilisé dans une experience.")
+      setOpen(true)
+    }
+    else if(result=="does not exist"){
+      //create new user & datablock & define which version user gets to see
+    }
   }
-  console.log("todo")
-  console.log("current value: " + studentValue)
-  //forward
-  props.next();
+  );
 }

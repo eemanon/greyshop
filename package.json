@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
     "firebase": "^8.0.2",
+    "js-file-download": "^0.4.12",
     "papaparse": "^5.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

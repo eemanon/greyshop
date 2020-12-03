@@ -10,22 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-//database related imports
-
-
-
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore'
-import firebaseConfig from '../firebase.conf.js';
-import 'firebase/auth'
-import 'firebase/firestore';
-import firebase from 'firebase/app'
-  //Global variables & config load
-firebase.initializeApp(firebaseConfig);
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-
+//Global variables & config load
+import { userSignOut, userSignInWithMail, useConnectedUser, useAllData, signInWithMail } from '../functions/FireBaseConnector'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,36 +24,53 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+function objectToCsv(arrObj, createColumnHeader) {
+  //get columnHeader & all keys from first object
+  let headerline = '';
+  if (createColumnHeader) {
+    Object.keys(arrObj[0]).map((key) => (
+      headerline = headerline + key + ","
+    ))
+    //remove last comma and add newline
+    headerline = headerline.slice(0, -1);
+    headerline = headerline + '\n';
+  }
+  console.log(headerline)
+  //get every object and transform it into a line of csv
+  //TODO: maybe use separate collection of fields that has to be in there and match them to it?
+
+}
 
 function DataView() {
-  const data = firestore.collection('data');
-  const query = data.limit(30);
-  console.log(query)
-  
-  const [returndata] = useCollectionData(query, {idField: 'id'});
-  console.log(returndata)
+  const fileDownload = require('js-file-download');
+  const [returndata] = useAllData("id", "data");
+  let header = [];
+  if (returndata != null)
+    header = Object.keys(returndata[0])
   return (<Paper><Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
-    <table>
-      <tr>{returndata!=null && Object.keys(returndata[0]).map((key) => (
-        <th>{key}</th>
+    <table><tbody>
+      <tr>{returndata != null && header.map((key) => (
+        <th key={key}>{key}</th>
       ))}</tr>
-      {returndata!=null && returndata.map((item, id) => (
-        <tr>
-          {Object.keys(item).map((key) => (
-            <td>{item[key]}</td>
+      {returndata != null && returndata.map((item, id) => (
+        <tr key={item.id}>
+          {header.map((key) => (
+            <td key={key} >{item[key]}</td>
           ))}
         </tr>
       ))}
+    </tbody>
     </table>
-    <Button onClick={() => auth.signOut()}>Logout</Button></Paper>)
+    <Button onClick={() => fileDownload(objectToCsv(returndata, true), 'export.csv')}>Download CSV</Button><br></br>
+    <Button onClick={userSignOut}>Logout</Button></Paper>)
 }
-function Loginform (){
+function Loginform() {
   const classes = useStyles();
   const [password, setPw] = useState("");
   const [mail, setMail] = useState("");
   const signInWithPW = (mail, pw) => {
     console.log("signing in with " + mail)
-    auth.signInWithEmailAndPassword(mail, pw)
+    userSignInWithMail(mail, pw)
       .then((user) => {
         console.log(user)
 
@@ -88,7 +91,7 @@ export default function DataStore(props) {
 
   const classes = useStyles();
   //returns user if connected
-  const [user] = useAuthState(auth);
+  const [user] = useConnectedUser();
 
   //interface value trackers
   //conditional render components

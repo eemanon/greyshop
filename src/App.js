@@ -104,7 +104,7 @@ function App() {
 
       <Router history={history}>
         <Route exact path='/'>
-          <StudentLogin next={() => { history.push("/consent"); setProgress(2); setHeaderBarTitle("Consentement"); }}>
+          <StudentLogin setVariant={setVariant} next={() => { history.push("/consent"); setProgress(2); setHeaderBarTitle("Consentement"); }}>
           </StudentLogin>
         </Route>
         <Route path='/consent'>
@@ -133,8 +133,7 @@ function App() {
           <DiceGame>
           </DiceGame>
         </Route>
-        <Route path='/datastore'>
-          <DataStore></DataStore>
+        <Route path='/datastore' render={() => {setHeaderBarTitle("DataStore");return(<DataStore></DataStore>)}}>
         </Route>
       </Router>
     </div>
