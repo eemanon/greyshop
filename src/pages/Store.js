@@ -95,8 +95,8 @@ function basketWeight(basket) {
 
 export default function Store(props) {
   const [notSeenInstructions, setNotSeenInstructions] = React.useState(true);
-  let timestamp_leave_instructions = null;
-  let timestamp_start_instructions = null;
+  let timestamp_start_instructions = Date.now();
+  const [timestampLeavePageLeave, setTimeStampLeave] = React.useState(null)
   const classes = useStyles();
   const items = props.products;
   const [basket, setBasket] = React.useState([]);
@@ -143,19 +143,12 @@ export default function Store(props) {
   };
   //returns categories and containing products 
   const showCategory = () => {
-    if (categoryIndex === -1) {
-      if(notSeenInstructions){
-        timestamp_start_instructions = Date.now();
-        console.log("instructions loaded at "+timestamp_start_instructions)
-      }
-
+    if (categoryIndex === -1)
       return (<ShopLandingPage variant={props.variant.number}></ShopLandingPage>)
-    }
     else {
       //if we leave the instructions page for the first time, we store the time.
-      if(notSeenInstructions){
-        timestamp_leave_instructions = Date.now();
-        console.log("left instructions at "+timestamp_leave_instructions)
+      if (notSeenInstructions) {
+        setTimeStampLeave(Date.now());
         setNotSeenInstructions(false)
       }
       const found = items.find(category => category.id === categoryIndex);
@@ -191,11 +184,20 @@ export default function Store(props) {
         {props.variant.thermometer ? <ThermoCard label={props.variant.thermometerlabel}
           value={basketWeight(basket) !== 0 ? carbonWeight(basket) / basketWeight(basket) : 0}></ThermoCard> : ""}
         <Divider />
-        <Basket next={props.next} basket={basket} remove={removeFromBasket} add={addToBasket} ht={sumHT(basket)}
-          showTax={props.variant.tax} taxe={carbonWeight(basket) > 14.22 ? (carbonWeight(basket) - 14.22) * 0.25 : 0}>
+        <Basket
+          next={props.next}
+          basket={basket}
+          remove={removeFromBasket}
+          add={addToBasket}
+          ht={sumHT(basket)}
+          showTax={props.variant.tax}
+          userID={props.userID}
+          taxe={carbonWeight(basket) > 14.22 ? (carbonWeight(basket) - 14.22) * 0.25 : 0}
+          timeArrival={timestamp_start_instructions}
+          timeFinishInstructions={timestampLeavePageLeave}
+          addContent={props.addContent}>
         </Basket>
       </SideDrawer>
-
     </div>
   );
 }

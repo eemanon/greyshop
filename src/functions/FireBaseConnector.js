@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 //database related imports
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
@@ -6,7 +5,6 @@ import firebaseConfig from '../firebase.conf.js';
 import 'firebase/auth'
 import 'firebase/firestore';
 import firebase from 'firebase/app'
-import { AccordionActions } from '@material-ui/core';
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -19,6 +17,9 @@ const useConnectedUser = () => {
 const userSignInWithMail = (mail, pw) => {
     return auth.signInWithEmailAndPassword(mail, pw);
 }
+const userSignInAnonymously = () => {
+    return auth.signInAnonymously();
+}
 
 const useAllData = (idField, collection) => {
     const data = firestore.collection(collection);
@@ -30,7 +31,7 @@ const userSignOut = () => {
     auth.signOut()
 }
 
-const userExists = (userID, action) => {
+const userExists = (userID) => {
 
     var docRef = firestore.collection("users").doc(userID);
 
@@ -40,7 +41,6 @@ const userExists = (userID, action) => {
             return "exists"
         } else {
             console.log("user doesnt exist yet")
-            action()
             return "does not exist"
         }
     }).catch(function (error) {
@@ -65,9 +65,34 @@ const getCounter = () => {
 }
 
 const incrementCounter = () => {
-    var docRef2 = firestore.collection("properties").doc("count").
-    update({"total": firebase.firestore.FieldValue.increment(1)})    
+    firestore.collection("properties").doc("count").update({"total": firebase.firestore.FieldValue.increment(1)})    
+}
+const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants, setVariant) => {
+    //doc refs:
+    let docCounter = firestore.collection("properties").doc("count");
+    let docData = firestore.collection("data").doc(uid);
+    //read counter
+    return firestore.runTransaction(function(transaction){
+        return transaction.get(docCounter).then(function(sfDoc) {
+
+            let newCounter = sfDoc.data().total + 1;
+            let variant = calcVariant(newCounter, numVariants)
+            transaction.update(docCounter, { total: newCounter });
+            transaction.set(docData, { variant: variant, startTime: timestamp, uid: uid, id: newCounter });
+            return [variant, newCounter];    
+        });
+    })
+}
+const useLoggedIn = () => {
+    return firebase.auth().onAuthStateChanged();
+}
+const addUser = (studentID, uid) => {
+    return firestore.collection("users").doc(studentID).set({
+        uid: uid
+    })
+}
+const addContent = (uid, object, merge=true) => {
+    return firestore.collection("data").doc(uid).set(object, { merge: merge });
 }
 
-
-export { incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData };
+export { addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };

@@ -88,8 +88,11 @@ function checkIfAgree(ticked, props, setOpen) {
     return
   }
   //send to db 
-  //TODO
-  console.log("TODO")
+  props.addContent(props.userID, { agreedToTerms: ticked }).then(function () {
+    console.log("Change succesfully written!");
+  }).catch(function (error) {
+    console.error("Error writing document: ", error);
+  });
   //next
   props.next();
 }

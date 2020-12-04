@@ -65,7 +65,15 @@ export default function SurveySection(props) {
       setCheck(true);
       return false;
     }
-    props.next()
+    //send data
+    let obj = {};
+    obj["section"+props.data.id] = answers;
+    props.addContent(props.userID, obj).then(function () {
+      console.log("Change succesfully written for id ",props.data.id);
+      props.next();
+    }).catch(function (error) {
+      console.error("Error writing document: ", error);
+    });
   }
   const titleElement = () => { return (<Typography variant="h4" component="h2" gutterBottom>{props.data.title}</Typography>) };
   return (

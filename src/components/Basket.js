@@ -47,9 +47,20 @@ function format2Digit(number) {
   return Math.round(number * 100) / 100
 }
 
-function checkOut(next, basket){
-  console.log("Checkout at "+Date.now());
+function checkOut(userID, next, basket, timeArrival, timeFinishInstructions, addContent, ht, taxe, showTax) {
+  let timeCheckout = Date.now();
   //todo call function to send stuff.
+  console.log(userID)
+  let newbasket = basket.map((item)=>({"id":item.id, "quantity":item.quantity}))
+  let object = { basket: newbasket, timeStartLandingPage: timeArrival, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht };
+  if (showTax)
+    object['tax'] = taxe;
+  console.log(object)
+  addContent(userID, object).then(function () {
+    console.log("Basket successfully written!");
+  }).catch(function (error) {
+    console.error("Error writing basket: ", error);
+  });
   next();
 }
 
@@ -82,13 +93,13 @@ export default function Basket(props) {
                 Total en cours HT
                 </TableCell>
               <TableCell align="left">{format2Digit(props.ht)} €</TableCell>
-            </TableRow> :null}
+            </TableRow> : null}
             {props.showTax ? <TableRow>
               <TableCell component="th" scope="row">
                 Taxe
                 </TableCell>
               <TableCell align="left">{format2Digit(props.taxe)} €</TableCell>
-            </TableRow> :null}
+            </TableRow> : null}
 
             <TableRow>
               <TableCell component="th" scope="row">
@@ -124,7 +135,16 @@ export default function Basket(props) {
           color={check(props.ht, props.taxe, props.showTax) ? "default" : "primary"}
           size="small"
           className={classes.button}
-          onClick={() => checkOut(props.next, props.basket)}
+          onClick={() => checkOut(
+            props.userID, 
+            props.next, 
+            props.basket, 
+            props.timeArrival,
+            props.timeFinishInstructions,
+            props.addContent, 
+            props.ht, 
+            props.taxe, 
+            props.showTax)}
           startIcon={<ShoppingCartIcon />}
         >
           Checkout

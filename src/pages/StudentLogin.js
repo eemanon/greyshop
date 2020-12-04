@@ -9,7 +9,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import {userExists, getCounter, incrementCounter} from '../functions/FireBaseConnector'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,9 +47,6 @@ export default function StudentLogin(props) {
     setOpen(false);
   }
 
-  //status of database check, checked when returned
-const [existsInDB, setExistsInDB] = useState("pending");
-
   //checks if the student id is a 8digit number
   const regex = RegExp('^[0-9]{8}$');
 
@@ -84,11 +80,14 @@ const [existsInDB, setExistsInDB] = useState("pending");
         </Typography>
         <TextField className={classes.textfield} fullWidth id="studentNumber" onChange={e => { setValue(e.target.value) }} label="Numéro étudiant" value={studentValue} />
 
-        <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props, regex, setOpen, timestamp_start_experience,setErrorMessage)}>Continuer</Button>
+        <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props,
+          regex, setOpen, timestamp_start_experience, setErrorMessage)}>
+          Continuer
+        </Button>
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
             {errorMessage}
-        </Alert>
+          </Alert>
         </Snackbar>
       </Paper>
     </div>
@@ -98,25 +97,39 @@ const [existsInDB, setExistsInDB] = useState("pending");
 function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErrorMessage) {
   //function to check if id is already used or invalid.
   //format check
-  console.log("experience started at "+timestampStart)
-  console.log("time now "+Date.now())
+  console.log("experience started at " + timestampStart)
+  console.log("time now " + Date.now())
   if (!regex.test(studentValue)) {
     setOpen(true)
     return
   }
-  //TODO
-  getCounter()
-  incrementCounter()
-
   //check if user exists...
-  userExists(studentValue, props.next).then((result)=>{
-    if(result=="exists"){
+  props.userExists(studentValue, props.userID).then((result) => {
+    console.log("result: " + result)
+    if (result == "exists") {
       setErrorMessage("Ce numéro d'étudiant a déjà été utilisé dans une experience.")
       setOpen(true)
     }
-    else if(result=="does not exist"){
-      //create new user & datablock & define which version user gets to see
+    else if (result == "does not exist") {
+      //try create new user entry & datablock & define which version user gets to see & send timestamp
+      props.addUser(studentValue, props.userID).then(function () {
+        //get counter and increment it
+        const calcVariant = (id, numVariants) => (id % numVariants);
+        return props.initialWrite(props.userID, studentValue, timestampStart, calcVariant, props.numVariants)
+        .catch(function (err) {
+          // This will be an "population is too big" error.
+          console.log("didnt make it")
+          console.error(err);
+        });
+      }).then(function (arr) {
+        console.log("this user will see shop variant ", arr[0]);
+        props.setVariant(arr[0])
+        props.setId(arr[1])
+        props.next()
+      }).catch(function (error) {
+        console.error("Error adding user: ", error);
+      });
     }
-  }
-  );
+
+  })
 }

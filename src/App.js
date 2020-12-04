@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import HeaderBar from './components/HeaderBar.js'
 import { Router } from 'react-router-dom';
@@ -18,7 +18,7 @@ import Products from './functions/DataLoader';
 import Co2questionids from './data/productIdsForQuestions.json';
 import regularQuestions from './data/questionnary.json';
 
-
+import { userSignInAnonymously, addUser, userExists, initialWrite, addContent } from './functions/FireBaseConnector.js'
 
 //debug only
 import Button from '@material-ui/core/Button';
@@ -86,12 +86,24 @@ const variants = [
     tax: true,
     thermometer: true,
     thermometerlabel: "Empreinte carbone moyenne de votre panier"
-  }    
+  }
 ]
 
 function App() {
-  //debugging only:
   const [variant, setVariant] = useState(0);
+  const [userID, setUserID] = useState("");
+  const [winnerID, setWinnerID] = useState(-1);
+  useEffect(() => {
+    userSignInAnonymously().then((user) => {
+      console.log(user)
+      if (user) {
+        setUserID(user.user.uid);
+      } else {
+        alert("Erreur d'authentification. Veuillez revenir ultérieurement.")
+      }
+    });
+  })
+
   const [progressState, setProgress] = useState(1);
   const [headerBarTitle, setHeaderBarTitle] = useState("Bienvenue");
   const products = Products();
@@ -100,40 +112,74 @@ function App() {
   const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, carbonInfo, "yes", "Évaluer l'empreinte carbone de ce produit.");
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} progress={progressState} total={17}><Button variant="contained" onClick={()=>setVariant((variant+1)%4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
-
+      <HeaderBar titletext={headerBarTitle} progress={progressState} total={17}><Button variant="contained" onClick={() => setVariant((variant + 1) % 4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
       <Router history={history}>
         <Route exact path='/'>
-          <StudentLogin setVariant={setVariant} next={() => { history.push("/consent"); setProgress(2); setHeaderBarTitle("Consentement"); }}>
+          <StudentLogin
+            setVariant={setVariant}
+            setId={setWinnerID}
+            numVariants={4}
+            userID={userID}
+            next={() => { history.push("/consent"); setProgress(2); setHeaderBarTitle("Consentement"); }}
+            addUser={addUser}
+            userExists={userExists}
+            initialWrite={initialWrite}
+          >
           </StudentLogin>
         </Route>
         <Route path='/consent'>
-          <Terms next={() => { history.push("/instructions"); setProgress(3); setHeaderBarTitle("Instructions");}}>
+          <Terms
+            next={() => { history.push("/instructions"); setProgress(3); setHeaderBarTitle("Instructions"); }}
+            userID={userID}
+            addContent={addContent}
+          >
           </Terms>
         </Route>
         <Route path='/instructions'>
-          <Instructions next={() => { history.push("/store"); setProgress(4); setHeaderBarTitle("Magasin")}}>
+          <Instructions next={() => { history.push("/store"); setProgress(4); setHeaderBarTitle("Magasin") }}>
           </Instructions>
         </Route>
         <Route path='/store'>
-          <Store variant={variants[variant]} products={products} next={() => { history.push("/questionnaire_section1"); setProgress(5); setHeaderBarTitle("Questionnaire") }}>
+          <Store
+            variant={variants[variant]}
+            products={products}
+            next={() => { history.push("/questionnaire_section1"); setProgress(5); setHeaderBarTitle("Questionnaire") }}
+            addContent={addContent}
+            userID={userID}>
           </Store>
         </Route>
         {regularQuestions.map((item, i) => (
-            <Route exact path={item.link} key={item.id}>
-              <SurveySection data={item} form={item.form} next={() => { console.log(item.nextPage);history.push(item.nextPage); setProgress(progressState + 1); }}>
-              </SurveySection>
-            </Route>
+          <Route exact path={item.link} key={item.id}>
+            <SurveySection
+              data={item}
+              form={item.form}
+              next={() => { console.log(item.nextPage); history.push(item.nextPage); setProgress(progressState + 1); }}
+              addContent={addContent}
+              userID={userID}
+            >
+            </SurveySection>
+          </Route>
         ))}
         <Route path='/questionnaire_section10'>
-          <SurveySection data={carbonQuestions} form={"list"} next={() => { history.push("/questionnaire_section11"); setProgress(progressState + 1); }}>
+          <SurveySection
+            data={carbonQuestions}
+            form={"list"}
+            next={() => { history.push("/questionnaire_section11"); setProgress(progressState + 1); }}
+            addContent={addContent}
+            userID={userID}
+          >
           </SurveySection>
         </Route>
         <Route path='/dicegame'>
-          <DiceGame>
+          <DiceGame
+            addContent={addContent}
+            userID={userID}
+          >
           </DiceGame>
         </Route>
-        <Route path='/datastore' render={() => {setHeaderBarTitle("DataStore");return(<DataStore></DataStore>)}}>
+        <Route path='/datastore'
+          render={() => { setHeaderBarTitle("DataStore"); return (<DataStore></DataStore>) }}
+        >
         </Route>
       </Router>
     </div>

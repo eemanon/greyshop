@@ -55,7 +55,7 @@ function DataView() {
       {returndata != null && returndata.map((item, id) => (
         <tr key={item.id}>
           {header.map((key) => (
-            <td key={key} >{item[key]}</td>
+            <td key={key} >{typeof item[key]=="object"?Object.keys(item[key]).length:item[key]}</td>
           ))}
         </tr>
       ))}
