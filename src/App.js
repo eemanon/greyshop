@@ -14,11 +14,10 @@ import SurveySection from './components/SurveySection.js'
 import DataStore from './pages/DataStore.js'
 
 import Products from './functions/DataLoader';
-
 import Co2questionids from './data/productIdsForQuestions.json';
 import regularQuestions from './data/questionnary.json';
 
-import { userSignInAnonymously, addUser, userExists, initialWrite, addContent } from './functions/FireBaseConnector.js'
+import { getDiceGame, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut} from './functions/FireBaseConnector.js'
 
 //debug only
 import Button from '@material-ui/core/Button';
@@ -91,7 +90,7 @@ const variants = [
 
 function App() {
   const [variant, setVariant] = useState(0);
-  const [userID, setUserID] = useState("");
+  const [userID, setUserID] = useState(null);
   const [winnerID, setWinnerID] = useState(-1);
   useEffect(() => {
     userSignInAnonymously().then((user) => {
@@ -174,11 +173,22 @@ function App() {
           <DiceGame
             addContent={addContent}
             userID={userID}
+            getDiceGame={getDiceGame}
           >
           </DiceGame>
         </Route>
         <Route path='/datastore'
-          render={() => { setHeaderBarTitle("DataStore"); return (<DataStore></DataStore>) }}
+          render={() => { setHeaderBarTitle("DataStore"); return (<DataStore
+            getNumDiceGames = {getNumDiceGames}
+            addAvailableDiceGames = {addAvailableDiceGames}
+            userSignOut = {userSignOut}
+            userSignInWithMail = {userSignInWithMail}
+            useConnectedUser = {useConnectedUser}
+            useAllData = {useAllData}
+            questions = {regularQuestions}
+            products = {products}
+          >
+          </DataStore>) }}
         >
         </Route>
       </Router>

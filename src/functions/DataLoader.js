@@ -20,6 +20,8 @@ function products () {
     });
     return(result);
 }
+
+
 export default products;
 
 /* exported structure:

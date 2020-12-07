@@ -56,14 +56,18 @@ export default function DiceGame(props) {
   //interface tracker for dialog open
   const [open, setOpen] = useState(false);
   const [dateSet, setDateSet] = useState(false);
+  const [diceThrow, setDiceThrow] = useState(0);
   const [mail, setMail] = useState("");
   const timestamp_finishExperience = Date.now()
+  const [diceSeries, setDiceSeries] = useState([]);
   console.log("experience finished at " + timestamp_finishExperience)
-  //value of dice
-  const [dice, setDice] = React.useState(1);
   useEffect(() => {
+    if (props.userID != null && diceSeries!=null && diceSeries.length == 0) {
+      console.log(props.userID);
+      props.getDiceGame(props.userID, setDiceSeries);
+    }
     if (props.userID && !dateSet) {
-      props.addContent(props.userID, { finishTime: Date.now() }).then(function () {
+      props.addContent(props.userID, { timeFinish: Date.now() }).then(function () {
         console.log("finish date saved");
         setDateSet(true)
       }).catch(function (error) {
@@ -71,7 +75,7 @@ export default function DiceGame(props) {
       });
     }
 
-  })
+  }, [props, diceSeries, dateSet])
 
   const handleClose = () => {
     setOpen(false);
@@ -83,25 +87,39 @@ export default function DiceGame(props) {
     }).catch(function (error) {
       console.error("Error writing document: ", error);
     });
-    
-  }
-  const handlePlayVideo = () => {
-    let value = Math.round((Math.random() * 6) % 6 + 1);
-    console.log(value)
-    setDice(value)
-    switch (value) {
-      case 6: vidRef6.current.play(); break;
-      case 1: vidRef1.current.play(); break;
-      case 2: vidRef2.current.play(); break;
-      case 3: vidRef3.current.play(); break;
-      case 4: vidRef4.current.play(); break;
-      case 5: vidRef5.current.play(); break;
-      default: break;
-    }
 
   }
-  return (
-    <div>
+  const handlePlayVideo = () => {
+    //check if we still can play...
+    if (diceThrow < diceSeries.length) {
+      switch (diceSeries[diceThrow]) {
+        case 6: vidRef6.current.play(); break;
+        case 1: vidRef1.current.play(); break;
+        case 2: vidRef2.current.play(); break;
+        case 3: vidRef3.current.play(); break;
+        case 4: vidRef4.current.play(); break;
+        case 5: vidRef5.current.play(); break;
+        default: break;
+      }
+    }
+    else
+      alert("you cant play anymore")
+
+
+  }
+
+  const endOfAnimation = () => {
+    console.log("thrown "+diceSeries[diceThrow])
+    if (diceSeries[diceThrow] == 6)
+      showMessage(setOpen);
+    else if (diceSeries[diceThrow] == 5)
+      alert('not won but can try again');
+    else
+      alert("you lost")
+    setDiceThrow(diceThrow + 1);
+  }
+  const Game = () => {
+    return (
       <Paper className={classes.paper}>
         <Typography variant="h3" component="h2" gutterBottom>
           Jeu pour gagner son panier
@@ -109,17 +127,17 @@ export default function DiceGame(props) {
         <Typography variant="body1" gutterBottom >
           Veuillez cliquer sur le bouton si vous voulez tenter le panier que vous venez de créer.
         </Typography>
-        <br></br><video ref={vidRef1} onEnded={() => alert("lost")} hidden={dice !== 1} >
+        <br></br><video ref={vidRef1} onEnded={endOfAnimation} hidden={diceSeries[diceThrow] !== 1} >
           <source src={vid1} type="video/mp4" />
-        </video><video ref={vidRef2} onEnded={() => alert("lost")} hidden={dice !== 2}>
+        </video><video ref={vidRef2} onEnded={endOfAnimation} hidden={diceSeries[diceThrow] !== 2}>
           <source src={vid2} type="video/mp4" />
-        </video><video ref={vidRef3} onEnded={() => alert("lost")} hidden={dice !== 3}>
+        </video><video ref={vidRef3} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 3}>
           <source src={vid3} type="video/mp4" />
-        </video><video ref={vidRef4} onEnded={() => alert("lost")} hidden={dice !== 4}>
+        </video><video ref={vidRef4} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 4}>
           <source src={vid4} type="video/mp4" />
-        </video><video ref={vidRef5} onEnded={() => alert("not won but you can try again.")} hidden={dice !== 5}>
+        </video><video ref={vidRef5} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 5}>
           <source src={vid5} type="video/mp4" />
-        </video><video ref={vidRef6} onEnded={() => showMessage(setOpen)} hidden={dice !== 6}>
+        </video><video ref={vidRef6} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 6}>
           <source src={vid6} type="video/mp4" />
         </video>
         <Button color="primary" variant="contained" onClick={handlePlayVideo}>Jeter les dés</Button>
@@ -150,5 +168,9 @@ export default function DiceGame(props) {
           </DialogActions>
         </Dialog>
       </Paper>
+    )
+  }
+  return (
+    <div>{diceSeries!= null && diceSeries.length != 0 ? <Game /> : "Loading..."}
     </div>);
 }
