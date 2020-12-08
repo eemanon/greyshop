@@ -66,9 +66,6 @@ export default function StudentLogin(props) {
             Nous vous rappelons que la participation à cette étude est limitée aux étudiants universitaires habitant à Toulouse.
             À cet effet, nous demandons votre numéro d'étudiant ci-dessous pour commencer l'étude <b>(votre carte d’étudiant sera demandée
             lors de la récupération de vos produits dans le magasin).</b>
-          </p>
-          <p>
-            ---
           </p><p>
             ** Votre numéro d'étudiant ne nous permet pas de vous identifier, mais de vérifier votre statut d'étudiant universitaire à Toulouse.**
           </p><p>

@@ -31,7 +31,15 @@ export default function SurveySection(props) {
   const classes = useStyles();
   const [answers, setAnswers] = useState([]);
   const [check, setCheck] = useState(false);
-  const questionIds = props.data.questions.map(question => question.id);
+  const questionIds = [];
+  //only add questions that are obligatory
+  props.data.questions.forEach(question => {
+    console.log("question")
+    console.log(question)
+    if(question.obligatory==="yes")
+      questionIds.push(question.id)
+  });
+  console.log(questionIds)
   const [unansweredQuestions, setUnansweredQuestions] = useState(questionIds)
   const setAnswer = (questionId, value) => {
     console.log("Question" + questionId + "received " + value)
@@ -80,7 +88,7 @@ export default function SurveySection(props) {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         {props.showTitle === "yes" ? titleElement() : ""}
-        <Typography variant="h6" gutterBottom>{props.data.Information}</Typography>
+        <Typography variant="h5" gutterBottom>{props.data.Information}</Typography>
         {props.data.questions.map(
           (item, i) => (
             <Question key={item.id} check={check} colored={unansweredQuestions.includes(item.id) ? "yes" : "no"} question={item} form={props.form} setAnswer={setAnswer}></Question>

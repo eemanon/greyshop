@@ -24,10 +24,13 @@ const useStyles = makeStyles((theme) => ({
     appbar: {
       width: '100%',
     },
+    button: {
+      margin:'auto',
+    },
     typo: {
       marginTop: "40px",
       padding: "10px",
-      display: "inline-block"
+      display: "block"
     },
     paper: {
       padding: theme.spacing(2),
@@ -59,9 +62,10 @@ export default function ProductCard(props) {
                 Prix: {props.priceInEuros} € <div className={classes.priceperUnit} >{props.pricePerUnit} €/kg</div>
                 </Typography>
                 <Button
-                    variant="contained"
+                    variant="outlined"
+                    className={classes.button}
                     onClick={() => props.add(props.item)}
-                    color="default"
+                    color="primary"
                     className={classes.button}
                     startIcon={<AddShoppingCartIcon/>}
                 >Ajouter au Panier </Button>

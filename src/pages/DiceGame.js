@@ -39,10 +39,12 @@ const useStyles = makeStyles((theme) => ({
 
 //open Victory Message
 function showMessage(setOpen) {
+  console.log('tt')
   setOpen(true)
 }
 
 export default function DiceGame(props) {
+  console.log("================ DICE GAME ===================")
   const classes = useStyles();
   const vidRef1 = useRef(null);
   const vidRef2 = useRef(null);
@@ -55,14 +57,17 @@ export default function DiceGame(props) {
 
   //interface tracker for dialog open
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [diceSeries, setDiceSeries] = useState([]);
   const [dateSet, setDateSet] = useState(false);
   const [diceThrow, setDiceThrow] = useState(0);
   const [mail, setMail] = useState("");
   const timestamp_finishExperience = Date.now()
-  const [diceSeries, setDiceSeries] = useState([]);
   console.log("experience finished at " + timestamp_finishExperience)
   useEffect(() => {
-    if (props.userID != null && diceSeries!=null && diceSeries.length == 0) {
+    console.log("diceseries")
+    console.log(diceSeries)
+    if (props.userID != null && diceSeries != null && diceSeries.length == 0) {
       console.log(props.userID);
       props.getDiceGame(props.userID, setDiceSeries);
     }
@@ -74,11 +79,15 @@ export default function DiceGame(props) {
         console.error("Error writing document: ", error);
       });
     }
-
-  }, [props, diceSeries, dateSet])
+  }, [props, dateSet])
 
   const handleClose = () => {
+    console.log("handleclose")
     setOpen(false);
+  };
+  const handleClose2 = () => {
+    console.log("handleclose2")
+    props.next();
   };
   const saveMail = () => {
     props.addContent(props.userID, { mail: mail }).then(function () {
@@ -87,11 +96,13 @@ export default function DiceGame(props) {
     }).catch(function (error) {
       console.error("Error writing document: ", error);
     });
-
+    props.next();
   }
   const handlePlayVideo = () => {
     //check if we still can play...
+    console.log("FUNCTION handleplayvideo")
     if (diceThrow < diceSeries.length) {
+      console.log("switch case")
       switch (diceSeries[diceThrow]) {
         case 6: vidRef6.current.play(); break;
         case 1: vidRef1.current.play(); break;
@@ -102,75 +113,118 @@ export default function DiceGame(props) {
         default: break;
       }
     }
-    else
+    else {
       alert("you cant play anymore")
+      props.next();
+    }
+
 
 
   }
 
   const endOfAnimation = () => {
-    console.log("thrown "+diceSeries[diceThrow])
+    console.log("thrown " + diceSeries[diceThrow])
     if (diceSeries[diceThrow] == 6)
       showMessage(setOpen);
-    else if (diceSeries[diceThrow] == 5)
-      alert('not won but can try again');
-    else
-      alert("you lost")
-    setDiceThrow(diceThrow + 1);
-  }
-  const Game = () => {
-    return (
-      <Paper className={classes.paper}>
-        <Typography variant="h3" component="h2" gutterBottom>
-          Jeu pour gagner son panier
-        </Typography>
-        <Typography variant="body1" gutterBottom >
-          Veuillez cliquer sur le bouton si vous voulez tenter le panier que vous venez de créer.
-        </Typography>
-        <br></br><video ref={vidRef1} onEnded={endOfAnimation} hidden={diceSeries[diceThrow] !== 1} >
-          <source src={vid1} type="video/mp4" />
-        </video><video ref={vidRef2} onEnded={endOfAnimation} hidden={diceSeries[diceThrow] !== 2}>
-          <source src={vid2} type="video/mp4" />
-        </video><video ref={vidRef3} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 3}>
-          <source src={vid3} type="video/mp4" />
-        </video><video ref={vidRef4} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 4}>
-          <source src={vid4} type="video/mp4" />
-        </video><video ref={vidRef5} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 5}>
-          <source src={vid5} type="video/mp4" />
-        </video><video ref={vidRef6} onEnded={endOfAnimation}  hidden={diceSeries[diceThrow] !== 6}>
-          <source src={vid6} type="video/mp4" />
-        </video>
-        <Button color="primary" variant="contained" onClick={handlePlayVideo}>Jeter les dés</Button>
-        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title">Félicitations! Vous avez gagné!</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Afin de pouvoir vous contacter pour vous fournir les informations nécessaires, veuillez entrer votre mél.
-          </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Adresse mél"
-              type="email"
-              fullWidth
-              onChange={(e) => setMail(e.target.value)}
-              value={mail}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-              Annuler
-          </Button>
-            <Button onClick={saveMail} color="primary">
-              Envoyer
-          </Button>
-          </DialogActions>
-        </Dialog>
-      </Paper>
-    )
+    else if (diceSeries[diceThrow] == 5) {
+      //alert('not won but can try again');
+      return
+    }
+
+    else {
+      setOpen2(true)
+    }
+
+    //setDiceThrow(diceThrow + 1);
   }
   return (
-    <div>{diceSeries!= null && diceSeries.length != 0 ? <Game /> : "Loading..."}
+    <div>{diceSeries != null && diceSeries.length != 0 ? <Paper className={classes.paper}>
+      <Typography variant="h3" component="h2" gutterBottom>
+        Jeu pour gagner son panier
+    </Typography>
+      <Typography variant="body1" gutterBottom ><p>
+        Veuillez cliquer sur le bouton pour lancer le dé digital et voir si vous avez gagné les produits sélectionnés.
+      </p>
+        <p>
+          Si le dé tombe sur le numéro 5, vous gagnez votre panier. <br></br>
+          Si le dé tombe sur le numéro 6, vous avez la possibilité de lancer le dé à nouveau.
+      </p>
+        <p>
+          Bonne chance !
+      </p>
+      </Typography>
+      <br></br> <div onClick={() => handlePlayVideo()}>
+        <video ref={vidRef1} onEnded={() => endOfAnimation()} hidden={diceSeries[diceThrow] !== 1} >
+          <source src={vid1} type="video/mp4" />
+        </video><video ref={vidRef2} onEnded={() => endOfAnimation()} hidden={diceSeries[diceThrow] !== 2}>
+          <source src={vid2} type="video/mp4" />
+        </video><video ref={vidRef3} onEnded={() => endOfAnimation()} hidden={diceSeries[diceThrow] !== 3}>
+          <source src={vid3} type="video/mp4" />
+        </video><video ref={vidRef4} onEnded={() => endOfAnimation()} hidden={diceSeries[diceThrow] !== 4}>
+          <source src={vid4} type="video/mp4" />
+        </video><video ref={vidRef5} onEnded={() => endOfAnimation()} hidden={diceSeries[diceThrow] !== 5}>
+          <source src={vid5} type="video/mp4" />
+        </video><video ref={vidRef6} onEnded={() => endOfAnimation()} hidden={diceSeries[diceThrow] !== 6}>
+          <source src={vid6} type="video/mp4" />
+        </video>
+      </div>
+
+      <Button color="primary" variant="contained" onClick={() => handlePlayVideo()}>Jeter les dés</Button>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">
+          Félicitations! Vous gagnez votre panier.
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Afin de vous contacter et vous transmettre les instructions, veuillez mettre votre adresse mail.<br></br>
+            Les produits sont à récupérer dans un magasin (Casino ou Intermarche) au centre-ville.<br></br>
+            Les détails pour récupérer votre panier seront transmis à votre mail électronique (Veuillez vérifier votre boîte de spam ou publicité, le mail sera envoyé dans un délai de 24h).
+      </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Mail électronique"
+            type="email"
+            fullWidth
+            onChange={(e) => setMail(e.target.value)}
+            value={mail}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => props.next()} color="primary">
+            Annuler
+      </Button>
+          <Button onClick={() => saveMail()} color="primary">
+            Envoyer
+      </Button>
+        </DialogActions>
+      </Dialog>
+      <Dialog
+        open={open2}
+        onClose={handleClose2}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Vous avez perdu.</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            <p>
+              Nous vous remercions encore pour votre participation et nous restons à votre disposition pour toute question.
+            </p>
+            <p>
+              Estefanya Vazquez et Aysegul Kanay<br></br>
+              estefanya.vazquez@etu.univ-tlse2.fr<br></br>
+              aysegul.kanay@univ-tlse2.fr
+            </p>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose2} color="primary">
+            Fermer
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Paper> : "Chargement..."}
     </div>);
 }

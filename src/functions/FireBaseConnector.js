@@ -130,6 +130,7 @@ const addAvailableDiceGames = (object, merge=true) => {
 
 const getDiceGame = (uid, setDiceSeries) => {
     //get id
+    console.log("FUNCTION getDiceGame")
     console.log('the user is '+uid)
     getUserContent(uid).then(function(userdata){
         console.log("userdata")
@@ -156,10 +157,11 @@ const getDiceGame = (uid, setDiceSeries) => {
 }
 
 const getUserContent = (uid) => {
+    console.log("FUNCTION getDiceGame")
     console.log("getting user content for "+uid)
-    let docRef = firestore.collection("data").doc(uid);
+    let docRef5 = firestore.collection("data").doc(uid);
 
-    return docRef.get().then(function (doc) {
+    return docRef5.get().then(function (doc) {
         if (doc.exists) {
             console.log("retrived user data is: ")
             console.log(doc.data())

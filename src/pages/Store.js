@@ -181,8 +181,11 @@ export default function Store(props) {
       </div>
       {showCategory()}
       <SideDrawer drawerwidth={drawerWidth} >
-        {props.variant.thermometer ? <ThermoCard label={props.variant.thermometerlabel}
-          value={basketWeight(basket) !== 0 ? carbonWeight(basket) / basketWeight(basket) : 0}></ThermoCard> : ""}
+        {props.variant.thermometer ? <ThermoCard 
+          label={props.variant.thermometerlabel}
+          value={basketWeight(basket) !== 0 ? carbonWeight(basket) / basketWeight(basket) : 0}
+          text={props.variant.text}
+          ></ThermoCard> : ""}
         <Divider />
         <Basket
           next={props.next}

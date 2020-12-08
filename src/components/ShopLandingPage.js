@@ -43,13 +43,13 @@ export default function ShopLandingPage(props) {
           <Paper className={classes.root}>
             <Typography variant="body1" gutterBottom className={classes.typo}>
               <p>
-                Certains produits sont disponibles en abondance et d’autres en quantité limitée. Pour chaque produit un indicateur numérique ainsi qu’un code couleur indiquant sa rareté dans le stock sont affichés. Plus le nombre est élevé plus le produit est rare.
+                Certains produits sont disponibles en abondance et d’autres en quantité limitée. Pour chaque produit un indicateur numérique ainsi qu’un code couleur indiquant sa rareté dans le stock sont affichés. <b>Plus le nombre est élevé plus le produit est rare.</b>
                       </p>
               <p>
                 En vue d’équilibrer les stocks, une taxe est appliquée lorsque le panier contient une trop grande proportion de produits rares.
                       </p>
               <p>
-                Les produits du magasin sont divisés en 5 catégories en fonction de leur disponibilité. Et une jauge vous permet de connaître la rareté moyenne des produits de votre panier et de voir si votre panier dépasse le seuil au-delà duquel la taxe est appliquée. Plus vous dépassez le seuil plus la taxe est élevée.
+                Les produits du magasin sont divisés en 5 catégories en fonction de leur disponibilité. Et une jauge vous permet de connaître la rareté moyenne des produits de votre panier et de voir <b>si votre panier dépasse le seuil au-delà duquel la taxe est appliquée.</b> Plus vous dépassez le seuil plus la taxe est élevée.
 
                       </p><p>
                 Vous pouvez dès maintenant parcourir les différents rayons à l'aide des onglets ci-dessus pour faire vos achats.

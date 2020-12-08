@@ -1,5 +1,5 @@
 //Component to display co2 footprint
-//props: value=value of the thermometer
+//props: value=value of the thermometer, text= conditional text to display below thermometer
 
 
 import React from 'react';
@@ -36,7 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
    display: "inline-block",
-   
+  },
+  indication: {
+     fontSize: "x-small"
   }
 }
 ));
@@ -89,6 +91,10 @@ export default function ThermoCard(props) {
             </table>   
             </div> 
           </div>
+          <div className={classes.indication}>
+          {props.text}
+          </div>
+          
         </Paper>
       </div>
     );

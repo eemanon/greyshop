@@ -2,7 +2,7 @@
 //props: next=next Page basket=basket remove=function to remove item from basket add=function to add item to basket  ht=sum without taxes 
 //showTax=boolean if tax is to be included taxe=value of the tax
 
-import React from 'react';
+import { useState } from 'react';
 
 //material ui imports
 import Divider from '@material-ui/core/Divider';
@@ -22,6 +22,12 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Tooltip from '@material-ui/core/Tooltip';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,10 +54,13 @@ function format2Digit(number) {
 }
 
 function checkOut(userID, next, basket, timeArrival, timeFinishInstructions, addContent, ht, taxe, showTax) {
+  console.log("FUNCTION checkOut")
+  if (!isValidBasket(ht, taxe, showTax))
+    return
   let timeCheckout = Date.now();
   //todo call function to send stuff.
   console.log(userID)
-  let newbasket = basket.map((item)=>({"id":item.id, "quantity":item.quantity}))
+  let newbasket = basket.map((item) => ({ "id": item.id, "quantity": item.quantity }))
   let object = { basket: newbasket, timeStartLandingPage: timeArrival, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht };
   if (showTax)
     object['tax'] = taxe;
@@ -64,20 +73,24 @@ function checkOut(userID, next, basket, timeArrival, timeFinishInstructions, add
   next();
 }
 
-function check(value, tax, taxAdded) {
+function isValidBasket(value, tax, taxAdded) {
   //check if basket value is between 20 and 25 €
   if (taxAdded) {
     if (value + tax < 20 || value + tax > 25)
-      return true;
+      return false;
   } else {
     if (value < 20 || value > 25)
-      return true;
+      return false;
   }
-  return false;
+  return true;
 }
 
 export default function Basket(props) {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
 
     <div className={classes.root}>
@@ -132,24 +145,47 @@ export default function Basket(props) {
       <Tooltip title="Le panier doit être entre 20 et 25 €">
         <Button
           variant="contained"
-          color={check(props.ht, props.taxe, props.showTax) ? "default" : "primary"}
+          color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "default"}
           size="small"
           className={classes.button}
-          onClick={() => checkOut(
-            props.userID, 
-            props.next, 
-            props.basket, 
-            props.timeArrival,
-            props.timeFinishInstructions,
-            props.addContent, 
-            props.ht, 
-            props.taxe, 
-            props.showTax)}
+          onClick={() => {isValidBasket(props.ht, props.taxe, props.showTax) ? setOpen(true):setOpen(false)}}
           startIcon={<ShoppingCartIcon />}
         >
           Checkout
       </Button>
       </Tooltip>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Checkout</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Etes-vous sûr de vouloir valider votre panier et quitter le magasin?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Non
+          </Button>
+          <Button
+            onClick={() => checkOut(
+              props.userID,
+              props.next,
+              props.basket,
+              props.timeArrival,
+              props.timeFinishInstructions,
+              props.addContent,
+              props.ht,
+              props.taxe,
+              props.showTax)}
+            color="primary" autoFocus>
+            Oui
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

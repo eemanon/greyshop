@@ -8,6 +8,7 @@ import history from './history';
 import StudentLogin from './pages/StudentLogin.js'
 import Terms from './pages/Terms.js'
 import Instructions from './pages/Instructions.js'
+import FinalPage from './pages/FinalPage.js'
 import Store from './pages/Store.js'
 import DiceGame from './pages/DiceGame.js'
 import SurveySection from './components/SurveySection.js'
@@ -17,7 +18,8 @@ import Products from './functions/DataLoader';
 import Co2questionids from './data/productIdsForQuestions.json';
 import regularQuestions from './data/questionnary.json';
 
-import { getDiceGame, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut} from './functions/FireBaseConnector.js'
+
+import { getDiceGame, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut } from './functions/FireBaseConnector.js'
 
 //debug only
 import Button from '@material-ui/core/Button';
@@ -42,7 +44,7 @@ function productIdsToQuestions(products, productIds, answers, title, id, informa
       if (found != null)
         product = found;
     });
-    let question = { "id": i, "Answer": answers, "Question": questionText, "image": product["Lien fichier"], "imageTitle": product["Descriptif Produit"] }
+    let question = { "id": i, "Answer": answers, "Question": questionText, "image": product["Lien fichier"], "imageTitle": product["Descriptif Produit"], obligatory: "yes" }
     result.questions.push(question);
     return true
   });
@@ -57,7 +59,8 @@ const variants = [
     labelpos: "front",
     tax: false,
     thermometer: false,
-    thermometerlabel: ""
+    thermometerlabel: "",
+    text:""
   },
   {
     number: "1",
@@ -66,7 +69,8 @@ const variants = [
     labelpos: "front",
     tax: true,
     thermometer: true,
-    thermometerlabel: "Rareté moyenne de votre panier"
+    thermometerlabel: "Rareté moyenne de votre panier",
+    text:""
   },
   {
     number: "2",
@@ -75,7 +79,8 @@ const variants = [
     labelpos: "behind",
     tax: false,
     thermometer: true,
-    thermometerlabel: "Empreinte carbone moyenne de votre panier"
+    thermometerlabel: "Empreinte carbone moyenne de votre panier",
+    text: "* Le seuil de 2.33 kg de CO2/kg de produits correspondant a une redution de 25% de l’empreinte carbone."
   },
   {
     number: "3",
@@ -84,7 +89,8 @@ const variants = [
     labelpos: "behind",
     tax: true,
     thermometer: true,
-    thermometerlabel: "Empreinte carbone moyenne de votre panier"
+    thermometerlabel: "Empreinte carbone moyenne de votre panier",
+    text: "* Le seuil de 2.33 kg de CO2/kg de produits correspondant a une redution de 25% de l’empreinte carbone."
   }
 ]
 
@@ -111,7 +117,7 @@ function App() {
   const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, carbonInfo, "yes", "Évaluer l'empreinte carbone de ce produit.");
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} progress={progressState} total={17}><Button variant="contained" onClick={() => setVariant((variant + 1) % 4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
+      <HeaderBar titletext={headerBarTitle} progress={progressState} total={18}><Button variant="contained" onClick={() => setVariant((variant + 1) % 4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
       <Router history={history}>
         <Route exact path='/'>
           <StudentLogin
@@ -174,22 +180,29 @@ function App() {
             addContent={addContent}
             userID={userID}
             getDiceGame={getDiceGame}
+            next={() => { history.push("/end"); setHeaderBarTitle("Experience terminée") }}
           >
           </DiceGame>
         </Route>
         <Route path='/datastore'
-          render={() => { setHeaderBarTitle("DataStore"); return (<DataStore
-            getNumDiceGames = {getNumDiceGames}
-            addAvailableDiceGames = {addAvailableDiceGames}
-            userSignOut = {userSignOut}
-            userSignInWithMail = {userSignInWithMail}
-            useConnectedUser = {useConnectedUser}
-            useAllData = {useAllData}
-            questions = {regularQuestions}
-            products = {products}
-          >
-          </DataStore>) }}
+          render={() => {
+            setHeaderBarTitle("DataStore"); return (<DataStore
+              getNumDiceGames={getNumDiceGames}
+              addAvailableDiceGames={addAvailableDiceGames}
+              userSignOut={userSignOut}
+              userSignInWithMail={userSignInWithMail}
+              useConnectedUser={useConnectedUser}
+              useAllData={useAllData}
+              questions={regularQuestions}
+              products={products}
+            >
+            </DataStore>)
+          }}
         >
+        </Route>
+        <Route path='/end'>
+          <FinalPage >
+          </FinalPage>
         </Route>
       </Router>
     </div>
