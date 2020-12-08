@@ -31,13 +31,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Question(props) {
+  console.log("COMPONENT Question")
+  console.log(props)
+  const val = props.value(props.question.id);
   const classes = useStyles();
   const textInput = () => {
     return (<TextField id="standard-basic" label={props.question.Question} onChange={handleChange} />)
   }
-  const [value, setValue] = React.useState("");
   const answercomponent = () => {
-    return (<RadioGroup column={(props.form == "list")?1:0} row={(props.form != "list")?1:0} aria-label="position" name="position" value={value} onChange={handleChange}>
+    return (<RadioGroup column={(props.form == "list")?1:0} row={(props.form != "list")?1:0} aria-label="position" name="position" value={val} onChange={handleChange}>
       {props.question.Answer.map((item, i) => (
         <FormControlLabel
           key={item.id}
@@ -48,11 +50,13 @@ export default function Question(props) {
         />
       ))
       }
-    </RadioGroup>)
+    </RadioGroup>);
   }
   const handleChange = (event) => {
+    console.log("FUNCTION handlechange (Question)")
+    console.log("value: "+event.target.value)
     props.setAnswer(props.question.id, event.target.value)
-    setValue(event.target.value);
+    
   };
 
   return (

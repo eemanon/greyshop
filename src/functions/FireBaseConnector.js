@@ -108,6 +108,7 @@ const addUser = (studentID, uid) => {
     })
 }
 const addContent = (uid, object, merge=true) => {
+    console.log('FUNCTION addContent (FireBaseConnector)')
     return firestore.collection("data").doc(uid).set(object, { merge: merge });
 }
 
@@ -157,7 +158,7 @@ const getDiceGame = (uid, setDiceSeries) => {
 }
 
 const getUserContent = (uid) => {
-    console.log("FUNCTION getDiceGame")
+    console.log("FUNCTION getUserContent")
     console.log("getting user content for "+uid)
     let docRef5 = firestore.collection("data").doc(uid);
 

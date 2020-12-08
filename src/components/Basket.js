@@ -54,19 +54,19 @@ function format2Digit(number) {
 }
 
 function checkOut(userID, next, basket, timeArrival, timeFinishInstructions, addContent, ht, taxe, showTax) {
-  console.log("FUNCTION checkOut")
+  console.log("FUNCTION checkOut (Basket)")
   if (!isValidBasket(ht, taxe, showTax))
     return
   let timeCheckout = Date.now();
   //todo call function to send stuff.
-  console.log(userID)
+  //console.log(userID)
   let newbasket = basket.map((item) => ({ "id": item.id, "quantity": item.quantity }))
   let object = { basket: newbasket, timeStartLandingPage: timeArrival, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht };
   if (showTax)
     object['tax'] = taxe;
-  console.log(object)
+  //console.log(object)
   addContent(userID, object).then(function () {
-    console.log("Basket successfully written!");
+    console.log("Basket successfully written! (Basket)");
   }).catch(function (error) {
     console.error("Error writing basket: ", error);
   });
@@ -148,7 +148,7 @@ export default function Basket(props) {
           color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "default"}
           size="small"
           className={classes.button}
-          onClick={() => {isValidBasket(props.ht, props.taxe, props.showTax) ? setOpen(true):setOpen(false)}}
+          onClick={() => { isValidBasket(props.ht, props.taxe, props.showTax) ? setOpen(true) : setOpen(false) }}
           startIcon={<ShoppingCartIcon />}
         >
           Checkout

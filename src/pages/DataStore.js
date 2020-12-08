@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 function objectToCsv(obj, products, questions) {
   let setAll = (obj, val) => Object.keys(obj).forEach(k => obj[k] = val);
-  let header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish"];
+  let header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish", "mail"];
   //add product header & create prototype object to use for transformation
   let basketObject = {};
   for (const category of products) {
@@ -63,7 +63,7 @@ function objectToCsv(obj, products, questions) {
     //clean rowobjects
     setAll(questionObject, -1);
     setAll(basketObject, 0);
-    let basics = { "id": -1, "variant": -1, "agreedToTerms": "null", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeFinishLandingPage": 0, "timeCheckout": 0, "timeFinish": 0 }
+    let basics = { "id": -1, "variant": -1, "agreedToTerms": "null", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeFinishLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail":"" }
     //map basics 
     for (const [key, value] of Object.entries(basics)){
       basics[key] = objOriginal[key];
@@ -152,7 +152,7 @@ function DataView(props) {
   let header = [];
   let arr = [];
   if (returndata != null) {
-    header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
+    header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish","mail", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
     arr = objectToTable(returndata, header);
     console.log(objectToCsv(returndata, props.products, props.questions));
   }

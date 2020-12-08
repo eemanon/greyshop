@@ -34,6 +34,7 @@ function productIdsToQuestions(products, productIds, answers, title, id, informa
     "Information": information,
     "id": id,
     "showTitle": showTitle,
+    "displaySingleQuestions": true,
     "questions": []
   };
   productIds.map((id, i) => {
@@ -99,14 +100,20 @@ function App() {
   const [userID, setUserID] = useState(null);
   const [winnerID, setWinnerID] = useState(-1);
   useEffect(() => {
-    userSignInAnonymously().then((user) => {
-      console.log(user)
-      if (user) {
-        setUserID(user.user.uid);
-      } else {
-        alert("Erreur d'authentification. Veuillez revenir ultérieurement.")
-      }
-    });
+    console.log("FUNCTION useEffect (App)")
+    //only get this if we dont have the user already
+    if(userID==null){
+      //check if we already know the visitor
+      userSignInAnonymously().then((user) => {
+        console.log("FUNCTION userSignInAnonymously (App)")
+        if (user) {
+          setUserID(user.user.uid);
+        } else {
+          alert("Erreur d'authentification. Veuillez revenir ultérieurement.")
+        }
+      });
+    }
+
   })
 
   const [progressState, setProgress] = useState(1);

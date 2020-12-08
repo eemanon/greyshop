@@ -59,7 +59,7 @@ export default function DiceGame(props) {
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [diceSeries, setDiceSeries] = useState([]);
-  const [dateSet, setDateSet] = useState(false);
+  const [initialDataRequestsDone, setInitialDataRequestsDone] = useState(false);
   const [diceThrow, setDiceThrow] = useState(0);
   const [mail, setMail] = useState("");
   const timestamp_finishExperience = Date.now()
@@ -67,19 +67,22 @@ export default function DiceGame(props) {
   useEffect(() => {
     console.log("diceseries")
     console.log(diceSeries)
-    if (props.userID != null && diceSeries != null && diceSeries.length == 0) {
-      console.log(props.userID);
-      props.getDiceGame(props.userID, setDiceSeries);
-    }
-    if (props.userID && !dateSet) {
+    //set date and get dicegame at the same time to avoid race conditions
+    if (!initialDataRequestsDone) {
+      //get dice data
+      console.log("FUNCTION useEffect (DiceGame)")
+      if (props.userID != null && diceSeries != null && diceSeries.length == 0) {
+        console.log(props.userID);
+        props.getDiceGame(props.userID, setDiceSeries);
+      }
       props.addContent(props.userID, { timeFinish: Date.now() }).then(function () {
         console.log("finish date saved");
-        setDateSet(true)
       }).catch(function (error) {
         console.error("Error writing document: ", error);
       });
+      setInitialDataRequestsDone(true)
     }
-  }, [props, dateSet])
+  }, [props, initialDataRequestsDone])
 
   const handleClose = () => {
     console.log("handleclose")

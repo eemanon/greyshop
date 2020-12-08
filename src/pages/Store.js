@@ -124,9 +124,9 @@ export default function Store(props) {
       setBasket(basket => {
         const newBasket = basket.map(produc => {
           if (produc.id === item.id) {
-            console.log("before: " + produc.quantity)
+            //console.log("before: " + produc.quantity)
             produc.quantity = produc.quantity - 1;
-            console.log("after: " + produc.quantity)
+            //console.log("after: " + produc.quantity)
           }
           return produc
         });
