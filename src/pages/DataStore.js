@@ -14,6 +14,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,33 +64,34 @@ function objectToCsv(obj, products, questions) {
     //clean rowobjects
     setAll(questionObject, -1);
     setAll(basketObject, 0);
-    let basics = { "id": -1, "variant": -1, "agreedToTerms": "null", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeFinishLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail":"" }
+    let basics = { "id": -1, "variant": -1, "agreedToTerms": "null", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeFinishLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail": "" }
     //map basics 
-    for (const [key, value] of Object.entries(basics)){
+    for (const [key, value] of Object.entries(basics)) {
       basics[key] = objOriginal[key];
     }
     //map products
-    objOriginal.basket.forEach((item, index) => {
-      basketObject["prod"+item.id] = item.quantity;
-    })
+    if (objOriginal.basket != null)
+      objOriginal.basket.forEach((item, index) => {
+        basketObject["prod" + item.id] = item.quantity;
+      })
     //map questions
     //get all sections:
     let questions = Object.keys(objOriginal).filter((item) => item.startsWith("section"))
     console.log(questions);
     questions.forEach((section) => {
-      objOriginal[section].forEach((question)=>{
+      objOriginal[section].forEach((question) => {
         //console.log('section id is '+section)
         //console.log('question id is '+question.id)
-        questionObject[section+"question"+question.id]=question.answer;
+        questionObject[section + "question" + question.id] = question.answer;
       })
     })
     //join objects
-    let merged = {...basics, ...basketObject, ...questionObject};
+    let merged = { ...basics, ...basketObject, ...questionObject };
     console.log("merged:")
     console.log(merged)
     //create row with header:
     header.forEach(head => {
-      row = row + merged[head]+ ","
+      row = row + merged[head] + ","
     })
     row = row.slice(0, -1);
     row = row + '\n';
@@ -145,28 +147,54 @@ function uploadDiceGames(numberOfGames, addAvailableDiceGames) {
   });
 }
 
+function productFindById(id, products) {
+  let res = null;
+  products.forEach((cat, index) => {
+    cat.products.forEach((product) => {
+      if (product.id.toString() == id.toString())
+        res = product;
+    });
+  })
+  return res;
+}
+
 function DataView(props) {
   const classes = useStyles();
   const fileDownload = require('js-file-download');
   const [returndata] = props.useAllData("idField", "data");
+  const downloadBasket = (id) => {
+    console.log("download " + id)
+    const basket = returndata.find(data => data.id == id)
+    if (basket == null)
+      return
+    console.log(basket.basket)
+    let csv = "quantity, description\n";
+    console.log(props.products)
+    basket.basket.forEach((item, index) => {
+      let description = productFindById(item.id, props.products)["Descriptif Produit"];
+      let row = item.quantity + ";" + description + "\n"
+      csv = csv + row;
+    })
+    fileDownload(csv, "basket" + id + ".txt")
+
+  }
   let header = [];
   let arr = [];
   if (returndata != null) {
-    header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish","mail", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
+    header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish", "mail", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
     arr = objectToTable(returndata, header);
-    console.log(objectToCsv(returndata, props.products, props.questions));
   }
-
+  console.log(arr)
   return (<div className={classes.dataview}>
 
     <Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
     <Table>
       <TableBody>
-        <TableRow>{returndata != null && header.map((key) => (
+        <TableRow><TableCell></TableCell>{returndata != null && header.map((key) => (
           <TableCell key={key}>{key}</TableCell>
         ))}</TableRow>
         {returndata != null && arr.map((item, id) => (
-          <TableRow>
+          <TableRow><TableCell><Button variant="contained" id={item[0]} onClick={() => downloadBasket(item[0])}><ShoppingCartIcon /></Button></TableCell>
             {item.map((cell) => (
               <TableCell>{cell ? cell.length > 20 ? cell.substring(0, 30) + "..." : cell : ""}</TableCell>
             ))}

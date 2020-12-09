@@ -1,7 +1,7 @@
 //Component to display a section of a survey
 //props: data=Question object in json format, form="list"/"column" how to display question answers, next=next page
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -36,11 +36,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SurveySection(props) {
   console.log("COMPONENT SurveySection")
+  const [initialRender, setInitialRender] = useState(true);
   //console.log(props.data.displaySingleQuestions)
   const classes = useStyles();
   const [answers, setAnswers] = useState([]);
   const [check, setCheck] = useState(false);
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
   const questionIds = [];
   //only add questions that are obligatory
   props.data.questions.forEach(question => {
@@ -48,7 +49,6 @@ export default function SurveySection(props) {
       questionIds.push(question.id)
   });
   const [unansweredQuestions, setUnansweredQuestions] = useState(questionIds)
-
   const setAnswer = (questionId, value) => {
     console.log("FUNCTION setAnswer (SurveySection)")
     console.log("Question " + questionId + " received " + value)
@@ -110,7 +110,8 @@ export default function SurveySection(props) {
     const handleBack = () => {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
-    console.log(props.data.questions[activeStep].id)
+    console.log("current answer selected: ")
+    console.log(getAnswer(props.data.questions[activeStep].id))
     return (<div>
       <Question
         key={activeStep}
@@ -126,18 +127,25 @@ export default function SurveySection(props) {
         activeStep={activeStep}
         className={classes.stepper}
         nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === props.data.questions.length-1}>
+          <Button size="small" color="primary" variant="contained" onClick={handleNext} disabled={activeStep === props.data.questions.length - 1 || getAnswer(props.data.questions[activeStep].id) === ""}>
             Next
           <KeyboardArrowRight />
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button size="small" color="primary" variant="contained" onClick={handleBack} disabled={activeStep === 0}>
             <KeyboardArrowLeft />
           Back
         </Button>
         } /></div>)
   }
+  useEffect(() => {
+    if (initialRender) {
+      console.log("scrolling")
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setInitialRender(false)
+    }
+  }, [])
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
@@ -156,6 +164,6 @@ export default function SurveySection(props) {
             ></Question>
           ))}
       </Paper>
-      <Button color="primary" variant="contained" onClick={() => { checkFilled() }}>Envoyer mes réponses</Button>
+      <Button color={unansweredQuestions.length == 0 ? "primary" : "default"} variant="contained" onClick={() => { checkFilled() }}>Envoyer mes réponses</Button>
     </div>);
 }

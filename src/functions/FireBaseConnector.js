@@ -81,21 +81,20 @@ const getNumDiceGames = () => {
 }
 
 const incrementCounter = () => {
-    firestore.collection("properties").doc("count").update({"total": firebase.firestore.FieldValue.increment(1)})    
+    firestore.collection("properties").doc("count").update({ "total": firebase.firestore.FieldValue.increment(1) })
 }
 const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants) => {
     //doc refs:
     let docCounter = firestore.collection("properties").doc("count");
     let docData = firestore.collection("data").doc(uid);
     //read counter
-    return firestore.runTransaction(function(transaction){
-        return transaction.get(docCounter).then(function(sfDoc) {
-
+    return firestore.runTransaction(function (transaction) {
+        return transaction.get(docCounter).then(function (sfDoc) {
             let newCounter = sfDoc.data().total + 1;
             let variant = calcVariant(newCounter, numVariants)
             transaction.update(docCounter, { total: newCounter });
             transaction.set(docData, { variant: variant, timeStart: timestamp, uid: uid, id: newCounter });
-            return [variant, newCounter];    
+            return [variant, newCounter];
         });
     })
 }
@@ -107,73 +106,38 @@ const addUser = (studentID, uid) => {
         uid: uid
     })
 }
-const addContent = (uid, object, merge=true) => {
+const addContent = (uid, object, merge = true) => {
     console.log('FUNCTION addContent (FireBaseConnector)')
     return firestore.collection("data").doc(uid).set(object, { merge: merge });
 }
 
-const addAvailableDiceGames = (object, merge=true) => {
+const addAvailableDiceGames = (object, merge = true) => {
     console.log("now writing")
     let gameCounter = firestore.collection("properties").doc("dicegames");
     let gameData = firestore.collection("dicegames").doc("runs");
     //read counter
-    return firestore.runTransaction(function(transaction){
-        return transaction.get(gameCounter).then(function(sfDoc) {
+    return firestore.runTransaction(function (transaction) {
+        return transaction.get(gameCounter).then(function (sfDoc) {
             console.log(sfDoc.data().total)
             let newCounter = sfDoc.data().total + Object.keys(object).length;
-            console.log('new counter: '+newCounter)
+            console.log('new counter: ' + newCounter)
             transaction.update(gameCounter, { total: newCounter });
             transaction.set(gameData, object, { merge: merge });
-            return newCounter;    
+            return newCounter;
         });
     })
 }
-
-const getDiceGame = (uid, setDiceSeries) => {
+const getDiceGames = () => {
     //get id
-    console.log("FUNCTION getDiceGame")
-    console.log('the user is '+uid)
-    getUserContent(uid).then(function(userdata){
-        console.log("userdata")
-        console.log(userdata.data())
-        //get dice game
-        let docRef = firestore.collection("dicegames").doc("runs");
-        return docRef.get().then(function (doc) {
-            if (doc.exists) {
-                console.log(doc.data())
-                setDiceSeries(doc.data()[userdata.data().id])
-                console.log("user id is "+userdata.data().id)
-                console.log((doc.data()[userdata.data().id]))
-                return doc.data()[userdata.data().id]
-            } else {
-                console.log("dicegames does not exist")
-                return "dicegames does not exist"
-            }
-        }).catch(function (error) {
-            console.log("db connection error", error);
-        });    
-        
-    })
-    
+    let docRef = firestore.collection("dicegames").doc("runs");
+    return docRef.get()    
 }
 
 const getUserContent = (uid) => {
     console.log("FUNCTION getUserContent")
-    console.log("getting user content for "+uid)
+    console.log("getting user content for " + uid)
     let docRef5 = firestore.collection("data").doc(uid);
-
-    return docRef5.get().then(function (doc) {
-        if (doc.exists) {
-            console.log("retrived user data is: ")
-            console.log(doc.data())
-            return doc
-        } else {
-            console.log("user doesnt exist")
-            return "user doesnt exist"
-        }
-    }).catch(function (error) {
-        console.log("db connection error", error);
-    });    
+    return docRef5.get()
 }
 
-export { getDiceGame, addAvailableDiceGames, getNumDiceGames, addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };
+export { getDiceGames, getUserContent, addAvailableDiceGames, getNumDiceGames, addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };

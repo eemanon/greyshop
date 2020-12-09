@@ -58,31 +58,60 @@ export default function DiceGame(props) {
   //interface tracker for dialog open
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [realID, setRealID] = useState(props.realID);
   const [diceSeries, setDiceSeries] = useState([]);
   const [initialDataRequestsDone, setInitialDataRequestsDone] = useState(false);
   const [diceThrow, setDiceThrow] = useState(0);
   const [mail, setMail] = useState("");
-  const timestamp_finishExperience = Date.now()
-  console.log("experience finished at " + timestamp_finishExperience)
+
   useEffect(() => {
-    console.log("diceseries")
-    console.log(diceSeries)
+    console.log("FUNCTION useEffect (DiceGame)")
     //set date and get dicegame at the same time to avoid race conditions
-    if (!initialDataRequestsDone) {
-      //get dice data
-      console.log("FUNCTION useEffect (DiceGame)")
-      if (props.userID != null && diceSeries != null && diceSeries.length == 0) {
-        console.log(props.userID);
-        props.getDiceGame(props.userID, setDiceSeries);
-      }
+
+    //is id set?
+    console.log("uid is " + props.userID)
+    console.log("real id is " + realID)
+    //if not, get it
+    if (realID == -1 && props.userID !== null) {
+      //get id
+      console.log('getting real ID')
+      props.getUserContent(props.userID).then(function (doc) {
+        if (doc.exists) {
+          console.log("retrived user data is: ")
+          console.log(doc.data())
+          setRealID(doc.data().id)
+          return
+        } else
+          console.log("user doesnt exist")
+      }).catch(function (error) {
+        console.log("db connection error", error);
+      });
+    }
+    if (realID !== -1 && diceSeries != null && diceSeries.length == 0) {
+      //get dice games 
+      console.log("getting dice games")
+      props.getDiceGames().then(function (doc) {
+        if (doc.exists) {
+          console.log("now filling diceseries...")
+          console.log(doc.data()[realID])
+          setDiceSeries(doc.data()[realID])
+        } else {
+          console.log("dicegames does not exist")
+        }
+      }).catch(function (error) {
+        console.log("db connection error", error);
+      });
+    }
+    if (!initialDataRequestsDone && props.userID !== null) {
+      setInitialDataRequestsDone(true)
       props.addContent(props.userID, { timeFinish: Date.now() }).then(function () {
-        console.log("finish date saved");
+        console.log("finish date saved")
       }).catch(function (error) {
         console.error("Error writing document: ", error);
       });
-      setInitialDataRequestsDone(true)
     }
-  }, [props, initialDataRequestsDone])
+
+  },[realID, diceSeries, props.userID])
 
   const handleClose = () => {
     console.log("handleclose")
@@ -141,7 +170,7 @@ export default function DiceGame(props) {
     //setDiceThrow(diceThrow + 1);
   }
   return (
-    <div>{diceSeries != null && diceSeries.length != 0 ? <Paper className={classes.paper}>
+    <div>{diceSeries != null && diceSeries.length > 0 ? <Paper className={classes.paper}>
       <Typography variant="h3" component="h2" gutterBottom>
         Jeu pour gagner son panier
     </Typography>

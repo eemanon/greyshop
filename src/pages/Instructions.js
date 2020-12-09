@@ -81,7 +81,7 @@ export default function Instructions(props) {
 Étudiante en Master 2 PEPSCO<br></br>
 Ayşegül Kanay (aysegul.kanay@univ-tlse2.fr) <br></br>
 Doctorante en CLLE-LTC <br></br>
-Sous la direction de Denis Hilton<br></br>
+Sous la direction de Denis Hilton et Stefan Ambec<br></br>
 
         </Typography>
 

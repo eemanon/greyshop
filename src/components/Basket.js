@@ -5,7 +5,6 @@
 import { useState } from 'react';
 
 //material ui imports
-import Divider from '@material-ui/core/Divider';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -44,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
 
   },
   button: {
-
+    marginTop: "10px",
+    marginBottom: "10px"
   }
 }));
 
@@ -58,6 +58,9 @@ function checkOut(userID, next, basket, timeArrival, timeFinishInstructions, add
   if (!isValidBasket(ht, taxe, showTax))
     return
   let timeCheckout = Date.now();
+  console.log("Arrived at "+ new Date(timeArrival).toLocaleTimeString("fr-FR"))
+  console.log("Landing Page finished at "+ new Date(timeFinishInstructions).toLocaleTimeString("fr-FR"))
+  console.log("Checkout at "+ new Date(timeCheckout).toLocaleTimeString("fr-FR"))
   //todo call function to send stuff.
   //console.log(userID)
   let newbasket = basket.map((item) => ({ "id": item.id, "quantity": item.quantity }))
@@ -92,7 +95,6 @@ export default function Basket(props) {
     setOpen(false);
   };
   return (
-
     <div className={classes.root}>
       <Typography variant="h6">
         Votre Panier
@@ -123,7 +125,18 @@ export default function Basket(props) {
           </TableBody>
         </Table>
       </TableContainer>
-      <Divider />
+      <Tooltip title="Le panier doit être entre 20 et 25 €">
+        <Button
+          variant="contained"
+          color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "default"}
+          size="small"
+          className={classes.button}
+          onClick={() => { isValidBasket(props.ht, props.taxe, props.showTax) ? setOpen(true) : setOpen(false) }}
+          startIcon={<ShoppingCartIcon />}
+        >
+          Checkout
+      </Button>
+      </Tooltip>
       <List className={classes.list}>
         <ListSubheader component="div" id="nested-list-subheader">
           {props.basket.length === 0 ? "Votre panier est vide" : "Produits selectionnées"}
@@ -142,18 +155,6 @@ export default function Basket(props) {
           );
         })}
       </List>
-      <Tooltip title="Le panier doit être entre 20 et 25 €">
-        <Button
-          variant="contained"
-          color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "default"}
-          size="small"
-          className={classes.button}
-          onClick={() => { isValidBasket(props.ht, props.taxe, props.showTax) ? setOpen(true) : setOpen(false) }}
-          startIcon={<ShoppingCartIcon />}
-        >
-          Checkout
-      </Button>
-      </Tooltip>
       <Dialog
         open={open}
         onClose={handleClose}

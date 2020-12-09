@@ -28,7 +28,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HeaderBar(props) {
   const classes = useStyles();
-
+  const Progress = () => {
+    return(
+      <Typography variant="h6">
+      {props.progress}/{props.total}
+    </Typography>
+    )
+  }
   return (
     <div className={classes.root}>
       <AppBar position="relative" className={classes.bar}>
@@ -37,9 +43,7 @@ export default function HeaderBar(props) {
             {props.titletext}
           </Typography>
           {props.children}
-          <Typography variant="h6">
-            {props.progress}/{props.total}
-          </Typography>
+          {props.showProgress?<Progress/>:""}
         </Toolbar>
       </AppBar>
     </div>

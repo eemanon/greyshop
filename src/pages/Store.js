@@ -3,13 +3,15 @@
 // products=a json object containing the categories containing the products to display} 
 // next=next page
 
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 //material ui
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Chip from '@material-ui/core/Chip';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 //component imports
 import SideDrawer from '../components/SideDrawer.js'
@@ -63,6 +65,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+function Alert(props) {
+  //displays an alert message in material ui style
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 function sumHT(basket) {
   //calc the sum without tax based on the basket object
   let sumHT = 0.0;
@@ -91,17 +98,28 @@ function basketWeight(basket) {
   return basketWeightkg;
 }
 
-
-
 export default function Store(props) {
-  const [notSeenInstructions, setNotSeenInstructions] = React.useState(true);
-  let timestamp_start_instructions = Date.now();
-  const [timestampLeavePageLeave, setTimeStampLeave] = React.useState(null)
+  console.log("COMPONENT Store")
   const classes = useStyles();
+
+  const [notSeenInstructions, setNotSeenInstructions] = useState(true);
+  const [timestamp_start_instructions, setTimeStampStartInstructions] = useState(null);
+  const [timestampLeavePageLeave, setTimeStampLeave] = useState(null)
   const items = props.products;
-  const [basket, setBasket] = React.useState([]);
-  const [categoryIndex, setValue] = React.useState(-1);
+  const [basket, setBasket] = useState([]);
+  const [categoryIndex, setValue] = useState(-1);
+  //state of error message
+  const [open, setOpen] = useState(false);
   const addToBasket = (item) => {
+    //check if the added item will get the basket over the limit.If so, dont add it.
+    let futureValue = sumHT(basket) + item["Prix initial"];
+    if (props.variant.tax)
+      futureValue = futureValue + carbonWeight(basket) + item.Grammes / 100 * item["Empreinte CO2 (g par 100 g)"] > 14.22 ? (carbonWeight(basket) + item.Grammes / 100 * item["Empreinte CO2 (g par 100 g)"] - 14.22) * 0.25 : 0;
+    if (futureValue > 25.00) {
+      //trigger error message and block
+      setOpen(true);
+      return
+    }
     const found = basket.find(product => product.id === item.id)
     if (found == null) {
       item.quantity = 1;
@@ -119,6 +137,10 @@ export default function Store(props) {
       });
     }
   }
+  useEffect(() => {
+    if (timestamp_start_instructions == null)
+      setTimeStampStartInstructions(Date.now());
+  })
   const removeFromBasket = (item) => {
     if (item.quantity > 1) {
       setBasket(basket => {
@@ -171,6 +193,13 @@ export default function Store(props) {
   const changeCategory = (newValue) => {
     setValue(newValue);
   };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  }
   return (
     <div className={classes.root}>
       <div className={classes.toolbar}>
@@ -181,11 +210,11 @@ export default function Store(props) {
       </div>
       {showCategory()}
       <SideDrawer drawerwidth={drawerWidth} >
-        {props.variant.thermometer ? <ThermoCard 
+        {props.variant.thermometer ? <ThermoCard
           label={props.variant.thermometerlabel}
           value={basketWeight(basket) !== 0 ? carbonWeight(basket) / basketWeight(basket) : 0}
           text={props.variant.text}
-          ></ThermoCard> : ""}
+        ></ThermoCard> : ""}
         <Divider />
         <Basket
           next={props.next}
@@ -201,6 +230,11 @@ export default function Store(props) {
           addContent={props.addContent}>
         </Basket>
       </SideDrawer>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          "Dépassement du budget: Il n’est pas possible de rajouter ce produit à votre panier car vous dépasseriez le budget alloué"
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

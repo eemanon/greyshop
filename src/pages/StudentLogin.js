@@ -95,6 +95,7 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
   console.log("experience started at " + timestampStart)
   console.log("time now " + Date.now())
   if (!regex.test(studentValue)) {
+    setErrorMessage("Veuillez entrer un numéro d'étudiant valide.")
     setOpen(true)
     return
   }
