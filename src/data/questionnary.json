@@ -10,168 +10,180 @@
             {
                 "Question": "Un couple marié devrait pouvoir avoir autant d’enfants qu’il le souhaite, du moment qu’il peut subvenir correctement à leurs besoins.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
                 "obligatory": "yes",
-                "id": 1
+                "id": 1,
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"]
             },
             {
                 "Question": "Protéger l’environnement est plus important que protéger l’emploi des gens.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
                 "obligatory": "yes",
-                "id": 2
+                "id": 2,
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"]
             },
             {
                 "Question": "Nous devons garder les lacs et les rivières propres pour protéger l’environnement, \r\net non pour permettre aux gens de profiter des sports nautiques.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 3
             },
             {
                 "Question": "La science moderne résoudra nos problèmes environnementaux.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 4
             },
             {
                 "Question": "Les êtres humains exploitent trop l’environnement.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 5
             },
             {
                 "Question": "Je préfère un jardin sauvage et naturel à un jardin soigné et bien ordonné.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 6
             },
             {
                 "Question": "L’être humain a été créé ou a évolué pour dominer le reste de la nature.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 7
             },
             {
                 "Question": "Je suis opposé à l’idée du contrôle et de la régulation de l’utilisation des matières premières par les gouvernements dans le but de les faire durer plus longtemps.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 8
             },
             {
                 "Question": "Ça me rend triste de voir les forêts détruites pour l’agriculture.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 9
             },
             {
                 "Question": "Je trouve que passer du temps dans la nature est ennuyeux.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 10
             },
             {
                 "Question": "J’aimerais rejoindre et participer activement à un groupe écologiste.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 11
             },
             {
                 "Question": "Je ne suis pas le genre de personne qui fait des efforts pour économiser les ressources naturelles.",
                 "Answer": [
-                    "Tout à fait d'accord",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Pas du tout d'accord"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout d'accord", "Tout à fait d'accord"],
                 "obligatory": "yes",
                 "id": 12
             }
@@ -188,112 +200,120 @@
             {
                 "Question": "Qualité",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 1
             },
             {
                 "Question": "Prix",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 2
             },
             {
                 "Question": "Rapport qualité/prix",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 3
             },
             {
                 "Question": "Nombre de calories",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 4
             },
             {
                 "Question": "Valeurs nutritionnelles",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 5
             },
             {
                 "Question": "Mode de production",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 6
             },
             {
                 "Question": "Impact environnemental",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 7
             },
             {
                 "Question": "Lieu de production",
                 "Answer": [
-                    "Pas du tout important",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Extrêmement important"
+                    "7"
                 ],
+                "extremeLabels": ["Pas du tout important", "Extrêmement important"],
                 "obligatory": "yes",
                 "id": 8
             }
@@ -310,126 +330,135 @@
             {
                 "Question": "Hypermarchés (Auchan, Carrefour, Leclerc…)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 1
             },
             {
                 "Question": "Supermarchés (Carrefour Market, Casino, Super U…)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 2
             },
             {
                 "Question": "Superettes (8 à huit, Monoprix, Petit casino)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 3
             },
             {
                 "Question": "Hard discounts (Aldi, Lidl, Leader price…)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 4
             },
             {
                 "Question": "Petits commerces (Epiceries,boucheries,boulangeries…)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 5
             },
             {
                 "Question": "Magasins bio",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 6
             },
             {
                 "Question": "AMAP (Association pour le Maintien d'une Agriculture Paysanne)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 7
             },
             {
                 "Question": "Directement chez le(s) producteur(s)",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 8
             },
             {
                 "Question": "Sur les marchés",
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 9
             }
@@ -445,14 +474,15 @@
         "questions": [
             {
                 "Answer": [
-                    "Jamais",
+                    "1",
                     "2",
                     "3",
                     "4",
                     "5",
                     "6",
-                    "Très fréquemment"
+                    "7"
                 ],
+                "extremeLabels": ["Jamais", "Très fréquemment"],
                 "obligatory": "yes",
                 "id": 1
             }

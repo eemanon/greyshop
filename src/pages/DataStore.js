@@ -125,12 +125,10 @@ function objectToTable(obj, header) {
   });
   return arr;
 }
-
-function uploadDiceGames(numberOfGames, addAvailableDiceGames) {
-  //create dicegames in json object
+function createRuns(numberOfGames, offset) {
   let obj = {};
   let i;
-  for (i = 1; i < numberOfGames; i++) {
+  for (i = offset; i < numberOfGames + offset; i++) {
     let randomNum = 5;
     obj["" + i] = []
     while (randomNum == 5) {
@@ -138,9 +136,11 @@ function uploadDiceGames(numberOfGames, addAvailableDiceGames) {
       obj["" + i].push(randomNum);
     }
   }
-  console.log(obj)
+  return obj;
+}
+function uploadDiceGames(numberOfGames, addAvailableDiceGames) {
   //add numberOfGames
-  addAvailableDiceGames(obj).then(function (newCounter) {
+  addAvailableDiceGames(createRuns, numberOfGames).then(function (newCounter) {
     console.log("DiceGames successfully written! " + newCounter);
   }).catch(function (error) {
     console.error("Error writing Dicegames: ", error);
@@ -176,6 +176,19 @@ function DataView(props) {
       csv = csv + row;
     })
     fileDownload(csv, "basket" + id + ".txt")
+  }
+  const downloadStudentIds = () => {
+    console.log(props)
+    let csv = "studentId,uid\n";
+    props.getStudentIds().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        csv = csv + doc.id + "," + doc.data().uid + "\n";
+      });
+      fileDownload(csv, "studentIds.csv");
+    }).catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
 
   }
   let header = [];
@@ -204,9 +217,10 @@ function DataView(props) {
     </Table>
 
     <ButtonGroup variant="contained" color="primary">
-      <Button onClick={() => uploadDiceGames(50, props.addAvailableDiceGames)}>Create 50 dicegames and upload them</Button>
+      <Button onClick={() => uploadDiceGames(10, props.addAvailableDiceGames)}>Create 10 dicegames and upload them</Button>
       <Button onClick={() => fileDownload(objectToCsv(returndata, props.products, props.questions), 'export.csv')}>Download CSV</Button>
       <Button onClick={() => fileDownload(JSON.stringify(returndata, true), 'export.json')} color="primary">Download JSON</Button>
+      <Button onClick={() => downloadStudentIds()} color="secondary">Download StudentIds</Button>
     </ButtonGroup>
     <br></br>
     <Button onClick={props.userSignOut}>Logout</Button></div>)
@@ -245,7 +259,7 @@ export default function DataStore(props) {
   return (
     <div>
       <Paper className={classes.root}>
-        {user == null ? <Loginform userSignInWithMail={props.userSignInWithMail} /> : <DataView products={props.products} questions={props.questions} userSignOut={props.userSignOut} useAllData={props.useAllData} getNumDiceGames={props.getNumDiceGames} addAvailableDiceGames={props.addAvailableDiceGames} />}
+        {user == null ? <Loginform userSignInWithMail={props.userSignInWithMail} /> : <DataView getStudentIds={props.getStudentIds} products={props.products} questions={props.questions} userSignOut={props.userSignOut} useAllData={props.useAllData} getNumDiceGames={props.getNumDiceGames} addAvailableDiceGames={props.addAvailableDiceGames} />}
       </Paper>
     </div>
   );

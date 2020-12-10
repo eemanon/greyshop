@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   answers: {
-    display: "block"
+    display: "table"
   },
   img: {
     display: "block",
@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
   imgTitle: {
     display: "block",
     marginTop: "20px"
+  },
+  exLabel: {
+    display: "table-cell",
+    verticalAlign: "middle"
   }
 }));
 
@@ -39,7 +43,7 @@ export default function Question(props) {
     return (<TextField id="standard-basic" label={props.question.Question} onChange={handleChange} />)
   }
   const answercomponent = () => {
-    return (<RadioGroup column={(props.form == "list")?1:0} row={(props.form != "list")?1:0} aria-label="position" name="position" value={val} onChange={handleChange}>
+    return (<RadioGroup column={(props.form == "list") ? 1 : 0} row={(props.form != "list") ? 1 : 0} aria-label="position" name="position" value={val} onChange={handleChange}>
       {props.question.Answer.map((item, i) => (
         <FormControlLabel
           key={item.id}
@@ -54,21 +58,25 @@ export default function Question(props) {
   }
   const handleChange = (event) => {
     console.log("FUNCTION handlechange (Question)")
-    console.log("value: "+event.target.value)
+    console.log("value: " + event.target.value)
     props.setAnswer(props.question.id, event.target.value)
-    
+
   };
 
   return (
-    <div className={classes.root} style={props.colored=="yes"&&props.check?{backgroundColor: "red"}:{}}>
+    <div className={classes.root} style={props.colored == "yes" && props.check ? { backgroundColor: "red" } : {}}>
       <Typography variant="h6" component="span" gutterBottom >
         {props.question.Question}
       </Typography>
       {props.question.image != null ? <Typography variant="subtitle1" component="span" className={classes.imgTitle} gutterBottom >{props.question.imageTitle}</Typography> : ""}
       {props.question.image != null ? <img className={classes.img} src={props.question.image} /> : ""}
-      <FormControl component="fieldset" className={classes.answers}>
-        {props.question.Answer != null ? answercomponent() : textInput()}
-      </FormControl>
+      <div className={classes.answers}>
+        {props.question.extremeLabels != null ? <div className={classes.exLabel}>{props.question.extremeLabels[0]}</div> : ""}
+        <FormControl component="fieldset">
+          {props.question.Answer != null ? answercomponent() : textInput()}
+        </FormControl>
+        {props.question.extremeLabels != null ? <div className={classes.exLabel}>{props.question.extremeLabels[1]}</div> : ""}
+      </div>
     </div>
   );
 }

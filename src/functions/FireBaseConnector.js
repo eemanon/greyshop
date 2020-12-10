@@ -111,7 +111,7 @@ const addContent = (uid, object, merge = true) => {
     return firestore.collection("data").doc(uid).set(object, { merge: merge });
 }
 
-const addAvailableDiceGames = (object, merge = true) => {
+const addAvailableDiceGames = (createRuns, number, merge = true) => {
     console.log("now writing")
     let gameCounter = firestore.collection("properties").doc("dicegames");
     let gameData = firestore.collection("dicegames").doc("runs");
@@ -119,10 +119,13 @@ const addAvailableDiceGames = (object, merge = true) => {
     return firestore.runTransaction(function (transaction) {
         return transaction.get(gameCounter).then(function (sfDoc) {
             console.log(sfDoc.data().total)
-            let newCounter = sfDoc.data().total + Object.keys(object).length;
+            //change ids:
+            let offset = sfDoc.data().total
+            let runs = createRuns(number, offset)
+            let newCounter = sfDoc.data().total + number;
             console.log('new counter: ' + newCounter)
             transaction.update(gameCounter, { total: newCounter });
-            transaction.set(gameData, object, { merge: merge });
+            transaction.set(gameData, runs, { merge: merge });
             return newCounter;
         });
     })
@@ -140,4 +143,10 @@ const getUserContent = (uid) => {
     return docRef5.get()
 }
 
-export { getDiceGames, getUserContent, addAvailableDiceGames, getNumDiceGames, addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };
+const getStudentIds = (uid) => {
+    console.log("FUNCTION getStudentIds")
+    let docRef5 = firestore.collection("users");
+    return docRef5.get()
+}
+
+export { getStudentIds, getDiceGames, getUserContent, addAvailableDiceGames, getNumDiceGames, addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };

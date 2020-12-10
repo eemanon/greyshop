@@ -111,10 +111,20 @@ export default function Store(props) {
   //state of error message
   const [open, setOpen] = useState(false);
   const addToBasket = (item) => {
+    console.log(carbonWeight(basket))
     //check if the added item will get the basket over the limit.If so, dont add it.
     let futureValue = sumHT(basket) + item["Prix initial"];
-    if (props.variant.tax)
-      futureValue = futureValue + carbonWeight(basket) + item.Grammes / 100 * item["Empreinte CO2 (g par 100 g)"] > 14.22 ? (carbonWeight(basket) + item.Grammes / 100 * item["Empreinte CO2 (g par 100 g)"] - 14.22) * 0.25 : 0;
+    if (props.variant.tax) {
+      //only add it if we pass or have passed the threshold
+      console.log("item co2 impact 100g:" + item["Empreinte CO2 (g par 100 g)"])
+      console.log("item co2 impact 1g:" + item["Empreinte CO2 (g par 100 g)"]/100)
+      console.log("Item weight: " + item.Grammes)
+      console.log("co2 impact in g:" + item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100)
+      console.log("co2 impact in kg:" + item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100000)
+      if ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100000) / (basketWeight(basket) + (item.Grammes / 1000))) > 2.33)
+        futureValue = futureValue + ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100000)) / (basketWeight(basket) + (item.Grammes / 1000)) - 2.33) * 0.35 * (basketWeight(basket) + (item.Grammes / 1000));
+    }
+    console.log(futureValue)
     if (futureValue > 25.00) {
       //trigger error message and block
       setOpen(true);
@@ -224,7 +234,7 @@ export default function Store(props) {
           ht={sumHT(basket)}
           showTax={props.variant.tax}
           userID={props.userID}
-          taxe={carbonWeight(basket) > 14.22 ? (carbonWeight(basket) - 14.22) * 0.25 : 0}
+          taxe={basketWeight(basket) == 0 ? 0 : carbonWeight(basket) / basketWeight(basket) > 2.33 ? (carbonWeight(basket) / basketWeight(basket) - 2.33) * 0.35 * basketWeight(basket) : 0}
           timeArrival={timestamp_start_instructions}
           timeFinishInstructions={timestampLeavePageLeave}
           addContent={props.addContent}>

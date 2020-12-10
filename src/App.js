@@ -20,7 +20,7 @@ import Co2questionids from './data/productIdsForQuestions.json';
 import regularQuestions from './data/questionnary.json';
 
 
-import { getUserContent, getDiceGames, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut } from './functions/FireBaseConnector.js'
+import { getStudentIds, getUserContent, getDiceGames, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut } from './functions/FireBaseConnector.js'
 
 //debug only
 import Button from '@material-ui/core/Button';
@@ -235,23 +235,6 @@ function App() {
             )
           }}
         />
-        <Route path='/datastore'
-          render={() => {
-            setHeaderBarTitle("DataStore");
-            setProgress(-1);
-            return (<DataStore
-              products={products}
-              getNumDiceGames={getNumDiceGames}
-              addAvailableDiceGames={addAvailableDiceGames}
-              userSignOut={userSignOut}
-              userSignInWithMail={userSignInWithMail}
-              useConnectedUser={useConnectedUser}
-              useAllData={useAllData}
-              questions={regularQuestions}
-              products={products}
-            />)
-          }}
-        />
         <Route path='/end'
           render={() => {
             setHeaderBarTitle("Experience terminée")
@@ -260,6 +243,23 @@ function App() {
               <FinalPage >
               </FinalPage>
             )
+          }}
+        />
+        <Route path='/datastore'
+          render={() => {
+            setHeaderBarTitle("DataStore");
+            setProgress(-1);
+            return (<DataStore
+              products={products}
+              getNumDiceGames={getNumDiceGames}
+              getStudentIds={getStudentIds}
+              addAvailableDiceGames={addAvailableDiceGames}
+              userSignOut={userSignOut}
+              userSignInWithMail={userSignInWithMail}
+              useConnectedUser={useConnectedUser}
+              useAllData={useAllData}
+              questions={regularQuestions}
+            />)
           }}
         />
       </Router>
