@@ -125,7 +125,7 @@ function App() {
   const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, carbonInfo, "yes", "Évaluer l'empreinte carbone de ce produit.");
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={16}><Button variant="contained" onClick={() => setVariant((variant + 1) % 4)} color="secondary">Change shop variant-currently {variant}</Button></HeaderBar>
+      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={16}></HeaderBar>
       <Router history={history}>
         <Route exact path='/'
           render={() => {

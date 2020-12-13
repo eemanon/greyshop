@@ -102,7 +102,7 @@ export default function DiceGame(props) {
         console.log("db connection error", error);
       });
     }
-  },[realID, diceSeries, props.userID])
+  }, [realID, diceSeries, props.userID])
 
   const handleClose = () => {
     console.log("handleclose")
@@ -113,7 +113,7 @@ export default function DiceGame(props) {
     props.next();
   };
   const saveMail = () => {
-    props.addContent(props.userID, { id:"mail", content:{"mail":mail }}, true, true).then(function () {
+    props.addContent(props.userID, { id: "mail", content: { "mail": mail } }, true, true).then(function () {
       console.log("saved mail");
       handleClose();
     }).catch(function (error) {
@@ -150,15 +150,11 @@ export default function DiceGame(props) {
     if (diceSeries[diceThrow] == 6)
       showMessage(setOpen);
     else if (diceSeries[diceThrow] == 5) {
-      //alert('not won but can try again');
-      return
+      setDiceThrow(diceThrow + 1)
     }
-
     else {
       setOpen2(true)
     }
-
-    //setDiceThrow(diceThrow + 1);
   }
   return (
     <div>{diceSeries != null && diceSeries.length > 0 ? <Paper className={classes.paper}>

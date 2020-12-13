@@ -33,9 +33,8 @@ const useStyles = makeStyles((theme) => ({
 function objectToCsv(obj, products, questions) {
   console.log("FUNCTION objectToCSV")
   console.log(obj)
-  //return
   let setAll = (obj, val) => Object.keys(obj).forEach(k => obj[k] = val);
-  let header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish", "mail"];
+  let header = ["idField", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "carbonWeight", "averageCarbonWeight"];
   //add product header & create prototype object to use for transformation
   let basketObject = {};
   for (const category of products) {
@@ -50,7 +49,10 @@ function objectToCsv(obj, products, questions) {
     for (const question of section.questions) {
       header.push("section" + section.id + "question" + question.id)
       questionObject["section" + section.id + "question" + question.id] = -1
+
     }
+    header.push("section" + section.id + "timeFinished");
+    questionObject["section" + section.id + "timeFinished"] = 0
   }
   let headerline = "";
   header.map((key) => (
@@ -67,14 +69,33 @@ function objectToCsv(obj, products, questions) {
     //clean rowobjects
     setAll(questionObject, -1);
     setAll(basketObject, 0);
-    let basics = { "id": -1, "variant": -1, "agreedToTerms": "null", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeFinishLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail": "" }
+    let basics = { "idField": "", "id": -1, "variant": -1, "agreedToTerms": "no", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail": "", "won": "", "visitsLandingPage": 0, "carbonWeight": 0, "averageCarbonWeight": 0 }
     //map basics 
+    console.log("objOriginal")
+    console.log(objOriginal)
     for (const [key, value] of Object.entries(basics)) {
-      basics[key] = objOriginal[key];
+      if (key === 'agreedToTerms')
+        basics['agreedToTerms'] = objOriginal['terms'].agreedToTerms ? 'yes' : 'no';
+      else if (key === 'won')
+        basics['won'] = objOriginal['won'] ? 'yes' : 'no';
+      else if (key === 'mail') {
+        if (objOriginal.hasOwnProperty('mail'))
+          basics['mail'] = objOriginal['mail'].mail;
+        else
+          basics['mail'] = "";
+      }
+      else if (key === 'tax') {
+        if (objOriginal.tax !== undefined)
+          basics['tax'] = objOriginal['tax'];
+        else
+          basics['tax'] = 0;
+      }
+      else
+        basics[key] = objOriginal[key];
     }
     //map products
-    if (objOriginal.basket != null)
-      objOriginal.basket.forEach((item, index) => {
+    if (objOriginal.basket.basket != null)
+      objOriginal.basket.basket.forEach((item, index) => {
         basketObject["prod" + item.id] = item.quantity;
       })
     //map questions
@@ -82,11 +103,14 @@ function objectToCsv(obj, products, questions) {
     let questions = Object.keys(objOriginal).filter((item) => item.startsWith("section"))
     console.log(questions);
     questions.forEach((section) => {
-      objOriginal[section].forEach((question) => {
+      objOriginal[section].answers.forEach((question) => {
         //console.log('section id is '+section)
         //console.log('question id is '+question.id)
         questionObject[section + "question" + question.id] = question.answer;
       })
+      questionObject[section + "timeFinished"] = objOriginal[section].timeFinished;
+      console.log("just set " + section + "timeFinished")
+      console.log(objOriginal[section].timeFinished)
     })
     //join objects
     let merged = { ...basics, ...basketObject, ...questionObject };
@@ -113,12 +137,14 @@ function objectToTable(obj, header) {
       if (typeof rowObj[element] == "number") {
         if (rowObj[element] % 1 === 0 && element != "variant" && element != "id" && element != "visitsLandingPage" && element != "timeLandingPage" && rowObj[element] != 0) //timestamp
           rowArr.push(new Date(rowObj[element]).toLocaleDateString("fr-FR") + " " + new Date(rowObj[element]).toLocaleTimeString("fr-FR"));
-        else if (rowObj[element] % 1 != 0 && rowObj[element] != null && element != "timeLandingPage")      //money
-          rowArr.push(Math.round(rowObj[element] * 100) / 100 + "€");
+        else if (rowObj[element] % 1 != 0 && rowObj[element] != null && element != "timeLandingPage" && !element.includes("Weight"))      //money
+          rowArr.push(Math.round(rowObj[element] * 100) / 100 + " €");
         else if (rowObj[element] == 0)
           rowArr.push("0");
         else if (element == "timeLandingPage")
           rowArr.push(Math.round(rowObj[element] * 100) / 100 + " s");
+        else if (element.includes("Weight"))
+          rowArr.push(Math.round(rowObj[element] * 100) / 100 + " kg");
         else
           rowArr.push(JSON.stringify(rowObj[element]));
       }
@@ -222,6 +248,8 @@ function DataView(props) {
             experience.timeCheckout = experience.basket.timeCheckout;
             experience.timeLandingPage = calcLandingPageTime(experience.basket.landingPageTimeStamps, experience.timeCheckout)
             experience.visitsLandingPage = experience.basket.landingPageTimeStamps.length % 2 == 0 ? experience.basket.landingPageTimeStamps.length / 2 : (experience.basket.landingPageTimeStamps.length + 1) / 2;
+            experience.carbonWeight = experience.basket.totalCarbonWeight;
+            experience.averageCarbonWeight = experience.basket.averageCarbonWeight;
           }
           if (experience.section12 != null)
             experience.timeFinish = experience.section12.timeFinished;
@@ -275,7 +303,7 @@ function DataView(props) {
   if (finalData != null) {
     console.log('returned data')
     console.log(finalData)
-    header = ["id", "variant", "terms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
+    header = ["id", "variant", "terms", "tax", "basketValueWT", "carbonWeight", "averageCarbonWeight", "basket", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
     arr = objectToTable(finalData, header);
   }
   console.log(arr)
