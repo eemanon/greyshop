@@ -53,27 +53,35 @@ function format2Digit(number) {
   return Math.round(number * 100) / 100
 }
 
-function checkOut(userID, next, basket, timeArrival, timeFinishInstructions, addContent, ht, taxe, showTax) {
+function checkOut(userID, next, basket, landingPageTimeStamps, timeFinishInstructions, addContent, ht, taxe, showTax, openErrorMessage, setErrorMessage, carbonWeight, averageCarbonWeight) {
   console.log("FUNCTION checkOut (Basket)")
   if (!isValidBasket(ht, taxe, showTax))
     return
   let timeCheckout = Date.now();
-  console.log("Arrived at "+ new Date(timeArrival).toLocaleTimeString("fr-FR"))
+  //TODO calc time on landingpage
+  console.log("Arrived at "+ new Date(landingPageTimeStamps[0]).toLocaleTimeString("fr-FR"))
   console.log("Landing Page finished at "+ new Date(timeFinishInstructions).toLocaleTimeString("fr-FR"))
   console.log("Checkout at "+ new Date(timeCheckout).toLocaleTimeString("fr-FR"))
   //todo call function to send stuff.
   //console.log(userID)
   let newbasket = basket.map((item) => ({ "id": item.id, "quantity": item.quantity }))
-  let object = { basket: newbasket, timeStartLandingPage: timeArrival, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht };
-  if (showTax)
-    object['tax'] = taxe;
-  //console.log(object)
-  addContent(userID, object).then(function () {
+  let object = { id:"basket", content: {basket: newbasket, landingPageTimeStamps: landingPageTimeStamps, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht, totalCarbonWeight: carbonWeight, averageCarbonWeight }};
+  console.log(showTax)
+  if (showTax){
+    console.log("adding tax")
+    object.content.tax = taxe;
+  }
+  console.log("final object")
+  console.log(object)
+  addContent(userID, object, true, true).then(function () {
     console.log("Basket successfully written! (Basket)");
+    next();
   }).catch(function (error) {
+    console.log("fail")
     console.error("Error writing basket: ", error);
+    setErrorMessage("Vous avez déjà finalisé un panier. Vous ne pouvez pas changer sa composition.")
+    openErrorMessage(true)
   });
-  next();
 }
 
 function isValidBasket(value, tax, taxAdded) {
@@ -176,12 +184,17 @@ export default function Basket(props) {
               props.userID,
               props.next,
               props.basket,
-              props.timeArrival,
+              props.landingPageTimeStamps,
               props.timeFinishInstructions,
               props.addContent,
               props.ht,
               props.taxe,
-              props.showTax)}
+              props.showTax,
+              props.openErrorMessage, 
+              props.setErrorMessage,
+              props.carbonWeight,
+              props.averageCarbonWeight
+              )}
             color="primary" autoFocus>
             Oui
           </Button>

@@ -10,6 +10,8 @@ import Button from '@material-ui/core/Button';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import Question from './Question.js';
 
@@ -21,9 +23,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
   },
   paper: {
-    marginBottom: "10px",
-    marginTop: "10px",
-    padding: "10px"
+    margin: "auto",
+    padding: "10px",
+    maxWidth: "1000px"
   },
   stepper: {
     maxWidth: 400,
@@ -32,10 +34,18 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
+function Alert(props) {
+  //displays an alert message in material ui style
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 export default function SurveySection(props) {
   console.log("COMPONENT SurveySection")
+//error message handling
+const [open, setOpen] = useState(false);
+const [errorMessage, setErrorMessage] = useState("Vous avez déjà répondu à cette partie des questions. Vous ne pouvez plus changer vos réponses.")
+
+
   const [initialRender, setInitialRender] = useState(true);
   //console.log(props.data.displaySingleQuestions)
   const classes = useStyles();
@@ -79,19 +89,27 @@ export default function SurveySection(props) {
 
     }
   };
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  }
   const checkFilled = () => {
     if (unansweredQuestions.length > 0) {
       setCheck(true);
       return false;
     }
     //send data
-    let obj = {};
-    obj["section" + props.data.id] = answers;
-    props.addContent(props.userID, obj).then(function () {
+    let obj = {id: "section"+props.data.id, content: {answers: answers, timeFinished: Date.now()}};
+    console.log(obj)
+    props.addContent(props.userID, obj, true, true).then(function () {
       console.log("Change succesfully written for id ", props.data.id);
       props.next();
     }).catch(function (error) {
       console.error("Error writing document: ", error);
+      setErrorMessage("Vous avez déjà répondu à cette partie des questions. Vous ne pouvez plus changer vos réponses.");
+      setOpen(true);
     });
   }
   const titleElement = () => { return (<Typography variant="h4" component="h2" gutterBottom>{props.data.title}</Typography>) };
@@ -163,7 +181,13 @@ export default function SurveySection(props) {
               setAnswer={setAnswer}
             ></Question>
           ))}
+          <Button color={unansweredQuestions.length == 0 ? "primary" : "default"} variant="contained" onClick={() => { checkFilled() }}>Envoyer mes réponses</Button>
       </Paper>
-      <Button color={unansweredQuestions.length == 0 ? "primary" : "default"} variant="contained" onClick={() => { checkFilled() }}>Envoyer mes réponses</Button>
+      
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          {errorMessage}
+        </Alert>
+      </Snackbar>
     </div>);
 }

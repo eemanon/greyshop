@@ -22,9 +22,17 @@ const userSignInAnonymously = () => {
 }
 
 const useAllData = (idField, collection) => {
+    console.log("FUNCTION usealldata (FireBaseConnector)")
     const data = firestore.collection(collection);
     const query = data.limit(600);
     return useCollectionData(query, { idField: idField });
+}
+
+const getAllSubCollections = (collectionName) => {
+    console.log("FUNCTION getAllSubCollections (FireBaseConnector)")
+    console.log("collection name "+collectionName)
+    var museums = firestore.collectionGroup(collectionName);
+    return museums.get()
 }
 
 const userSignOut = () => {
@@ -84,6 +92,7 @@ const incrementCounter = () => {
     firestore.collection("properties").doc("count").update({ "total": firebase.firestore.FieldValue.increment(1) })
 }
 const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants) => {
+    //sets user id, variant, timestart
     //doc refs:
     let docCounter = firestore.collection("properties").doc("count");
     let docData = firestore.collection("data").doc(uid);
@@ -93,7 +102,7 @@ const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants) => {
             let newCounter = sfDoc.data().total + 1;
             let variant = calcVariant(newCounter, numVariants)
             transaction.update(docCounter, { total: newCounter });
-            transaction.set(docData, { variant: variant, timeStart: timestamp, uid: uid, id: newCounter });
+            transaction.set(docData, { variant: variant, timeStart: timestamp, id: newCounter });
             return [variant, newCounter];
         });
     })
@@ -106,9 +115,13 @@ const addUser = (studentID, uid) => {
         uid: uid
     })
 }
-const addContent = (uid, object, merge = true) => {
+const addContent = (uid, object, collection = false, merge = true) => {
     console.log('FUNCTION addContent (FireBaseConnector)')
-    return firestore.collection("data").doc(uid).set(object, { merge: merge });
+    console.log("object id: " + object.id + "object content: " + object.content)
+    if (!collection)
+        return firestore.collection("data").doc(uid).set(object, { merge: merge });
+    else
+        return firestore.collection("data").doc(uid).collection("collections").doc(object.id).set(object.content);
 }
 
 const addAvailableDiceGames = (createRuns, number, merge = true) => {
@@ -133,7 +146,7 @@ const addAvailableDiceGames = (createRuns, number, merge = true) => {
 const getDiceGames = () => {
     //get id
     let docRef = firestore.collection("dicegames").doc("runs");
-    return docRef.get()    
+    return docRef.get()
 }
 
 const getUserContent = (uid) => {
@@ -149,4 +162,4 @@ const getStudentIds = (uid) => {
     return docRef5.get()
 }
 
-export { getStudentIds, getDiceGames, getUserContent, addAvailableDiceGames, getNumDiceGames, addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };
+export { getAllSubCollections, getStudentIds, getDiceGames, getUserContent, addAvailableDiceGames, getNumDiceGames, addContent, addUser, useLoggedIn, initialWrite, incrementCounter, getCounter, userExists, userSignOut, userSignInWithMail, useConnectedUser, useAllData, userSignInAnonymously };

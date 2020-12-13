@@ -20,7 +20,7 @@ import Co2questionids from './data/productIdsForQuestions.json';
 import regularQuestions from './data/questionnary.json';
 
 
-import { getStudentIds, getUserContent, getDiceGames, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut } from './functions/FireBaseConnector.js'
+import { getStudentIds, getUserContent, getDiceGames, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut, getAllSubCollections } from './functions/FireBaseConnector.js'
 
 //debug only
 import Button from '@material-ui/core/Button';
@@ -100,14 +100,12 @@ function App() {
   const [variant, setVariant] = useState(0);
   const [userID, setUserID] = useState(null);
   const [winnerID, setWinnerID] = useState(-1);
+  const [admin, setAdmin] = useState(true);
   const [progressState, setProgress] = useState(1);
   const [headerBarTitle, setHeaderBarTitle] = useState("Bienvenue");
-
-  useEffect(() => {
-    console.log("FUNCTION useEffect (App)")
-    //only get this if we dont have the user already
-    if (userID == null) {
-      //check if we already know the visitor
+  const signInAn = () => {
+    console.log("FUNCTION signInAn (App)")
+    if(userID == null){
       userSignInAnonymously().then((user) => {
         console.log("FUNCTION userSignInAnonymously (App)")
         if (user) {
@@ -117,7 +115,9 @@ function App() {
         }
       });
     }
-
+  }
+  useEffect(() => {
+    console.log("FUNCTION useEffect (App)")
   }, [userID])
   const products = Products();
 
@@ -131,6 +131,7 @@ function App() {
           render={() => {
             setProgress(1);
             setHeaderBarTitle("Bienvenue");
+            signInAn(userID)
             return (
               <StudentLogin
                 setVariant={setVariant}
@@ -149,6 +150,7 @@ function App() {
           render={() => {
             setProgress(2);
             setHeaderBarTitle("Consentement");
+            signInAn(userID)
             return (
               <Terms
                 next={() => { history.push("/instructions"); }}
@@ -162,6 +164,7 @@ function App() {
           render={() => {
             setProgress(3);
             setHeaderBarTitle("Instructions");
+            signInAn(userID)
             return (<Instructions next={() => { history.push("/budgetdetails"); }} />)
           }}
         />
@@ -169,13 +172,15 @@ function App() {
           render={() => {
             setProgress(4);
             setHeaderBarTitle("Budget");
+            signInAn(userID)
             return (<BudgetDetails next={() => { history.push("/store"); }} />)
           }}
         />
         <Route path='/store'
           render={() => {
             setProgress(5);
-            setHeaderBarTitle("Magasin")
+            setHeaderBarTitle("Magasin");
+            signInAn(userID)
             return (
               <Store
                 variant={variants[variant]}
@@ -191,6 +196,7 @@ function App() {
             render={() => {
               setProgress(i + 6);
               setHeaderBarTitle("Questionnaire")
+              signInAn(userID)
               return (
                 <SurveySection
                   data={item}
@@ -208,6 +214,7 @@ function App() {
           render={() => {
             setHeaderBarTitle("Questionnaire");
             setProgress(15);
+            signInAn(userID)
             return (
               <SurveySection
                 data={carbonQuestions}
@@ -223,6 +230,7 @@ function App() {
           render={() => {
             setHeaderBarTitle("Jeu de dés");
             setProgress(-1);
+            signInAn(userID)
             return (
               <DiceGame
                 addContent={addContent}
@@ -239,6 +247,7 @@ function App() {
           render={() => {
             setHeaderBarTitle("Experience terminée")
             setProgress(-1);
+            signInAn(userID)
             return (
               <FinalPage >
               </FinalPage>
@@ -251,7 +260,9 @@ function App() {
             setProgress(-1);
             return (<DataStore
               products={products}
+              getDiceGames={getDiceGames}
               getNumDiceGames={getNumDiceGames}
+              getAllSubCollections = {getAllSubCollections}
               getStudentIds={getStudentIds}
               addAvailableDiceGames={addAvailableDiceGames}
               userSignOut={userSignOut}

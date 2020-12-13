@@ -103,13 +103,14 @@ export default function Store(props) {
   const classes = useStyles();
 
   const [notSeenInstructions, setNotSeenInstructions] = useState(true);
-  const [timestamp_start_instructions, setTimeStampStartInstructions] = useState(null);
+  const [landingPageTimeStamps, setLandingPageTimeStamps] = useState([Date.now()]);
   const [timestampLeavePageLeave, setTimeStampLeave] = useState(null)
   const items = props.products;
   const [basket, setBasket] = useState([]);
   const [categoryIndex, setValue] = useState(-1);
   //state of error message
   const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Dépassement du budget: Il n’est pas possible de rajouter ce produit à votre panier car vous dépasseriez le budget alloué")
   const addToBasket = (item) => {
     console.log(carbonWeight(basket))
     //check if the added item will get the basket over the limit.If so, dont add it.
@@ -117,16 +118,17 @@ export default function Store(props) {
     if (props.variant.tax) {
       //only add it if we pass or have passed the threshold
       console.log("item co2 impact 100g:" + item["Empreinte CO2 (g par 100 g)"])
-      console.log("item co2 impact 1g:" + item["Empreinte CO2 (g par 100 g)"]/100)
+      console.log("item co2 impact 1g:" + item["Empreinte CO2 (g par 100 g)"] / 100)
       console.log("Item weight: " + item.Grammes)
-      console.log("co2 impact in g:" + item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100)
-      console.log("co2 impact in kg:" + item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100000)
-      if ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100000) / (basketWeight(basket) + (item.Grammes / 1000))) > 2.33)
-        futureValue = futureValue + ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"]/100000)) / (basketWeight(basket) + (item.Grammes / 1000)) - 2.33) * 0.35 * (basketWeight(basket) + (item.Grammes / 1000));
+      console.log("co2 impact in g:" + item.Grammes * item["Empreinte CO2 (g par 100 g)"] / 100)
+      console.log("co2 impact in kg:" + item.Grammes * item["Empreinte CO2 (g par 100 g)"] / 100000)
+      if ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"] / 100000) / (basketWeight(basket) + (item.Grammes / 1000))) > 2.33)
+        futureValue = futureValue + ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"] / 100000)) / (basketWeight(basket) + (item.Grammes / 1000)) - 2.33) * 0.35 * (basketWeight(basket) + (item.Grammes / 1000));
     }
     console.log(futureValue)
     if (futureValue > 25.00) {
       //trigger error message and block
+      setErrorMessage("Dépassement du budget: Il n’est pas possible de rajouter ce produit à votre panier car vous dépasseriez le budget alloué");
       setOpen(true);
       return
     }
@@ -148,8 +150,8 @@ export default function Store(props) {
     }
   }
   useEffect(() => {
-    if (timestamp_start_instructions == null)
-      setTimeStampStartInstructions(Date.now());
+    if (landingPageTimeStamps == null)
+      setLandingPageTimeStamps(Date.now());
   })
   const removeFromBasket = (item) => {
     if (item.quantity > 1) {
@@ -176,6 +178,7 @@ export default function Store(props) {
   //returns categories and containing products 
   const showCategory = () => {
     if (categoryIndex === -1)
+      //store timestamp
       return (<ShopLandingPage variant={props.variant.number}></ShopLandingPage>)
     else {
       //if we leave the instructions page for the first time, we store the time.
@@ -201,6 +204,11 @@ export default function Store(props) {
   }
   //method to change currently selected category
   const changeCategory = (newValue) => {
+    if ((newValue === -1 && categoryIndex !== -1) || (newValue !== -1 && categoryIndex === -1)) {
+      console.log('adding date to list:' + Date.now())
+      setLandingPageTimeStamps([...landingPageTimeStamps, Date.now()]);
+    }
+
     setValue(newValue);
   };
 
@@ -227,6 +235,10 @@ export default function Store(props) {
         ></ThermoCard> : ""}
         <Divider />
         <Basket
+          openErrorMessage={setOpen}
+          setErrorMessage={setErrorMessage}
+          carbonWeight={carbonWeight(basket)}
+          averageCarbonWeight = {carbonWeight(basket) / basketWeight(basket)}
           next={props.next}
           basket={basket}
           remove={removeFromBasket}
@@ -235,14 +247,14 @@ export default function Store(props) {
           showTax={props.variant.tax}
           userID={props.userID}
           taxe={basketWeight(basket) == 0 ? 0 : carbonWeight(basket) / basketWeight(basket) > 2.33 ? (carbonWeight(basket) / basketWeight(basket) - 2.33) * 0.35 * basketWeight(basket) : 0}
-          timeArrival={timestamp_start_instructions}
+          landingPageTimeStamps={landingPageTimeStamps}
           timeFinishInstructions={timestampLeavePageLeave}
           addContent={props.addContent}>
         </Basket>
       </SideDrawer>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          "Dépassement du budget: Il n’est pas possible de rajouter ce produit à votre panier car vous dépasseriez le budget alloué"
+          {errorMessage}
         </Alert>
       </Snackbar>
     </div>

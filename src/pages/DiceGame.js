@@ -102,15 +102,6 @@ export default function DiceGame(props) {
         console.log("db connection error", error);
       });
     }
-    if (!initialDataRequestsDone && props.userID !== null) {
-      setInitialDataRequestsDone(true)
-      props.addContent(props.userID, { timeFinish: Date.now() }).then(function () {
-        console.log("finish date saved")
-      }).catch(function (error) {
-        console.error("Error writing document: ", error);
-      });
-    }
-
   },[realID, diceSeries, props.userID])
 
   const handleClose = () => {
@@ -122,7 +113,7 @@ export default function DiceGame(props) {
     props.next();
   };
   const saveMail = () => {
-    props.addContent(props.userID, { mail: mail }).then(function () {
+    props.addContent(props.userID, { id:"mail", content:{"mail":mail }}, true, true).then(function () {
       console.log("saved mail");
       handleClose();
     }).catch(function (error) {

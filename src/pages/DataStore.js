@@ -1,7 +1,7 @@
 //Component that allows to download and view data from database
 //props: next=next page
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //material ui
 import Paper from '@material-ui/core/Paper';
@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function objectToCsv(obj, products, questions) {
+  console.log("FUNCTION objectToCSV")
+  console.log(obj)
+  //return
   let setAll = (obj, val) => Object.keys(obj).forEach(k => obj[k] = val);
   let header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish", "mail"];
   //add product header & create prototype object to use for transformation
@@ -100,7 +103,6 @@ function objectToCsv(obj, products, questions) {
   });
   return csv
 }
-
 function objectToTable(obj, header) {
   console.log(obj)
   let arr = [];
@@ -109,12 +111,14 @@ function objectToTable(obj, header) {
     let rowArr = []
     header.map(element => {
       if (typeof rowObj[element] == "number") {
-        if (rowObj[element] % 1 === 0 && element != "variant" && element != "id" && rowObj[element] != 0) //timestamp
+        if (rowObj[element] % 1 === 0 && element != "variant" && element != "id" && element != "visitsLandingPage" && element != "timeLandingPage" && rowObj[element] != 0) //timestamp
           rowArr.push(new Date(rowObj[element]).toLocaleDateString("fr-FR") + " " + new Date(rowObj[element]).toLocaleTimeString("fr-FR"));
-        else if (rowObj[element] % 1 != 0 && rowObj[element] != null)      //money
+        else if (rowObj[element] % 1 != 0 && rowObj[element] != null && element != "timeLandingPage")      //money
           rowArr.push(Math.round(rowObj[element] * 100) / 100 + "€");
         else if (rowObj[element] == 0)
           rowArr.push("0");
+        else if (element == "timeLandingPage")
+          rowArr.push(Math.round(rowObj[element] * 100) / 100 + " s");
         else
           rowArr.push(JSON.stringify(rowObj[element]));
       }
@@ -146,7 +150,6 @@ function uploadDiceGames(numberOfGames, addAvailableDiceGames) {
     console.error("Error writing Dicegames: ", error);
   });
 }
-
 function productFindById(id, products) {
   let res = null;
   products.forEach((cat, index) => {
@@ -157,20 +160,96 @@ function productFindById(id, products) {
   })
   return res;
 }
+function calcLandingPageTime(timestamps, checkoutTime) {
+  console.log(timestamps)
+  let totalTimeSpent = 0;
+  for (let index = 0; index < timestamps.length; index = index + 2) {
+    if (index + 1 >= timestamps.length)
+      totalTimeSpent = totalTimeSpent + (checkoutTime - timestamps[index]);
+    else
+      totalTimeSpent = totalTimeSpent + (timestamps[index + 1] - timestamps[index])
+  }
+  return totalTimeSpent / 1000;
+}
 
 function DataView(props) {
   const classes = useStyles();
   const fileDownload = require('js-file-download');
   const [returndata] = props.useAllData("idField", "data");
+  const [finalData, setData] = useState(null);
+  const [diceGames, setDiceGames] = useState(null);
+  const [diceCalc, setDiceCalc] = useState(false);
+  const [dataReceived, setReceived] = useState(false);
+
+  useEffect(() => {
+    console.log("FUNCTION useEffect (DataView)")
+    if (returndata != null && !dataReceived) {
+      console.log("get subcollections now");
+      console.log(props)
+      props.getDiceGames().then(function (doc) {
+        if (doc.exists) {
+          console.log("now filling diceseries...")
+          console.log(doc.data())
+          setDiceGames(doc.data())
+        } else {
+          console.log("dicegames does not exist")
+        }
+      }).catch(function (error) {
+        console.log("db connection error", error);
+      });
+      props.getAllSubCollections("collections").then(function (querySnapshot) {
+        console.log(querySnapshot)
+        let obj = [];
+        returndata.forEach((el => {
+          obj.push(el);
+        }))
+        console.log("object")
+        console.log(obj)
+        querySnapshot.forEach(function (doc) {
+          console.log("inside the loop")
+          const found = obj.find((el) => el.idField == doc.ref.parent.parent.id)
+          if (found != null) {
+            console.log('found ' + found.idField)
+            found[doc.id] = doc.data();
+          }
+        });
+        console.log('tada:')
+        obj.forEach((experience) => {
+          if (experience.basket != null) {
+            experience.basketValueWT = experience.basket.basketValueWT
+            experience.tax = experience.basket.tax
+            experience.timeStartLandingPage = experience.basket.landingPageTimeStamps[0];
+            experience.timeCheckout = experience.basket.timeCheckout;
+            experience.timeLandingPage = calcLandingPageTime(experience.basket.landingPageTimeStamps, experience.timeCheckout)
+            experience.visitsLandingPage = experience.basket.landingPageTimeStamps.length % 2 == 0 ? experience.basket.landingPageTimeStamps.length / 2 : (experience.basket.landingPageTimeStamps.length + 1) / 2;
+          }
+          if (experience.section12 != null)
+            experience.timeFinish = experience.section12.timeFinished;
+        })
+        setData(obj);
+      });
+      setReceived(true);
+    }
+    if (!diceCalc && diceGames != null && finalData != null) {
+      let obj = finalData;
+      obj.forEach((experience) => {
+        experience.won = diceGames[experience.id][diceGames[experience.id].length - 1] == 6;
+      });
+      console.log(obj)
+      setData(obj)
+      setDiceCalc(true)
+      console.log("rerender?")
+    }
+  });
   const downloadBasket = (id) => {
     console.log("download " + id)
-    const basket = returndata.find(data => data.id == id)
-    if (basket == null)
+    const dataItem = finalData.find(data => data.id == id)
+    if (dataItem == null || dataItem.basket == null)
       return
-    console.log(basket.basket)
+    console.log(dataItem)
     let csv = "quantity, description\n";
     console.log(props.products)
-    basket.basket.forEach((item, index) => {
+    dataItem.basket.basket.forEach((item, index) => {
       let description = productFindById(item.id, props.products)["Descriptif Produit"];
       let row = item.quantity + ";" + description + "\n"
       csv = csv + row;
@@ -193,13 +272,14 @@ function DataView(props) {
   }
   let header = [];
   let arr = [];
-  if (returndata != null) {
-    header = ["id", "variant", "agreedToTerms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeFinishLandingPage", "timeCheckout", "timeFinish", "mail", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
-    arr = objectToTable(returndata, header);
+  if (finalData != null) {
+    console.log('returned data')
+    console.log(finalData)
+    header = ["id", "variant", "terms", "tax", "basketValueWT", "basket", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
+    arr = objectToTable(finalData, header);
   }
   console.log(arr)
   return (<div className={classes.dataview}>
-
     <Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
     <Table>
       <TableBody>
@@ -218,7 +298,7 @@ function DataView(props) {
 
     <ButtonGroup variant="contained" color="primary">
       <Button onClick={() => uploadDiceGames(10, props.addAvailableDiceGames)}>Create 10 dicegames and upload them</Button>
-      <Button onClick={() => fileDownload(objectToCsv(returndata, props.products, props.questions), 'export.csv')}>Download CSV</Button>
+      <Button onClick={() => fileDownload(objectToCsv(finalData, props.products, props.questions), 'export.csv')}>Download CSV</Button>
       <Button onClick={() => fileDownload(JSON.stringify(returndata, true), 'export.json')} color="primary">Download JSON</Button>
       <Button onClick={() => downloadStudentIds()} color="secondary">Download StudentIds</Button>
     </ButtonGroup>
@@ -233,6 +313,7 @@ function Loginform(props) {
     console.log("signing in with " + mail)
     props.userSignInWithMail(mail, pw)
       .then((user) => {
+        console.log("got a user: ")
         console.log(user)
 
       })
@@ -249,17 +330,15 @@ function Loginform(props) {
 }
 
 export default function DataStore(props) {
-
   const classes = useStyles();
   //returns user if connected
   const [user] = props.useConnectedUser();
-
   //interface value trackers
   //conditional render components
   return (
     <div>
       <Paper className={classes.root}>
-        {user == null ? <Loginform userSignInWithMail={props.userSignInWithMail} /> : <DataView getStudentIds={props.getStudentIds} products={props.products} questions={props.questions} userSignOut={props.userSignOut} useAllData={props.useAllData} getNumDiceGames={props.getNumDiceGames} addAvailableDiceGames={props.addAvailableDiceGames} />}
+        {user == null || user.email == null ? <Loginform userSignInWithMail={props.userSignInWithMail} /> : <DataView getDiceGames={props.getDiceGames} getAllSubCollections={props.getAllSubCollections} getStudentIds={props.getStudentIds} products={props.products} questions={props.questions} userSignOut={props.userSignOut} useAllData={props.useAllData} getNumDiceGames={props.getNumDiceGames} addAvailableDiceGames={props.addAvailableDiceGames} />}
       </Paper>
     </div>
   );

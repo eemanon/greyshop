@@ -124,6 +124,8 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
         props.next()
       }).catch(function (error) {
         console.error("Error adding user: ", error);
+        setErrorMessage("Vous avez déjà soumis un numéro d'étudiant.")
+        setOpen(true)
       });
     }
 
