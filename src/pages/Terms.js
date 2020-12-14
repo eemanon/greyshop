@@ -35,6 +35,7 @@ export default function Terms(props) {
   const [ticked, setTicked] = useState(false);
   //tracker for error message
   const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Vous devez accepter les conditions pour participer à cette experience.");
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -70,30 +71,34 @@ export default function Terms(props) {
           label="J’ai lu, compris et accepté les termes du consentement éclairé ci-dessus."
         />
         <br></br>
-        <Button color={!ticked ? "default" : "primary"} variant="contained" onClick={() => checkIfAgree(ticked, props, setOpen)}>Continuer</Button>
+        <Button color={!ticked ? "default" : "primary"} variant="contained" onClick={() => checkIfAgree(ticked, props, setOpen, setErrorMessage)}>Continuer</Button>
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Vous devez accepter les conditions pour participer à cette experience.
-        </Alert>
+            {errorMessage}
+          </Alert>
         </Snackbar>
 
       </Paper>
     </div>
   );
 }
-function checkIfAgree(ticked, props, setOpen) {
+function checkIfAgree(ticked, props, setOpen, setErrorMessage) {
   //check if ticked
   if (!ticked) {
+    setErrorMessage("Vous devez accepter les conditions pour participer à cette experience.")
     setOpen(true);
     return
   }
   //send to db 
-  props.addContent(props.userID, { id: "terms", content:{agreedToTerms: ticked} }, true, true).then(function () {
+  props.addContent(props.userID, { id: "terms", content: { agreedToTerms: ticked } }, true, true).then(function () {
     console.log("Change succesfully written!");
+    props.next();
   }).catch(function (error) {
+    if (error.code == 'permission-denied')
+      setErrorMessage("Vous avez déjà participé à une experience.")
+    else
+      setErrorMessage("Problèmes de connexion. Veuillez réessayer plus tard.")
+    setOpen(true);
     console.error("Error writing document: ", error);
-    
   });
-  //next
-  props.next();
 }

@@ -23,6 +23,7 @@ const userSignInAnonymously = () => {
 
 const useAllData = (idField, collection) => {
     console.log("FUNCTION usealldata (FireBaseConnector)")
+    console.log("collection is "+collection)
     const data = firestore.collection(collection);
     const query = data.limit(600);
     return useCollectionData(query, { idField: idField });
@@ -51,9 +52,7 @@ const userExists = (userID) => {
             console.log("user doesnt exist yet")
             return "does not exist"
         }
-    }).catch(function (error) {
-        console.log("db connection error", error);
-    });
+    })
 }
 
 const getCounter = () => {

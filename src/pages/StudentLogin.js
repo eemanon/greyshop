@@ -129,5 +129,14 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
       });
     }
 
+  }).catch(function (error) {
+    if(error.code=='unavailable'){
+      setErrorMessage("Problèmes de connexion. Veuillez réessayer plus tard")
+      setOpen(true)
+    }
+    if(error.code=='permission denied'){
+      setErrorMessage("Vous avez déjà soumis un numéro d'étudiant.")
+      setOpen(true)
+    }
   })
 }

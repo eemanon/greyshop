@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 
 //material ui
 import Paper from '@material-ui/core/Paper';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -209,9 +210,10 @@ function DataView(props) {
 
   useEffect(() => {
     console.log("FUNCTION useEffect (DataView)")
+    console.log("returndata is ")
+    console.log(returndata)
     if (returndata != null && !dataReceived) {
       console.log("get subcollections now");
-      console.log(props)
       props.getDiceGames().then(function (doc) {
         if (doc.exists) {
           console.log("now filling diceseries...")
@@ -255,7 +257,9 @@ function DataView(props) {
             experience.timeFinish = experience.section12.timeFinished;
         })
         setData(obj);
-      });
+      }).catch(function (error) {
+        console.log("Oh no, the subcollections! : ", error);
+      });;
       setReceived(true);
     }
     if (!diceCalc && diceGames != null && finalData != null) {
@@ -306,9 +310,9 @@ function DataView(props) {
     header = ["id", "variant", "terms", "tax", "basketValueWT", "carbonWeight", "averageCarbonWeight", "basket", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9", "section10", "section11", "section12"];
     arr = objectToTable(finalData, header);
   }
-  console.log(arr)
   return (<div className={classes.dataview}>
     <Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
+    {finalData==null?<div><CircularProgress /><br></br></div>:
     <Table>
       <TableBody>
         <TableRow><TableCell></TableCell>{returndata != null && header.map((key) => (
@@ -322,7 +326,7 @@ function DataView(props) {
           </TableRow>
         ))}
       </TableBody>
-    </Table>
+    </Table>}
 
     <ButtonGroup variant="contained" color="primary">
       <Button onClick={() => uploadDiceGames(10, props.addAvailableDiceGames)}>Create 10 dicegames and upload them</Button>
@@ -353,7 +357,7 @@ function Loginform(props) {
   }
   return (<form><Typography variant="h3" component="h2" gutterBottom>Please log in</Typography>
     <TextField value={mail} onChange={e => { setMail(e.target.value) }} className={classes.textfield} fullWidth id="mail" label="email address" />
-    <TextField value={password} onChange={e => { setPw(e.target.value) }} className={classes.textfield} fullWidth id="password" label="password" />
+    <TextField type="password" value={password} onChange={e => { setPw(e.target.value) }} className={classes.textfield} fullWidth id="password" label="password" />
     <Button onClick={() => signInWithPW(mail, password)}>Login</Button></form>)
 }
 
