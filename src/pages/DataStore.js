@@ -94,11 +94,14 @@ function objectToCsv(obj, products, questions) {
       else
         basics[key] = objOriginal[key];
     }
-    //map products
-    if (objOriginal.basket.basket != null)
+    //map products if any
+    if(objOriginal.basket !=null){
+      if (objOriginal.basket.basket != null)
       objOriginal.basket.basket.forEach((item, index) => {
         basketObject["prod" + item.id] = item.quantity;
       })
+    }
+
     //map questions
     //get all sections:
     let questions = Object.keys(objOriginal).filter((item) => item.startsWith("section"))
