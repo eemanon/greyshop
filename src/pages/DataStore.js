@@ -35,7 +35,7 @@ function objectToCsv(obj, products, questions) {
   console.log("FUNCTION objectToCSV")
   console.log(obj)
   let setAll = (obj, val) => Object.keys(obj).forEach(k => obj[k] = val);
-  let header = ["idField", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "carbonWeight", "averageCarbonWeight"];
+  let header = ["idField", "id", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "carbonWeight", "averageCarbonWeight"];
   //add product header & create prototype object to use for transformation
   let basketObject = {};
   for (const category of products) {
@@ -101,7 +101,8 @@ function objectToCsv(obj, products, questions) {
         basketObject["prod" + item.id] = item.quantity;
       })
     }
-
+    console.log("basics")
+    console.log(basics)
     //map questions
     //get all sections:
     let questions = Object.keys(objOriginal).filter((item) => item.startsWith("section"))
@@ -234,10 +235,7 @@ function DataView(props) {
         returndata.forEach((el => {
           obj.push(el);
         }))
-        console.log("object")
-        console.log(obj)
         querySnapshot.forEach(function (doc) {
-          console.log("inside the loop")
           const found = obj.find((el) => el.idField == doc.ref.parent.parent.id)
           if (found != null) {
             console.log('found ' + found.idField)

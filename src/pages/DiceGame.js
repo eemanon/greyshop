@@ -165,8 +165,8 @@ export default function DiceGame(props) {
         Veuillez cliquer sur le bouton pour lancer le dé digital et voir si vous avez gagné les produits sélectionnés.
       </p>
         <p>
-          Si le dé tombe sur le numéro 5, vous gagnez votre panier. <br></br>
-          Si le dé tombe sur le numéro 6, vous avez la possibilité de lancer le dé à nouveau.
+          Si le dé tombe sur le numéro 6, vous gagnez votre panier. <br></br>
+          Si le dé tombe sur le numéro 5, vous avez la possibilité de lancer le dé à nouveau.
       </p>
         <p>
           Bonne chance !
