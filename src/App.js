@@ -5,6 +5,9 @@ import { Router } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import history from './history';
 
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
 import StudentLogin from './pages/StudentLogin.js'
 import Terms from './pages/Terms.js'
 import Instructions from './pages/Instructions.js'
@@ -26,6 +29,11 @@ import { getStudentIds, getUserContent, getDiceGames, getNumDiceGames, addAvaila
 import Button from '@material-ui/core/Button';
 
 //database connection imports
+
+function Alert(props) {
+  //function to display alert in material ui style
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 
 function productIdsToQuestions(products, productIds, answers, title, id, information, showTitle, questionText) {
@@ -97,15 +105,24 @@ const variants = [
 ]
 
 function App() {
+
+  const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Vous devez accepter les conditions pour participer à cette experience.");
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  }
+
   const [variant, setVariant] = useState(0);
   const [userID, setUserID] = useState(null);
   const [winnerID, setWinnerID] = useState(-1);
-  const [admin, setAdmin] = useState(true);
   const [progressState, setProgress] = useState(1);
   const [headerBarTitle, setHeaderBarTitle] = useState("Bienvenue");
   const signInAn = () => {
     console.log("FUNCTION signInAn (App)")
-    if(userID == null){
+    if (userID == null) {
       userSignInAnonymously().then((user) => {
         console.log("FUNCTION userSignInAnonymously (App)")
         if (user) {
@@ -117,8 +134,15 @@ function App() {
     }
   }
   useEffect(() => {
-    console.log("FUNCTION useEffect (App)")
-  }, [userID])
+      console.log(history)
+      console.log(userID)
+      window.onpopstate = () => {
+        console.log("popped")
+        history.go(1)
+        setErrorMessage("Vous ne pouvez pas revenir en arrière pour modifier vos réponses.");
+        setOpen(true)
+      };
+  }, [history]);
   const products = Products();
 
   const carbonInfo = "Vous allez à présent évaluer l’empreinte carbone de 36 produits sélectionnés dans le magasin. L’empreinte carbone est une mesure de l’émission de gaz à effet de serre au cours de la production, du transport et de la distribution d’un produit. Plus l’empreinte carbone d’un produit est élevée, plus celui-ci contribue au réchauffement climatique.";
@@ -138,7 +162,7 @@ function App() {
                 setId={setWinnerID}
                 numVariants={4}
                 userID={userID}
-                next={() => { history.push("/consent"); setProgress(2); setHeaderBarTitle("Consentement"); }}
+                next={() => { setProgress(2); setHeaderBarTitle("Consentement"); history.push("/consent", {from: history.location}); }}
                 addUser={addUser}
                 userExists={userExists}
                 initialWrite={initialWrite}
@@ -153,7 +177,7 @@ function App() {
             signInAn(userID)
             return (
               <Terms
-                next={() => { history.push("/instructions"); }}
+                next={() => { history.push("/instructions", {from: history.location}); }}
                 userID={userID}
                 addContent={addContent}
               />
@@ -165,7 +189,7 @@ function App() {
             setProgress(3);
             setHeaderBarTitle("Instructions");
             signInAn(userID)
-            return (<Instructions next={() => { history.push("/budgetdetails"); }} />)
+            return (<Instructions next={() => { history.push("/budgetdetails", {from: history.location}); }} />)
           }}
         />
         <Route path='/budgetdetails'
@@ -173,7 +197,7 @@ function App() {
             setProgress(4);
             setHeaderBarTitle("Budget");
             signInAn(userID)
-            return (<BudgetDetails next={() => { history.push("/store"); }} />)
+            return (<BudgetDetails next={() => { history.push("/store", {from: history.location}); }} />)
           }}
         />
         <Route path='/store'
@@ -262,7 +286,7 @@ function App() {
               products={products}
               getDiceGames={getDiceGames}
               getNumDiceGames={getNumDiceGames}
-              getAllSubCollections = {getAllSubCollections}
+              getAllSubCollections={getAllSubCollections}
               getStudentIds={getStudentIds}
               addAvailableDiceGames={addAvailableDiceGames}
               userSignOut={userSignOut}
@@ -274,6 +298,11 @@ function App() {
           }}
         />
       </Router>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            {errorMessage}
+          </Alert>
+        </Snackbar>
     </div>
   );
 }

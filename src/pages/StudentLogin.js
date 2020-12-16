@@ -128,6 +128,7 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
         setOpen(true)
       });
     }
+    console.log(props.userID)
 
   }).catch(function (error) {
     if(error.code=='unavailable'){
