@@ -147,6 +147,8 @@ function App() {
 
   const carbonInfo = "Vous allez à présent évaluer l’empreinte carbone de 36 produits sélectionnés dans le magasin. L’empreinte carbone est une mesure de l’émission de gaz à effet de serre au cours de la production, du transport et de la distribution d’un produit. Plus l’empreinte carbone d’un produit est élevée, plus celui-ci contribue au réchauffement climatique.";
   const carbonQuestions = productIdsToQuestions(products, Co2questionids, ["élevée", "moyenne", "faible", "je ne sais pas"], "Section 10 : CO2 knowledge test (Presentation of 36 products) ", 10, carbonInfo, "yes", "Évaluer l'empreinte carbone de ce produit.");
+  
+  const allQuestions = regularQuestions.concat(carbonQuestions);
   return (
     <div className="App">
       <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={16}></HeaderBar>
@@ -293,7 +295,7 @@ function App() {
               userSignInWithMail={userSignInWithMail}
               useConnectedUser={useConnectedUser}
               useAllData={useAllData}
-              questions={regularQuestions}
+              questions={allQuestions}
             />)
           }}
         />

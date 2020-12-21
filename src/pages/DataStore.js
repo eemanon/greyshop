@@ -45,6 +45,8 @@ function objectToCsv(obj, products, questions) {
     }
   }
   //add question header...
+  console.log("questions");
+  console.log(questions)
   let questionObject = {}
   for (const section of questions) {
     for (const question of section.questions) {
