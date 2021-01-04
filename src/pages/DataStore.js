@@ -97,11 +97,11 @@ function objectToCsv(obj, products, questions) {
         basics[key] = objOriginal[key];
     }
     //map products if any
-    if(objOriginal.basket !=null){
+    if (objOriginal.basket != null) {
       if (objOriginal.basket.basket != null)
-      objOriginal.basket.basket.forEach((item, index) => {
-        basketObject["prod" + item.id] = item.quantity;
-      })
+        objOriginal.basket.basket.forEach((item, index) => {
+          basketObject["prod" + item.id] = item.quantity;
+        })
     }
     console.log("basics")
     console.log(basics)
@@ -113,7 +113,14 @@ function objectToCsv(obj, products, questions) {
       objOriginal[section].answers.forEach((question) => {
         //console.log('section id is '+section)
         //console.log('question id is '+question.id)
-        questionObject[section + "question" + question.id] = question.answer;
+        //+1 to have a range of question answers from 1 to 7
+        if (!(section == "section12" && question.id == "1"))
+          questionObject[section + "question" + question.id] = parseInt(question.answer) + 1;
+        else {
+          console.log("age question found")
+          questionObject[section + "question" + question.id] = parseInt(question.answer);
+        }
+
       })
       questionObject[section + "timeFinished"] = objOriginal[section].timeFinished;
       console.log("just set " + section + "timeFinished")
@@ -253,7 +260,7 @@ function DataView(props) {
             experience.timeCheckout = experience.basket.timeCheckout;
             experience.timeLandingPage = calcLandingPageTime(experience.basket.landingPageTimeStamps, experience.timeCheckout)
             experience.visitsLandingPage = experience.basket.landingPageTimeStamps.length % 2 == 0 ? experience.basket.landingPageTimeStamps.length / 2 : (experience.basket.landingPageTimeStamps.length + 1) / 2;
-            experience.carbonWeight = experience.basket.totalCarbonWeight;
+            experience.carbonWeight = Math.round(experience.basket.totalCarbonWeight*100) /100;  //limit to two decimals
             experience.averageCarbonWeight = experience.basket.averageCarbonWeight;
           }
           if (experience.section12 != null)
@@ -315,30 +322,29 @@ function DataView(props) {
   }
   return (<div className={classes.dataview}>
     <Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
-    {finalData==null?<div><CircularProgress /><br></br></div>:
-    <Table>
-      <TableBody>
-        <TableRow><TableCell></TableCell>{returndata != null && header.map((key) => (
-          <TableCell key={key}>{key}</TableCell>
-        ))}</TableRow>
-        {returndata != null && arr.map((item, id) => (
-          <TableRow><TableCell><Button variant="contained" id={item[0]} onClick={() => downloadBasket(item[0])}><ShoppingCartIcon /></Button></TableCell>
-            {item.map((cell) => (
-              <TableCell>{cell ? cell.length > 20 ? cell.substring(0, 30) + "..." : cell : ""}</TableCell>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>}
-
     <ButtonGroup variant="contained" color="primary">
       <Button onClick={() => uploadDiceGames(10, props.addAvailableDiceGames)}>Create 10 dicegames and upload them</Button>
       <Button onClick={() => fileDownload(objectToCsv(finalData, props.products, props.questions), 'export.csv')}>Download CSV</Button>
       <Button onClick={() => fileDownload(JSON.stringify(returndata, true), 'export.json')} color="primary">Download JSON</Button>
       <Button onClick={() => downloadStudentIds()} color="secondary">Download StudentIds</Button>
+      <Button onClick={props.userSignOut}>Logout</Button>
     </ButtonGroup>
-    <br></br>
-    <Button onClick={props.userSignOut}>Logout</Button></div>)
+    {finalData == null ? <div><CircularProgress /><br></br></div> :
+      <Table>
+        <TableBody>
+          <TableRow><TableCell></TableCell>{returndata != null && header.map((key) => (
+            <TableCell key={key}>{key}</TableCell>
+          ))}</TableRow>
+          {returndata != null && arr.map((item, id) => (
+            <TableRow><TableCell><Button variant="contained" id={item[0]} onClick={() => downloadBasket(item[0])}><ShoppingCartIcon /></Button></TableCell>
+              {item.map((cell) => (
+                <TableCell>{cell ? cell.length > 20 ? cell.substring(0, 30) + "..." : cell : ""}</TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>}
+  </div>)
 }
 function Loginform(props) {
   const classes = useStyles();

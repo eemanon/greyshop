@@ -20,13 +20,19 @@ import Basket from '../components/Basket.js'
 import ThermoCard from '../components/Thermometer';
 import ShopLandingPage from "../components/ShopLandingPage"
 
+import { isMobile } from 'react-device-detect';
 
 const drawerWidth = 300;
+const mobileDrawerWidth = 80;
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  rootDesktop: {
     flexGrow: 1,
     marginRight: drawerWidth
+  },
+  rootMobile: {
+    flexGrow: 1,
+    marginRight: mobileDrawerWidth
   },
   panel: {
     display: 'flex',
@@ -47,13 +53,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
   },
   toolbar: {
     display: 'flex',
@@ -101,7 +100,7 @@ function basketWeight(basket) {
 export default function Store(props) {
   console.log("COMPONENT Store")
   const classes = useStyles();
-
+  const [drawerOpen, setdrawerOpen] = useState(false);
   const [notSeenInstructions, setNotSeenInstructions] = useState(true);
   const [landingPageTimeStamps, setLandingPageTimeStamps] = useState([Date.now()]);
   const [timestampLeavePageLeave, setTimeStampLeave] = useState(null)
@@ -190,7 +189,7 @@ export default function Store(props) {
       return (
         <Grid container spacing={3} className={classes.grid}>
           {found.products.map((item, i) => (
-            <Grid key={item.id} item xs={6} md={4} lg={3} xl={2}>
+            <Grid key={item.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
               <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]}
                 unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]}
                 priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]}
@@ -219,7 +218,7 @@ export default function Store(props) {
     setOpen(false);
   }
   return (
-    <div className={classes.root}>
+    <div className={isMobile ? classes.rootMobile : classes.rootDesktop}>
       <div className={classes.toolbar}>
         <Chip label="Acceuil" color={categoryIndex === -1 ? "primary" : "default"} onClick={(i) => { changeCategory(-1) }} />
         {items.map((item, i) => (
@@ -227,18 +226,21 @@ export default function Store(props) {
         ))}
       </div>
       {showCategory()}
-      <SideDrawer drawerwidth={drawerWidth} >
+      <SideDrawer drawerwidth={drawerWidth} mobileWidth={mobileDrawerWidth} drawerOpen={drawerOpen} setDrawerOpen={setdrawerOpen}>
         {props.variant.thermometer ? <ThermoCard
+          drawerOpen={drawerOpen}
           label={props.variant.thermometerlabel}
           value={basketWeight(basket) !== 0 ? carbonWeight(basket) / basketWeight(basket) : 0}
           text={props.variant.text}
         ></ThermoCard> : ""}
         <Divider />
         <Basket
+          setDrawerOpen={setdrawerOpen}
+          drawerOpen={drawerOpen}
           openErrorMessage={setOpen}
           setErrorMessage={setErrorMessage}
           carbonWeight={carbonWeight(basket)}
-          averageCarbonWeight = {carbonWeight(basket) / basketWeight(basket)}
+          averageCarbonWeight={carbonWeight(basket) / basketWeight(basket)}
           next={props.next}
           basket={basket}
           remove={removeFromBasket}

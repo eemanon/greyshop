@@ -56,7 +56,7 @@ export default function Instructions(props) {
           Budget :
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Vous disposerez d’un budget de 25 euros pour votre visite dans le magasin.
+          Nous vous octroyons un budget de 25 euros pour votre visite dans le magasin.
           Vous devrez dépenser un minimum de 20 euros avant de pouvoir quitter le magasin.
           Cependant, la part des 25 euros non dépensée lors de vos achats ne vous sera pas rendue en liquide.
               </Typography>
@@ -67,22 +67,21 @@ export default function Instructions(props) {
           Vous aurez une chance sur cinq de remporter le panier de courses alimentaires que vous avez composé durant l’expérience.
                     </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Afin de déterminer si vous remportez le panier, vous jetterez un dé. Si le dé tombe sur 5, vous gagnerez le panier,
-          s’il tombe sur 6, vous jetterez le dé à nouveau.
-              </Typography>
+          Afin de déterminer si vous remportez le panier, vous jetterez un dé. Si le dé tombe sur 6, vous gagnerez le panier,
+          s’il tombe sur 5, vous jetterez le dé à nouveau.
+        </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Si vous gagnez, vous pourrez aller chercher vos produits dans un magasin « Casino » au centre de  Toulouse, dont nous vous fournirons l’adresse.
-              </Typography>
+        </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Nous vous remercions pour votre participation.
-              </Typography>
+        </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Estefanya Vazquez (estefanya.vazquez@etu.univ-tlse2.fr) <br></br>
-Étudiante en Master 2 PEPSCO<br></br>
-Ayşegül Kanay (aysegul.kanay@univ-tlse2.fr) <br></br>
-Doctorante en CLLE-LTC <br></br>
-Sous la direction de Denis Hilton et Stefan Ambec<br></br>
-
+          Étudiante en Master 2 PEPSCO<br></br>
+          Ayşegül Kanay (aysegul.kanay@univ-tlse2.fr) <br></br>
+          Doctorante en CLLE-LTC <br></br>
+          Sous la direction de Denis Hilton et Stefan Ambec<br></br>
         </Typography>
 
         <Button color="primary" variant="contained" onClick={() => props.next()}>Continuer</Button>

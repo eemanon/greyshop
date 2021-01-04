@@ -2,10 +2,11 @@
 //props: next=next Page basket=basket remove=function to remove item from basket add=function to add item to basket  ht=sum without taxes 
 //showTax=boolean if tax is to be included taxe=value of the tax
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 //material ui imports
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -27,6 +28,18 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import { BrowserView, MobileView } from 'react-device-detect';
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,15 +72,15 @@ function checkOut(userID, next, basket, landingPageTimeStamps, timeFinishInstruc
     return
   let timeCheckout = Date.now();
   //TODO calc time on landingpage
-  console.log("Arrived at "+ new Date(landingPageTimeStamps[0]).toLocaleTimeString("fr-FR"))
-  console.log("Landing Page finished at "+ new Date(timeFinishInstructions).toLocaleTimeString("fr-FR"))
-  console.log("Checkout at "+ new Date(timeCheckout).toLocaleTimeString("fr-FR"))
+  console.log("Arrived at " + new Date(landingPageTimeStamps[0]).toLocaleTimeString("fr-FR"))
+  console.log("Landing Page finished at " + new Date(timeFinishInstructions).toLocaleTimeString("fr-FR"))
+  console.log("Checkout at " + new Date(timeCheckout).toLocaleTimeString("fr-FR"))
   //todo call function to send stuff.
   //console.log(userID)
   let newbasket = basket.map((item) => ({ "id": item.id, "quantity": item.quantity }))
-  let object = { id:"basket", content: {basket: newbasket, landingPageTimeStamps: landingPageTimeStamps, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht, totalCarbonWeight: carbonWeight, averageCarbonWeight }};
+  let object = { id: "basket", content: { basket: newbasket, landingPageTimeStamps: landingPageTimeStamps, timeFinishLandingPage: timeFinishInstructions, timeCheckout: timeCheckout, basketValueWT: ht, totalCarbonWeight: carbonWeight, averageCarbonWeight } };
   console.log(showTax)
-  if (showTax){
+  if (showTax) {
     console.log("adding tax")
     object.content.tax = taxe;
   }
@@ -95,18 +108,30 @@ function isValidBasket(value, tax, taxAdded) {
   }
   return true;
 }
+function sumBasketItems(basket) {
+  let count = 0;
+  basket.forEach(element => {
+    count = count + element.quantity;
+  });
+  return count;
+}
 
 export default function Basket(props) {
+  console.log("basket render")
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [itemCount, setItemCount] = useState(0);
+  useEffect(() => {
+    setItemCount(sumBasketItems(props.basket))
+  }, [props.basket])
   const handleClose = () => {
     setOpen(false);
   };
-  return (
-    <div className={classes.root}>
-      <Typography variant="h6">
-        Votre Panier
-      </Typography>
+
+  const FullBasket = () => {
+    return (<div><Typography variant="h6">
+      Votre Panier
+</Typography>
       <br></br>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table" size="small">
@@ -114,20 +139,20 @@ export default function Basket(props) {
             {props.showTax ? <TableRow>
               <TableCell component="th" scope="row">
                 Total en cours HT
-                </TableCell>
+          </TableCell>
               <TableCell align="left">{format2Digit(props.ht)} €</TableCell>
             </TableRow> : null}
             {props.showTax ? <TableRow>
               <TableCell component="th" scope="row">
                 Taxe
-                </TableCell>
+          </TableCell>
               <TableCell align="left">{format2Digit(props.taxe)} €</TableCell>
             </TableRow> : null}
 
             <TableRow>
               <TableCell component="th" scope="row">
                 Total en cours
-                </TableCell>
+          </TableCell>
               <TableCell align="left">{props.showTax ? format2Digit(props.ht + props.taxe) : format2Digit(props.ht)} €</TableCell>
             </TableRow>
           </TableBody>
@@ -143,7 +168,7 @@ export default function Basket(props) {
           startIcon={<ShoppingCartIcon />}
         >
           Checkout
-      </Button>
+        </Button>
       </Tooltip>
       <List className={classes.list}>
         <ListSubheader component="div" id="nested-list-subheader">
@@ -173,12 +198,12 @@ export default function Basket(props) {
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Etes-vous sûr de vouloir valider votre panier et quitter le magasin?
-          </DialogContentText>
+      </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Non
-          </Button>
+      </Button>
           <Button
             onClick={() => checkOut(
               props.userID,
@@ -190,16 +215,60 @@ export default function Basket(props) {
               props.ht,
               props.taxe,
               props.showTax,
-              props.openErrorMessage, 
+              props.openErrorMessage,
               props.setErrorMessage,
               props.carbonWeight,
               props.averageCarbonWeight
-              )}
+            )}
             color="primary" autoFocus>
             Oui
-          </Button>
+      </Button>
         </DialogActions>
-      </Dialog>
+      </Dialog></div>);
+  }
+  const IconBasket = () => {
+    return (<div>
+      <Table className={classes.table} aria-label="simple table" size="small">
+        <TableBody>
+          {props.showTax ? <div><TableRow>
+            <TableCell component="th" scope="row">
+              HT
+          </TableCell></TableRow><TableRow>
+              <TableCell align="left">{format2Digit(props.ht)} €</TableCell>
+            </TableRow></div> : null}
+          {props.showTax ? <div><TableRow>
+            <TableCell component="th" scope="row">
+              Taxe
+          </TableCell></TableRow><TableRow>
+              <TableCell align="left">{format2Digit(props.taxe)} €</TableCell>
+            </TableRow></div> : null}
+          <TableRow>
+            <TableCell component="th" scope="row">
+              Total
+          </TableCell></TableRow><TableRow>
+            <TableCell align="left">{props.showTax ? format2Digit(props.ht + props.taxe) : format2Digit(props.ht)} €</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+      <IconButton
+        variant="contained"
+        aria-label="cart"
+        color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "default"}
+        onClick={() => { props.setDrawerOpen(!props.drawerOpen) }}
+      >
+        <StyledBadge badgeContent={itemCount} color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "secondary"}>
+          <ShoppingCartIcon />
+        </StyledBadge>
+      </IconButton></div>)
+  }
+  return (
+    <div className={classes.root}>
+      <BrowserView>
+        <FullBasket />
+      </BrowserView>
+      <MobileView>
+        {props.drawerOpen ? <FullBasket /> : <IconBasket />}
+      </MobileView>
     </div>
   );
 }

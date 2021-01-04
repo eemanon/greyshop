@@ -10,6 +10,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 
+import { isMobile } from 'react-device-detect';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -43,18 +45,19 @@ export default function Question(props) {
     return (<TextField id="standard-basic" label={props.question.Question} onChange={handleChange} />)
   }
   const answercomponent = () => {
-    return (<RadioGroup column={(props.form == "list") ? 1 : 0} row={(props.form != "list") ? 1 : 0} aria-label="position" name="position" value={val} onChange={handleChange}>
-      {props.question.Answer.map((item, i) => (
-        <FormControlLabel
-          key={item.id}
-          value={"" + i}
-          control={<Radio color="primary" />}
-          label={item}
-          labelPlacement={props.form == "list" ? "end" : "bottom"}
-        />
-      ))
-      }
-    </RadioGroup>);
+    return (
+      <RadioGroup column={(props.form == "list" || isMobile) ? 1 : 0} row={(props.form != "list" && !isMobile) ? 1 : 0} aria-label="position" name="position" value={val} onChange={handleChange}>
+        {props.question.Answer.map((item, i) => (
+          <FormControlLabel
+            key={item.id}
+            value={"" + i}
+            control={<Radio color="primary" />}
+            label={item}
+            labelPlacement={(props.form == "list" || isMobile) ? "end" : "bottom"}
+          />
+        ))
+        }
+      </RadioGroup>);
   }
   const handleChange = (event) => {
     console.log("FUNCTION handlechange (Question)")
@@ -71,11 +74,11 @@ export default function Question(props) {
       {props.question.image != null ? <Typography variant="subtitle1" component="span" className={classes.imgTitle} gutterBottom >{props.question.imageTitle}</Typography> : ""}
       {props.question.image != null ? <img className={classes.img} src={props.question.image} /> : ""}
       <div className={classes.answers}>
-        {props.question.extremeLabels != null ? <div className={classes.exLabel}>{props.question.extremeLabels[0]}</div> : ""}
+        {props.question.extremeLabels != null ? isMobile ? <div className={classes.exLabelMob}>{props.question.extremeLabels[0]}</div>: <div className={classes.exLabel}>{props.question.extremeLabels[0]}</div> : ""}
         <FormControl component="fieldset">
           {props.question.Answer != null ? answercomponent() : textInput()}
         </FormControl>
-        {props.question.extremeLabels != null ? <div className={classes.exLabel}>{props.question.extremeLabels[1]}</div> : ""}
+        {props.question.extremeLabels != null ? isMobile ? <div className={classes.exLabelMob}>{props.question.extremeLabels[1]}</div>: <div className={classes.exLabel}>{props.question.extremeLabels[1]}</div> : ""}
       </div>
     </div>
   );

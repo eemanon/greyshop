@@ -114,7 +114,6 @@ function App() {
     }
     setOpen(false);
   }
-
   const [variant, setVariant] = useState(0);
   const [userID, setUserID] = useState(null);
   const [winnerID, setWinnerID] = useState(-1);
@@ -123,6 +122,7 @@ function App() {
   const signInAn = () => {
     console.log("FUNCTION signInAn (App)")
     if (userID == null) {
+      //reconnect
       userSignInAnonymously().then((user) => {
         console.log("FUNCTION userSignInAnonymously (App)")
         if (user) {
@@ -151,7 +151,7 @@ function App() {
   const allQuestions = regularQuestions.concat(carbonQuestions);
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={16}></HeaderBar>
+      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={17}><Button variant="contained" onClick={()=>setVariant((variant+1)%4)} color="secondary">shop {variant}</Button></HeaderBar>
       <Router history={history}>
         <Route exact path='/'
           render={() => {

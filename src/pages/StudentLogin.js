@@ -10,6 +10,10 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
+import ClleLogo from '../images/clle_logo.png';
+import Utj2Logo from '../images/utj2_logo.png';
+import TseLogo from '../images/tse_logo.png';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -22,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
   textfield: {
     marginBottom: "10px"
   },
+  logos: {
+    marginBottom: "30px"
+  }
 
 }));
 
@@ -53,6 +60,12 @@ export default function StudentLogin(props) {
   return (
     <div>
       <Paper className={classes.root}>
+        <div className={classes.logos}>
+          <img src={ClleLogo} alt="Clle Logo" width="20%" />
+          <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
+          <img src={TseLogo} alt="Toulouse Business School Logo" width="20%" />
+        </div>
+
         <Typography variant="body1" gutterBottom >
           Nous vous remercions pour votre participation à cette étude.
           L'expérience porte sur les comportements d’achat en ligne. Pour cette expérience,
@@ -60,7 +73,7 @@ export default function StudentLogin(props) {
           À la fin de l’expérience, un dé digital vous permettra de voir si vous avez gagné les produits choisis
           (vous avez une chance sur cinq de gagner).
             </Typography><Typography variant="body1" gutterBottom >
-          Veuillez suivre les instructions et consignes qui seront affichés au fur et à mesure de l'expérience.
+          Veuillez suivre les instructions et consignes qui seront affichées au fur et à mesure de l'expérience.
             </Typography><Typography variant="body1" gutterBottom >
           Nous vous rappelons que la participation à cette étude est limitée aux étudiants universitaires habitant à Toulouse.
             À cet effet, nous demandons votre numéro d'étudiant ci-dessous pour commencer l'étude <b>(votre carte d’étudiant sera demandée
@@ -131,11 +144,11 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
     console.log(props.userID)
 
   }).catch(function (error) {
-    if(error.code=='unavailable'){
+    if (error.code == 'unavailable') {
       setErrorMessage("Problèmes de connexion. Veuillez réessayer plus tard")
       setOpen(true)
     }
-    if(error.code=='permission denied'){
+    if (error.code == 'permission denied') {
       setErrorMessage("Vous avez déjà soumis un numéro d'étudiant.")
       setOpen(true)
     }

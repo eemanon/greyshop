@@ -704,10 +704,32 @@
         ]
     },
     {
-        "Title": "Section 12 : demographic information",
+        "Title": "Section 12 : device manipulation check",
+        "Information": "",
         "id": 12,
         "showTitle": "no",
         "link": "/questionnaire_section12",
+        "nextPage": "/questionnaire_section13",
+        "form": "list",
+        "questions": [
+            {
+                "Question": "Quel type d’appareil avez-vous utilisé pour mener l'expérience:",
+                "Answer": [
+                    "Smartphone",
+                    "Ordinateur",
+                    "Tablette",
+                    "Autre"
+                ],
+                "obligatory": "yes",
+                "id": 1
+            }
+        ]
+    },
+    {
+        "Title": "Section 13 : demographic information",
+        "id": 13,
+        "showTitle": "no",
+        "link": "/questionnaire_section13",
         "nextPage": "/dicegame",
         "form": "list",
         "questions": [

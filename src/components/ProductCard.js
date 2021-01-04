@@ -56,7 +56,7 @@ export default function ProductCard(props) {
             <Typography variant="h6" component="h2" gutterBottom>
             {props.name}
           </Typography>
-                <img src={process.env.PUBLIC_URL+props.imagePath} alt={props.alt} width="70%"/>
+                <img src={process.env.PUBLIC_URL+props.imagePath} alt={props.alt} width="130px" height="130px" />
                 {props.label?label():""}
                 <Typography variant="body1" gutterBottom className={classes.typo} component={'span'}>
                 Prix: {props.priceInEuros} € <div className={classes.priceperUnit} >{props.pricePerUnit} €/kg</div>
