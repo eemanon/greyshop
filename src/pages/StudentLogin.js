@@ -10,6 +10,8 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
+import { BrowserView, MobileView } from 'react-device-detect';
+
 import ClleLogo from '../images/clle_logo.png';
 import Utj2Logo from '../images/utj2_logo.png';
 import TseLogo from '../images/tse_logo.png';
@@ -59,45 +61,57 @@ export default function StudentLogin(props) {
 
   return (
     <div>
-      <Paper className={classes.root}>
-        <div className={classes.logos}>
-          <img src={ClleLogo} alt="Clle Logo" width="20%" />
-          <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
-          <img src={TseLogo} alt="Toulouse Business School Logo" width="20%" />
-        </div>
+      <BrowserView>
+        <Paper className={classes.root}>
+          <div className={classes.logos}>
+            <img src={ClleLogo} alt="Clle Logo" width="20%" />
+            <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
+            <img src={TseLogo} alt="Toulouse Business School Logo" width="20%" />
+          </div>
 
-        <Typography variant="body1" gutterBottom >
-          Nous vous remercions pour votre participation à cette étude.
-          L'expérience porte sur les comportements d’achat en ligne. Pour cette expérience,
-          vous allez faire vos courses sur un site expérimental et répondre à un questionnaire.
-          À la fin de l’expérience, un dé digital vous permettra de voir si vous avez gagné les produits choisis
-          (vous avez une chance sur cinq de gagner).
+          <Typography variant="body1" gutterBottom >
+            Nous vous remercions pour votre participation à cette étude.
+            L'expérience porte sur les comportements d’achat en ligne. Pour cette expérience,
+            vous allez faire vos courses sur un site expérimental et répondre à un questionnaire.
+            À la fin de l’expérience, un dé digital vous permettra de voir si vous avez gagné les produits choisis
+            (vous avez une chance sur cinq de gagner).
             </Typography><Typography variant="body1" gutterBottom >
-          Veuillez suivre les instructions et consignes qui seront affichées au fur et à mesure de l'expérience.
+            Veuillez suivre les instructions et consignes qui seront affichées au fur et à mesure de l'expérience.
             </Typography><Typography variant="body1" gutterBottom >
-          Nous vous rappelons que la participation à cette étude est limitée aux étudiants universitaires habitant à Toulouse.
+            Nous vous rappelons que la participation à cette étude est limitée aux étudiants universitaires habitant à Toulouse.
             À cet effet, nous demandons votre numéro d'étudiant ci-dessous pour commencer l'étude <b>(votre carte d’étudiant sera demandée
             lors de la récupération de vos produits dans le magasin).</b>
-        </Typography><Typography variant="body1" gutterBottom >
-          ** Votre numéro d'étudiant ne nous permet pas de vous identifier, mais de vérifier votre statut d'étudiant universitaire à Toulouse.**
+          </Typography><Typography variant="body1" gutterBottom >
+            ** Votre numéro d'étudiant ne nous permet pas de vous identifier, mais de vérifier votre statut d'étudiant universitaire à Toulouse.**
             </Typography><Typography variant="body1" gutterBottom >
-          Nous vous remercions encore pour votre participation et nous restons à votre disposition pour toute question.
+            Nous vous remercions encore pour votre participation et nous restons à votre disposition pour toute question.
             </Typography>
-        <Typography variant="body1" gutterBottom >
-          Estefanya Vazquez et Aysegul Kanay <br></br>estefanya.vazquez@etu.univ-tlse2.fr<br></br>aysegul.kanay@univ-tlse2.fr
+          <Typography variant="body1" gutterBottom >
+            Estefanya Vazquez et Aysegul Kanay <br></br>estefanya.vazquez@etu.univ-tlse2.fr<br></br>aysegul.kanay@univ-tlse2.fr
         </Typography>
-        <TextField className={classes.textfield} fullWidth id="studentNumber" onChange={e => { setValue(e.target.value) }} label="Numéro étudiant" value={studentValue} />
+          <TextField className={classes.textfield} fullWidth id="studentNumber" onChange={e => { setValue(e.target.value) }} label="Numéro étudiant" value={studentValue} />
 
-        <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props,
-          regex, setOpen, timestamp_start_experience, setErrorMessage)}>
-          Continuer
+          <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props,
+            regex, setOpen, timestamp_start_experience, setErrorMessage)}>
+            Continuer
         </Button>
-        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="error">
-            {errorMessage}
-          </Alert>
-        </Snackbar>
-      </Paper>
+          <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="error">
+              {errorMessage}
+            </Alert>
+          </Snackbar>
+        </Paper>
+      </BrowserView>
+      <MobileView>
+      <Paper className={classes.root}>
+          <div className={classes.logos}>
+            <img src={ClleLogo} alt="Clle Logo" width="20%" />
+            <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
+            <img src={TseLogo} alt="Toulouse Business School Logo" width="20%" />
+          </div>
+          Il est requis d’utiliser un ordinateur pour participer à l'étude (le site n’est pas compatible pour des téléphones portables (smartphones) et tablettes. Nous vous invitons à participer depuis votre ordinateur.
+        </Paper>
+      </MobileView>
     </div>
   );
 }
