@@ -53,7 +53,7 @@ export default function Terms(props) {
           Je certifie donner mon accord pour participer à une étude portant sur les comportements d’achats en ligne.
           J'accepte volontairement de participer à cette étude et je comprends que ma participation n'est pas obligatoire
           et que je peux arrêter à tout moment, sans avoir à me justifier, ni encourir aucune responsabilité.
-          Au cours de cette étude, j'accepte que soient recueillies des données sur mes réponses.
+          Au cours de cette étude, j'accepte que mes réponses soient enregistrées.
           Je comprends que les informations recueillies sont strictement confidentielles et à usage exclusif des investigateurs de cette étude.
           J'ai été informé(e) que mes données sont anonymes et que par conséquent mon identité n'apparaitra dans aucun rapport ou publication et
           que toute information me concernant sera traitée de façon confidentielle. J'accepte que les données enregistrées à l'occasion de cette étude

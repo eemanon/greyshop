@@ -42,15 +42,14 @@ export default function Instructions(props) {
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Nous vous remercions d’avoir accepté de participer à cette expérience.
           Elle  consiste à faire vos courses dans un magasin d’alimentation en ligne fictif.
-          Veuillez faire vos achats comme à votre habitude. Vous avez la possibilité de gagner votre panier à la fın de l’expérience,
+          Vous avez la possibilité de gagner votre panier à la fın de l’expérience,
           choisissez-donc les produits que vous consommez dans votre quotidien. La passation durera environ 25 minutes.
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Cette expérience est menée dans le cadre d’un projet de recherche scientifique. Les données recueillies seront traitées de façon  anonyme.
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Après avoir terminé vos courses, nous vous demanderons de répondre à quelques questions. Veuillez noter qu’il n’y a pas de bonnes et de mauvaises
-          réponses, seul votre avis nous intéresse.
+          Après avoir terminé vos courses, nous vous demanderons de répondre à quelques questions. Veuillez noter qu’il n’y a ni bonnes ni mauvaises réponses, seul votre avis nous intéresse.
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Budget :

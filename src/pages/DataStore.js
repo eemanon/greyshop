@@ -323,7 +323,7 @@ function DataView(props) {
   return (<div className={classes.dataview}>
     <Typography variant="h3" component="h2" gutterBottom>Données disponibles</Typography>
     <ButtonGroup variant="contained" color="primary">
-      <Button onClick={() => uploadDiceGames(10, props.addAvailableDiceGames)}>Create 10 dicegames and upload them</Button>
+      <Button onClick={() => uploadDiceGames(100, props.addAvailableDiceGames)}>Create 100 dicegames and upload them</Button>
       <Button onClick={() => fileDownload(objectToCsv(finalData, props.products, props.questions), 'export.csv')}>Download CSV</Button>
       <Button onClick={() => fileDownload(JSON.stringify(returndata, true), 'export.json')} color="primary">Download JSON</Button>
       <Button onClick={() => downloadStudentIds()} color="secondary">Download StudentIds</Button>

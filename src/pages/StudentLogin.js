@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import { BrowserView, MobileView } from 'react-device-detect';
+import { isTablet, BrowserView, MobileView } from 'react-device-detect';
 
 import ClleLogo from '../images/clle_logo.png';
 import Utj2Logo from '../images/utj2_logo.png';
@@ -61,14 +61,13 @@ export default function StudentLogin(props) {
 
   return (
     <div>
-      <BrowserView>
+      {!isTablet && <BrowserView>
         <Paper className={classes.root}>
           <div className={classes.logos}>
             <img src={ClleLogo} alt="Clle Logo" width="20%" />
             <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
             <img src={TseLogo} alt="Toulouse Business School Logo" width="20%" />
           </div>
-
           <Typography variant="body1" gutterBottom >
             Nous vous remercions pour votre participation à cette étude.
             L'expérience porte sur les comportements d’achat en ligne. Pour cette expérience,
@@ -101,9 +100,9 @@ export default function StudentLogin(props) {
             </Alert>
           </Snackbar>
         </Paper>
-      </BrowserView>
+      </BrowserView>}
       <MobileView>
-      <Paper className={classes.root}>
+        <Paper className={classes.root}>
           <div className={classes.logos}>
             <img src={ClleLogo} alt="Clle Logo" width="20%" />
             <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
