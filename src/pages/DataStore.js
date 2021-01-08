@@ -114,7 +114,7 @@ function objectToCsv(obj, products, questions) {
         //console.log('section id is '+section)
         //console.log('question id is '+question.id)
         //+1 to have a range of question answers from 1 to 7
-        if (!(section == "section12" && question.id == "1"))
+        if (!(section == "section13" && question.id == "1"))
           questionObject[section + "question" + question.id] = parseInt(question.answer) + 1;
         else {
           console.log("age question found")
