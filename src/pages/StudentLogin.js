@@ -1,7 +1,7 @@
 //Component a login form with a simple texfield that is checked upon.
 //props: next=next page
 import React, { useState } from 'react';
-
+import {useLocation} from "react-router-dom";
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -41,6 +41,11 @@ function Alert(props) {
 
 
 export default function StudentLogin(props) {
+	//get parameter id from link
+  const search = useLocation().search;  
+  const mailID = new URLSearchParams(search).get('id');
+  console.log("mail ID: "+mailID)
+	
   const classes = useStyles();
   const timestamp_start_experience = (Date.now())
   //input tracking state
@@ -91,7 +96,7 @@ export default function StudentLogin(props) {
           <TextField className={classes.textfield} fullWidth id="studentNumber" onChange={e => { setValue(e.target.value) }} label="Numéro étudiant" value={studentValue} />
 
           <Button color={regex.test(studentValue) ? "primary" : "default"} variant="contained" onClick={() => checkIfUsed(studentValue, props,
-            regex, setOpen, timestamp_start_experience, setErrorMessage)}>
+            regex, setOpen, timestamp_start_experience, setErrorMessage, mailID)}>
             Continuer
         </Button>
           <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
@@ -115,7 +120,7 @@ export default function StudentLogin(props) {
   );
 }
 
-function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErrorMessage) {
+function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErrorMessage, mailID) {
   //function to check if id is already used or invalid.
   //format check
   console.log("experience started at " + timestampStart)
@@ -137,7 +142,8 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
       props.addUser(studentValue, props.userID).then(function () {
         //get counter and increment it
         const calcVariant = (id, numVariants) => (id % numVariants);
-        return props.initialWrite(props.userID, studentValue, timestampStart, calcVariant, props.numVariants)
+		console.log("blabla "+mailID)
+        return props.initialWrite(props.userID, studentValue, timestampStart, calcVariant, props.numVariants, mailID)
           .catch(function (err) {
             // This will be an "population is too big" error.
             console.log("didnt make it")
@@ -145,8 +151,9 @@ function checkIfUsed(studentValue, props, regex, setOpen, timestampStart, setErr
           });
       }).then(function (arr) {
         console.log("this user will see shop variant ", arr[0]);
-        props.setVariant(arr[0])
-        props.setId(arr[1])
+        //props.setVariant(arr[0])
+		props.setVariant(0)		//version december 21 :use only ever the same version
+        props.setId(arr[1])		
         props.next()
       }).catch(function (error) {
         console.error("Error adding user: ", error);

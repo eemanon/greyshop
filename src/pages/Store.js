@@ -125,7 +125,7 @@ export default function Store(props) {
         futureValue = futureValue + ((carbonWeight(basket) + (item.Grammes * item["Empreinte CO2 (g par 100 g)"] / 100000)) / (basketWeight(basket) + (item.Grammes / 1000)) - 2.33) * 0.35 * (basketWeight(basket) + (item.Grammes / 1000));
     }
     console.log(futureValue)
-    if (futureValue > 25.00) {
+    if (futureValue > 40) {
       //trigger error message and block
       setErrorMessage("Dépassement du budget: Il n’est pas possible de rajouter ce produit à votre panier car vous dépasseriez le budget alloué");
       setOpen(true);

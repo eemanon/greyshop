@@ -90,18 +90,20 @@ const getNumDiceGames = () => {
 const incrementCounter = () => {
     firestore.collection("properties").doc("count").update({ "total": firebase.firestore.FieldValue.increment(1) })
 }
-const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants) => {
+const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants, mailID) => {
     //sets user id, variant, timestart
     //doc refs:
     let docCounter = firestore.collection("properties").doc("count");
     let docData = firestore.collection("data").doc(uid);
     //read counter
+	console.log("mail id firebase: " + mailID);
     return firestore.runTransaction(function (transaction) {
         return transaction.get(docCounter).then(function (sfDoc) {
             let newCounter = sfDoc.data().total + 1;
             let variant = calcVariant(newCounter, numVariants)
+			variant = 0
             transaction.update(docCounter, { total: newCounter });
-            transaction.set(docData, { variant: variant, timeStart: timestamp, id: newCounter });
+            transaction.set(docData, { variant: variant, timeStart: timestamp, id: newCounter, mailID: mailID });
             return [variant, newCounter];
         });
     })

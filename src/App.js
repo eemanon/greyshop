@@ -151,7 +151,8 @@ function App() {
   const allQuestions = regularQuestions.concat(carbonQuestions);
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={17}><Button variant="contained" onClick={()=>setVariant((variant+1)%4)} color="secondary">shop {variant}</Button></HeaderBar>
+      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={17}>
+	  </HeaderBar>
       <Router history={history}>
         <Route exact path='/'
           render={() => {

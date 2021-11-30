@@ -98,12 +98,12 @@ function checkOut(userID, next, basket, landingPageTimeStamps, timeFinishInstruc
 }
 
 function isValidBasket(value, tax, taxAdded) {
-  //check if basket value is between 20 and 25 €
+  //check if basket value is between 0 and 25 €
   if (taxAdded) {
-    if (value + tax < 20 || value + tax > 25)
+    if (value + tax < 0 || value + tax > 40)
       return false;
   } else {
-    if (value < 20 || value > 25)
+    if (value < 0 || value > 40)
       return false;
   }
   return true;
@@ -158,7 +158,7 @@ export default function Basket(props) {
           </TableBody>
         </Table>
       </TableContainer>
-      <Tooltip title="Le panier doit être entre 20 et 25 €">
+      <Tooltip title="Le panier doit être entre 0 et 40 €">
         <Button
           variant="contained"
           color={isValidBasket(props.ht, props.taxe, props.showTax) ? "primary" : "default"}
