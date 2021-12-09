@@ -37,8 +37,9 @@ export default function BudgetDetails(props) {
           Budget
           </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Bonjour et bienvenue. Vous allez participer à une experience qui va consister à faire des achats dans un magasin en ligne.
-          Nous vous octroyons un budget de 25 euros pour faire vos courses.
+          Vous allez maintenant pouvoir constituer un panier de biens alimentaires dans notre magasin.</Typography><Typography variant="body1" gutterBottom className={classes.typo}>
+Vous aurez un budget de 40 euros (ou 43/48 selon le traitement) pour faire vos courses.
+N'oubliez pas: ce qui compte pour nous est que vous choisissiez ce que vous souhaitez consommer sachant que vous pouvez recevoir le panier de consommation en janvier. 
         </Typography>
         <Button color="primary" variant="contained" onClick={() => props.next()}>Continuer</Button>
       </Paper>

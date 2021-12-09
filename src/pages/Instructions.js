@@ -40,49 +40,30 @@ export default function Instructions(props) {
           Instructions
           </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Nous vous remercions d’avoir accepté de participer à cette expérience.
-          Elle  consiste à faire vos courses dans un magasin d’alimentation en ligne fictif.
-          Vous avez la possibilité de gagner votre panier à la fın de l’expérience,
-          choisissez-donc les produits que vous consommez dans votre quotidien. La passation durera environ 25 minutes.
+          Votre tâche est simple et consiste à faire vos courses dans un magasin d’alimentation en ligne.
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Cette expérience est menée dans le cadre d’un projet de recherche scientifique. Les données recueillies seront traitées de façon  anonyme.
+          Il est important que vous gardiez en tête qu'il n'y a aucune bonne ou mauvaise réponse. Ce qui compte vraiment, c'est de choisir les produits que vous souhaitez consommer sachant que vous pouvez gagner le panier de consommation choisi  .
+La durée de cette enquête est d'environ 30 minutes.
+
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Après avoir terminé vos courses, nous vous demanderons de répondre à quelques questions. Veuillez noter qu’il n’y a ni bonnes ni mauvaises réponses, seul votre avis nous intéresse.
+          Cette expérience est menée dans le cadre d’un projet de recherche scientifique. Les données recueillies seront traitées de façon anonyme.
               </Typography>
-        <Typography variant="body1" gutterBottom className={classes.typo}>
-          Budget :
+			          <Typography variant="body1" gutterBottom className={classes.typo}>
+Après avoir terminé vos courses, nous vous demanderons de répondre à quelques questions. A nouveau, il n’y a aucune bonne ou mauvaise réponse: seul votre avis nous intéresse.
               </Typography>
-        <Typography variant="body1" gutterBottom className={classes.typo}>
-          Nous vous octroyons un budget de 25 euros pour votre visite dans le magasin.
-          Vous devrez dépenser un minimum de 20 euros avant de pouvoir quitter le magasin.
-          Cependant, la part des 25 euros non dépensée lors de vos achats ne vous sera pas rendue en liquide.
+			   <Typography variant="body1" gutterBottom className={classes.typo}>
+Vous aurez un budget de 40 euros (ou 43/48 selon les traitements) pour constituer votre panier dans le magasin.
+Il n'y a pas de minimum d'achat, mais gardez en tête que l'argent non dépensé est perdu.
+
               </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Récompense :
-        </Typography>
+              </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
-          Vous aurez une chance sur cinq de remporter le panier de courses alimentaires que vous avez composé durant l’expérience.
-                    </Typography>
-        <Typography variant="body1" gutterBottom className={classes.typo}>
-          Afin de déterminer si vous remportez le panier, vous jetterez un dé. Si le dé tombe sur 6, vous gagnerez le panier,
-          s’il tombe sur 5, vous jetterez le dé à nouveau.
-        </Typography>
-        <Typography variant="body1" gutterBottom className={classes.typo}>
-          Si vous gagnez, vous pourrez aller chercher vos produits dans un magasin « Casino » au centre de  Toulouse, dont nous vous fournirons l’adresse.
-        </Typography>
-        <Typography variant="body1" gutterBottom className={classes.typo}>
-          Nous vous remercions pour votre participation.
-        </Typography>
-        <Typography variant="body1" gutterBottom className={classes.typo}>
-          Estefanya Vazquez (estefanya.vazquez@etu.univ-tlse2.fr) <br></br>
-          Étudiante en Master 2 PEPSCO<br></br>
-          Ayşegül Kanay (aysegul.kanay@univ-tlse2.fr) <br></br>
-          Doctorante en CLLE-LTC <br></br>
-          Sous la direction de Denis Hilton et Stefan Ambec<br></br>
-        </Typography>
-
+          Pour votre participation, vous obtiendrez un bon cadeau d'une valeur de 10€.Vous avez également une chance sur 10 de gagner votre panier de consommation  à la fın de l’expérience. Le tirage au sort et la livraison des paniers se feront après les fêtes en janvier 2022. Les gagnants pourront alors récupérer leur panier dans le drive du supermarché proche de leur domicile. 
+              </Typography>
         <Button color="primary" variant="contained" onClick={() => props.next()}>Continuer</Button>
 
 

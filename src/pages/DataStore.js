@@ -35,7 +35,7 @@ function objectToCsv(obj, products, questions) {
   console.log("FUNCTION objectToCSV")
   console.log(obj)
   let setAll = (obj, val) => Object.keys(obj).forEach(k => obj[k] = val);
-  let header = ["idField", "id", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "carbonWeight", "averageCarbonWeight"];
+  let header = ["idField", "id", "mailID", "variant", "agreedToTerms", "tax", "basketValueWT", "timeStart", "timeStartLandingPage", "timeLandingPage", "visitsLandingPage", "timeCheckout", "timeFinish", "mail", "won", "carbonWeight", "averageCarbonWeight"];
   //add product header & create prototype object to use for transformation
   let basketObject = {};
   for (const category of products) {
@@ -72,13 +72,17 @@ function objectToCsv(obj, products, questions) {
     //clean rowobjects
     setAll(questionObject, -1);
     setAll(basketObject, 0);
-    let basics = { "idField": "", "id": -1, "variant": -1, "agreedToTerms": "no", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail": "", "won": "", "visitsLandingPage": 0, "carbonWeight": 0, "averageCarbonWeight": 0 }
+    let basics = { "idField": "", "id": -1,"mailID":"", "variant": -1, "agreedToTerms": "no", "tax": -1.0, "basketValueWT": -1.0, "timeStart": 0, "timeStartLandingPage": 0, "timeLandingPage": 0, "timeCheckout": 0, "timeFinish": 0, "mail": "", "won": "", "visitsLandingPage": 0, "carbonWeight": 0, "averageCarbonWeight": 0 }
     //map basics 
     console.log("objOriginal")
     console.log(objOriginal)
     for (const [key, value] of Object.entries(basics)) {
-      if (key === 'agreedToTerms')
-        basics['agreedToTerms'] = objOriginal['terms'].agreedToTerms ? 'yes' : 'no';
+      if (key === 'agreedToTerms'){
+		if (objOriginal.hasOwnProperty('mail'))
+          basics['agreedToTerms'] = objOriginal['terms'].agreedToTerms ? 'yes' : 'no';
+        else
+          basics['agreedToTerms'] = "";
+	  }
       else if (key === 'won')
         basics['won'] = objOriginal['won'] ? 'yes' : 'no';
       else if (key === 'mail') {
@@ -93,6 +97,9 @@ function objectToCsv(obj, products, questions) {
         else
           basics['tax'] = 0;
       }
+	  else if (key === 'mailID') {
+		  basics['mailID'] = objOriginal['mailID'];
+	  }
       else
         basics[key] = objOriginal[key];
     }

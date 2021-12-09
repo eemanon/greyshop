@@ -8,7 +8,7 @@ import history from './history';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import StudentLogin from './pages/StudentLogin.js'
+import LandingPage from './pages/LandingPage.js'
 import Terms from './pages/Terms.js'
 import Instructions from './pages/Instructions.js'
 import BudgetDetails from './pages/BudgetDetails.js'
@@ -20,7 +20,7 @@ import DataStore from './pages/DataStore.js'
 
 import Products from './functions/DataLoader';
 import Co2questionids from './data/productIdsForQuestions.json';
-import regularQuestions from './data/questionnary.json';
+import regularQuestions from './data/questionary_1_2_3.json';
 
 
 import { getStudentIds, getUserContent, getDiceGames, getNumDiceGames, addAvailableDiceGames, userSignInAnonymously, addUser, userExists, initialWrite, addContent, useConnectedUser, useAllData, userSignInWithMail, userSignOut, getAllSubCollections } from './functions/FireBaseConnector.js'
@@ -116,6 +116,7 @@ function App() {
   }
   const [variant, setVariant] = useState(0);
   const [userID, setUserID] = useState(null);
+  const [mailID, setMailID] = useState("");
   const [winnerID, setWinnerID] = useState(-1);
   const [progressState, setProgress] = useState(1);
   const [headerBarTitle, setHeaderBarTitle] = useState("Bienvenue");
@@ -160,15 +161,14 @@ function App() {
             setHeaderBarTitle("Bienvenue");
             signInAn(userID)
             return (
-              <StudentLogin
+              <LandingPage
                 setVariant={setVariant}
-                setId={setWinnerID}
-                numVariants={4}
                 userID={userID}
                 next={() => { setProgress(2); setHeaderBarTitle("Consentement"); history.push("/consent", {from: history.location}); }}
                 addUser={addUser}
                 userExists={userExists}
                 initialWrite={initialWrite}
+				setMailID={setMailID}
               />
             )
           }}
@@ -212,7 +212,7 @@ function App() {
               <Store
                 variant={variants[variant]}
                 products={products}
-                next={() => { history.push("/questionnaire_section1"); }}
+                next={() => { history.push("/questionnaire_page1"); }}
                 addContent={addContent}
                 userID={userID} />
             )
@@ -270,17 +270,10 @@ function App() {
             )
           }}
         />
-        <Route path='/end'
-          render={() => {
-            setHeaderBarTitle("Experience terminée")
-            setProgress(-1);
-            signInAn(userID)
-            return (
-              <FinalPage >
-              </FinalPage>
-            )
-          }}
-        />
+        <Route path='/end' component={() => { 
+     window.location.href="https://www.merciderepondre.com/WebProd/cgi-bin/askiaext.dll?Action=StartSurvey&SurveyName=RET2385&Broker=99&BrokerPanelId="+mailID+"&ID_EXP="+0; 
+     return null;
+}}/>
         <Route path='/datastore'
           render={() => {
             setHeaderBarTitle("DataStore");

@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "greensh0p"
+  },
+  "targets": {
+    "greensh0p": {
+      "hosting": {
+        "greensh1p": [
+          "greensh1p"
+        ]
+      }
+    }
   }
 }

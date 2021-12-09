@@ -93,6 +93,7 @@ const incrementCounter = () => {
 const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants, mailID) => {
     //sets user id, variant, timestart
     //doc refs:
+	console.log("initialWrite Firebase...")
     let docCounter = firestore.collection("properties").doc("count");
     let docData = firestore.collection("data").doc(uid);
     //read counter
@@ -104,6 +105,8 @@ const initialWrite = (uid, studentID, timestamp, calcVariant, numVariants, mailI
 			variant = 0
             transaction.update(docCounter, { total: newCounter });
             transaction.set(docData, { variant: variant, timeStart: timestamp, id: newCounter, mailID: mailID });
+			console.log("now returning variant and counter..."+variant)
+			console.log("counter: "+newCounter)
             return [variant, newCounter];
         });
     })

@@ -1,6 +1,23 @@
 {
-  "hosting": {
+  "hosting": [
+  {
     "public": "build",
+	"target": "greensh0p",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  {
+    "public": "build",
+	"target": "greensh1p",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -13,4 +30,7 @@
       }
     ]
   }
+  
+  
+  ]
 }

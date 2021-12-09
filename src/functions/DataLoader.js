@@ -1,6 +1,6 @@
 // images.js
-import items from '../data/productList.json';
-import mapping from '../data/category_mapping.json'
+import items from '../data/productsAnsii.json';
+import mapping from '../data/category_mapping2.json'
 function products () {
     //Raw structure:        Array of objects where each object equals one product.
     //Target structure:     Array of categories containing the products.
