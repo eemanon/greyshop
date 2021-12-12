@@ -167,7 +167,7 @@ export default function Basket(props) {
           onClick={() => { isValidBasket(props.ht, props.taxe, props.showTax) ? setOpen(true) : setOpen(false) }}
           startIcon={<ShoppingCartIcon />}
         >
-          Checkout
+          Valider le panier
         </Button>
       </Tooltip>
       <List className={classes.list}>
@@ -194,7 +194,7 @@ export default function Basket(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">Checkout</DialogTitle>
+        <DialogTitle id="alert-dialog-title">Valider le panier</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Etes-vous sûr de vouloir valider votre panier et quitter le magasin?

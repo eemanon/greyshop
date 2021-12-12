@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "10px"
   },
   typo: {
-    textAlign: "left"
+    textAlign: "center"
   }
 
 }));
@@ -38,7 +38,7 @@ export default function BudgetDetails(props) {
           </Typography>
         <Typography variant="body1" gutterBottom className={classes.typo}>
           Vous allez maintenant pouvoir constituer un panier de biens alimentaires dans notre magasin.</Typography><Typography variant="body1" gutterBottom className={classes.typo}>
-Vous aurez un budget de 40 euros (ou 43/48 selon le traitement) pour faire vos courses.
+Vous aurez un budget de 40 euros pour faire vos courses.
 N'oubliez pas: ce qui compte pour nous est que vous choisissiez ce que vous souhaitez consommer sachant que vous pouvez recevoir le panier de consommation en janvier. 
         </Typography>
         <Button color="primary" variant="contained" onClick={() => props.next()}>Continuer</Button>

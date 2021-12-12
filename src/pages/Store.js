@@ -83,7 +83,9 @@ function carbonWeight(basket) {
   let carbonWeight = 0.0;
   basket.forEach(item => {
     carbonWeight = carbonWeight + item.quantity * (item.Grammes / 100 * item["Empreinte CO2 (g par 100 g)"]);
+	console.log(item)
   });
+  
   const carbonWeightkg = carbonWeight / 1000
   return carbonWeightkg;
 }
@@ -191,9 +193,9 @@ export default function Store(props) {
           {found.products.map((item, i) => (
             <Grid key={item.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
               <ProductCard add={addToBasket} item={item} name={item["Descriptif Produit"]} quantity={item["Grammes"]}
-                unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["kg CO2 / kg"]}
-                priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantité (euro/kg) baseline"]}
-                color={item["Traffic light inter"]} label={props.variant.labels} labelpos={props.variant.labelpos} labeltext={props.variant.labeltext}>
+                unit="g" imagePath={item["Lien fichier"]} alt="alt" indicator={item["Prix/quantite (euro/kg) baseline"]}
+                priceInEuros={item["Prix initial"]} pricePerUnit={item["Prix/quantite (euro/kg) baseline"]}
+                color={item["Traffic light inter"]} weightPerItem={item["Grammes"]} label={props.variant.labels} labelpos={props.variant.labelpos} labeltext={props.variant.labeltext}>
               </ProductCard>
             </Grid>
           ))}
@@ -220,7 +222,7 @@ export default function Store(props) {
   return (
     <div className={isMobile ? classes.rootMobile : classes.rootDesktop}>
       <div className={classes.toolbar}>
-        <Chip label="Acceuil" color={categoryIndex === -1 ? "primary" : "default"} onClick={(i) => { changeCategory(-1) }} />
+        <Chip label="Accueil" color={categoryIndex === -1 ? "primary" : "default"} onClick={(i) => { changeCategory(-1) }} />
         {items.map((item, i) => (
           <Chip label={item.name} key={item.id} color={categoryIndex === item.id ? "primary" : "default"} onClick={(i) => { changeCategory(item.id) }} />
         ))}

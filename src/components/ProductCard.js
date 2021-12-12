@@ -60,6 +60,7 @@ export default function ProductCard(props) {
                 {props.label?label():""}
                 <Typography variant="body1" gutterBottom className={classes.typo} component={'span'}>
                 Prix: {props.priceInEuros} € <div className={classes.priceperUnit} >{props.pricePerUnit} €/kg</div>
+				<div className={classes.priceperUnit} >{props.weightPerItem} g</div>
                 </Typography>
                 <Button
                     variant="outlined"

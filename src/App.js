@@ -152,7 +152,7 @@ function App() {
   const allQuestions = regularQuestions.concat(carbonQuestions);
   return (
     <div className="App">
-      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={17}>
+      <HeaderBar titletext={headerBarTitle} showProgress={progressState !== -1} progress={progressState} total={18}>
 	  </HeaderBar>
       <Router history={history}>
         <Route exact path='/'
@@ -270,8 +270,10 @@ function App() {
             )
           }}
         />
-        <Route path='/end' component={() => { 
-     window.location.href="https://www.merciderepondre.com/WebProd/cgi-bin/askiaext.dll?Action=StartSurvey&SurveyName=RET2385&Broker=99&BrokerPanelId="+mailID+"&ID_EXP="+0; 
+        <Route path='/end' component={() => {
+		const redirectlink = "https://www.merciderepondre.com/WebProd/cgi-bin/askiaext.dll?Action=StartSurvey&SurveyName=RET2385&Broker=99&BrokerPanelId="+mailID+"&ID_EXP="+0; 
+		alert("going to "+redirectlink)
+     window.location.href=redirectlink;
      return null;
 }}/>
         <Route path='/datastore'

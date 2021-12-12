@@ -32,6 +32,13 @@
 				"Answer": ["Il est très probable que je le reçoive", "Il est probable que je le reçoive", "Neutre", "Il est peu probable que je le reçoive", "Il est très peu probable que je le reçoive"],
 				"obligatory": "yes",
 				"id": 4
+			},
+
+			{
+				"Question": "Avez-vous prêté attention aux pastilles de couleur sous les produits proposés dans le magasin virtuel ?",
+				"Answer": ["Oui, et je m’en suis servi(e) pour prendre mes décisions", "Oui, mais je ne m’en suis pas servi(e) pour prendre mes décisions", "Non, je n’ai pas remarqué la présence de ces pastilles"],
+				"obligatory": "yes",
+				"id": 99
 			}
 		]
 	},
@@ -40,7 +47,7 @@
 		"Information": "",
 		"id": 2,
 		"showTitle": "no",
-		"link": "/questionnaire_page2",
+		"link": "/questionnaire_pages2",
 		"nextPage": "/questionnaire_page3",
 		"form": "list",
 		"questions": [{
@@ -497,7 +504,6 @@
 		"showTitle": "no",
 		"link": "/questionnaire_page13",
 		"nextPage": "",
-		"nextPage": "/end",
 		"form": "list",
 		"questions": [{
 				"Question": "La terre est comme un vaisseau spatial avec un espace et des ressources très limités",

@@ -64,18 +64,17 @@ export default function LandingPage(props) {
     <div>
       {!isTablet && <BrowserView>
         <Paper className={classes.root}>
-          <div className={classes.logos}>
-            <img src={ClleLogo} alt="Clle Logo" width="20%" />
-            <img src={Utj2Logo} alt="Université Toulouse II Jean Jaures Logo" width="20%" />
-            <img src={TseLogo} alt="Toulouse Business School Logo" width="20%" />
-          </div>
           <Typography variant="body1" gutterBottom >
             Bonjour et bienvenue.
 Nous vous remercions pour votre participation à cette étude.
 L'expérience porte sur les comportements d’achat en ligne. Pour cette expérience, vous allez faire vos courses sur un site expérimental et répondre à un questionnaire.
             </Typography><Typography variant="body1" gutterBottom >
             Veuillez suivre les instructions et consignes qui seront affichées au fur et à mesure de l'expérience.
-            </Typography><Typography variant="body1" gutterBottom >
+            </Typography>
+			<Typography variant="body1" gutterBottom >
+			Vous pouvez choisir un panier de biens pour un maximum de 40 euros. L'argent non dépensé est perdu.
+			</Typography>
+			<Typography variant="body1" gutterBottom >
             Nous vous remercions encore pour votre participation.
           </Typography>
 

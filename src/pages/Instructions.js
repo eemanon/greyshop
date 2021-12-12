@@ -35,7 +35,6 @@ export default function Instructions(props) {
   return (
     <div>
       <Paper className={classes.root}>
-        <img src={Logo} alt="Logo" width="20%" />
         <Typography variant="h3" component="h2" gutterBottom>
           Instructions
           </Typography>
@@ -54,7 +53,7 @@ La durée de cette enquête est d'environ 30 minutes.
 Après avoir terminé vos courses, nous vous demanderons de répondre à quelques questions. A nouveau, il n’y a aucune bonne ou mauvaise réponse: seul votre avis nous intéresse.
               </Typography>
 			   <Typography variant="body1" gutterBottom className={classes.typo}>
-Vous aurez un budget de 40 euros (ou 43/48 selon les traitements) pour constituer votre panier dans le magasin.
+Vous aurez un budget de 40 euros pour constituer votre panier dans le magasin.
 Il n'y a pas de minimum d'achat, mais gardez en tête que l'argent non dépensé est perdu.
 
               </Typography>
