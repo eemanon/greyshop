@@ -272,7 +272,7 @@ function App() {
         />
         <Route path='/end' component={() => {
 		const redirectlink = "https://www.merciderepondre.com/WebProd/cgi-bin/askiaext.dll?Action=StartSurvey&SurveyName=RET2385&Broker=99&BrokerPanelId="+mailID+"&ID_EXP="+0; 
-		alert("going to "+redirectlink)
+		//alert("going to "+redirectlink)
      window.location.href=redirectlink;
      return null;
 }}/>
