@@ -72,9 +72,6 @@ L'expérience porte sur les comportements d’achat en ligne. Pour cette expéri
             Veuillez suivre les instructions et consignes qui seront affichées au fur et à mesure de l'expérience.
             </Typography>
 			<Typography variant="body1" gutterBottom >
-			Vous pouvez choisir un panier de biens pour un maximum de 40 euros. L'argent non dépensé est perdu.
-			</Typography>
-			<Typography variant="body1" gutterBottom >
             Nous vous remercions encore pour votre participation.
           </Typography>
 

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "10px"
   },
   typo: {
-    textAlign: "left"
+    textAlign: "center"
   }
 
 }));

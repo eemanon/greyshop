@@ -58,7 +58,7 @@
   },
   {
     "id": 4,
-    "Descriptif Produit": "Potimarron agro�cologie FILIERE QUALITE CARREFOUR",
+    "Descriptif Produit": "Potimarron agroécologie FILIERE QUALITE CARREFOUR",
     "Prix initial": 1.29,
     "Prix/quantité (euro/kg) baseline": 0.86,
     "Rayon": 1,
@@ -96,7 +96,7 @@
   },
   {
     "id": 6,
-    "Descriptif Produit": "Carottes agro�cologie FILIERE QUALITE CARREFOUR",
+    "Descriptif Produit": "Carottes agroécologie FILIERE QUALITE CARREFOUR",
     "Prix initial": 0.89,
     "Prix/quantité (euro/kg) baseline": 0.89,
     "Rayon": 1,
@@ -191,7 +191,7 @@
   },
   {
     "id": 11,
-    "Descriptif Produit": "Avocats m�rs � point Hass",
+    "Descriptif Produit": "Avocats mûrs à point Hass",
     "Prix initial": 3.5,
     "Prix/quantité (euro/kg) baseline": 7,
     "Rayon": 1,
@@ -267,7 +267,7 @@
   },
   {
     "id": 15,
-    "Descriptif Produit": "Betterave agro�cologie FILIERE QUALITE CARREFOUR",
+    "Descriptif Produit": "Betterave agroécologie FILIERE QUALITE CARREFOUR",
     "Prix initial": 1.99,
     "Prix/quantité (euro/kg) baseline": 1.33,
     "Rayon": 1,
@@ -381,7 +381,7 @@
   },
   {
     "id": 21,
-    "Descriptif Produit": "Ail 3 t�tes Lautrec REFLETS DE FRANCE",
+    "Descriptif Produit": "Ail 3 têtes Lautrec REFLETS DE FRANCE",
     "Prix initial": 3.69,
     "Prix/quantité (euro/kg) baseline": 14.76,
     "Rayon": 1,
@@ -590,7 +590,7 @@
   },
   {
     "id": 32,
-    "Descriptif Produit": "Salade Feuille de ch�ne blonde",
+    "Descriptif Produit": "Salade Feuille de chêne blonde",
     "Prix initial": 0.69,
     "Prix/quantité (euro/kg) baseline": 2.76,
     "Rayon": 1,
@@ -609,7 +609,7 @@
   },
   {
     "id": 33,
-    "Descriptif Produit": "Salade Feuille de ch�ne rouge",
+    "Descriptif Produit": "Salade Feuille de chêne rouge",
     "Prix initial": 0.75,
     "Prix/quantité (euro/kg) baseline": 3,
     "Rayon": 1,
@@ -913,7 +913,7 @@
   },
   {
     "id": 49,
-    "Descriptif Produit": "Past�que Bio",
+    "Descriptif Produit": "Pastèque Bio",
     "Prix initial": 2.69,
     "Prix/quantité (euro/kg) baseline": 0.67,
     "Rayon": 1,
@@ -932,7 +932,7 @@
   },
   {
     "id": 50,
-    "Descriptif Produit": "Cl�mentines vrac",
+    "Descriptif Produit": "Clémentines vrac",
     "Prix initial": 2.99,
     "Prix/quantité (euro/kg) baseline": 2.99,
     "Rayon": 1,
@@ -951,7 +951,7 @@
   },
   {
     "id": 51,
-    "Descriptif Produit": "Steak hach� 15% MG CHARAL",
+    "Descriptif Produit": "Steak haché 15% MG CHARAL",
     "Prix initial": 3,
     "Prix/quantité (euro/kg) baseline": 11.54,
     "Rayon": 2,
@@ -970,7 +970,7 @@
   },
   {
     "id": 52,
-    "Descriptif Produit": "Steaks hach�s 5% MG",
+    "Descriptif Produit": "Steaks hachés 5% MG",
     "Prix initial": 3.41,
     "Prix/quantité (euro/kg) baseline": 17.05,
     "Rayon": 2,
@@ -989,7 +989,7 @@
   },
   {
     "id": 53,
-    "Descriptif Produit": "Viande Bovine: Pav� de Rumsteck � griller SOCOPA L'ABSOLU",
+    "Descriptif Produit": "Viande Bovine: Pavé de Rumsteck à griller SOCOPA L'ABSOLU",
     "Prix initial": 4.5,
     "Prix/quantité (euro/kg) baseline": 18.75,
     "Rayon": 2,
@@ -1008,7 +1008,7 @@
   },
   {
     "id": 54,
-    "Descriptif Produit": "Viande bovine: faux filet*** � griller CARREFOUR BIO",
+    "Descriptif Produit": "Viande bovine: faux filet*** à griller CARREFOUR BIO",
     "Prix initial": 4.99,
     "Prix/quantité (euro/kg) baseline": 24.95,
     "Rayon": 2,
@@ -1027,7 +1027,7 @@
   },
   {
     "id": 55,
-    "Descriptif Produit": "Faux-filet � griller CHARAL",
+    "Descriptif Produit": "Faux-filet à griller CHARAL",
     "Prix initial": 7.16,
     "Prix/quantité (euro/kg) baseline": 19.89,
     "Rayon": 2,
@@ -1065,7 +1065,7 @@
   },
   {
     "id": 57,
-    "Descriptif Produit": "Viande de b�uf: boulettes natures CARREFOUR LE MARCHE",
+    "Descriptif Produit": "Viande de bœuf: boulettes natures CARREFOUR LE MARCHE",
     "Prix initial": 3.3,
     "Prix/quantité (euro/kg) baseline": 8.8,
     "Rayon": 2,
@@ -1084,7 +1084,7 @@
   },
   {
     "id": 58,
-    "Descriptif Produit": "Viande pr�par� boulettes � la Napolitaine CHARAL",
+    "Descriptif Produit": "Viande préparé boulettes à la Napolitaine CHARAL",
     "Prix initial": 4,
     "Prix/quantité (euro/kg) baseline": 13.33,
     "Rayon": 2,
@@ -1122,7 +1122,7 @@
   },
   {
     "id": 60,
-    "Descriptif Produit": "Boulettes au b�uf natures CARREFOUR LE MARCHE",
+    "Descriptif Produit": "Boulettes au bœuf natures CARREFOUR LE MARCHE",
     "Prix initial": 5.49,
     "Prix/quantité (euro/kg) baseline": 7.32,
     "Rayon": 2,
@@ -1198,7 +1198,7 @@
   },
   {
     "id": 64,
-    "Descriptif Produit": "Filets de Cabillaud fa�on Fish & Chips CARREFOUR",
+    "Descriptif Produit": "Filets de Cabillaud façon Fish & Chips CARREFOUR",
     "Prix initial": 4,
     "Prix/quantité (euro/kg) baseline": 18.18,
     "Rayon": 2,
@@ -1217,7 +1217,7 @@
   },
   {
     "id": 65,
-    "Descriptif Produit": "Pav�s de saumon CARREFOUR BIO",
+    "Descriptif Produit": "Pavés de saumon CARREFOUR BIO",
     "Prix initial": 7.9,
     "Prix/quantité (euro/kg) baseline": 31.6,
     "Rayon": 2,
@@ -1236,7 +1236,7 @@
   },
   {
     "id": 66,
-    "Descriptif Produit": "Filets de saumon sauvage sal� DELPIERREal� DELPIERRE",
+    "Descriptif Produit": "Filets de saumon sauvage salé DELPIERRE",
     "Prix initial": 6.9,
     "Prix/quantité (euro/kg) baseline": 28.75,
     "Rayon": 2,
@@ -1255,7 +1255,7 @@
   },
   {
     "id": 67,
-    "Descriptif Produit": "Pav�s de saumon avec peau s/ar�tes FILIERE QUALITE CARREFOUR",
+    "Descriptif Produit": "Pavés de saumon avec peau s/arêtes FILIERE QUALITE CARREFOUR",
     "Prix initial": 9.99,
     "Prix/quantité (euro/kg) baseline": 17.84,
     "Rayon": 2,
@@ -1274,7 +1274,7 @@
   },
   {
     "id": 68,
-    "Descriptif Produit": "Saumon fum� Norv�ge CARREFOUR",
+    "Descriptif Produit": "Saumon fumé Norvège CARREFOUR",
     "Prix initial": 5.29,
     "Prix/quantité (euro/kg) baseline": 37.79,
     "Rayon": 2,
@@ -1293,7 +1293,7 @@
   },
   {
     "id": 69,
-    "Descriptif Produit": "Saumon fum� bio CARREFOUR BIO",
+    "Descriptif Produit": "Saumon fumé bio CARREFOUR BIO",
     "Prix initial": 5.87,
     "Prix/quantité (euro/kg) baseline": 41.93,
     "Rayon": 2,
@@ -1312,7 +1312,7 @@
   },
   {
     "id": 70,
-    "Descriptif Produit": "Saumon fum� de Norv�ge LABEYRIE",
+    "Descriptif Produit": "Saumon fumé de Norvège LABEYRIE",
     "Prix initial": 6.15,
     "Prix/quantité (euro/kg) baseline": 43.93,
     "Rayon": 2,
@@ -1388,7 +1388,7 @@
   },
   {
     "id": 74,
-    "Descriptif Produit": "Eminc�s d'aiguillettes de poulet r�ti CARREFOUR",
+    "Descriptif Produit": "Emincés d'aiguillettes de poulet rôti CARREFOUR",
     "Prix initial": 1.95,
     "Prix/quantité (euro/kg) baseline": 13,
     "Rayon": 2,
@@ -1407,7 +1407,7 @@
   },
   {
     "id": 75,
-    "Descriptif Produit": "�minc�s de poulet r�ti FLEURY MICHON",
+    "Descriptif Produit": "Émincés de poulet rôti FLEURY MICHON",
     "Prix initial": 2.39,
     "Prix/quantité (euro/kg) baseline": 15.93,
     "Rayon": 2,
@@ -1483,7 +1483,7 @@
   },
   {
     "id": 79,
-    "Descriptif Produit": "pilons de poulet",
+    "Descriptif Produit": "Pilons de poulet",
     "Prix initial": 3.2,
     "Prix/quantité (euro/kg) baseline": 3.2,
     "Rayon": 2,
@@ -1521,7 +1521,7 @@
   },
   {
     "id": 81,
-    "Descriptif Produit": "Filet de poulet jaune Lou� Fermier",
+    "Descriptif Produit": "Filet de poulet jaune Loué Fermier",
     "Prix initial": 4.11,
     "Prix/quantité (euro/kg) baseline": 17.13,
     "Rayon": 2,
@@ -1597,7 +1597,7 @@
   },
   {
     "id": 85,
-    "Descriptif Produit": "Viande de Porc: C�tes �chine Label Rouge � griller CARREFOUR",
+    "Descriptif Produit": "Viande de Porc: Côtes échine Label Rouge à griller CARREFOUR",
     "Prix initial": 3.37,
     "Prix/quantité (euro/kg) baseline": 9.63,
     "Rayon": 2,
@@ -1616,7 +1616,7 @@
   },
   {
     "id": 86,
-    "Descriptif Produit": "C�tes de porc �chines Bio CARREFOUR BIO",
+    "Descriptif Produit": "Côtes de porc échines Bio CARREFOUR BIO",
     "Prix initial": 2.97,
     "Prix/quantité (euro/kg) baseline": 9.9,
     "Rayon": 2,
@@ -1635,7 +1635,7 @@
   },
   {
     "id": 87,
-    "Descriptif Produit": "Viande de Porc: C�tes �chine � griller Label Rouge CARREFOUR SELECTION",
+    "Descriptif Produit": "Viande de Porc: Côtes échine à griller Label Rouge CARREFOUR SELECTION",
     "Prix initial": 7.81,
     "Prix/quantité (euro/kg) baseline": 9.19,
     "Rayon": 2,
@@ -1654,7 +1654,7 @@
   },
   {
     "id": 88,
-    "Descriptif Produit": "Chipolatas sup�rieures CARREFOUR",
+    "Descriptif Produit": "Chipolatas supérieures CARREFOUR",
     "Prix initial": 4.49,
     "Prix/quantité (euro/kg) baseline": 6.8,
     "Rayon": 2,
@@ -1692,7 +1692,7 @@
   },
   {
     "id": 90,
-    "Descriptif Produit": "Chipolatas sup�rieures Label Rouge BIGARD",
+    "Descriptif Produit": "Chipolatas supérieures Label Rouge BIGARD",
     "Prix initial": 3.5,
     "Prix/quantité (euro/kg) baseline": 10.61,
     "Rayon": 2,
@@ -1711,7 +1711,7 @@
   },
   {
     "id": 91,
-    "Descriptif Produit": "Fromage R�p� Emmental PRESIDENT",
+    "Descriptif Produit": "Fromage Râpé Emmental PRESIDENT",
     "Prix initial": 1.63,
     "Prix/quantité (euro/kg) baseline": 8.15,
     "Rayon": 3,
@@ -1730,7 +1730,7 @@
   },
   {
     "id": 92,
-    "Descriptif Produit": "Fromage R�p� Emmental Fondant CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Fromage Râpé Emmental Fondant CARREFOUR CLASSIC'",
     "Prix initial": 1.39,
     "Prix/quantité (euro/kg) baseline": 6.95,
     "Rayon": 3,
@@ -1749,7 +1749,7 @@
   },
   {
     "id": 93,
-    "Descriptif Produit": "Fromage Bio R�p� Emmental Au Lait Pasteuris� CARREFOUR BIO",
+    "Descriptif Produit": "Fromage Bio Râpé Emmental Au Lait Pasteurisé CARREFOUR BIO",
     "Prix initial": 2.2,
     "Prix/quantité (euro/kg) baseline": 11,
     "Rayon": 3,
@@ -1787,7 +1787,7 @@
   },
   {
     "id": 95,
-    "Descriptif Produit": "Fromage R�p� Emmental ENTREMONT",
+    "Descriptif Produit": "Fromage Râpé Emmental ENTREMONT",
     "Prix initial": 1.91,
     "Prix/quantité (euro/kg) baseline": 9.1,
     "Rayon": 3,
@@ -1882,7 +1882,7 @@
   },
   {
     "id": 100,
-    "Descriptif Produit": "Fromage � Tartiner Ail Et Fines Herbes BOURSIN",
+    "Descriptif Produit": "Fromage à Tartiner Ail Et Fines Herbes BOURSIN",
     "Prix initial": 2.6,
     "Prix/quantité (euro/kg) baseline": 10.4,
     "Rayon": 3,
@@ -1901,7 +1901,7 @@
   },
   {
     "id": 101,
-    "Descriptif Produit": "Fromage � Tartiner Ail Et Fines Herbes CARREFOUR",
+    "Descriptif Produit": "Fromage à Tartiner Ail Et Fines Herbes CARREFOUR",
     "Prix initial": 1.91,
     "Prix/quantité (euro/kg) baseline": 7.64,
     "Rayon": 3,
@@ -1920,7 +1920,7 @@
   },
   {
     "id": 102,
-    "Descriptif Produit": "Fromage Bio � Tartiner Ail Et Fines Herbes SOJABIO",
+    "Descriptif Produit": "Fromage Bio à Tartiner Ail Et Fines Herbes SOJABIO",
     "Prix initial": 2.75,
     "Prix/quantité (euro/kg) baseline": 22,
     "Rayon": 3,
@@ -1939,7 +1939,7 @@
   },
   {
     "id": 103,
-    "Descriptif Produit": "Fromage � Tartiner Nature Au Sel de Gu�rande LES RECETTES DE MADAME LOIC",
+    "Descriptif Produit": "Fromage à Tartiner Nature Au Sel de Guérande LES RECETTES DE MADAME LOIC",
     "Prix initial": 2.83,
     "Prix/quantité (euro/kg) baseline": 8.84,
     "Rayon": 3,
@@ -1958,7 +1958,7 @@
   },
   {
     "id": 104,
-    "Descriptif Produit": "Fromage � Tartiner Nature CARREFOURCARREFOUR",
+    "Descriptif Produit": "Fromage à Tartiner Nature CARREFOUR",
     "Prix initial": 1.72,
     "Prix/quantité (euro/kg) baseline": 5.73,
     "Rayon": 3,
@@ -2015,9 +2015,9 @@
   },
   {
     "id": 107,
-    "Descriptif Produit": "Fromage de Ch�vre Sainte Maure CARREFOUR",
+    "Descriptif Produit": "Fromage de Chèvre Sainte Maure CARREFOUR",
     "Prix initial": 1.53,
-    "Prix/quantité (euro/kg) baseline": "8.50 �",
+    "Prix/quantité (euro/kg) baseline": 8.5,
     "Rayon": 3,
     "Lien fichier": "\\Fichiers\\Rayon3\\17.JPG",
     "Grammes": 180,
@@ -2034,7 +2034,7 @@
   },
   {
     "id": 108,
-    "Descriptif Produit": "Fromage de Ch�vre PRESIDENT",
+    "Descriptif Produit": "Fromage de Chèvre PRESIDENT",
     "Prix initial": 1.8,
     "Prix/quantité (euro/kg) baseline": 10,
     "Rayon": 3,
@@ -2053,7 +2053,7 @@
   },
   {
     "id": 109,
-    "Descriptif Produit": "Fromage de Ch�vre Bio CARREFOUR BIO",
+    "Descriptif Produit": "Fromage de Chèvre Bio CARREFOUR BIO",
     "Prix initial": 2.08,
     "Prix/quantité (euro/kg) baseline": 13.87,
     "Rayon": 3,
@@ -2072,7 +2072,7 @@
   },
   {
     "id": 110,
-    "Descriptif Produit": "�ufs de Plein Air L'OEUF DE PROVENCE",
+    "Descriptif Produit": "Œufs de Plein Air L'OEUF DE PROVENCE",
     "Prix initial": 2.99,
     "Prix/quantité (euro/kg) baseline": 0.39,
     "Rayon": 3,
@@ -2091,7 +2091,7 @@
   },
   {
     "id": 111,
-    "Descriptif Produit": "�ufs Bio de Plein Air",
+    "Descriptif Produit": "Œufs Bio de Plein Air",
     "Prix initial": 4.6,
     "Prix/quantité (euro/kg) baseline": 0.61,
     "Rayon": 3,
@@ -2110,7 +2110,7 @@
   },
   {
     "id": 112,
-    "Descriptif Produit": "�ufs plein air CARREFOUR ORIGINAL",
+    "Descriptif Produit": "Œufs plein air CARREFOUR ORIGINAL",
     "Prix initial": 2.75,
     "Prix/quantité (euro/kg) baseline": 0.36,
     "Rayon": 3,
@@ -2129,7 +2129,7 @@
   },
   {
     "id": 113,
-    "Descriptif Produit": "�ufs Sans-Antibiotique LUSTUCRU",
+    "Descriptif Produit": "Œufs Sans-Antibiotique LUSTUCRU",
     "Prix initial": 3.99,
     "Prix/quantité (euro/kg) baseline": 0.19,
     "Rayon": 3,
@@ -2148,7 +2148,7 @@
   },
   {
     "id": 114,
-    "Descriptif Produit": "�ufs frais poules �lev�es au sol CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Œufs frais poules élevées au sol CARREFOUR CLASSIC'",
     "Prix initial": 3.35,
     "Prix/quantité (euro/kg) baseline": 0.16,
     "Rayon": 3,
@@ -2167,7 +2167,7 @@
   },
   {
     "id": 115,
-    "Descriptif Produit": "�ufs dat�s du jour de ponte AVIBRESSE",
+    "Descriptif Produit": "Œufs datés du jour de ponte AVIBRESSE",
     "Prix initial": 4.5,
     "Prix/quantité (euro/kg) baseline": 0.21,
     "Rayon": 3,
@@ -2186,7 +2186,7 @@
   },
   {
     "id": 116,
-    "Descriptif Produit": "�ufs de poules �lev�es au sol CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Œufs de poules élevées au sol CARREFOUR CLASSIC'",
     "Prix initial": 1.15,
     "Prix/quantité (euro/kg) baseline": 0.6,
     "Rayon": 3,
@@ -2205,7 +2205,7 @@
   },
   {
     "id": 117,
-    "Descriptif Produit": "�ufs Bio de Plein Air Calibre Moyen CARREFOUR BIO",
+    "Descriptif Produit": "Œufs Bio de Plein Air Calibre Moyen CARREFOUR BIO",
     "Prix initial": 1.88,
     "Prix/quantité (euro/kg) baseline": 0.97,
     "Rayon": 3,
@@ -2224,7 +2224,7 @@
   },
   {
     "id": 118,
-    "Descriptif Produit": "�ufs Bio de Plein Air REFLETS DE FRANCE",
+    "Descriptif Produit": "Œufs Bio de Plein Air REFLETS DE FRANCE",
     "Prix initial": 2.03,
     "Prix/quantité (euro/kg) baseline": 1.07,
     "Rayon": 3,
@@ -2262,7 +2262,7 @@
   },
   {
     "id": 120,
-    "Descriptif Produit": "Yaourt fruits mix�s brass� CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Yaourt fruits mixés brassé CARREFOUR CLASSIC'",
     "Prix initial": 2.49,
     "Prix/quantité (euro/kg) baseline": 1.24,
     "Rayon": 3,
@@ -2319,9 +2319,9 @@
   },
   {
     "id": 123,
-    "Descriptif Produit": "Yaourt myrtille brass� Bio LES 2 VACHES",
+    "Descriptif Produit": "Yaourt myrtille brassé Bio LES 2 VACHES",
     "Prix initial": 1.65,
-    "Prix/quantité (euro/kg) baseline": "3.59 �",
+    "Prix/quantité (euro/kg) baseline": 3.59,
     "Rayon": 3,
     "Lien fichier": "\\Fichiers\\Rayon3\\33.JPG",
     "Grammes": 115,
@@ -2338,7 +2338,7 @@
   },
   {
     "id": 124,
-    "Descriptif Produit": "Cr�me Fraiche Bio Epaisse 30% Mat.Gr. CARREFOUR BIO",
+    "Descriptif Produit": "Crème Fraiche Bio Epaisse 30% Mat.Gr. CARREFOUR BIO",
     "Prix initial": 1.91,
     "Prix/quantité (euro/kg) baseline": 3.82,
     "Rayon": 3,
@@ -2357,7 +2357,7 @@
   },
   {
     "id": 125,
-    "Descriptif Produit": "Cr�me Epaisse 15% Mat.Gr. Bridelice",
+    "Descriptif Produit": "Crème Epaisse 15% Mat.Gr. Bridelice",
     "Prix initial": 1.59,
     "Prix/quantité (euro/kg) baseline": 3.18,
     "Rayon": 3,
@@ -2376,7 +2376,7 @@
   },
   {
     "id": 126,
-    "Descriptif Produit": "Cr�me fra�che �paisse enti�re CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Crème fraîche épaisse entière CARREFOUR CLASSIC'",
     "Prix initial": 1.41,
     "Prix/quantité (euro/kg) baseline": 2.82,
     "Rayon": 3,
@@ -2395,7 +2395,7 @@
   },
   {
     "id": 127,
-    "Descriptif Produit": "Cr�me Sp�cialit� Laiti�re 4% Mat.Gr. CARREFOUR",
+    "Descriptif Produit": "Crème Spécialité Laitière 4% Mat.Gr. CARREFOUR",
     "Prix initial": 1.11,
     "Prix/quantité (euro/kg) baseline": 2.22,
     "Rayon": 3,
@@ -2414,7 +2414,7 @@
   },
   {
     "id": 128,
-    "Descriptif Produit": "Cr�me l�g�re semi-�paisse 18% MG CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Crème légère semi-épaisse 18% MG CARREFOUR CLASSIC'",
     "Prix initial": 1.85,
     "Prix/quantité (euro/kg) baseline": 3.08,
     "Rayon": 3,
@@ -2433,7 +2433,7 @@
   },
   {
     "id": 129,
-    "Descriptif Produit": "Cr�me Semi-�paisse L�g�re de Normandie 18% Mat.Gr. ELLE & VIRE",
+    "Descriptif Produit": "Crème Semi-épaisse Légère de Normandie 18% Mat.Gr. ELLE & VIRE",
     "Prix initial": 2.82,
     "Prix/quantité (euro/kg) baseline": 4.7,
     "Rayon": 3,
@@ -2452,7 +2452,7 @@
   },
   {
     "id": 130,
-    "Descriptif Produit": "Cr�me Enti�re Semi-�paisse de Normandie ELLE & VIRE",
+    "Descriptif Produit": "Crème Entière Semi-épaisse de Normandie ELLE & VIRE",
     "Prix initial": 3.51,
     "Prix/quantité (euro/kg) baseline": 5.85,
     "Rayon": 3,
@@ -2471,7 +2471,7 @@
   },
   {
     "id": 131,
-    "Descriptif Produit": "Cr�me enti�re semi-�paisse 30% MG CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Crème entière semi-épaisse 30% MG CARREFOUR CLASSIC'",
     "Prix initial": 2.78,
     "Prix/quantité (euro/kg) baseline": 4.63,
     "Rayon": 3,
@@ -2490,7 +2490,7 @@
   },
   {
     "id": 132,
-    "Descriptif Produit": "Cr�me Enti�re Fluide de Normandie ELLE & VIRE",
+    "Descriptif Produit": "Crème Entière Fluide de Normandie ELLE & VIRE",
     "Prix initial": 2.51,
     "Prix/quantité (euro/kg) baseline": 5.02,
     "Rayon": 3,
@@ -2509,7 +2509,7 @@
   },
   {
     "id": 133,
-    "Descriptif Produit": "Cr�me Enti�re Fluide 30% Mat.Gr. CARREFOUR",
+    "Descriptif Produit": "Crème Entière Fluide 30% Mat.Gr. CARREFOUR",
     "Prix initial": 2.19,
     "Prix/quantité (euro/kg) baseline": 4.38,
     "Rayon": 3,
@@ -2528,7 +2528,7 @@
   },
   {
     "id": 134,
-    "Descriptif Produit": "Cr�me fluide l�g�re 12% MG CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Crème fluide légère 12% MG CARREFOUR CLASSIC'",
     "Prix initial": 1.9,
     "Prix/quantité (euro/kg) baseline": 3.8,
     "Rayon": 3,
@@ -2547,7 +2547,7 @@
   },
   {
     "id": 135,
-    "Descriptif Produit": "Cr�me Fluide L�g�re 12% Mat.Gr. BRIDELICE",
+    "Descriptif Produit": "Crème Fluide Légère 12% Mat.Gr. BRIDELICE",
     "Prix initial": 2.23,
     "Prix/quantité (euro/kg) baseline": 4.46,
     "Rayon": 3,
@@ -2566,7 +2566,7 @@
   },
   {
     "id": 136,
-    "Descriptif Produit": "Cr�me Fluide Bio L�g�re ELLE & VIRE",
+    "Descriptif Produit": "Crème Fluide Bio Légère ELLE & VIRE",
     "Prix initial": 2.99,
     "Prix/quantité (euro/kg) baseline": 5.98,
     "Rayon": 3,
@@ -2585,7 +2585,7 @@
   },
   {
     "id": 137,
-    "Descriptif Produit": "Cr�me Enti�re Fluide Bio ELLE & VIRE",
+    "Descriptif Produit": "Crème Entière Fluide Bio ELLE & VIRE",
     "Prix initial": 3.79,
     "Prix/quantité (euro/kg) baseline": 7.58,
     "Rayon": 3,
@@ -2680,7 +2680,7 @@
   },
   {
     "id": 142,
-    "Descriptif Produit": "Lait Demi-Ecreme St�rilis� UHT Calcium du Nord de la France CARREFOUR",
+    "Descriptif Produit": "Lait Demi-Ecreme Stérilisé UHT Calcium du Nord de la France CARREFOUR",
     "Prix initial": 4.8,
     "Prix/quantité (euro/kg) baseline": 0.8,
     "Rayon": 3,
@@ -2699,7 +2699,7 @@
   },
   {
     "id": 143,
-    "Descriptif Produit": "Lait Demi-Ecreme Bio St�rilis� UHT CARREFOUR BIO",
+    "Descriptif Produit": "Lait Demi-Ecreme Bio Stérilisé UHT CARREFOUR BIO",
     "Prix initial": 5.52,
     "Prix/quantité (euro/kg) baseline": 0.92,
     "Rayon": 3,
@@ -2832,7 +2832,7 @@
   },
   {
     "id": 150,
-    "Descriptif Produit": "Boisson lact�e au chocolat CANDIA",
+    "Descriptif Produit": "Boisson lactée au chocolat CANDIA",
     "Prix initial": 2.27,
     "Prix/quantité (euro/kg) baseline": 1.89,
     "Rayon": 3,
@@ -2851,7 +2851,7 @@
   },
   {
     "id": 151,
-    "Descriptif Produit": "Boisson lact�e au chocolat CARREFOUR",
+    "Descriptif Produit": "Boisson lactée au chocolat CARREFOUR",
     "Prix initial": 1.89,
     "Prix/quantité (euro/kg) baseline": 1.58,
     "Rayon": 3,
@@ -2870,7 +2870,7 @@
   },
   {
     "id": 152,
-    "Descriptif Produit": "Cr�me dessert expresso DANETTE",
+    "Descriptif Produit": "Crème dessert expresso DANETTE",
     "Prix initial": 1.39,
     "Prix/quantité (euro/kg) baseline": 2.78,
     "Rayon": 3,
@@ -2889,7 +2889,7 @@
   },
   {
     "id": 153,
-    "Descriptif Produit": "Cr�mes dessert caf� CARREFOUR",
+    "Descriptif Produit": "Crèmes dessert café CARREFOUR",
     "Prix initial": 0.91,
     "Prix/quantité (euro/kg) baseline": 1.82,
     "Rayon": 3,
@@ -2908,7 +2908,7 @@
   },
   {
     "id": 154,
-    "Descriptif Produit": "Cr�me dessert vanille Bio CARREFOUR BIO",
+    "Descriptif Produit": "Crème dessert vanille Bio CARREFOUR BIO",
     "Prix initial": 1.09,
     "Prix/quantité (euro/kg) baseline": 2.87,
     "Rayon": 3,
@@ -2927,7 +2927,7 @@
   },
   {
     "id": 155,
-    "Descriptif Produit": "Cr�mes dessert saveur vanille CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Crèmes dessert saveur vanille CARREFOUR CLASSIC'",
     "Prix initial": 0.65,
     "Prix/quantité (euro/kg) baseline": 1.3,
     "Rayon": 3,
@@ -2946,7 +2946,7 @@
   },
   {
     "id": 156,
-    "Descriptif Produit": "Cr�me dessert vanille DANETTE",
+    "Descriptif Produit": "Crème dessert vanille DANETTE",
     "Prix initial": 1.29,
     "Prix/quantité (euro/kg) baseline": 2.58,
     "Rayon": 3,
@@ -2965,7 +2965,7 @@
   },
   {
     "id": 157,
-    "Descriptif Produit": "Cr�me dessert chocolat LA LAITIERE",
+    "Descriptif Produit": "Crème dessert chocolat LA LAITIERE",
     "Prix initial": 1.71,
     "Prix/quantité (euro/kg) baseline": 4.28,
     "Rayon": 3,
@@ -2984,7 +2984,7 @@
   },
   {
     "id": 158,
-    "Descriptif Produit": "Cr�mes dessert chocolat CARREFOUR ORIGINAL",
+    "Descriptif Produit": "Crèmes dessert chocolat CARREFOUR ORIGINAL",
     "Prix initial": 1.3,
     "Prix/quantité (euro/kg) baseline": 3.25,
     "Rayon": 3,
@@ -3003,7 +3003,7 @@
   },
   {
     "id": 159,
-    "Descriptif Produit": "Cr�me caramel BONNE MAMAN",
+    "Descriptif Produit": "Crème caramel BONNE MAMAN",
     "Prix initial": 1.8,
     "Prix/quantité (euro/kg) baseline": 4.5,
     "Rayon": 3,
@@ -3022,7 +3022,7 @@
   },
   {
     "id": 160,
-    "Descriptif Produit": "Desserts cr�me caramel CARREFOUR ORIGINAL",
+    "Descriptif Produit": "Desserts crème caramel CARREFOUR ORIGINAL",
     "Prix initial": 1.44,
     "Prix/quantité (euro/kg) baseline": 3.6,
     "Rayon": 3,
@@ -3041,7 +3041,7 @@
   },
   {
     "id": 161,
-    "Descriptif Produit": "Desserts Li�geois vanille caramel CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Desserts Liégeois vanille caramel CARREFOUR CLASSIC'",
     "Prix initial": 0.79,
     "Prix/quantité (euro/kg) baseline": 1.98,
     "Rayon": 3,
@@ -3060,7 +3060,7 @@
   },
   {
     "id": 162,
-    "Descriptif Produit": "Cr�me li�geoise vanille caramel VIENNOIS",
+    "Descriptif Produit": "Crème liégeoise vanille caramel VIENNOIS",
     "Prix initial": 1.31,
     "Prix/quantité (euro/kg) baseline": 3.28,
     "Rayon": 3,
@@ -3079,7 +3079,7 @@
   },
   {
     "id": 163,
-    "Descriptif Produit": "Cr�me li�geoise chocolat Bio CARREFOUR BIO",
+    "Descriptif Produit": "Crème liégeoise chocolat Bio CARREFOUR BIO",
     "Prix initial": 1.55,
     "Prix/quantité (euro/kg) baseline": 3.88,
     "Rayon": 3,
@@ -3098,9 +3098,9 @@
   },
   {
     "id": 164,
-    "Descriptif Produit": "Dessert Li�geois chocolat CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Dessert Liégeois chocolat CARREFOUR CLASSIC'",
     "Prix initial": 0.79,
-    "Prix/quantité (euro/kg) baseline": "1.98 �",
+    "Prix/quantité (euro/kg) baseline": 1.98,
     "Rayon": 3,
     "Lien fichier": "\\Fichiers\\Rayon3\\74.JPG",
     "Grammes": 400,
@@ -3117,7 +3117,7 @@
   },
   {
     "id": 165,
-    "Descriptif Produit": "Cr�me li�geoise chocolat VIENNOIS",
+    "Descriptif Produit": "Crème liégeoise chocolat VIENNOIS",
     "Prix initial": 1.12,
     "Prix/quantité (euro/kg) baseline": 2.8,
     "Rayon": 3,
@@ -3136,7 +3136,7 @@
   },
   {
     "id": 166,
-    "Descriptif Produit": "Yaourt � boire fraise YOP",
+    "Descriptif Produit": "Yaourt à boire fraise YOP",
     "Prix initial": 1.69,
     "Prix/quantité (euro/kg) baseline": 2.05,
     "Rayon": 3,
@@ -3155,7 +3155,7 @@
   },
   {
     "id": 167,
-    "Descriptif Produit": "Yaourt � boire saveur fraise CARREFOUR",
+    "Descriptif Produit": "Yaourt à boire saveur fraise CARREFOUR",
     "Prix initial": 1.28,
     "Prix/quantité (euro/kg) baseline": 1.55,
     "Rayon": 3,
@@ -3214,7 +3214,7 @@
     "id": 170,
     "Descriptif Produit": "Fromage frais nature Bio CARREFOUR BIO",
     "Prix initial": 1.69,
-    "Prix/quantité (euro/kg) baseline": "3.38�",
+    "Prix/quantité (euro/kg) baseline": 3.38,
     "Rayon": 3,
     "Lien fichier": "\\Fichiers\\Rayon3\\80.JPG",
     "Grammes": 500,
@@ -3231,7 +3231,7 @@
   },
   {
     "id": 171,
-    "Descriptif Produit": "Jambon sup�rieur Tradil�ge Avec couenne",
+    "Descriptif Produit": "Jambon supérieur Tradilège Avec couenne",
     "Prix initial": 1.99,
     "Prix/quantité (euro/kg) baseline": 12.44,
     "Rayon": 4,
@@ -3250,7 +3250,7 @@
   },
   {
     "id": 172,
-    "Descriptif Produit": "Jambon Le Bon Paris Herta A l'�touff� - Conservation sans nitrite",
+    "Descriptif Produit": "Jambon Le Bon Paris Herta A l'étouffé - Conservation sans nitrite",
     "Prix initial": 3.47,
     "Prix/quantité (euro/kg) baseline": 16.52,
     "Rayon": 4,
@@ -3269,7 +3269,7 @@
   },
   {
     "id": 173,
-    "Descriptif Produit": "Jambon Le Sup�rieur cuit � l'�touff�e CARREFOUR EXTRA",
+    "Descriptif Produit": "Jambon Le Supérieur cuit à l'étouffée CARREFOUR EXTRA",
     "Prix initial": 2.19,
     "Prix/quantité (euro/kg) baseline": 13.69,
     "Rayon": 4,
@@ -3288,7 +3288,7 @@
   },
   {
     "id": 174,
-    "Descriptif Produit": "Jambon Le Paris cuit � l'�touff�e CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Jambon Le Paris cuit à l'étouffée CARREFOUR CLASSIC'",
     "Prix initial": 3.27,
     "Prix/quantité (euro/kg) baseline": 10.22,
     "Rayon": 4,
@@ -3326,7 +3326,7 @@
   },
   {
     "id": 176,
-    "Descriptif Produit": "Jambon cuit sup�rieur CARREFOUR BIO",
+    "Descriptif Produit": "Jambon cuit supérieur CARREFOUR BIO",
     "Prix initial": 4.9,
     "Prix/quantité (euro/kg) baseline": 27.22,
     "Rayon": 4,
@@ -3345,7 +3345,7 @@
   },
   {
     "id": 177,
-    "Descriptif Produit": "R�ti de porc cuit r�duit en sel FLEURY MICHON",
+    "Descriptif Produit": "Rôti de porc cuit réduit en sel FLEURY MICHON",
     "Prix initial": 3.09,
     "Prix/quantité (euro/kg) baseline": 19.31,
     "Rayon": 4,
@@ -3364,7 +3364,7 @@
   },
   {
     "id": 178,
-    "Descriptif Produit": "R�ti de porc cuit r�duit en sel FLEURY MICHON",
+    "Descriptif Produit": "Rôti de porc cuit réduit en sel FLEURY MICHON",
     "Prix initial": 3.7,
     "Prix/quantité (euro/kg) baseline": 17.62,
     "Rayon": 4,
@@ -3383,7 +3383,7 @@
   },
   {
     "id": 179,
-    "Descriptif Produit": "R�ti de porc qualit� sup�rieure CARREFOUR",
+    "Descriptif Produit": "Rôti de porc qualité supérieure CARREFOUR",
     "Prix initial": 2.27,
     "Prix/quantité (euro/kg) baseline": 12.61,
     "Rayon": 4,
@@ -3402,7 +3402,7 @@
   },
   {
     "id": 180,
-    "Descriptif Produit": "R�ti de porc qualit� sup�rieure CARREFOUR EXTRA",
+    "Descriptif Produit": "Rôti de porc qualité supérieure CARREFOUR EXTRA",
     "Prix initial": 2.03,
     "Prix/quantité (euro/kg) baseline": 12.69,
     "Rayon": 4,
@@ -3421,7 +3421,7 @@
   },
   {
     "id": 181,
-    "Descriptif Produit": "R�ti de porc bio cuit CARREFOUR BIO",
+    "Descriptif Produit": "Rôti de porc bio cuit CARREFOUR BIO",
     "Prix initial": 2.3,
     "Prix/quantité (euro/kg) baseline": 28.75,
     "Rayon": 4,
@@ -3440,7 +3440,7 @@
   },
   {
     "id": 182,
-    "Descriptif Produit": "R�ti de porc cuit Label Rouge FLEURY MICHON",
+    "Descriptif Produit": "Rôti de porc cuit Label Rouge FLEURY MICHON",
     "Prix initial": 2.86,
     "Prix/quantité (euro/kg) baseline": 17.88,
     "Rayon": 4,
@@ -3516,7 +3516,7 @@
   },
   {
     "id": 186,
-    "Descriptif Produit": "Jambon cru fum� IGP CARREFOUR",
+    "Descriptif Produit": "Jambon cru fumé IGP CARREFOUR",
     "Prix initial": 2.15,
     "Prix/quantité (euro/kg) baseline": 21.5,
     "Rayon": 4,
@@ -3554,7 +3554,7 @@
   },
   {
     "id": 188,
-    "Descriptif Produit": "Bacon fum� CARREFOUR",
+    "Descriptif Produit": "Bacon fumé CARREFOUR",
     "Prix initial": 1.74,
     "Prix/quantité (euro/kg) baseline": 17.4,
     "Rayon": 4,
@@ -3573,7 +3573,7 @@
   },
   {
     "id": 189,
-    "Descriptif Produit": "Bacon fum� au bois de h�tre CARREFOUR",
+    "Descriptif Produit": "Bacon fumé au bois de hêtre CARREFOUR",
     "Prix initial": 1.92,
     "Prix/quantité (euro/kg) baseline": 16,
     "Rayon": 4,
@@ -3592,7 +3592,7 @@
   },
   {
     "id": 190,
-    "Descriptif Produit": "Bacon fum� HERTA",
+    "Descriptif Produit": "Bacon fumé HERTA",
     "Prix initial": 2.33,
     "Prix/quantité (euro/kg) baseline": 15.53,
     "Rayon": 4,
@@ -3611,7 +3611,7 @@
   },
   {
     "id": 191,
-    "Descriptif Produit": "Bacon fum� grandes tranches HERTA",
+    "Descriptif Produit": "Bacon fumé grandes tranches HERTA",
     "Prix initial": 1.84,
     "Prix/quantité (euro/kg) baseline": 18.4,
     "Rayon": 4,
@@ -3687,7 +3687,7 @@
   },
   {
     "id": 195,
-    "Descriptif Produit": "Rillettes de poulet r�ti BORDEAU CHESNEL",
+    "Descriptif Produit": "Rillettes de poulet rôti BORDEAU CHESNEL",
     "Prix initial": 3.78,
     "Prix/quantité (euro/kg) baseline": 9.45,
     "Rayon": 4,
@@ -3725,7 +3725,7 @@
   },
   {
     "id": 197,
-    "Descriptif Produit": "Lardons fum�s HERTA",
+    "Descriptif Produit": "Lardons fumés HERTA",
     "Prix initial": 2.49,
     "Prix/quantité (euro/kg) baseline": 16.6,
     "Rayon": 4,
@@ -3744,7 +3744,7 @@
   },
   {
     "id": 198,
-    "Descriptif Produit": "Lardons bio fum�s CARREFOUR BIO",
+    "Descriptif Produit": "Lardons bio fumés CARREFOUR BIO",
     "Prix initial": 2.37,
     "Prix/quantité (euro/kg) baseline": 15.8,
     "Rayon": 4,
@@ -3763,7 +3763,7 @@
   },
   {
     "id": 199,
-    "Descriptif Produit": "Lardons fum�s CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Lardons fumés CARREFOUR CLASSIC'",
     "Prix initial": 1.59,
     "Prix/quantité (euro/kg) baseline": 10.6,
     "Rayon": 4,
@@ -3915,7 +3915,7 @@
   },
   {
     "id": 207,
-    "Descriptif Produit": "Saucisson sec d�Auvergne REFLETS DE FRANCE",
+    "Descriptif Produit": "Saucisson sec d’Auvergne REFLETS DE FRANCE",
     "Prix initial": 5.46,
     "Prix/quantité (euro/kg) baseline": 18.2,
     "Rayon": 4,
@@ -4029,7 +4029,7 @@
   },
   {
     "id": 213,
-    "Descriptif Produit": "Blanc de dinde dor� au Four FLEURY MICHON",
+    "Descriptif Produit": "Blanc de dinde doré au Four FLEURY MICHON",
     "Prix initial": 1.97,
     "Prix/quantité (euro/kg) baseline": 12.31,
     "Rayon": 4,
@@ -4048,7 +4048,7 @@
   },
   {
     "id": 214,
-    "Descriptif Produit": "Blanc de dinde dor� au four CARREFOUR EXTRA",
+    "Descriptif Produit": "Blanc de dinde doré au four CARREFOUR EXTRA",
     "Prix initial": 1.52,
     "Prix/quantité (euro/kg) baseline": 9.5,
     "Rayon": 4,
@@ -4181,7 +4181,7 @@
   },
   {
     "id": 221,
-    "Descriptif Produit": "Olives vertes d�noyaut�es CARREFOUR",
+    "Descriptif Produit": "Olives vertes dénoyautées CARREFOUR",
     "Prix initial": 0.89,
     "Prix/quantité (euro/kg) baseline": 2.41,
     "Rayon": 5,
@@ -4200,7 +4200,7 @@
   },
   {
     "id": 222,
-    "Descriptif Produit": "Olives vertes d�noyaut�es TRAMIER",
+    "Descriptif Produit": "Olives vertes dénoyautées TRAMIER",
     "Prix initial": 2.74,
     "Prix/quantité (euro/kg) baseline": 10.54,
     "Rayon": 5,
@@ -4219,7 +4219,7 @@
   },
   {
     "id": 223,
-    "Descriptif Produit": "Olives vertes d�noyaut�es Bio BIONATURAE",
+    "Descriptif Produit": "Olives vertes dénoyautées Bio BIONATURAE",
     "Prix initial": 2.62,
     "Prix/quantité (euro/kg) baseline": 29.11,
     "Rayon": 5,
@@ -4238,7 +4238,7 @@
   },
   {
     "id": 224,
-    "Descriptif Produit": "Olives noires enti�res DE NUESTRA TIERRASTRA TIERRA",
+    "Descriptif Produit": "Olives noires entières DE NUESTRA TIERRASTRA TIERRA",
     "Prix initial": 0.99,
     "Prix/quantité (euro/kg) baseline": 2.83,
     "Rayon": 5,
@@ -4257,7 +4257,7 @@
   },
   {
     "id": 225,
-    "Descriptif Produit": "Olives noires � la grecque d�noyaut�es TRAMIER",
+    "Descriptif Produit": "Olives noires à la grecque dénoyautées TRAMIER",
     "Prix initial": 2.69,
     "Prix/quantité (euro/kg) baseline": 12.23,
     "Rayon": 5,
@@ -4276,7 +4276,7 @@
   },
   {
     "id": 226,
-    "Descriptif Produit": "Ratatouille cuisin�e � la proven�ale CARREFOUR",
+    "Descriptif Produit": "Ratatouille cuisinée à la provençale CARREFOUR",
     "Prix initial": 2.35,
     "Prix/quantité (euro/kg) baseline": 4.43,
     "Rayon": 5,
@@ -4295,7 +4295,7 @@
   },
   {
     "id": 227,
-    "Descriptif Produit": "Ratatouille recette ni�oise REFLETS DE FRANCE",
+    "Descriptif Produit": "Ratatouille recette niçoise REFLETS DE FRANCE",
     "Prix initial": 2.59,
     "Prix/quantité (euro/kg) baseline": 4.11,
     "Rayon": 5,
@@ -4314,7 +4314,7 @@
   },
   {
     "id": 228,
-    "Descriptif Produit": "Ratatouille ni�oise bio CARREFOUR BIO",
+    "Descriptif Produit": "Ratatouille niçoise bio CARREFOUR BIO",
     "Prix initial": 2.65,
     "Prix/quantité (euro/kg) baseline": 4.21,
     "Rayon": 5,
@@ -4333,7 +4333,7 @@
   },
   {
     "id": 229,
-    "Descriptif Produit": "Pistaches grill�es sal�es CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Pistaches grillées salées CARREFOUR CLASSIC'",
     "Prix initial": 4.45,
     "Prix/quantité (euro/kg) baseline": 14.83,
     "Rayon": 5,
@@ -4352,7 +4352,7 @@
   },
   {
     "id": 230,
-    "Descriptif Produit": "Pistaches ap�ro LE VIEUX BISTROT",
+    "Descriptif Produit": "Pistaches apéro LE VIEUX BISTROT",
     "Prix initial": 7.35,
     "Prix/quantité (euro/kg) baseline": 40.83,
     "Rayon": 5,
@@ -4371,7 +4371,7 @@
   },
   {
     "id": 231,
-    "Descriptif Produit": "Pistaches grill�es sal�es Classic CARREFOUR",
+    "Descriptif Produit": "Pistaches grillées salées Classic CARREFOUR",
     "Prix initial": 3.71,
     "Prix/quantité (euro/kg) baseline": 14.84,
     "Rayon": 5,
@@ -4390,7 +4390,7 @@
   },
   {
     "id": 232,
-    "Descriptif Produit": "Pistaches grill�es sans sel ajout� CARREFOUR ORIGINAL",
+    "Descriptif Produit": "Pistaches grillées sans sel ajouté CARREFOUR ORIGINAL",
     "Prix initial": 2.42,
     "Prix/quantité (euro/kg) baseline": 16.13,
     "Rayon": 5,
@@ -4409,7 +4409,7 @@
   },
   {
     "id": 233,
-    "Descriptif Produit": "Noix de cajou grill�es � sec BENENUTS",
+    "Descriptif Produit": "Noix de cajou grillées à sec BENENUTS",
     "Prix initial": 3.91,
     "Prix/quantité (euro/kg) baseline": 23.7,
     "Rayon": 5,
@@ -4428,7 +4428,7 @@
   },
   {
     "id": 234,
-    "Descriptif Produit": "Noix de cajou grill�es � sec BENENUTS",
+    "Descriptif Produit": "Noix de cajou grillées à sec BENENUTS",
     "Prix initial": 5.12,
     "Prix/quantité (euro/kg) baseline": 23.27,
     "Rayon": 5,
@@ -4447,9 +4447,9 @@
   },
   {
     "id": 235,
-    "Descriptif Produit": "Noix de cajou grill�es sal�es CARREFOUR",
+    "Descriptif Produit": "Noix de cajou grillées salées CARREFOUR",
     "Prix initial": 1.92,
-    "Prix/quantité (euro/kg) baseline": "15.36 �",
+    "Prix/quantité (euro/kg) baseline": 15.36,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\15.JPG",
     "Grammes": 125,
@@ -4466,7 +4466,7 @@
   },
   {
     "id": 236,
-    "Descriptif Produit": "Noix de cajou grill�es sal�es CARREFOUR",
+    "Descriptif Produit": "Noix de cajou grillées salées CARREFOUR",
     "Prix initial": 4.45,
     "Prix/quantité (euro/kg) baseline": 14.83,
     "Rayon": 5,
@@ -4485,7 +4485,7 @@
   },
   {
     "id": 237,
-    "Descriptif Produit": "Noix de Cajou grill�es/sal�es CARREFOUR",
+    "Descriptif Produit": "Noix de Cajou grillées/salées CARREFOUR",
     "Prix initial": 3.72,
     "Prix/quantité (euro/kg) baseline": 14.88,
     "Rayon": 5,
@@ -4504,7 +4504,7 @@
   },
   {
     "id": 238,
-    "Descriptif Produit": "Noix de cajou grill�es sans sel ajout� CARREFOUR",
+    "Descriptif Produit": "Noix de cajou grillées sans sel ajouté CARREFOUR",
     "Prix initial": 2.17,
     "Prix/quantité (euro/kg) baseline": 17.36,
     "Rayon": 5,
@@ -4563,7 +4563,7 @@
     "id": 241,
     "Descriptif Produit": "Chips nature LAY'S",
     "Prix initial": 2.25,
-    "Prix/quantité (euro/kg) baseline": "6.43 �",
+    "Prix/quantité (euro/kg) baseline": 6.43,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\21.JPG",
     "Grammes": 350,
@@ -4620,7 +4620,7 @@
     "id": 244,
     "Descriptif Produit": "Chips nature CARREFOUR CLASSIC'",
     "Prix initial": 0.89,
-    "Prix/quantité (euro/kg) baseline": "4.45 �",
+    "Prix/quantité (euro/kg) baseline": 4.45,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\24.JPG",
     "Grammes": 200,
@@ -4751,7 +4751,7 @@
   },
   {
     "id": 251,
-    "Descriptif Produit": "P�tes coquillettes PANZANI",
+    "Descriptif Produit": "Pâtes coquillettes PANZANI",
     "Prix initial": 0.76,
     "Prix/quantité (euro/kg) baseline": 1.52,
     "Rayon": 5,
@@ -4770,9 +4770,9 @@
   },
   {
     "id": 252,
-    "Descriptif Produit": "P�tes coquillettes CARREFOUR",
+    "Descriptif Produit": "Pâtes coquillettes CARREFOUR",
     "Prix initial": 0.99,
-    "Prix/quantité (euro/kg) baseline": "0.99 �",
+    "Prix/quantité (euro/kg) baseline": 0.99,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\32.JPG",
     "Grammes": 1000,
@@ -4789,7 +4789,7 @@
   },
   {
     "id": 253,
-    "Descriptif Produit": "P�tes coquillette bl� complet FILIERE QUALITE CARREFOUR",
+    "Descriptif Produit": "Pâtes coquillette blé complet FILIERE QUALITE CARREFOUR",
     "Prix initial": 1.09,
     "Prix/quantité (euro/kg) baseline": 2.18,
     "Rayon": 5,
@@ -4808,7 +4808,7 @@
   },
   {
     "id": 254,
-    "Descriptif Produit": "P�tes coquillettes Bio CARREFOUR BIO",
+    "Descriptif Produit": "Pâtes coquillettes Bio CARREFOUR BIO",
     "Prix initial": 0.87,
     "Prix/quantité (euro/kg) baseline": 1.74,
     "Rayon": 5,
@@ -4827,7 +4827,7 @@
   },
   {
     "id": 255,
-    "Descriptif Produit": "P�tes coquillettes BARILLA",
+    "Descriptif Produit": "Pâtes coquillettes BARILLA",
     "Prix initial": 1.4,
     "Prix/quantité (euro/kg) baseline": 1.4,
     "Rayon": 5,
@@ -4846,7 +4846,7 @@
   },
   {
     "id": 256,
-    "Descriptif Produit": "P�tes coquillettes Bio BARILLA",
+    "Descriptif Produit": "Pâtes coquillettes Bio BARILLA",
     "Prix initial": 1.59,
     "Prix/quantité (euro/kg) baseline": 3.18,
     "Rayon": 5,
@@ -4865,7 +4865,7 @@
   },
   {
     "id": 257,
-    "Descriptif Produit": "P�tes les 3 minutes coquillettes PANZANI",
+    "Descriptif Produit": "Pâtes les 3 minutes coquillettes PANZANI",
     "Prix initial": 1.83,
     "Prix/quantité (euro/kg) baseline": 1.83,
     "Rayon": 5,
@@ -4884,7 +4884,7 @@
   },
   {
     "id": 258,
-    "Descriptif Produit": "P�tes coquillettes cuisson rapide CARREFOURde CARREFOUR",
+    "Descriptif Produit": "Pâtes coquillettes cuisson rapide CARREFOUR",
     "Prix initial": 0.55,
     "Prix/quantité (euro/kg) baseline": 1.1,
     "Rayon": 5,
@@ -4903,7 +4903,7 @@
   },
   {
     "id": 259,
-    "Descriptif Produit": "P�tes Coquillettes sans gluten BARILLA",
+    "Descriptif Produit": "Pâtes Coquillettes sans gluten BARILLA",
     "Prix initial": 1.97,
     "Prix/quantité (euro/kg) baseline": 4.92,
     "Rayon": 5,
@@ -4922,7 +4922,7 @@
   },
   {
     "id": 260,
-    "Descriptif Produit": "P�tes coquillettes al dente 3 min LUSTUCRU",
+    "Descriptif Produit": "Pâtes coquillettes al dente 3 min LUSTUCRU",
     "Prix initial": 1.22,
     "Prix/quantité (euro/kg) baseline": 2.44,
     "Rayon": 5,
@@ -4941,7 +4941,7 @@
   },
   {
     "id": 261,
-    "Descriptif Produit": "P�tes d'alsace igp spaghetti CARREFOUR",
+    "Descriptif Produit": "Pâtes d'alsace igp spaghetti CARREFOUR",
     "Prix initial": 0.99,
     "Prix/quantité (euro/kg) baseline": 3.96,
     "Rayon": 5,
@@ -4960,7 +4960,7 @@
   },
   {
     "id": 262,
-    "Descriptif Produit": "P�tes spaghetti CARREFOUR",
+    "Descriptif Produit": "Pâtes spaghetti CARREFOUR",
     "Prix initial": 0.49,
     "Prix/quantité (euro/kg) baseline": 0.98,
     "Rayon": 5,
@@ -4979,7 +4979,7 @@
   },
   {
     "id": 263,
-    "Descriptif Produit": "P�tes spaghetti CARREFOUR",
+    "Descriptif Produit": "Pâtes spaghetti CARREFOUR",
     "Prix initial": 0.95,
     "Prix/quantité (euro/kg) baseline": 0.95,
     "Rayon": 5,
@@ -4998,7 +4998,7 @@
   },
   {
     "id": 264,
-    "Descriptif Produit": "P�tes spaghetti n�5 BARILLA",
+    "Descriptif Produit": "Pâtes spaghetti n°5 BARILLA",
     "Prix initial": 0.78,
     "Prix/quantité (euro/kg) baseline": 1.56,
     "Rayon": 5,
@@ -5017,7 +5017,7 @@
   },
   {
     "id": 265,
-    "Descriptif Produit": "P�tes Spaghetti n�5 BARILLA",
+    "Descriptif Produit": "Pâtes Spaghetti n°5 BARILLA",
     "Prix initial": 1.39,
     "Prix/quantité (euro/kg) baseline": 1.39,
     "Rayon": 5,
@@ -5036,7 +5036,7 @@
   },
   {
     "id": 266,
-    "Descriptif Produit": "P�tes spaghetti PANZANI",
+    "Descriptif Produit": "Pâtes spaghetti PANZANI",
     "Prix initial": 0.96,
     "Prix/quantité (euro/kg) baseline": 1.92,
     "Rayon": 5,
@@ -5055,7 +5055,7 @@
   },
   {
     "id": 267,
-    "Descriptif Produit": "P�tes spaghetti PANZANI",
+    "Descriptif Produit": "Pâtes spaghetti PANZANI",
     "Prix initial": 1.4,
     "Prix/quantité (euro/kg) baseline": 1.4,
     "Rayon": 5,
@@ -5074,9 +5074,9 @@
   },
   {
     "id": 268,
-    "Descriptif Produit": "P�tes integrale spaghetti bl� complet n�5 BARILLA",
+    "Descriptif Produit": "Pâtes integrale spaghetti blé complet n°5 BARILLA",
     "Prix initial": 1.16,
-    "Prix/quantité (euro/kg) baseline": "2.32 �",
+    "Prix/quantité (euro/kg) baseline": 2.32,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\48.JPG",
     "Grammes": 500,
@@ -5093,7 +5093,7 @@
   },
   {
     "id": 269,
-    "Descriptif Produit": "P�tes spaghetti semi-complets Bio CARREFOUR BIO",
+    "Descriptif Produit": "Pâtes spaghetti semi-complets Bio CARREFOUR BIO",
     "Prix initial": 0.89,
     "Prix/quantité (euro/kg) baseline": 1.78,
     "Rayon": 5,
@@ -5150,7 +5150,7 @@
   },
   {
     "id": 272,
-    "Descriptif Produit": "Riz basmati parfum� 11mn CARREFOUR",
+    "Descriptif Produit": "Riz basmati parfumé 11mn CARREFOUR",
     "Prix initial": 1.35,
     "Prix/quantité (euro/kg) baseline": 2.7,
     "Rayon": 5,
@@ -5171,7 +5171,7 @@
     "id": 273,
     "Descriptif Produit": "Riz basmati sachets cuisson 10mn LUSTUCRU",
     "Prix initial": 2.94,
-    "Prix/quantité (euro/kg) baseline": "3.27 �",
+    "Prix/quantité (euro/kg) baseline": 3.27,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\53.JPG",
     "Grammes": 900,
@@ -5207,7 +5207,7 @@
   },
   {
     "id": 275,
-    "Descriptif Produit": "Farine de bl� T45 FRANCINE",
+    "Descriptif Produit": "Farine de blé T45 FRANCINE",
     "Prix initial": 0.77,
     "Prix/quantité (euro/kg) baseline": 1.54,
     "Rayon": 5,
@@ -5226,7 +5226,7 @@
   },
   {
     "id": 276,
-    "Descriptif Produit": "Farine de bl� fluide T45 CARREFOUR",
+    "Descriptif Produit": "Farine de blé fluide T45 CARREFOUR",
     "Prix initial": 0.59,
     "Prix/quantité (euro/kg) baseline": 0.59,
     "Rayon": 5,
@@ -5245,7 +5245,7 @@
   },
   {
     "id": 277,
-    "Descriptif Produit": "Farine de bl� T55 Bio FRANCINE",
+    "Descriptif Produit": "Farine de blé T55 Bio FRANCINE",
     "Prix initial": 2.16,
     "Prix/quantité (euro/kg) baseline": 2.16,
     "Rayon": 5,
@@ -5302,7 +5302,7 @@
   },
   {
     "id": 280,
-    "Descriptif Produit": "Sauce tomate basilic CARREFOUR CLASSIC'UR CLASSIC'",
+    "Descriptif Produit": "Sauce tomate basilic CARREFOUR CLASSIC",
     "Prix initial": 0.99,
     "Prix/quantité (euro/kg) baseline": 2.36,
     "Rayon": 5,
@@ -5399,7 +5399,7 @@
     "id": 285,
     "Descriptif Produit": "Petits pois CASSEGRAIN",
     "Prix initial": 1.05,
-    "Prix/quantité (euro/kg) baseline": "7.50 �",
+    "Prix/quantité (euro/kg) baseline": 7.5,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\65.JPG",
     "Grammes": 140,
@@ -5416,7 +5416,7 @@
   },
   {
     "id": 286,
-    "Descriptif Produit": "Petits pois extra-fins CARREFOUR CLASSIC'OUR CLASSIC'",
+    "Descriptif Produit": "Petits pois extra-fins CARREFOUR CLASSIC",
     "Prix initial": 1.06,
     "Prix/quantité (euro/kg) baseline": 1.89,
     "Rayon": 5,
@@ -5437,7 +5437,7 @@
     "id": 287,
     "Descriptif Produit": "Petits pois bio CARREFOUR BIO",
     "Prix initial": 2.69,
-    "Prix/quantité (euro/kg) baseline": "6.40�",
+    "Prix/quantité (euro/kg) baseline": 6.4,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\67.JPG",
     "Grammes": 420,
@@ -5473,9 +5473,9 @@
   },
   {
     "id": 289,
-    "Descriptif Produit": "Haricots verts bio sans sel ajout� JARDIN BIO",
+    "Descriptif Produit": "Haricots verts bio sans sel ajouté JARDIN BIO",
     "Prix initial": 3.76,
-    "Prix/quantité (euro/kg) baseline": "10.90 �",
+    "Prix/quantité (euro/kg) baseline": 10.9,
     "Rayon": 5,
     "Lien fichier": "\\Fichiers\\Rayon5\\69.JPG",
     "Grammes": 345,
@@ -5492,7 +5492,7 @@
   },
   {
     "id": 290,
-    "Descriptif Produit": "Haricots verts bio extra fins coup�s CARREFOUR BIO",
+    "Descriptif Produit": "Haricots verts bio extra fins coupés CARREFOUR BIO",
     "Prix initial": 2.05,
     "Prix/quantité (euro/kg) baseline": 5.69,
     "Rayon": 5,
@@ -5511,7 +5511,7 @@
   },
   {
     "id": 291,
-    "Descriptif Produit": "Haricots verts tr�s fins CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Haricots verts très fins CARREFOUR CLASSIC'",
     "Prix initial": 0.93,
     "Prix/quantité (euro/kg) baseline": 2.11,
     "Rayon": 5,
@@ -5530,7 +5530,7 @@
   },
   {
     "id": 292,
-    "Descriptif Produit": "Ma�s BONDUELLE",
+    "Descriptif Produit": "Maïs BONDUELLE",
     "Prix initial": 2.09,
     "Prix/quantité (euro/kg) baseline": 4.98,
     "Rayon": 5,
@@ -5549,7 +5549,7 @@
   },
   {
     "id": 293,
-    "Descriptif Produit": "Ma�s D'AUCY",
+    "Descriptif Produit": "Maïs D'AUCY",
     "Prix initial": 2.09,
     "Prix/quantité (euro/kg) baseline": 4.98,
     "Rayon": 5,
@@ -5568,7 +5568,7 @@
   },
   {
     "id": 294,
-    "Descriptif Produit": "Ma�s doux croquant CARREFOUR",
+    "Descriptif Produit": "Maïs doux croquant CARREFOUR",
     "Prix initial": 1.49,
     "Prix/quantité (euro/kg) baseline": 1.74,
     "Rayon": 5,
@@ -5587,7 +5587,7 @@
   },
   {
     "id": 295,
-    "Descriptif Produit": "Ma�s s/sucres ajout�s BONDUELLE",
+    "Descriptif Produit": "Maïs s/sucres ajoutés BONDUELLE",
     "Prix initial": 0.86,
     "Prix/quantité (euro/kg) baseline": 3.02,
     "Rayon": 5,
@@ -5606,7 +5606,7 @@
   },
   {
     "id": 296,
-    "Descriptif Produit": "Ma�s sans sucres ajout�s CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Maïs sans sucres ajoutés CARREFOUR CLASSIC'",
     "Prix initial": 0.5,
     "Prix/quantité (euro/kg) baseline": 1.75,
     "Rayon": 5,
@@ -5722,7 +5722,7 @@
     "id": 302,
     "Descriptif Produit": "Madeleines moelleuses CARREFOUR ORIGINAL",
     "Prix initial": 1.65,
-    "Prix/quantité (euro/kg) baseline": "3.30 �",
+    "Prix/quantité (euro/kg) baseline": 3.3,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\2.JPG",
     "Grammes": 500,
@@ -5741,7 +5741,7 @@
     "id": 303,
     "Descriptif Produit": "Quatre-quarts beurre frais BONNE MAMAN",
     "Prix initial": 3.18,
-    "Prix/quantité (euro/kg) baseline": "6.36 �",
+    "Prix/quantité (euro/kg) baseline": 6.36,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\3.JPG",
     "Grammes": 500,
@@ -5758,7 +5758,7 @@
   },
   {
     "id": 304,
-    "Descriptif Produit": "G�teau quatre-quarts pur beurre CARREFOUR ORIGINAL",
+    "Descriptif Produit": "Gâteau quatre-quarts pur beurre CARREFOUR ORIGINAL",
     "Prix initial": 2.19,
     "Prix/quantité (euro/kg) baseline": 4.38,
     "Rayon": 6,
@@ -5796,9 +5796,9 @@
   },
   {
     "id": 306,
-    "Descriptif Produit": "Biscuits L'Original caram�lis�e PALMITO",
+    "Descriptif Produit": "Biscuits L'Original caramélisée PALMITO",
     "Prix initial": 1.49,
-    "Prix/quantité (euro/kg) baseline": "7.45 �",
+    "Prix/quantité (euro/kg) baseline": 7.45,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\6.JPG",
     "Grammes": 200,
@@ -5834,7 +5834,7 @@
   },
   {
     "id": 308,
-    "Descriptif Produit": "Biscuits petit d�jeuner p�pites de chocolat CARREFOUR",
+    "Descriptif Produit": "Biscuits petit déjeuner pépites de chocolat CARREFOUR",
     "Prix initial": 1.46,
     "Prix/quantité (euro/kg) baseline": 3.65,
     "Rayon": 6,
@@ -5853,7 +5853,7 @@
   },
   {
     "id": 309,
-    "Descriptif Produit": "Biscuits petit d�jeuner chocolat BELVITA",
+    "Descriptif Produit": "Biscuits petit déjeuner chocolat BELVITA",
     "Prix initial": 2.06,
     "Prix/quantité (euro/kg) baseline": 5.15,
     "Rayon": 6,
@@ -5872,7 +5872,7 @@
   },
   {
     "id": 310,
-    "Descriptif Produit": "Cookies �clats chocolat GRANOLA",
+    "Descriptif Produit": "Cookies éclats chocolat GRANOLA",
     "Prix initial": 1.42,
     "Prix/quantité (euro/kg) baseline": 7.72,
     "Rayon": 6,
@@ -5910,9 +5910,9 @@
   },
   {
     "id": 312,
-    "Descriptif Produit": "Cr�pe chocolat WHAOU!",
+    "Descriptif Produit": "Crêpe chocolat WHAOU!",
     "Prix initial": 1.9,
-    "Prix/quantité (euro/kg) baseline": "7.42 �",
+    "Prix/quantité (euro/kg) baseline": 7.42,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\12.JPG",
     "Grammes": 256,
@@ -5929,9 +5929,9 @@
   },
   {
     "id": 313,
-    "Descriptif Produit": "Cr�pes chocolat et billes de c�r�ales CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Crêpes chocolat et billes de céréales CARREFOUR CLASSIC'",
     "Prix initial": 1.39,
-    "Prix/quantité (euro/kg) baseline": "5.43 �",
+    "Prix/quantité (euro/kg) baseline": 5.43,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\13.JPG",
     "Grammes": 256,
@@ -6024,9 +6024,9 @@
   },
   {
     "id": 318,
-    "Descriptif Produit": "bonbons Mix Box CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Bonbons Mix Box CARREFOUR CLASSIC'",
     "Prix initial": 2.83,
-    "Prix/quantité (euro/kg) baseline": "5.39 �",
+    "Prix/quantité (euro/kg) baseline": 5.39,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\18.JPG",
     "Grammes": 525,
@@ -6081,7 +6081,7 @@
   },
   {
     "id": 321,
-    "Descriptif Produit": "Bonbons go�t fruits CARREFOUR",
+    "Descriptif Produit": "Bonbons goût fruits CARREFOUR",
     "Prix initial": 2.05,
     "Prix/quantité (euro/kg) baseline": 4.1,
     "Rayon": 6,
@@ -6138,9 +6138,9 @@
   },
   {
     "id": 324,
-    "Descriptif Produit": "Bonbons BALL chocolat lait c�ur c�r�ales KITKAT",
+    "Descriptif Produit": "Bonbons BALL chocolat lait cœur céréales KITKAT",
     "Prix initial": 4.73,
-    "Prix/quantité (euro/kg) baseline": "11.82 �",
+    "Prix/quantité (euro/kg) baseline": 11.82,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\24.JPG",
     "Grammes": 400,
@@ -6195,7 +6195,7 @@
   },
   {
     "id": 327,
-    "Descriptif Produit": "Barres chocolat�es KITKAT",
+    "Descriptif Produit": "Barres chocolatées KITKAT",
     "Prix initial": 3.02,
     "Prix/quantité (euro/kg) baseline": 7.28,
     "Rayon": 6,
@@ -6214,7 +6214,7 @@
   },
   {
     "id": 328,
-    "Descriptif Produit": "Barres chocolat�es noisettes MILKA",
+    "Descriptif Produit": "Barres chocolatées noisettes MILKA",
     "Prix initial": 1.99,
     "Prix/quantité (euro/kg) baseline": 12.63,
     "Rayon": 6,
@@ -6233,7 +6233,7 @@
   },
   {
     "id": 329,
-    "Descriptif Produit": "Bonbons cacahu�tes enrob�es chocolat au lait CARREFOUR",
+    "Descriptif Produit": "Bonbons cacahuètes enrobées chocolat au lait CARREFOUR",
     "Prix initial": 1.5,
     "Prix/quantité (euro/kg) baseline": 6,
     "Rayon": 6,
@@ -6252,7 +6252,7 @@
   },
   {
     "id": 330,
-    "Descriptif Produit": "Bonbons chocolat au lait et cacahu�tes PEANUT M&M'S",
+    "Descriptif Produit": "Bonbons chocolat au lait et cacahuètes PEANUT M&M'S",
     "Prix initial": 2.45,
     "Prix/quantité (euro/kg) baseline": 7.42,
     "Rayon": 6,
@@ -6271,9 +6271,9 @@
   },
   {
     "id": 331,
-    "Descriptif Produit": "Caf� moulu doux bio ALTER ECOCO",
+    "Descriptif Produit": "Café moulu doux bio ALTER ECOCO",
     "Prix initial": 2.92,
-    "Prix/quantité (euro/kg) baseline": "11.68 �",
+    "Prix/quantité (euro/kg) baseline": 11.68,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\31.JPG",
     "Grammes": 250,
@@ -6290,7 +6290,7 @@
   },
   {
     "id": 332,
-    "Descriptif Produit": "Caf� moulu Le Grand Classique CARREFOUR",
+    "Descriptif Produit": "Café moulu Le Grand Classique CARREFOUR",
     "Prix initial": 0.94,
     "Prix/quantité (euro/kg) baseline": 3.76,
     "Rayon": 6,
@@ -6309,7 +6309,7 @@
   },
   {
     "id": 333,
-    "Descriptif Produit": "Caf� moulu CARTE NOIRE",
+    "Descriptif Produit": "Café moulu CARTE NOIRE",
     "Prix initial": 5.92,
     "Prix/quantité (euro/kg) baseline": 11.84,
     "Rayon": 6,
@@ -6328,7 +6328,7 @@
   },
   {
     "id": 334,
-    "Descriptif Produit": "Caf� dosettes Compatibles SENSEO Classique n�5 CARTE NOIRE",
+    "Descriptif Produit": "Café dosettes Compatibles SENSEO Classique n°5 CARTE NOIRE",
     "Prix initial": 3.62,
     "Prix/quantité (euro/kg) baseline": 14.48,
     "Rayon": 6,
@@ -6347,7 +6347,7 @@
   },
   {
     "id": 335,
-    "Descriptif Produit": "Caf� dosettes Compatibles SENSEO classique CARREFOUR",
+    "Descriptif Produit": "Café dosettes Compatibles SENSEO classique CARREFOUR",
     "Prix initial": 2.25,
     "Prix/quantité (euro/kg) baseline": 8.93,
     "Rayon": 6,
@@ -6366,7 +6366,7 @@
   },
   {
     "id": 336,
-    "Descriptif Produit": "Caf� capsules Compatibles Nespresso Lungo 100% arabica CRF EXTRA",
+    "Descriptif Produit": "Café capsules Compatibles Nespresso Lungo 100% arabica CRF EXTRA",
     "Prix initial": 5.2,
     "Prix/quantité (euro/kg) baseline": 23.21,
     "Rayon": 6,
@@ -6385,7 +6385,7 @@
   },
   {
     "id": 337,
-    "Descriptif Produit": "Caf� capsules Compatibles Nespresso Lungo n�8 CARTE NOIRE",
+    "Descriptif Produit": "Café capsules Compatibles Nespresso Lungo n°8 CARTE NOIRE",
     "Prix initial": 2.62,
     "Prix/quantité (euro/kg) baseline": 46.79,
     "Rayon": 6,
@@ -6404,7 +6404,7 @@
   },
   {
     "id": 338,
-    "Descriptif Produit": "Caf� dosettes CompatiblesTASSIMO Long Classic  L'OR TASSIMO",
+    "Descriptif Produit": "Café dosettes CompatiblesTASSIMO Long Classic  L'OR TASSIMO",
     "Prix initial": 5.35,
     "Prix/quantité (euro/kg) baseline": 34.29,
     "Rayon": 6,
@@ -6423,7 +6423,7 @@
   },
   {
     "id": 339,
-    "Descriptif Produit": "Caf� dosettes CompatiblesTASSIMO Long Classique  L'OR TASSIMO",
+    "Descriptif Produit": "Café dosettes CompatiblesTASSIMO Long Classique  L'OR TASSIMO",
     "Prix initial": 3.57,
     "Prix/quantité (euro/kg) baseline": 34.33,
     "Rayon": 6,
@@ -6442,7 +6442,7 @@
   },
   {
     "id": 340,
-    "Descriptif Produit": "Th� vert menthe CARREFOUR",
+    "Descriptif Produit": "Thé vert menthe CARREFOUR",
     "Prix initial": 0.79,
     "Prix/quantité (euro/kg) baseline": 19.75,
     "Rayon": 6,
@@ -6461,7 +6461,7 @@
   },
   {
     "id": 341,
-    "Descriptif Produit": "Th� bio vert menthe douce CARREFOUR BIO",
+    "Descriptif Produit": "Thé bio vert menthe douce CARREFOUR BIO",
     "Prix initial": 1.48,
     "Prix/quantité (euro/kg) baseline": 46.25,
     "Rayon": 6,
@@ -6480,7 +6480,7 @@
   },
   {
     "id": 342,
-    "Descriptif Produit": "Th� vert menthe intense LIPTONN",
+    "Descriptif Produit": "Thé vert menthe intense LIPTONN",
     "Prix initial": 1.43,
     "Prix/quantité (euro/kg) baseline": 44.69,
     "Rayon": 6,
@@ -6499,9 +6499,9 @@
   },
   {
     "id": 343,
-    "Descriptif Produit": "Th� vert menthe Bio JARDIN BIOO",
+    "Descriptif Produit": "Thé vert menthe Bio JARDIN BIOO",
     "Prix initial": 2.36,
-    "Prix/quantité (euro/kg) baseline": "78.67 �",
+    "Prix/quantité (euro/kg) baseline": 78.67,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\43.JPG",
     "Grammes": 30,
@@ -6518,7 +6518,7 @@
   },
   {
     "id": 344,
-    "Descriptif Produit": "Th� vert menthe TWININGS",
+    "Descriptif Produit": "Thé vert menthe TWININGS",
     "Prix initial": 2.43,
     "Prix/quantité (euro/kg) baseline": 63.95,
     "Rayon": 6,
@@ -6537,7 +6537,7 @@
   },
   {
     "id": 345,
-    "Descriptif Produit": "Th� noir fruits rouges CARREFOUR",
+    "Descriptif Produit": "Thé noir fruits rouges CARREFOUR",
     "Prix initial": 1.39,
     "Prix/quantité (euro/kg) baseline": 32.33,
     "Rayon": 6,
@@ -6556,7 +6556,7 @@
   },
   {
     "id": 346,
-    "Descriptif Produit": "Th� noir 5 fruits rouges LIPTONN",
+    "Descriptif Produit": "Thé noir 5 fruits rouges LIPTONN",
     "Prix initial": 1.35,
     "Prix/quantité (euro/kg) baseline": 39.71,
     "Rayon": 6,
@@ -6575,9 +6575,9 @@
   },
   {
     "id": 347,
-    "Descriptif Produit": "Th� English Breakfast CARREFOUR",
+    "Descriptif Produit": "Thé English Breakfast CARREFOUR",
     "Prix initial": 0.8,
-    "Prix/quantité (euro/kg) baseline": "16.00 �",
+    "Prix/quantité (euro/kg) baseline": 16,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\47.JPG",
     "Grammes": 50,
@@ -6594,7 +6594,7 @@
   },
   {
     "id": 348,
-    "Descriptif Produit": "Th� Earl Grey TWININGS",
+    "Descriptif Produit": "Thé Earl Grey TWININGS",
     "Prix initial": 1.94,
     "Prix/quantité (euro/kg) baseline": 38.8,
     "Rayon": 6,
@@ -6613,9 +6613,9 @@
   },
   {
     "id": 349,
-    "Descriptif Produit": "Th� Earl Grey TWININGS",
+    "Descriptif Produit": "Thé Earl Grey TWININGS",
     "Prix initial": 7.15,
-    "Prix/quantité (euro/kg) baseline": "35.75�",
+    "Prix/quantité (euro/kg) baseline": 35.75,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\49.JPG",
     "Grammes": 200,
@@ -6651,7 +6651,7 @@
   },
   {
     "id": 351,
-    "Descriptif Produit": "Compote pommes sans sucres ajout�s CARREFOUR",
+    "Descriptif Produit": "Compote pommes sans sucres ajoutés CARREFOUR",
     "Prix initial": 0.99,
     "Prix/quantité (euro/kg) baseline": 1.39,
     "Rayon": 6,
@@ -6784,7 +6784,7 @@
   },
   {
     "id": 358,
-    "Descriptif Produit": "Cassonade pure canne LA PERRUCHEPERRUCHE",
+    "Descriptif Produit": "Cassonade pure canne LA PERRUCHE",
     "Prix initial": 1.82,
     "Prix/quantité (euro/kg) baseline": 2.43,
     "Rayon": 6,
@@ -6803,7 +6803,7 @@
   },
   {
     "id": 359,
-    "Descriptif Produit": "Chocolat au lait noisettes enti�res CARREFOUR",
+    "Descriptif Produit": "Chocolat au lait noisettes entières CARREFOUR",
     "Prix initial": 1.43,
     "Prix/quantité (euro/kg) baseline": 7.15,
     "Rayon": 6,
@@ -6822,7 +6822,7 @@
   },
   {
     "id": 360,
-    "Descriptif Produit": "Chocolat au lait noisettes enti�res CARREFOUR BIO",
+    "Descriptif Produit": "Chocolat au lait noisettes entières CARREFOUR BIO",
     "Prix initial": 2.72,
     "Prix/quantité (euro/kg) baseline": 13.6,
     "Rayon": 6,
@@ -6841,7 +6841,7 @@
   },
   {
     "id": 361,
-    "Descriptif Produit": "Chocolat au lait �clats noisettes COTE D'OR",
+    "Descriptif Produit": "Chocolat au lait éclats noisettes COTE D'OR",
     "Prix initial": 5.01,
     "Prix/quantité (euro/kg) baseline": 12.52,
     "Rayon": 6,
@@ -6860,16 +6860,35 @@
   },
   {
     "id": 362,
-    "Descriptif Produit": "Chocolat Lait Extra Fin MA�TRE CHOCOLATIER LINDT",
+    "Descriptif Produit": "Chocolat Lait Extra Fin MAÎTRE CHOCOLATIER LINDT",
     "Prix initial": 2.95,
     "Prix/quantité (euro/kg) baseline": 8.94,
     "Rayon": 6,
     "Lien fichier": "\\Fichiers\\Rayon6\\62.JPG",
     "Grammes": 300,
-    "Empreinte CO2 (g par 100 g)": 563,
-    "kg CO2 / kg": 5.63,
-    "Traffic light intra (green = vert. orange orange. red rouge)": "green",
-    "Traffic light inter": "red",
+    "Empreinte CO2 (g par 100 g)": 5,
+    "kg CO2 / kg": "",
+    "Traffic light intra (green = vert. orange orange. red rouge)": "",
+    "Traffic light inter": "",
+    "Prix final BM80 - calculé": "",
+    "Prix/quantité (euro/kg) BM80": "",
+    "BM 80 - arrondi": "",
+    "Prix final BM250 - calculé": "",
+    "Prix/quantité (euro/kg) BM250": "",
+    "BM 250 - arrondi": ""
+  },
+  {
+    "id": 3,
+    "Descriptif Produit": 5.63,
+    "Prix initial": "green",
+    "Prix/quantité (euro/kg) baseline": "red",
+    "Rayon": "",
+    "Lien fichier": "",
+    "Grammes": "",
+    "Empreinte CO2 (g par 100 g)": "",
+    "kg CO2 / kg": "",
+    "Traffic light intra (green = vert. orange orange. red rouge)": "",
+    "Traffic light inter": "",
     "Prix final BM80 - calculé": "",
     "Prix/quantité (euro/kg) BM80": "",
     "BM 80 - arrondi": "",
@@ -6879,7 +6898,7 @@
   },
   {
     "id": 363,
-    "Descriptif Produit": "Chocolat au lait Alpin CARREFOUREFOUR",
+    "Descriptif Produit": "Chocolat au lait Alpin CARREFOUR",
     "Prix initial": 1.5,
     "Prix/quantité (euro/kg) baseline": 5,
     "Rayon": 6,
@@ -7012,7 +7031,7 @@
   },
   {
     "id": 370,
-    "Descriptif Produit": "Poudre Bio all natural NESQUIKSQUIK",
+    "Descriptif Produit": "Poudre Bio all natural NESQUIK",
     "Prix initial": 3.6,
     "Prix/quantité (euro/kg) baseline": 10.29,
     "Rayon": 6,
@@ -7069,7 +7088,7 @@
   },
   {
     "id": 373,
-    "Descriptif Produit": "P�te � tartiner chocolat noisette JARDIN BIO'LOGIQUE",
+    "Descriptif Produit": "Pâte à tartiner chocolat noisette JARDIN BIO'LOGIQUE",
     "Prix initial": 6.7,
     "Prix/quantité (euro/kg) baseline": 8.93,
     "Rayon": 6,
@@ -7088,7 +7107,7 @@
   },
   {
     "id": 374,
-    "Descriptif Produit": "P�te � tartiner  CARREFOUR CLASSIC'R CLASSIC'",
+    "Descriptif Produit": "Pâte à tartiner  CARREFOUR CLASSIC",
     "Prix initial": 2.5,
     "Prix/quantité (euro/kg) baseline": 3.33,
     "Rayon": 6,
@@ -7107,7 +7126,7 @@
   },
   {
     "id": 375,
-    "Descriptif Produit": "P�te � tartiner NUTELLA",
+    "Descriptif Produit": "Pâte à tartiner NUTELLA",
     "Prix initial": 4.59,
     "Prix/quantité (euro/kg) baseline": 5.56,
     "Rayon": 6,
@@ -7126,7 +7145,7 @@
   },
   {
     "id": 376,
-    "Descriptif Produit": "P�te � tartiner 16% de noisettes CARREFOUR BIO",
+    "Descriptif Produit": "Pâte à tartiner 16% de noisettes CARREFOUR BIO",
     "Prix initial": 4.55,
     "Prix/quantité (euro/kg) baseline": 6.5,
     "Rayon": 6,
@@ -7335,7 +7354,7 @@
   },
   {
     "id": 387,
-    "Descriptif Produit": "Frites allumettes sp�cial four CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Frites allumettes spécial four CARREFOUR CLASSIC'",
     "Prix initial": 2.1,
     "Prix/quantité (euro/kg) baseline": 1.4,
     "Rayon": 7,
@@ -7430,7 +7449,7 @@
   },
   {
     "id": 392,
-    "Descriptif Produit": "Poisson pan� b�tonnets colin alaska 100% filet msc Findus",
+    "Descriptif Produit": "Poisson pané bâtonnets colin alaska 100% filet msc Findus",
     "Prix initial": 3.57,
     "Prix/quantité (euro/kg) baseline": 7.97,
     "Rayon": 7,
@@ -7449,7 +7468,7 @@
   },
   {
     "id": 393,
-    "Descriptif Produit": "B�tonnets pan�s colin d'Alaska MSC CARREFOUR",
+    "Descriptif Produit": "Bâtonnets panés colin d'Alaska MSC CARREFOUR",
     "Prix initial": 1.89,
     "Prix/quantité (euro/kg) baseline": 4.2,
     "Rayon": 7,
@@ -7468,7 +7487,7 @@
   },
   {
     "id": 394,
-    "Descriptif Produit": "Poisson pan� s/gluten SCHAR",
+    "Descriptif Produit": "Poisson pané s/gluten SCHAR",
     "Prix initial": 5.85,
     "Prix/quantité (euro/kg) baseline": 19.5,
     "Rayon": 7,
@@ -7525,7 +7544,7 @@
   },
   {
     "id": 397,
-    "Descriptif Produit": "Poisson pan� tranches de cabillaud MSC FINDUS",
+    "Descriptif Produit": "Poisson pané tranches de cabillaud MSC FINDUS",
     "Prix initial": 7.15,
     "Prix/quantité (euro/kg) baseline": 14.02,
     "Rayon": 7,
@@ -7639,7 +7658,7 @@
   },
   {
     "id": 403,
-    "Descriptif Produit": "Haricots verts extra-fins pr�cuits vapeurs CARREFOUR",
+    "Descriptif Produit": "Haricots verts extra-fins précuits vapeurs CARREFOUR",
     "Prix initial": 1.41,
     "Prix/quantité (euro/kg) baseline": 1.88,
     "Rayon": 7,
@@ -7696,7 +7715,7 @@
   },
   {
     "id": 406,
-    "Descriptif Produit": "Cr�pes jambon fromage MARIE",
+    "Descriptif Produit": "Crêpes jambon fromage MARIE",
     "Prix initial": 4.2,
     "Prix/quantité (euro/kg) baseline": 4.2,
     "Rayon": 7,
@@ -7715,7 +7734,7 @@
   },
   {
     "id": 407,
-    "Descriptif Produit": "Cr�pes emmental CARREFOURUR",
+    "Descriptif Produit": "Crêpes emmental CARREFOUR",
     "Prix initial": 3.14,
     "Prix/quantité (euro/kg) baseline": 3.14,
     "Rayon": 7,
@@ -7943,7 +7962,7 @@
   },
   {
     "id": 419,
-    "Descriptif Produit": "Glaces � l'eau bio assortiment Best Of YETI",
+    "Descriptif Produit": "Glaces à l'eau bio assortiment Best Of YETI",
     "Prix initial": 3.72,
     "Prix/quantité (euro/kg) baseline": 8.86,
     "Rayon": 7,
@@ -8019,7 +8038,7 @@
   },
   {
     "id": 423,
-    "Descriptif Produit": "Lasagnes ch�vres �pinards MARIE",
+    "Descriptif Produit": "Lasagnes chèvres épinards MARIE",
     "Prix initial": 4.95,
     "Prix/quantité (euro/kg) baseline": 5.82,
     "Rayon": 7,
@@ -8038,7 +8057,7 @@
   },
   {
     "id": 424,
-    "Descriptif Produit": "Plat cuisin� lasagnes ch�vre �pinards CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Plat cuisiné lasagnes chèvre épinards CARREFOUR CLASSIC'",
     "Prix initial": 3.44,
     "Prix/quantité (euro/kg) baseline": 5.73,
     "Rayon": 7,
@@ -8057,7 +8076,7 @@
   },
   {
     "id": 425,
-    "Descriptif Produit": "Plat cuisin� hachis parmentier CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Plat cuisiné hachis parmentier CARREFOUR CLASSIC'",
     "Prix initial": 2.34,
     "Prix/quantité (euro/kg) baseline": 3.9,
     "Rayon": 7,
@@ -8076,7 +8095,7 @@
   },
   {
     "id": 426,
-    "Descriptif Produit": "Plat cuisin� Hachis Parmentier MARIE",
+    "Descriptif Produit": "Plat cuisiné Hachis Parmentier MARIE",
     "Prix initial": 2.52,
     "Prix/quantité (euro/kg) baseline": 8.4,
     "Rayon": 7,
@@ -8095,7 +8114,7 @@
   },
   {
     "id": 427,
-    "Descriptif Produit": "Plat cuisin� Pa�lla Royale MARIE",
+    "Descriptif Produit": "Plat cuisiné Paëlla Royale MARIE",
     "Prix initial": 3.95,
     "Prix/quantité (euro/kg) baseline": 4.39,
     "Rayon": 7,
@@ -8114,7 +8133,7 @@
   },
   {
     "id": 428,
-    "Descriptif Produit": "Plat cuisin� paella Valenciana  CARREFOUR",
+    "Descriptif Produit": "Plat cuisiné paella Valenciana  CARREFOUR",
     "Prix initial": 3.58,
     "Prix/quantité (euro/kg) baseline": 3.58,
     "Rayon": 7,
@@ -8133,7 +8152,7 @@
   },
   {
     "id": 429,
-    "Descriptif Produit": "L�gumes cuisin�s La Paysanne BONDUELLE",
+    "Descriptif Produit": "Légumes cuisinés La Paysanne BONDUELLE",
     "Prix initial": 3.19,
     "Prix/quantité (euro/kg) baseline": 4.25,
     "Rayon": 7,
@@ -8152,7 +8171,7 @@
   },
   {
     "id": 430,
-    "Descriptif Produit": "L�gumes cuisin�s bio po�l�e de 6 l�gumes CARREFOUR BIO",
+    "Descriptif Produit": "Légumes cuisinés bio poêlée de 6 légumes CARREFOUR BIO",
     "Prix initial": 2.45,
     "Prix/quantité (euro/kg) baseline": 4.08,
     "Rayon": 7,
@@ -8171,7 +8190,7 @@
   },
   {
     "id": 431,
-    "Descriptif Produit": "Boisson th� p�che Ice Tea LIPTON",
+    "Descriptif Produit": "Boisson thé pêche Ice Tea LIPTON",
     "Prix initial": 1.29,
     "Prix/quantité (euro/kg) baseline": 0.86,
     "Rayon": 8,
@@ -8190,7 +8209,7 @@
   },
   {
     "id": 432,
-    "Descriptif Produit": "Boisson au th� glac� p�che intense FUZE TEA",
+    "Descriptif Produit": "Boisson au thé glacé pêche intense FUZE TEA",
     "Prix initial": 1.77,
     "Prix/quantité (euro/kg) baseline": 1.42,
     "Rayon": 8,
@@ -8209,7 +8228,7 @@
   },
   {
     "id": 433,
-    "Descriptif Produit": "Boisson au th� glac� p�che z�ro Ice Tea LIPTON",
+    "Descriptif Produit": "Boisson au thé glacé pêche zéro Ice Tea LIPTON",
     "Prix initial": 1.42,
     "Prix/quantité (euro/kg) baseline": 0.95,
     "Rayon": 8,
@@ -8228,7 +8247,7 @@
   },
   {
     "id": 434,
-    "Descriptif Produit": "Boisson Iced Tea saveur p�che CARREFOUR",
+    "Descriptif Produit": "Boisson Iced Tea saveur pêche CARREFOUR",
     "Prix initial": 1.3,
     "Prix/quantité (euro/kg) baseline": 0.65,
     "Rayon": 8,
@@ -8361,7 +8380,7 @@
   },
   {
     "id": 441,
-    "Descriptif Produit": "Soda cola z�ro BREIZH COLA",
+    "Descriptif Produit": "Soda cola zéro BREIZH COLA",
     "Prix initial": 1.32,
     "Prix/quantité (euro/kg) baseline": 0.88,
     "Rayon": 8,
@@ -8475,7 +8494,7 @@
   },
   {
     "id": 447,
-    "Descriptif Produit": "Sp�cialit� � diluer au citron CARREFOUR",
+    "Descriptif Produit": "Spécialité à diluer au citron CARREFOUR",
     "Prix initial": 1.68,
     "Prix/quantité (euro/kg) baseline": 2.4,
     "Rayon": 8,
@@ -8513,7 +8532,7 @@
   },
   {
     "id": 449,
-    "Descriptif Produit": "Limonade bio ar�me naturel citron CARREFOUR BIO",
+    "Descriptif Produit": "Limonade bio arôme naturel citron CARREFOUR BIO",
     "Prix initial": 0.9,
     "Prix/quantité (euro/kg) baseline": 0.9,
     "Rayon": 8,
@@ -8627,7 +8646,7 @@
   },
   {
     "id": 455,
-    "Descriptif Produit": "Boisson saveur orange CARREFOUR CLASSIC'REFOUR CLASSIC'",
+    "Descriptif Produit": "Boisson saveur orange CARREFOUR CLASSIC",
     "Prix initial": 2.35,
     "Prix/quantité (euro/kg) baseline": 1.19,
     "Rayon": 8,
@@ -8722,7 +8741,7 @@
   },
   {
     "id": 460,
-    "Descriptif Produit": "Eau min�rale naturelle EVIAN",
+    "Descriptif Produit": "Eau minérale naturelle EVIAN",
     "Prix initial": 3.18,
     "Prix/quantité (euro/kg) baseline": 0.35,
     "Rayon": 8,
@@ -8741,7 +8760,7 @@
   },
   {
     "id": 461,
-    "Descriptif Produit": "Eau min�rale naturelle des Alpes CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Eau minérale naturelle des Alpes CARREFOUR CLASSIC'",
     "Prix initial": 1.98,
     "Prix/quantité (euro/kg) baseline": 0.22,
     "Rayon": 8,
@@ -8760,7 +8779,7 @@
   },
   {
     "id": 462,
-    "Descriptif Produit": "Eau min�rale EVIAN",
+    "Descriptif Produit": "Eau minérale EVIAN",
     "Prix initial": 1.99,
     "Prix/quantité (euro/kg) baseline": 0.66,
     "Rayon": 8,
@@ -8779,7 +8798,7 @@
   },
   {
     "id": 463,
-    "Descriptif Produit": "Eau min�rale naturelle des Alpes CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Eau minérale naturelle des Alpes CARREFOUR CLASSIC'",
     "Prix initial": 1.45,
     "Prix/quantité (euro/kg) baseline": 0.48,
     "Rayon": 8,
@@ -8798,7 +8817,7 @@
   },
   {
     "id": 464,
-    "Descriptif Produit": "Eau min�rale naturelle VOLVIC",
+    "Descriptif Produit": "Eau minérale naturelle VOLVIC",
     "Prix initial": 2.4,
     "Prix/quantité (euro/kg) baseline": 0.3,
     "Rayon": 8,
@@ -8836,7 +8855,7 @@
   },
   {
     "id": 466,
-    "Descriptif Produit": "Eau aromatis�e Citronnade CRISTALINE",
+    "Descriptif Produit": "Eau aromatisée Citronnade CRISTALINE",
     "Prix initial": 0.99,
     "Prix/quantité (euro/kg) baseline": 0.66,
     "Rayon": 8,
@@ -8855,7 +8874,7 @@
   },
   {
     "id": 467,
-    "Descriptif Produit": "Eau naturel aromatis� au citron CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Eau naturel aromatisé au citron CARREFOUR CLASSIC'",
     "Prix initial": 0.75,
     "Prix/quantité (euro/kg) baseline": 0.5,
     "Rayon": 8,
@@ -8874,7 +8893,7 @@
   },
   {
     "id": 468,
-    "Descriptif Produit": "Eau � l'ar�me naturel de citron CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Eau à l'arôme naturel de citron CARREFOUR CLASSIC'",
     "Prix initial": 2.4,
     "Prix/quantité (euro/kg) baseline": 0.8,
     "Rayon": 8,
@@ -8912,7 +8931,7 @@
   },
   {
     "id": 470,
-    "Descriptif Produit": "Eau min�rale naturelle p�tillante CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Eau minérale naturelle pétillante CARREFOUR CLASSIC'",
     "Prix initial": 2.16,
     "Prix/quantité (euro/kg) baseline": 0.36,
     "Rayon": 8,
@@ -8931,7 +8950,7 @@
   },
   {
     "id": 471,
-    "Descriptif Produit": "Eau gazeuse min�rale naturelle Fines Bulles PERRIER",
+    "Descriptif Produit": "Eau gazeuse minérale naturelle Fines Bulles PERRIER",
     "Prix initial": 3.54,
     "Prix/quantité (euro/kg) baseline": 0.59,
     "Rayon": 8,
@@ -8950,7 +8969,7 @@
   },
   {
     "id": 472,
-    "Descriptif Produit": "Eau finement p�tillante CARREFOUR CLASSIC'",
+    "Descriptif Produit": "Eau finement pétillante CARREFOUR CLASSIC'",
     "Prix initial": 2.1,
     "Prix/quantité (euro/kg) baseline": 0.35,
     "Rayon": 8,
@@ -9007,7 +9026,7 @@
   },
   {
     "id": 475,
-    "Descriptif Produit": "Nectar orange sans pulpe sans sucres ajout�s Bio JOKER",
+    "Descriptif Produit": "Nectar orange sans pulpe sans sucres ajoutés Bio JOKER",
     "Prix initial": 2.15,
     "Prix/quantité (euro/kg) baseline": 2.15,
     "Rayon": 8,
@@ -9102,7 +9121,7 @@
   },
   {
     "id": 480,
-    "Descriptif Produit": "Jus de fruits bio multifruits CARREFOUR BIOCARREFOUR BIO",
+    "Descriptif Produit": "Jus de fruits bio multifruits CARREFOUR BIO",
     "Prix initial": 2.72,
     "Prix/quantité (euro/kg) baseline": 2.27,
     "Rayon": 8,

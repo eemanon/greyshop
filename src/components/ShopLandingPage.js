@@ -31,7 +31,7 @@ export default function ShopLandingPage(props) {
       <div>
         <Paper className={classes.root}>
           <Typography variant="body1" gutterBottom className={classes.typo}>
-            Vous pouvez dès maintenant parcourir les différents rayons à l'aide des onglets ci-dessus pour faire vos achats.
+            Vous pouvez choisir un panier de biens pour un maximum de 40 euros. L'argent non dépensé est perdu.
               </Typography>
 
         </Paper>
